@@ -7,3 +7,6 @@ node_modules
 
 # source depenendancies
 razomy/python
+
+# python cache
+__pycache__
