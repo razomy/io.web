@@ -1,8 +1,0 @@
-# razomy.function.server
-uvicorn~=0.30.0
-fastapi~=0.111.0
-jinja2~=3.1.4
-# razomy.python.image
-pillow~=10.3.0
-# razomy.python.image.remove_backgrond
-rembg~=2.0.5
