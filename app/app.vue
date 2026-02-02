@@ -1,5 +1,5 @@
 <script setup>
-import DefaultApp from '~~/razomy/vue.nuxt/default-app.vue'
+import DefaultApp from '~~/razomy/vue.nuxt/DefaultApp.vue'
 </script>
 
 <template>

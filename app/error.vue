@@ -1,5 +1,5 @@
 <script setup>
-import DefaultError from '~~/razomy/vue.nuxt/default-error.vue'
+import DefaultError from '~~/razomy/vue.nuxt/DefaultError.vue'
 </script>
 
 <template>

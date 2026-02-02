@@ -1,0 +1,125 @@
+<template>
+  <div class="bg-surface-light min-vh-100 pb-16">
+
+    <!-- Hero Background -->
+    <div class="hero-bg bg-primary pt-16 pb-32 px-4 text-center">
+      <v-container>
+        <Breadcrumbs />
+        <v-chip color="white" variant="outlined" class="mb-4">
+          Online Converter
+        </v-chip>
+        <h1 class="text-h2 font-weight-black text-white mb-2">
+          {{ source.toUpperCase() }} <span class="text-white-50">to</span> {{ target.toUpperCase() }}
+        </h1>
+        <p class="text-white-70 text-body-1">
+          {{ t('fs.source.target.hero_sub', { s: source.toUpperCase(), t: target.toUpperCase() }) }}
+        </p>
+      </v-container>
+    </div>
+
+    <!-- Main Content Area (Overlapping Hero) -->
+    <v-container class="mt-n16 position-relative z-index-1">
+      <ModernDropzone
+          v-model="file"
+          :accept="`.${source}`"
+          :is-processing="loading"
+          @convert="startConversion"
+      />
+
+      <!-- Ошибки -->
+      <v-snackbar v-model="hasError" color="error" location="top">
+        {{ errorMsg }}
+        <template v-slot:actions>
+          <v-btn variant="text" @click="hasError = false">Close</v-btn>
+        </template>
+      </v-snackbar>
+
+      <!-- SEO Контент -->
+      <SeoSection :content="seoData" :source="source" :target="target" />
+    </v-container>
+
+  </div>
+</template>
+
+<script setup lang="ts">
+import ModernDropzone from '~~/razomy/vue.nuxt/ModernDropzone.vue';
+import SeoSection from '~~/razomy/vue.nuxt/SeoSection.vue';
+import { generateSeoContent, CONVERTER_CONFIG } from '~~/content/context';
+import { isValidConversion } from '~~/content/isValidConversion';
+import Breadcrumbs from '~~/razomy/vue.nuxt/Breadcrumbs.vue';
+
+const { t } = useI18n();
+const route = useRoute();
+
+const source = (route.params.source as string).toLowerCase();
+const target = (route.params.target as string).toLowerCase();
+
+// SEO Meta
+const seoData = computed(() => generateSeoContent(t, source, target));
+useSeoMeta({
+  title: seoData.value.h1,
+  description: seoData.value.intro
+});
+
+// Logic
+const file = ref<File | null>(null);
+const loading = ref(false);
+const hasError = ref(false);
+const errorMsg = ref('');
+
+definePageMeta({
+  validate: async (route) => {
+    // Валидация типов
+    return isValidConversion(route.params.source as string, route.params.target as string);
+  }
+});
+
+const startConversion = async () => {
+  if (!file.value) return;
+
+  loading.value = true;
+  hasError.value = false;
+
+  const formData = new FormData();
+  formData.append('file', file.value);
+  formData.append('from', source);
+  formData.append('to', target);
+
+  try {
+    const { data, error } = await useFetch(CONVERTER_CONFIG.endpoints.convert, {
+      method: 'POST',
+      body: formData,
+      responseType: 'blob'
+    });
+
+    if (error.value) throw new Error('Conversion API Error');
+
+    // Скачивание
+    const url = window.URL.createObjectURL(data.value as Blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `converted.${target}`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+  } catch (e) {
+    console.error(e);
+    errorMsg.value = t('error.generic');
+    hasError.value = true;
+  } finally {
+    loading.value = false;
+  }
+};
+</script>
+
+<style scoped>
+.hero-bg {
+  /* Градиентный фон */
+  background: rgb(var(--v-theme-primary));
+  padding-bottom: 120px; /* Место под нахлест карточки */
+}
+.z-index-1 { z-index: 1; }
+.text-white-70 { color: rgba(255,255,255, 0.7); }
+.text-white-50 { color: rgba(255,255,255, 0.5); }
+</style>

@@ -1,5 +1,5 @@
 <script setup>
-import EmptyLayout from '~~/razomy/vue.nuxt/empty-layout.vue'
+import EmptyLayout from '~~/razomy/vue.nuxt/EmptyLayout.vue'
 </script>
 
 <template>

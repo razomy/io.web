@@ -1,5 +1,5 @@
 <script setup>
-import DefaultLayout from '~~/razomy/vue.nuxt/default-layout.vue'
+import DefaultLayout from '~~/razomy/vue.nuxt/DefaultLayout.vue'
 </script>
 
 <template>
