@@ -21,11 +21,11 @@
   </div>
 </template>
 <script setup lang='ts'>
-import {COOKIE_SESSION_LOCALE} from '~/models/COOKIE_SESSION_LOCALE';
+import {c} from '~~/content/context';
 
 const {locale} = useI18n();
 
-const cookie_session_locale = useCookie(COOKIE_SESSION_LOCALE);
+const cookie_session_locale = useCookie(c.cookie.session.locale);
 cookie_session_locale.value = cookie_session_locale.value || locale.value;
 
 const route = useRoute();

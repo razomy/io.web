@@ -1,5 +1,6 @@
 import formidable from 'formidable';
-import { convertToStream } from '../../razomy/functions/convert';
+
+import {convertToStream} from '~~/razomy/function/convertToStream';
 
 export default defineEventHandler(async (event) => {
   // 1. Парсинг (загрузка файла во временную папку)

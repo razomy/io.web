@@ -1,5 +1,5 @@
 import {H3Event} from 'h3';
-import zod from 'zod';
+import {z}from 'zod';
 import {c} from '~~/content/context';
 
 // export const id_schema = zod.object({
@@ -26,8 +26,8 @@ export function getQueryFrom(event: H3Event, schema: zod.ZodObject) {
 export function getUserLocales(event: H3Event): 'en' {
   let responses = getQueryFrom(
     event,
-    zod.object({
-      locale: zod.string()
+    z.object({
+      locale: z.string()
         .length(2),
     }),
   ) as { locale: string };

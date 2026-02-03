@@ -1,95 +1,19 @@
+import {FILE_TYPES} from '../razomy/function/FILE_TYPES';
+
 const subdomainName = 'function' as const;
 const domain = `${subdomainName}.razomy.org` as const;
 const url = `https://${domain}` as const;
 const cookie = {
   session: {locale: `${subdomainName}.razomy.org-session-locale`,}
-} as const
-// Ключ - исходный формат, Массив - доступные целевые форматы
-export const ALLOWED_CONVERSIONS = {
-  jpg: ['png', 'webp', 'pdf'],
-  png: ['jpg', 'webp', 'ico'],
-  docx: ['pdf', 'txt'],
-  pdf: ['docx', 'jpg']
-} as const
-// utils/converter.constants.ts
-export const CONVERTER_CONFIG = {
-  maxSize: 100 * 1024 * 1024, // 100 MB
-  endpoints: {
-    convert: '/api/convert'
-  }
-}
-
-export const generateSeoContent = (t: any, source: string, target: string) => {
-  const s = source.toUpperCase();
-  const tgt = target.toUpperCase();
-
-  return {
-    h1: t('fs.source.target.seo.h1', {source: s, target: tgt}),
-    intro: t('fs.source.target.seo.intro', {source: s, target: tgt}),
-    steps: [
-      {
-        title: t('fs.source.target.steps.upload'),
-        icon: 'mdi-cloud-upload',
-        text: t('fs.source.target.steps.upload_desc', {s})
-      },
-      {title: t('fs.source.target.steps.quality'), icon: 'mdi-tune', text: t('fs.source.target.steps.quality_desc')},
-      {
-        title: t('fs.source.target.steps.download'),
-        icon: 'mdi-download',
-        text: t('fs.source.target.steps.download_desc', {tgt})
-      },
-    ],
-    faq: [
-      {q: t('fs.source.target.faq.q1', {s}), a: t('fs.source.target.faq.a1')},
-      {q: t('fs.source.target.faq.q2'), a: t('fs.source.target.faq.a2')},
-      {q: t('fs.source.target.faq.q3'), a: t('fs.source.target.faq.a3')},
-    ]
-  }
-}
-
-export const ALLOWED_CONVERSIONS2 = {
-  jpg: ['png', 'webp', 'pdf'],
-  png: ['jpg', 'webp', 'ico'],
-  docx: ['pdf', 'txt', 'html'],
-  pdf: ['docx', 'jpg', 'png'],
-  mp4: ['mp3', 'gif'],
-  xlsx: ['csv', 'pdf']
 } as const;
 
 // Хелпер для получения иконки по расширению (для красоты)
 export const getFileIcon = (ext: string) => {
-  const map: Record<string, string> = {
-    pdf: 'mdi-file-pdf-box',
-    jpg: 'mdi-file-image',
-    png: 'mdi-file-image',
-    webp: 'mdi-file-image',
-    docx: 'mdi-file-word',
-    xlsx: 'mdi-file-excel',
-    mp4: 'mdi-video',
-    mp3: 'mdi-music',
-  };
-  return map[ext] || 'mdi-file-document-outline';
+  return FILE_TYPES[ext]?.icon || 'mdi-file-document-outline';
 };
 
-export const ALLOWED_CONVERSIONS4 = {
-  jpg: ['png', 'webp', 'pdf'],
-  png: ['jpg', 'webp', 'ico'],
-  webp: ['jpg', 'png'],
-  docx: ['pdf', 'txt', 'html'],
-  pdf: ['docx', 'jpg', 'png'],
-  xlsx: ['csv', 'pdf'],
-  mp4: ['mp3', 'gif'],
-  mp3: ['wav']
-} as const;
-
-// Категории для группировки
-export const CATEGORY_MAP: Record<string, string> = {
-  jpg: 'image', png: 'image', webp: 'image', ico: 'image',
-  docx: 'document', pdf: 'document', txt: 'document', html: 'document', xlsx: 'document', csv: 'document',
-  mp4: 'video', gif: 'video',
-  mp3: 'audio', wav: 'audio'
-};
-
+export const ALLOWED_CONVERSIONS = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.conversions})));
+export const CATEGORY_MAP: Record<string, string> = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.category})));
 // Конфиг категорий (иконки и названия)
 export const CATEGORY_CONFIG: Record<string, { icon: string, labelKey: string }> = {
   image: {icon: 'mdi-image-multiple', labelKey: 'categories.image'},
@@ -98,11 +22,30 @@ export const CATEGORY_CONFIG: Record<string, { icon: string, labelKey: string }>
   audio: {icon: 'mdi-music', labelKey: 'categories.audio'},
 };
 
-const routes = {
-  fs: Object.keys(ALLOWED_CONVERSIONS).map(i => {
-    return ALLOWED_CONVERSIONS[i]!.map(i => ({[i]: null}))
-  })
-} as const
+const footerLinks = [
+  { url: '/company/blog', text: 'footer.blog' },
+  { url: '/company/about', text: 'footer.about' },
+  { url: '/company/feedback', text: 'footer.feedback' },
+  { url: '/company/contacts', text: 'footer.contacts' },
+  { url: '/company', text: 'footer.company' },
+  { url: '/company/licence', text: 'footer.licence' },
+  { url: '/company/term-of-use', text: 'footer.term-of-use' },
+  { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
+  // <v-btn icon="mdi-github" color="white" href="#" target="_blank"/>
+];
+
+const headerLinks = [
+  { url: '/company/blog', text: 'footer.blog' },
+  { url: '/company/about', text: 'footer.about' },
+  { url: '/company/feedback', text: 'footer.feedback' },
+  { url: '/company/contacts', text: 'footer.contacts' },
+  { url: '/company', text: 'footer.company' },
+  { url: '/company/licence', text: 'footer.licence' },
+  { url: '/company/term-of-use', text: 'footer.term-of-use' },
+  { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
+];
+
+const routes = FILE_TYPES.map(i=>[i.conversions.map(o=>`/${i.ext}-${o}`)]).flat(2);
 
 const i18n = {
   en: {
@@ -129,7 +72,7 @@ const i18n = {
       'term-of-use': 'Terms of Use',
       'privacy-policy': 'Privacy Policy',
       donate: 'Donate',
-      'company-name': 'Razomy Inc.'
+      'company-name': 'Razomy'
     },
     sidebar: {
       search: 'Find format...',
@@ -225,7 +168,7 @@ const i18n = {
         'term-of-use': 'Условия использования',
         'privacy-policy': 'Политика конфиденциальности',
         donate: 'Поддержать',
-        'company-name': 'Razomy Inc.'
+        'company-name': 'Razomy'
       },
       sidebar: {
         search: 'Найти формат...',
@@ -300,6 +243,8 @@ const i18n = {
 } as const;
 
 export const c = {
+  headerLinks,
+  footerLinks,
   subdomainName,
   domain,
   url,

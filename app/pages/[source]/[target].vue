@@ -44,7 +44,6 @@
 <script setup lang="ts">
 import ModernDropzone from '~~/razomy/vue.nuxt/ModernDropzone.vue';
 import SeoSection from '~~/razomy/vue.nuxt/SeoSection.vue';
-import { generateSeoContent, CONVERTER_CONFIG } from '~~/content/context';
 import { isValidConversion } from '~~/content/isValidConversion';
 import Breadcrumbs from '~~/razomy/vue.nuxt/Breadcrumbs.vue';
 
@@ -53,6 +52,34 @@ const route = useRoute();
 
 const source = (route.params.source as string).toLowerCase();
 const target = (route.params.target as string).toLowerCase();
+
+const generateSeoContent = (t: any, source: string, target: string) => {
+  const s = source.toUpperCase();
+  const tgt = target.toUpperCase();
+
+  return {
+    h1: t('fs.source.target.seo.h1', {source: s, target: tgt}),
+    intro: t('fs.source.target.seo.intro', {source: s, target: tgt}),
+    steps: [
+      {
+        title: t('fs.source.target.steps.upload'),
+        icon: 'mdi-cloud-upload',
+        text: t('fs.source.target.steps.upload_desc', {s})
+      },
+      {title: t('fs.source.target.steps.quality'), icon: 'mdi-tune', text: t('fs.source.target.steps.quality_desc')},
+      {
+        title: t('fs.source.target.steps.download'),
+        icon: 'mdi-download',
+        text: t('fs.source.target.steps.download_desc', {tgt})
+      },
+    ],
+    faq: [
+      {q: t('fs.source.target.faq.q1', {s}), a: t('fs.source.target.faq.a1')},
+      {q: t('fs.source.target.faq.q2'), a: t('fs.source.target.faq.a2')},
+      {q: t('fs.source.target.faq.q3'), a: t('fs.source.target.faq.a3')},
+    ]
+  }
+}
 
 // SEO Meta
 const seoData = computed(() => generateSeoContent(t, source, target));
@@ -73,7 +100,13 @@ definePageMeta({
     return isValidConversion(route.params.source as string, route.params.target as string);
   }
 });
-
+// utils/converter.constants.ts
+ const CONVERTER_CONFIG = {
+  maxSize: 100 * 1024 * 1024, // 100 MB
+  endpoints: {
+    convert: '/api/convert'
+  }
+}
 const startConversion = async () => {
   if (!file.value) return;
 

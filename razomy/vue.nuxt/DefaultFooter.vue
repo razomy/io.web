@@ -3,7 +3,7 @@
     <v-footer class='rounded-xl py-6'>
       <v-row justify='center' no-gutters>
         <v-btn
-          v-for='link in links'
+          v-for='link in c.footerLinks'
           :to='localePath(link.url)'
           variant='text'
           class='mx-2'
@@ -11,7 +11,7 @@
         >
           {{ t(link.text) }}
         </v-btn>
-        <language-selector></language-selector>
+        <LanguageSelector></LanguageSelector>
         <v-btn href="https://donate.stripe.com/28o9CS6Px6QwaQMbIN"
                append-icon="mdi-heart-outline"
                class='mx-2'
@@ -29,17 +29,10 @@
   </v-container>
 </template>
 <script lang='ts' setup>
+import {c} from '~~/content/context';
+import LanguageSelector from '~~/razomy/vue.nuxt/LanguageSelector.vue';
+
 const localePath = useLocalePath();
 const { t } = useI18n();
 
-const links = [
-  { url: '/company/blog', text: 'footer.blog' },
-  { url: '/company/about', text: 'footer.about' },
-  { url: '/company/feedback', text: 'footer.feedback' },
-  { url: '/company/contacts', text: 'footer.contacts' },
-  { url: '/company', text: 'footer.company' },
-  { url: '/company/licence', text: 'footer.licence' },
-  { url: '/company/term-of-use', text: 'footer.term-of-use' },
-  { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
-];
 </script>
