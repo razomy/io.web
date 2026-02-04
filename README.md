@@ -21,7 +21,7 @@
     - Ensure compliance;
     - Make it pluggable for ease of use.
 
-- Web site: https://function.razomy.com
+- Web site: https://io.razomy.com
 
 ## Development
 
@@ -32,8 +32,8 @@
 
 2. `mkdir razomy` `cd razomy`
     1. `git clone git@github.com:razomy/python.git`;
-    2. `git clone git@github.com:razomy/function.server.git`;
-    3. `ln -sf ROOT_DIR_PATH/python/razomy/python ROOT_DIR_PATH/function.server/razomy/python`. replace ROOT_DIR_PATH with absolute folder path.
+    2. `git clone git@github.com:razomy/io.server.git`;
+    3. `ln -sf ROOT_DIR_PATH/python/razomy/python ROOT_DIR_PATH/io.server/razomy/python`. replace ROOT_DIR_PATH with absolute folder path.
     4. `cd function.server`.
 
 3. Init venv

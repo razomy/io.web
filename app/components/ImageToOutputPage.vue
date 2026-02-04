@@ -4,15 +4,14 @@
     <!-- Hero Background -->
     <div class="hero-bg bg-primary pt-16 pb-32 px-4 text-center">
       <v-container>
-        <Breadcrumbs />
         <v-chip color="white" variant="outlined" class="mb-4">
           Online Converter
         </v-chip>
         <h1 class="text-h2 font-weight-black text-white mb-2">
-          {{ source.toUpperCase() }} <span class="text-white-50">to</span> {{ target.toUpperCase() }}
+          {{ input.toUpperCase() }} <span class="text-white-50">to</span> {{ output.toUpperCase() }}
         </h1>
         <p class="text-white-70 text-body-1">
-          {{ t('fs.source.target.hero_sub', { s: source.toUpperCase(), t: target.toUpperCase() }) }}
+          {{ t('group.input.output.hero_sub', { s: input.toUpperCase(), t: output.toUpperCase() }) }}
         </p>
       </v-container>
     </div>
@@ -21,7 +20,7 @@
     <v-container class="mt-n16 position-relative z-index-1">
       <ModernDropzone
           v-model="file"
-          :accept="`.${source}`"
+          :accept="`.${input}`"
           :is-processing="loading"
           @convert="startConversion"
       />
@@ -35,7 +34,7 @@
       </v-snackbar>
 
       <!-- SEO Контент -->
-      <SeoSection :content="seoData" :source="source" :target="target" />
+      <SeoSection :content="seoData" :input="input" :output="output" />
     </v-container>
 
   </div>
@@ -50,39 +49,39 @@ import Breadcrumbs from '~~/razomy/vue.nuxt/Breadcrumbs.vue';
 const { t } = useI18n();
 const route = useRoute();
 
-const source = (route.params.source as string).toLowerCase();
-const target = (route.params.target as string).toLowerCase();
+const input = (route.params.input as string).toLowerCase();
+const output = (route.params.output as string).toLowerCase();
 
-const generateSeoContent = (t: any, source: string, target: string) => {
-  const s = source.toUpperCase();
-  const tgt = target.toUpperCase();
+const generateSeoContent = (t: any, input: string, output: string) => {
+  const s = input.toUpperCase();
+  const tgt = output.toUpperCase();
 
   return {
-    h1: t('fs.source.target.seo.h1', {source: s, target: tgt}),
-    intro: t('fs.source.target.seo.intro', {source: s, target: tgt}),
+    h1: t('group.input.output.seo.h1', {input: s, output: tgt}),
+    intro: t('group.input.output.seo.intro', {input: s, output: tgt}),
     steps: [
       {
-        title: t('fs.source.target.steps.upload'),
+        title: t('group.input.output.steps.upload'),
         icon: 'mdi-cloud-upload',
-        text: t('fs.source.target.steps.upload_desc', {s})
+        text: t('group.input.output.steps.upload_desc', {s})
       },
-      {title: t('fs.source.target.steps.quality'), icon: 'mdi-tune', text: t('fs.source.target.steps.quality_desc')},
+      {title: t('group.input.output.steps.quality'), icon: 'mdi-tune', text: t('group.input.output.steps.quality_desc')},
       {
-        title: t('fs.source.target.steps.download'),
+        title: t('group.input.output.steps.download'),
         icon: 'mdi-download',
-        text: t('fs.source.target.steps.download_desc', {tgt})
+        text: t('group.input.output.steps.download_desc', {tgt})
       },
     ],
     faq: [
-      {q: t('fs.source.target.faq.q1', {s}), a: t('fs.source.target.faq.a1')},
-      {q: t('fs.source.target.faq.q2'), a: t('fs.source.target.faq.a2')},
-      {q: t('fs.source.target.faq.q3'), a: t('fs.source.target.faq.a3')},
+      {q: t('group.input.output.faq.q1', {s}), a: t('group.input.output.faq.a1')},
+      {q: t('group.input.output.faq.q2'), a: t('group.input.output.faq.a2')},
+      {q: t('group.input.output.faq.q3'), a: t('group.input.output.faq.a3')},
     ]
   }
 }
 
 // SEO Meta
-const seoData = computed(() => generateSeoContent(t, source, target));
+const seoData = computed(() => generateSeoContent(t, input, output));
 useSeoMeta({
   title: seoData.value.h1,
   description: seoData.value.intro
@@ -96,8 +95,11 @@ const errorMsg = ref('');
 
 definePageMeta({
   validate: async (route) => {
+    const input = (route.params.input as string).toLowerCase();
+    const output = (route.params.output as string).toLowerCase();
+
     // Валидация типов
-    return isValidConversion(route.params.source as string, route.params.target as string);
+    return isValidConversion(input, output);
   }
 });
 // utils/converter.constants.ts
@@ -115,8 +117,8 @@ const startConversion = async () => {
 
   const formData = new FormData();
   formData.append('file', file.value);
-  formData.append('from', source);
-  formData.append('to', target);
+  formData.append('from', input);
+  formData.append('to', output);
 
   try {
     const { data, error } = await useFetch(CONVERTER_CONFIG.endpoints.convert, {
@@ -131,7 +133,7 @@ const startConversion = async () => {
     const url = window.URL.createObjectURL(data.value as Blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `converted.${target}`);
+    link.setAttribute('download', `converted.${output}`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

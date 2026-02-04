@@ -11,11 +11,9 @@
       </template>
     </Head>
     <Body>
-    <v-layout class='flex-column'>
-      <v-main>
-        <slot/>
-      </v-main>
-    </v-layout>
+    <v-main>
+      <slot/>
+    </v-main>
     </Body>
     </Html>
   </div>
@@ -31,9 +29,9 @@ cookie_session_locale.value = cookie_session_locale.value || locale.value;
 const route = useRoute();
 const {t} = useI18n();
 const head = useLocaleHead({
-  addDirAttribute: true,
-  identifierAttribute: 'id',
-  addSeoAttributes: true,
+  dir: true,
+  lang: true,
+  seo: true,
 });
 const title = computed(() => route.meta.title);
 

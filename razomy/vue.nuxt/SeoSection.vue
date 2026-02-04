@@ -46,8 +46,8 @@
           </tr>
           </thead>
           <tbody>
-          <tr><td>Source</td><td>.{{ source.toUpperCase() }}</td></tr>
-          <tr><td>Target</td><td>.{{ target.toUpperCase() }}</td></tr>
+          <tr><td>Source</td><td>.{{ input.toUpperCase() }}</td></tr>
+          <tr><td>Target</td><td>.{{ output.toUpperCase() }}</td></tr>
           <tr><td>Price</td><td class="text-success font-weight-bold">Free</td></tr>
           </tbody>
         </v-table>
@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ content: any, source: string, target: string }>()
+defineProps<{ content: any, input: string, output: string }>()
 </script>
 
 <style scoped>

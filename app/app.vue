@@ -1,4 +1,5 @@
 <script setup>
+import '~/assets/css/main.css'
 import DefaultApp from '~~/razomy/vue.nuxt/DefaultApp.vue'
 </script>
 

@@ -1,0 +1,36 @@
+/* assets/main.css или <style> в app.vue */
+
+:root {
+    /* ОЧЕНЬ мягкая тень (стиль Apple/Google) */
+    --shadow-soft-sm: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    --shadow-soft-lg: 0 16px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* 1. Класс для Всплывающих Меню (VMenu) */
+.global-soft-menu {
+    /* Тень широкая и прозрачная */
+    box-shadow: var(--shadow-soft-lg) !important;
+
+    /* Скругление углов (16px) */
+    border-radius: 16px !important;
+
+    /* Тонкая рамка вместо жесткой тени */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    /* Важно: фон должен быть задан, иначе тень может выглядеть странно */
+    background-color: rgb(var(--v-theme-surface)) !important;
+
+    /* Обрезаем контент по углам */
+    overflow: hidden;
+}
+
+/* 2. Класс для обычных Карточек (VCard) */
+.global-soft-card {
+    box-shadow: var(--shadow-soft-sm) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    /* Убираем стандартную тень Vuetify */
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}

@@ -1,6 +1,6 @@
-import {FILE_TYPES} from '../razomy/function/FILE_TYPES';
+import {FILE_TYPES} from '../razomy/io/FILE_TYPES';
 
-const subdomainName = 'function' as const;
+const subdomainName = 'io' as const;
 const domain = `${subdomainName}.razomy.org` as const;
 const url = `https://${domain}` as const;
 const cookie = {
@@ -9,51 +9,73 @@ const cookie = {
 
 // Хелпер для получения иконки по расширению (для красоты)
 export const getFileIcon = (ext: string) => {
-  return FILE_TYPES[ext]?.icon || 'mdi-file-document-outline';
+  return FILE_TYPES[ext as any]?.icon || 'mdi-file-document-outline';
 };
 
-export const ALLOWED_CONVERSIONS = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.conversions})));
-export const CATEGORY_MAP: Record<string, string> = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.category})));
+export const EXT_TO_EXTS_MAP = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.conversions})));
+export const EXT_TO_GROUP_MAP: Record<string, string> = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.category})));
 // Конфиг категорий (иконки и названия)
-export const CATEGORY_CONFIG: Record<string, { icon: string, labelKey: string }> = {
-  image: {icon: 'mdi-image-multiple', labelKey: 'categories.image'},
-  document: {icon: 'mdi-file-document-multiple', labelKey: 'categories.document'},
-  video: {icon: 'mdi-video', labelKey: 'categories.video'},
-  audio: {icon: 'mdi-music', labelKey: 'categories.audio'},
+export const groups: Record<string, { icon: string, labelKey: string }> = {
+  image: {icon: 'mdi-image-multiple', labelKey: 'groups.image'},
+  // document: {icon: 'mdi-file-document-multiple', labelKey: 'groups.document'},
+  video: {icon: 'mdi-video', labelKey: 'groups.video'},
+  audio: {icon: 'mdi-music', labelKey: 'groups.audio'},
 };
 
-const footerLinks = [
-  { url: '/company/blog', text: 'footer.blog' },
-  { url: '/company/about', text: 'footer.about' },
-  { url: '/company/feedback', text: 'footer.feedback' },
-  { url: '/company/contacts', text: 'footer.contacts' },
-  { url: '/company', text: 'footer.company' },
-  { url: '/company/licence', text: 'footer.licence' },
-  { url: '/company/term-of-use', text: 'footer.term-of-use' },
-  { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
-  // <v-btn icon="mdi-github" color="white" href="#" target="_blank"/>
+const footerLinks: any[] = [
+  // { url: '/company/blog', text: 'footer.blog' },
+  // { url: '/company/about', text: 'footer.about' },
+  // { url: '/company/feedback', text: 'footer.feedback' },
+  // { url: '/company/contacts', text: 'footer.contacts' },
+  // { url: '/company', text: 'footer.company' },
+  // { url: '/company/licence', text: 'footer.licence' },
+  // { url: '/company/term-of-use', text: 'footer.term-of-use' },
+  // { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
+  // <v-btn icon="mdi-github" color="white" href="#" output="_blank"/>
 ];
 
-const headerLinks = [
-  { url: '/company/blog', text: 'footer.blog' },
-  { url: '/company/about', text: 'footer.about' },
-  { url: '/company/feedback', text: 'footer.feedback' },
-  { url: '/company/contacts', text: 'footer.contacts' },
-  { url: '/company', text: 'footer.company' },
-  { url: '/company/licence', text: 'footer.licence' },
-  { url: '/company/term-of-use', text: 'footer.term-of-use' },
-  { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
+const headerLinks: any[] = [
+  // { url: '/company/blog', text: 'footer.blog' },
+  // { url: '/company/about', text: 'footer.about' },
+  // { url: '/company/feedback', text: 'footer.feedback' },
+  // { url: '/company/contacts', text: 'footer.contacts' },
+  // { url: '/company', text: 'footer.company' },
+  // { url: '/company/licence', text: 'footer.licence' },
+  // { url: '/company/term-of-use', text: 'footer.term-of-use' },
+  // { url: '/company/privacy-policy', text: 'footer.privacy-policy' },
 ];
 
-const routes = FILE_TYPES.map(i=>[i.conversions.map(o=>`/${i.ext}-${o}`)]).flat(2);
 
+// {
+//   [{url:a, ComponentB}
+//   {url:a, ComponentC}
+//   {}
+
+const pairRoutes = FILE_TYPES
+  .map(i => [i.conversions.map(o => `/${i.category}/${i.ext}/${o}`)])
+  .flat(2);
+
+export const pairRoutesSet = new Set(pairRoutes)
+
+const routes = pairRoutes;
 const i18n = {
   en: {
+    product: {
+      name: 'Io',
+      description: 'Input output',
+      icon: 'mdi-transcribe'
+    },
+    groups: {
+      image: 'image',
+      audio: 'audio',
+      video: 'video',
+      document: 'document'
+    },
     breadcrumb: {
       title: 'Home',
       select_category: 'Select Category',
       select_source: 'Select Source',
-      select_target: 'Select Target'
+      select_output: 'Select Target'
     },
     header: {
       monsters: 'Monsters',
@@ -104,8 +126,8 @@ const i18n = {
       },
       generic: 'Conversion failed. Please try again later.'
     },
-    fs: {
-      title: 'All Tools',
+    group: {
+      title: 'Functions',
       subtitle: 'Find the converter you need among 100+ formats',
       search_placeholder: 'e.g. pdf to docx, jpg...',
       no_results: 'No results found',
@@ -113,22 +135,22 @@ const i18n = {
       convert_to: 'CONVERT TO',
       seo_title: 'File Converter Catalog',
       seo_desc: 'Full list of supported formats for conversion. PDF, DOCX, JPG, PNG and others.',
-      source: {
-        title: 'Convert .{source} files',
-        subtitle: 'Select target format for your .{source} files',
+      input: {
+        title: 'Convert .{input} files',
+        subtitle: 'Select output format for your .{input} files',
         available_conversions: 'Available conversions',
-        target: {
+        output: {
           hero_sub: 'Best way to convert {s} to {t} in seconds.',
           seo: {
-            h1: 'Convert {source} to {target} for free',
-            intro: 'Best way to convert {source} files to {target} format in seconds.',
+            h1: 'Convert {input} to {output} for free',
+            intro: 'Best way to convert {input} files to {output} format in seconds.',
           },
           steps: {
-            upload: 'Upload {source} file',
+            upload: 'Upload {input} file',
             upload_desc: 'Select your {s} file to upload',
             quality: 'Select quality (if applicable)',
             quality_desc: 'Adjust settings as needed',
-            download: 'Download your {target}',
+            download: 'Download your {output}',
             download_desc: 'Get your converted {tgt} file'
           },
           faq: {
@@ -148,8 +170,8 @@ const i18n = {
       breadcrumb: {
         title: 'Главная',
         select_category: 'Категория',
-        select_source: 'Источник',
-        select_target: 'Цель'
+        select_input: 'Источник',
+        select_output: 'Цель'
       },
       header: {
         monsters: 'Монстры',
@@ -201,7 +223,7 @@ const i18n = {
         generic: 'Ошибка при конвертации. Попробуйте позже.'
       }
     },
-    fs: {
+    group: {
       title: 'Все инструменты',
       subtitle: 'Найдите нужный конвертер среди 100+ форматов',
       search_placeholder: 'Например: pdf в docx, jpg...',
@@ -210,22 +232,22 @@ const i18n = {
       convert_to: 'ПРЕОБРАЗОВАТЬ В',
       seo_title: 'Каталог всех файловых конвертеров',
       seo_desc: 'Полный список поддерживаемых форматов для конвертации. PDF, DOCX, JPG, PNG и другие.',
-      source: {
-        title: 'Конвертер файлов .{source}',
-        subtitle: 'Выберите целевой формат для конвертации ваших .{source} файлов',
+      input: {
+        title: 'Конвертер файлов .{input}',
+        subtitle: 'Выберите целевой формат для конвертации ваших .{input} файлов',
         available_conversions: 'Доступные направления',
-        target: {
+        output: {
           hero_sub: 'Лучший способ преобразовать файлы {s} в формат {t} за секунды.',
           seo: {
-            h1: 'Конвертировать {source} в {target} бесплатно',
-            intro: 'Лучший способ преобразовать файлы {source} в формат {target} за секунды.',
+            h1: 'Конвертировать {input} в {output} бесплатно',
+            intro: 'Лучший способ преобразовать файлы {input} в формат {output} за секунды.',
           },
           steps: {
-            upload: 'Загрузите файл {source}',
+            upload: 'Загрузите файл {input}',
             upload_desc: 'Выберите ваш файл {s}',
             quality: 'Выберите качество (если применимо)',
             quality_desc: 'Настройте параметры',
-            download: 'Скачайте ваш {target}',
+            download: 'Скачайте ваш {output}',
             download_desc: 'Получите ваш файл {tgt}'
           },
           faq: {

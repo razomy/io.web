@@ -12,23 +12,22 @@
     </Head>
     <Body>
     <v-app>
-      <v-layout class='flex-column'>
-        <!-- Сайдбар -->
-        <AppSidebar v-model="drawer"/>
+      <!-- Сайдбар -->
+      <AppSidebar v-model="drawer"/>
 
-        <landing-header>
+      <!--        <landing-header>-->
+      <!--          <v-app-bar-nav-icon @click="drawer = !drawer"/>-->
+      <!--        </landing-header>-->
+
+      <v-main>
+        <Breadcrumbs>
           <v-app-bar-nav-icon @click="drawer = !drawer"/>
-        </landing-header>
-
+        </Breadcrumbs>
         <!-- Контент -->
-        <v-main>
-          <slot/>
-        </v-main>
+        <slot/>
+        <LandingFooter></LandingFooter>
+      </v-main>
 
-
-        <landing-footer></landing-footer>
-
-      </v-layout>
     </v-app>
     </Body>
     </Html>
@@ -36,9 +35,9 @@
 </template>
 <script setup lang='ts'>
 import LandingFooter from './DefaultFooter.vue';
-import LandingHeader from './DefaultHeader.vue';
 import AppSidebar from './Sidebar.vue';
 import {c} from '~~/content/context';
+import Breadcrumbs from '~~/razomy/vue.nuxt/Breadcrumbs.vue';
 
 const {locale} = useI18n();
 const route = useRoute();
@@ -49,9 +48,9 @@ const cookie_session_locale = useCookie(c.cookie.session.locale);
 cookie_session_locale.value = cookie_session_locale.value || locale.value;
 
 const head = useLocaleHead({
-  addDirAttribute: true,
-  identifierAttribute: 'id',
-  addSeoAttributes: true,
+  dir: true,
+  lang: true,
+  seo: true,
 });
 
 const title = computed(() => route.meta.title);

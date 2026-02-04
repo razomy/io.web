@@ -1,16 +1,17 @@
 {
-  "name": "razomy.function.webapp",
+  "name": "@razomy/io.app.chunk",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "npx nuxt typecheck && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "workspaces": [
-    "./razomy/*"
+    "./razomy/*",
+    "../../code/js.chunk/razomy/*"
   ],
   "dependencies": {
     "@nuxtjs/i18n": "^10.2.1",
@@ -26,5 +27,9 @@
     "vue-router": "^5.0.1",
     "vuetify-nuxt-module": "^0.19.5",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.4"
   }
 }

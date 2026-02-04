@@ -1,64 +1,66 @@
 <template>
-  <div class="d-flex align-center flex-wrap justify-center gap-1 py-4">
-
+  <div class="d-flex align-center flex-wrap justify-start gap-1">
+    <slot></slot>
     <!-- 1. HOME -->
     <v-btn
         :to="localePath('/')"
         variant="text"
-        color="white"
         class="text-capitalize px-2"
         density="comfortable"
     >
-      <v-icon icon="mdi-home" start size="small" />
+      <v-icon icon="mdi-home" start size="small"/>
       {{ $t('breadcrumb.title') }}
     </v-btn>
 
-    <v-icon icon="mdi-chevron-right" color="white-50" size="small" />
+    <v-icon icon="mdi-chevron-right" opacity="50" size="small"/>
 
     <!-- 2. CATEGORY DROPDOWN -->
     <v-menu location="bottom center" transition="slide-y-transition">
       <template v-slot:activator="{ props }">
         <v-btn
+            v-if="groupSlug"
             v-bind="props"
             variant="text"
-            color="white"
             class="text-capitalize px-2 font-weight-bold"
             append-icon="mdi-chevron-down"
         >
-          {{ currentCategoryLabel }}
+          {{ groups[groupSlug]?.labelKey }}
         </v-btn>
+        <v-icon-btn v-bind="props" v-else icon="mdi-plus"></v-icon-btn>
       </template>
-      <v-list density="compact" nav class="rounded-lg elevation-4">
+      <v-list density="compact" nav class="rounded-lg" elevation="4">
         <v-list-subheader class="text-uppercase font-weight-bold text-caption">
           {{ $t('breadcrumb.select_category') }}
         </v-list-subheader>
         <v-list-item
-            v-for="catKey in categories"
-            :key="catKey"
-            :title="$t(CATEGORY_CONFIG[catKey]?.labelKey || catKey)"
-            :prepend-icon="CATEGORY_CONFIG[catKey]?.icon"
-            @click="navigateToCategory(catKey)"
-            :active="catKey === currentCategory"
+            v-for="groupKey in categories"
+            :key="groupKey"
+            :title="$t(groups[groupKey]?.labelKey || groupKey)"
+            :prepend-icon="groups[groupKey]?.icon"
+            :to="localePath(`/${groupKey}`)"
+            :active="groupKey === groupSlug"
             color="primary"
         />
       </v-list>
     </v-menu>
 
     <!-- 3. SOURCE DROPDOWN (If category selected) -->
-    <template v-if="currentCategory">
-      <v-icon icon="mdi-chevron-right" color="white-50" size="small" />
+    <template v-if="groupSlug">
+      <v-icon icon="mdi-chevron-right" opacity="50" size="small"/>
 
       <v-menu location="bottom center" transition="slide-y-transition" max-height="300">
         <template v-slot:activator="{ props }">
           <v-btn
+              v-if="inputSlug"
               v-bind="props"
               variant="text"
-              color="white"
               class="text-uppercase px-2 font-weight-bold"
               append-icon="mdi-chevron-down"
           >
-            .{{ currentSource || '???' }}
+            .{{ inputSlug }}
           </v-btn>
+          <v-icon-btn v-bind="props" v-else icon="mdi-plus"></v-icon-btn>
+
         </template>
         <v-list density="compact" nav class="rounded-lg elevation-4">
           <v-list-subheader class="text-uppercase font-weight-bold text-caption">
@@ -66,11 +68,11 @@
           </v-list-subheader>
 
           <v-list-item
-              v-for="src in formatsInCategory"
-              :key="src"
-              :title="`.${src.toUpperCase()}`"
-              :to="localePath(`/${src}`)"
-              :active="src === currentSource"
+              v-for="inputKey in formatsInCategory"
+              :key="inputKey"
+              :title="`.${inputKey.toUpperCase()}`"
+              :to="localePath(`/${groupSlug}/${inputSlug}/${inputKey}`)"
+              :active="inputKey === inputSlug"
               color="primary"
           />
         </v-list>
@@ -78,20 +80,22 @@
     </template>
 
     <!-- 4. TARGET DROPDOWN (If source selected) -->
-    <template v-if="currentSource && currentTarget">
-      <v-icon icon="mdi-chevron-right" color="white-50" size="small" />
+    <template v-if="inputSlug && currentTarget">
+      <v-icon icon="mdi-chevron-right" opacity="50" size="small"/>
 
       <v-menu location="bottom center" transition="slide-y-transition">
         <template v-slot:activator="{ props }">
           <v-btn
+              v-if="currentTarget"
               v-bind="props"
               variant="text"
-              color="white"
               class="text-uppercase px-2 font-weight-bold"
               append-icon="mdi-chevron-down"
           >
-            To {{ currentTarget }}
+            {{ currentTarget }}
           </v-btn>
+          <v-icon-btn v-bind="props" v-else icon="mdi-plus"></v-icon-btn>
+
         </template>
         <v-list density="compact" nav class="rounded-lg elevation-4">
           <v-list-subheader class="text-uppercase font-weight-bold text-caption">
@@ -99,11 +103,11 @@
           </v-list-subheader>
 
           <v-list-item
-              v-for="tgt in availableTargets"
-              :key="tgt"
-              :title="`To ${tgt.toUpperCase()}`"
-              :to="localePath(`/${currentSource}/${tgt}`)"
-              :active="tgt === currentTarget"
+              v-for="outputKey in availableTargets"
+              :key="outputKey"
+              :title="`To ${outputKey.toUpperCase()}`"
+              :to="localePath(`/${groupSlug}/${inputSlug}/${outputKey}`)"
+              :active="outputKey === currentTarget"
               prepend-icon="mdi-arrow-right"
               color="primary"
           />
@@ -115,64 +119,36 @@
 </template>
 
 <script setup lang="ts">
-import {
-  CATEGORY_MAP,
-  CATEGORY_CONFIG,
-  ALLOWED_CONVERSIONS
-} from '~~/content/context';
+import {EXT_TO_EXTS_MAP, groups, EXT_TO_GROUP_MAP} from '~~/content/context';
 
 const route = useRoute();
 const localePath = useLocalePath();
-const { t } = useI18n();
+const {t} = useI18n();
 
 // 1. Текущие параметры из URL
-const currentSource = computed(() => (route.params.source as string)?.toLowerCase());
-const currentTarget = computed(() => (route.params.target as string)?.toLowerCase());
-
-// 2. Текущая категория
-const currentCategory = computed(() => {
-  if (currentSource.value) {
-    return CATEGORY_MAP[currentSource.value] || 'other';
-  }
-  return 'image'; // Дефолт или логика для страницы /fs
-});
-
-const currentCategoryLabel = computed(() => {
-  const key = CATEGORY_CONFIG[currentCategory.value]?.labelKey || currentCategory.value;
-  return t(key);
-});
+const groupSlug = computed(() => (route.params.group as string)?.toLowerCase());
+const inputSlug = computed(() => (route.params.input as string)?.toLowerCase());
+const currentTarget = computed(() => (route.params.output as string)?.toLowerCase());
 
 // 3. Списки для меню
-const categories = computed(() => Object.keys(CATEGORY_CONFIG));
+const categories = computed(() => Object.keys(groups));
 
 const formatsInCategory = computed(() => {
   // Фильтруем все форматы, которые принадлежат текущей категории
-  return Object.keys(ALLOWED_CONVERSIONS).filter(fmt =>
-      (CATEGORY_MAP[fmt] || 'other') === currentCategory.value
+  return Object.keys(EXT_TO_EXTS_MAP).filter(fmt =>
+      (EXT_TO_GROUP_MAP[fmt] || 'other') === groupSlug.value
   );
 });
 
 const availableTargets = computed(() => {
-  if (!currentSource.value) return [];
-  return ALLOWED_CONVERSIONS[currentSource.value as keyof typeof ALLOWED_CONVERSIONS] || [];
+  if (!inputSlug.value) return [];
+  return EXT_TO_EXTS_MAP[inputSlug.value as keyof typeof EXT_TO_EXTS_MAP] || [];
 });
 
-// Навигация при смене категории (выбираем первый попавшийся формат из этой категории)
-const navigateToCategory = (catKey: string) => {
-  const firstFormat = Object.keys(ALLOWED_CONVERSIONS).find(fmt =>
-      (CATEGORY_MAP[fmt] || 'other') === catKey
-  );
-
-  if (firstFormat) {
-    navigateTo(localePath(`/fs/${firstFormat}`));
-  } else {
-    // Если форматов нет, ведем в каталог с фильтром (если реализовано) или просто в fs
-    navigateTo(localePath('/fs'));
-  }
-};
 </script>
 
 <style scoped>
-.white-50 { color: rgba(255, 255, 255, 0.5); }
-.gap-1 { gap: 4px; }
+.gap-1 {
+  gap: 4px;
+}
 </style>

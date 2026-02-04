@@ -9,7 +9,7 @@ import {c} from '~~/content/context';
 //   ,
 // });
 //
-export function getQueryFrom(event: H3Event, schema: zod.ZodObject) {
+export function getQueryFrom(event: H3Event, schema: z.ZodObject) {
   let responses = getQuery(event);
 
   try {
@@ -30,12 +30,12 @@ export function getUserLocales(event: H3Event): 'en' {
       locale: z.string()
         .length(2),
     }),
-  ) as { locale: string };
+  ) as { locale: any };
   if (responses?.locale) {
     return responses.locale || 'en';
   }
 
-  const locale = getCookie(event, c.cookie.session.locale) || 'en';
+  const locale = getCookie(event, c.cookie.session.locale) as any || 'en';
   return locale;
 }
 

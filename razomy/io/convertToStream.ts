@@ -1,6 +1,6 @@
-import path from 'node:path';
-import {type ConvertResult, processImageStream} from '~~/razomy/function.images/processImageStream';
-import {processAVStream} from '~~/razomy/function.videos/processAVStream';
+import * as path from 'node:path';
+import {type ConvertResult, processImageStream} from '../io.image/processImageStream';
+import {processAVStream} from '../io.video/processAVStream';
 import {audioExtensions, videoExtensions} from './FILE_TYPES';
 
 /**

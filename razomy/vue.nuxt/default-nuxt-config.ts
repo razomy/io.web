@@ -8,8 +8,8 @@ export const defaultNuxtConfig: NuxtConfig = ({
   devtools: {enabled: true},
   site: {
     url: c.url,
-    name: c.i18n.en.name,
-    description: c.i18n.en.description,
+    name: c.i18n.en.product.name,
+    description: c.i18n.en.product.description,
     defaultLocale: 'en',
   },
   vuetify: {

@@ -1,17 +1,60 @@
 <template>
   <v-navigation-drawer
       v-model="isOpen"
-      :width="300"
-      class="bg-surface"
-      elevation="2"
+      app
+      permanent
+      expand-on-hover
+      border="1"
+      class="bordere-1"
+      :rail="railGroups"
   >
-    <!-- Шапка с поиском -->
-    <div class="pa-4 sticky-top bg-surface z-index-10 border-b">
-      <div class="d-flex align-center mb-4">
-        <v-icon icon="mdi-transcribe" color="primary" size="32" class="mr-2"/>
-        <span class="text-h6 font-weight-bold">Converter App</span>
-      </div>
+    <template v-slot:prepend>
+      <RazomyProducts/>
+      <v-divider></v-divider>
+    </template>
+    <template v-slot:default>
+      <v-list nav>
+        <v-list-item
+            v-for="(group, groupKey) in groupedFormats"
+            :key="groupKey"
+            density="compact"
+            :value="groupKey"
+            :prepend-icon="groups[groupKey]?.icon || 'mdi-folder'"
+            :title="t(groups[groupKey]?.labelKey || groupKey)"
+            :to="localePath(`/${groupKey}`)"
+            :active="groupKey === groupSlug"
+            color="primary"
+        />
+      </v-list>
+    </template>
 
+    <template v-slot:append>
+      <div class="pa-2">
+        <v-icon-btn v-if="railGroups"
+                    icon="mdi-chevron-right"
+                    @click.stop="railGroups = !railGroups"
+        ></v-icon-btn>
+        <v-btn v-if="!railGroups"
+               block
+               density="compact"
+               @click.stop="railGroups = !railGroups"
+        >
+          <v-icon icon="mdi-chevron-left"></v-icon>
+          Collapse
+        </v-btn>
+      </div>
+    </template>
+  </v-navigation-drawer>
+
+  <v-navigation-drawer
+      v-model="isOpen"
+      permanent
+      app
+      border="1"
+      class="bordere-1"
+  >
+    <!-- Search Input -->
+    <div class="pa-1 sticky-top bg-surface z-index-10 border-b">
       <v-text-field
           v-model="search"
           :placeholder="t('sidebar.search')"
@@ -25,14 +68,20 @@
       />
     </div>
 
-    <v-list class="pa-2" nav>
+    <v-list
+        class="pa-2"
+        nav
+        open-strategy="single"
+        density="compact"
+    >
 
-      <!-- РЕЖИМ 1: Результаты поиска (Плоский список) -->
+      <!-- MODE 1: Search Results -->
       <template v-if="search">
         <div class="text-caption text-medium-emphasis mb-2 ml-2">
           {{ t('sidebar.results_for') }} "{{ search }}"
         </div>
 
+        <!-- Added density="compact" -->
         <v-list-item
             v-for="item in searchResults"
             :key="`${item.from}-${item.to}`"
@@ -40,6 +89,7 @@
             color="primary"
             rounded="lg"
             class="mb-1"
+            density="compact"
         >
           <template v-slot:prepend>
             <v-icon size="small" icon="mdi-swap-horizontal" color="grey"/>
@@ -56,48 +106,41 @@
         </div>
       </template>
 
-      <!-- РЕЖИМ 2: Категории (Аккордеон) -->
+      <!-- MODE 2: Categories -->
       <template v-else>
+        <!-- Level 2: Source Formats -->
+        <!-- Removed 'sub-group' prop to fix the huge indentation issue -->
         <v-list-group
-            v-for="(group, catKey) in groupedFormats"
-            :key="catKey"
-            :value="catKey"
+            v-for="input in groupedFormats[groupSlug]"
+            :key="input"
+            :value="input"
         >
           <template v-slot:activator="{ props }">
+            <!-- Added density="compact" and pl-4 for visual hierarchy -->
             <v-list-item
                 v-bind="props"
-                :prepend-icon="CATEGORY_CONFIG[catKey]?.icon || 'mdi-folder'"
-                :title="t(CATEGORY_CONFIG[catKey]?.labelKey || catKey)"
-                rounded="lg"
+                :title="`.${input.toUpperCase()}`"
+                :to="localePath(`/${EXT_TO_GROUP_MAP[input]}/${input}`)"
+                color="primary"
+                density="compact"
+                :active="input === inputSlug"
             />
           </template>
 
-          <!-- Список исходных форматов внутри категории -->
-          <v-list-group
-              v-for="source in group"
-              :key="source"
-              :value="source"
-              sub-group
-          >
-            <template v-slot:activator="{ props }">
-              <v-list-item
-                  v-bind="props"
-                  :title="`.${source.toUpperCase()}`"
-              />
-            </template>
-
-            <!-- Целевые форматы -->
-            <v-list-item
-                v-for="target in ALLOWED_CONVERSIONS[source as keyof typeof ALLOWED_CONVERSIONS]"
-                :key="target"
-                :title="`${source.toUpperCase()} → ${target.toUpperCase()}`"
-                :to="localePath(`/${CATEGORY_MAP[source]}/${source}/${target}`)"
-                density="compact"
-                prepend-icon="mdi-arrow-right-bottom"
-            />
-          </v-list-group>
-
+          <!-- Level 3: Target Formats -->
+          <!-- Added density="compact" and pl-6 for correct indentation -->
+          <v-list-item
+              v-for="output in EXT_TO_EXTS_MAP[input as keyof typeof EXT_TO_EXTS_MAP]"
+              :key="output"
+              class="pa-0"
+              :title="`${input.toUpperCase()} → ${output.toUpperCase()}`"
+              :to="localePath(`/${EXT_TO_GROUP_MAP[input]}/${input}/${output}`)"
+              density="compact"
+              color="primary"
+              :active="output === outputSlug"
+          />
         </v-list-group>
+
       </template>
 
     </v-list>
@@ -105,52 +148,70 @@
 </template>
 
 <script setup lang="ts">
-import {ALLOWED_CONVERSIONS, CATEGORY_CONFIG, CATEGORY_MAP} from '../../content/context';
+import RazomyProducts from './RazomyProducts.vue';
+import {EXT_TO_EXTS_MAP, groups, EXT_TO_GROUP_MAP} from '../../content/context';
 
 const props = defineProps<{ modelValue: boolean }>();
 const emit = defineEmits(['update:modelValue']);
 const {t} = useI18n();
-
 const localePath = useLocalePath();
-const search = ref('');
+const route = useRoute();
 
-// Двусторонняя привязка для drawer
+const railGroups = ref(true); // Default to open
+const search = ref('');
+const groupSlug = ref<string>('');
+const inputSlug = ref<string>('');
+const outputSlug = ref<string>('');
+
 const isOpen = computed({
   get: () => props.modelValue,
   set: (val) => emit('update:modelValue', val)
 });
 
-// Логика группировки
 const groupedFormats = computed(() => {
   const groups: Record<string, string[]> = {};
-
-  for (const format in ALLOWED_CONVERSIONS) {
-    const category = CATEGORY_MAP[format] || 'other';
+  for (const format in EXT_TO_EXTS_MAP) {
+    const category = EXT_TO_GROUP_MAP[format] || 'other';
     if (!groups[category]) groups[category] = [];
     groups[category].push(format);
   }
   return groups;
 });
 
-// Логика умного поиска
+// --- Logic to keep menu open after redirect ---
+watch(() => route.params, (newParams) => {
+  groupSlug.value = newParams.group as string;
+  inputSlug.value = newParams.input as string;
+  outputSlug.value = newParams.output as string;
+}, {immediate: true, deep: true});
+
+
+// --- Search Logic ---
 const searchResults = computed(() => {
   if (!search.value) return [];
-  const q = search.value.toLowerCase();
+  const q = search.value.toLowerCase().trim();
+  const parts = q.split(/[\s\-\/>]+|\sto\s+/).filter(Boolean);
   const results: { from: string, to: string, category: string }[] = [];
 
-  Object.entries(ALLOWED_CONVERSIONS).forEach(([source, targets]) => {
-    // Если совпал источник (например ввели "pdf")
-    if (source.includes(q)) {
-      targets.forEach(t => results.push({from: source, to: t, category: CATEGORY_MAP[source]!}));
-    }
-    // Если совпала цель, но не источник
-    else {
-      targets.forEach(t => {
-        if (t.includes(q)) results.push({from: source, to: t, category: CATEGORY_MAP[source]!});
-      });
+  Object.entries(EXT_TO_EXTS_MAP).forEach(([input, outputs]:any) => {
+    if (parts.length >= 2) {
+      const fromPart = parts[0];
+      const toPart = parts[1];
+      if (input.includes(fromPart as any)) {
+        outputs.forEach((t:any) => {
+          if (t.includes(toPart)) results.push({from: input, to: t, category: EXT_TO_GROUP_MAP[input]!});
+        });
+      }
+    } else {
+      if (input.includes(q)) {
+        outputs.forEach((t:any) => results.push({from: input, to: t, category: EXT_TO_GROUP_MAP[input]!}));
+      } else {
+        outputs.forEach((t:any) => {
+          if (t.includes(q)) results.push({from: input, to: t, category: EXT_TO_GROUP_MAP[input]!});
+        });
+      }
     }
   });
-
   return results;
 });
 </script>
