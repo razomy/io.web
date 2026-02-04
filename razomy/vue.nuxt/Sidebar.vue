@@ -8,7 +8,7 @@
     <!-- Шапка с поиском -->
     <div class="pa-4 sticky-top bg-surface z-index-10 border-b">
       <div class="d-flex align-center mb-4">
-        <v-icon icon="mdi-transcribe" color="primary" size="32" class="mr-2" />
+        <v-icon icon="mdi-transcribe" color="primary" size="32" class="mr-2"/>
         <span class="text-h6 font-weight-bold">Converter App</span>
       </div>
 
@@ -36,13 +36,13 @@
         <v-list-item
             v-for="item in searchResults"
             :key="`${item.from}-${item.to}`"
-            :to="localePath(`/${item.from}/${item.to}`)"
+            :to="localePath(`/${item.category}/${item.from}/${item.to}`)"
             color="primary"
             rounded="lg"
             class="mb-1"
         >
           <template v-slot:prepend>
-            <v-icon size="small" icon="mdi-swap-horizontal" color="grey" />
+            <v-icon size="small" icon="mdi-swap-horizontal" color="grey"/>
           </template>
           <v-list-item-title class="font-weight-medium">
             <span class="text-uppercase">{{ item.from }}</span>
@@ -91,7 +91,7 @@
                 v-for="target in ALLOWED_CONVERSIONS[source as keyof typeof ALLOWED_CONVERSIONS]"
                 :key="target"
                 :title="`${source.toUpperCase()} → ${target.toUpperCase()}`"
-                :to="localePath(`/${source}/${target}`)"
+                :to="localePath(`/${CATEGORY_MAP[source]}/${source}/${target}`)"
                 density="compact"
                 prepend-icon="mdi-arrow-right-bottom"
             />
@@ -105,11 +105,11 @@
 </template>
 
 <script setup lang="ts">
-import { ALLOWED_CONVERSIONS, CATEGORY_MAP, CATEGORY_CONFIG } from '../../content/context';
+import {ALLOWED_CONVERSIONS, CATEGORY_CONFIG, CATEGORY_MAP} from '../../content/context';
 
 const props = defineProps<{ modelValue: boolean }>();
 const emit = defineEmits(['update:modelValue']);
-const { t } = useI18n();
+const {t} = useI18n();
 
 const localePath = useLocalePath();
 const search = ref('');
@@ -136,17 +136,17 @@ const groupedFormats = computed(() => {
 const searchResults = computed(() => {
   if (!search.value) return [];
   const q = search.value.toLowerCase();
-  const results: { from: string, to: string }[] = [];
+  const results: { from: string, to: string, category: string }[] = [];
 
   Object.entries(ALLOWED_CONVERSIONS).forEach(([source, targets]) => {
     // Если совпал источник (например ввели "pdf")
     if (source.includes(q)) {
-      targets.forEach(t => results.push({ from: source, to: t }));
+      targets.forEach(t => results.push({from: source, to: t, category: CATEGORY_MAP[source]!}));
     }
     // Если совпала цель, но не источник
     else {
       targets.forEach(t => {
-        if (t.includes(q)) results.push({ from: source, to: t });
+        if (t.includes(q)) results.push({from: source, to: t, category: CATEGORY_MAP[source]!});
       });
     }
   });
