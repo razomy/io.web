@@ -1,76 +1,117 @@
-# Welcome to razomy.function
+# Razomy Io
 
-## About
+> "Razomy" means Together—you and me.  
+> We act as catalysts, turning natural chaos into clarity through open collaboration.  
+> By building honest, reliable systems, we empower humanity and create a foundation for peace.  
+> We foster a borderless environment driven by quality code and mutual support.  
+> Join us to build this future—one commit at a time.
 
-### Organisation
+### 📦 Product
 
-- I want to live(make) in a world of peace, honesty, and support.
-- "Razomy" means together; we work together to develop the world.
-- Non-profit, investment only.
-- Open and without borders; everyone contributing positively is welcome.
+**razomy io** is a web application designed to handle operational tasks simply.
 
-### Product
+- **Features:**
+    - Convert files into different formats.
+    - Edit and adjust images.
 
-- Function is a web application for executing operational tasks.
+- **Design:**
+    - **Extensible:** You can extend functionality as needed.
+    - **Pluggable:** Built to be pluggable and easy to use.
 
-- Functionalities include:
-    - Converting files into different types;
-    - Editing images.
+- **Website:** https://io.razomy.org
 
-- You can extend the functionality as needed:
-    - Ensure compliance;
-    - Make it pluggable for ease of use.
+## 💻 Development
 
-- Web site: https://io.razomy.com
-
-## Development
+We use **Nuxt** for development.
 
 ### Get started
 
-1. Install python (3.12) and git
-   https://www.python.org/downloads/
+1. **Install Node.js and Git**
+   Ensure you have a recent version of Node installed.
 
-2. `mkdir razomy` `cd razomy`
-    1. `git clone git@github.com:razomy/python.git`;
-    2. `git clone git@github.com:razomy/io.server.git`;
-    3. `ln -sf ROOT_DIR_PATH/python/razomy/python ROOT_DIR_PATH/io.server/razomy/python`. replace ROOT_DIR_PATH with absolute folder path.
-    4. `cd function.server`.
+2. **Clone the repository**
+   ```shell
+   git clone git@github.com:razomy/io.web.git
+   cd io.web
+   ```
 
-3. Init venv
+3. **Install dependencies**
+   ```shell
+   npm install
+   ```
 
-```shell
-python3 -m venv venv
-```
+4. **Run locally**
+   ```shell
+   npm run dev
+   ```
+   The app will start at `http://localhost:3000`
 
-4. Install dependencies
+---
 
-```shell
-pip install -r requirements.txt
-```
+### 🤝 Contribution Checklist
 
-5. Run
+We follow strict architectural rules to keep the system reliable.
 
-```shell
-python main.py
-```
+**Structure**
 
-### Contribute
+- [ ] **Packages:** Maintained in a single layer.
+- [ ] **Granularity:** One technical element per file.
+- [ ] **Organization:** One domain per folder.
+- [ ] **Ordering:**
+    - Abstract → Concrete (e.g., `object/car`).
+    - Source → Target (e.g., `png/pdf`).
 
-1. Make one change per commit
-    1. Describe the reason for the change and the solution.
-    2. Sign the commit with a proper name and an accessible email for the next 10 years.
-2. Make one change type or one solid feature per merge request.
+**Naming**
 
-## Deploy
+- [ ] **Atomic:** Names must be atomic concepts.
+- [ ] **Extendable:** Names are extended via prefixes, suffixes, and other names (composition).
+- [ ] **Pluralization:**
+    - Singular for single items.
+    - Plural (`s`) **only** for group operations.
+- [ ] **Casing:**
+    - `PascalCase` for types/classes.
+    - `camelCase` for vars/functions.
+- [ ] **Consistency:** File name matches instance name, property name, and type.
+- [ ] **Prefixes:**
+    - Use `try` for nullable returns (e.g., `tryGet`).
+    - Use `with` for interface extensions.
+    - **No** `I` prefix for Interfaces.
+- [ ] **Suffixes:** Use `Mut` for mutable types.
+- [ ] **Functions:**
+    - Follow pattern: `[action][result?]["By"+ arguments?]` (e.g., `get`, `getString`, `getStringByIndex`).
+    - Async: No `Async` suffix by default.
+    - Conflict: If Sync and Async exist, use `Sync` suffix for the synchronous version.
+- [ ] **Abbreviations:** Preferred over full words (e.g., `js` > `javascript`).
 
-1. setup Google Cloud Platform (GCP)
-   https://cloud.google.com
+**Logic**
 
-2. setup gcloud
-   https://cloud.google.com/sdk/docs/install
+- [ ] **Strictness:**
+    - Always throw on error (no silent fails).
+    - **No input validation** (code assumes valid input; logic responsibility lies with the caller).
+    - **No optional execution** (code must be deterministic).
+- [ ] **Imports:**
+    - External: `@razomy/...`
+    - Domain: `./...`
+    - Prefer (e.g., `import * as packageName from '@razomy/package.name`) named syntax.
+- [ ] **Exports:** Prefer named exports.
 
-3. deploy
+**Feature Workflow**
 
-```shell
-sh deploy.sh
-```
+- [ ] **One change per commit:** Describe the reason and the solution.
+- [ ] **Identity:** Sign commits with a proper name and a permanent email address (one you plan to keep for years).
+- [ ] **Cleanliness:** One change type or one solid feature per merge request.
+
+## 🐳 Deploy
+
+Deployment is handled via **Docker**.
+
+1. **Build the image**
+   ```shell
+   docker build -t razomy-io .
+   ```
+
+2. **Run the container**
+   ```shell
+   docker run -p 3000:3000 razomy-io
+   ```
+
