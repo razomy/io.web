@@ -1,16 +1,16 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import * as sharp from 'sharp';
-import { pipeline } from 'node:stream/promises';
-import { images } from './types';
-import { processImageStream } from './processImageStream';
+import sharp from 'sharp';
+import {pipeline} from 'node:stream/promises';
+import {images} from './types';
+import {processImageStream} from './processImageStream';
 // 👇 УКАЖИ ПРАВИЛЬНЫЙ ПУТЬ К ТВОЕМУ ФАЙЛУ
 
 const OUT_DIR = './test_images_out';
 
 // Создаем папку для тестов
 if (fs.existsSync(OUT_DIR)) {
-  fs.rmSync(OUT_DIR, { recursive: true, force: true });
+  fs.rmSync(OUT_DIR, {recursive: true, force: true});
 }
 fs.mkdirSync(OUT_DIR);
 
@@ -42,7 +42,7 @@ async function createSourceImage(ext: string, filePath: string) {
       width: width,
       height: height,
       channels: 4,
-      background: { r: 255, g: 0, b: 0, alpha: 1 }
+      background: {r: 255, g: 0, b: 0, alpha: 1}
     }
   })
     .composite([{
@@ -64,7 +64,7 @@ async function createSourceImage(ext: string, filePath: string) {
   } else if (ext === 'avif') {
     await img.avif().toFile(filePath);
   } else if (ext === 'heic' || ext === 'heif') {
-    await img.heif({ compression: 'av1' }).toFile(filePath);
+    await img.heif({compression: 'av1'}).toFile(filePath);
   } else if (ext === 'ico') {
     // Sharp не умеет писать .ico нативно, сохраняем как png (тест пропустит это)
     throw new Error('SKIP_ICO_SOURCE');
@@ -88,6 +88,7 @@ async function runTests() {
     try {
       await createSourceImage(inputExt, inputPath);
     } catch (e: any) {
+      console.error(e);
       if (e.message === 'SKIP_BMP' || e.message === 'SKIP_ICO_SOURCE') {
         console.log(`   ⏭️  Пропуск генерации исходника (Sharp не умеет писать .${inputExt})`);
         continue;

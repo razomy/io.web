@@ -2,7 +2,9 @@ import {type FileTypeConfig} from '../io/FILE_TYPES';
 
 // Список форматов, в которые Sharp умеет СОХРАНЯТЬ
 const IMAGE_WRITE_TARGETS = [
-  'jpg', 'png', 'webp', 'avif', 'tiff', 'gif', 'heic', 'ico'
+  'jpg', 'png', 'webp', 'avif', 'tiff', 'gif',
+  // TODO: not working 'heic',
+  'ico'
 ];
 
 // Генератор списка конвертаций (исключает самого себя)
@@ -20,8 +22,8 @@ export const images: FileTypeConfig[] = [
 
   // --- СОВРЕМЕННЫЕ (Чтение и Запись) ---
   {ext: 'avif', mime: 'image/avif', category: 'image', icon: 'mdi-star-face', conversions: getConversions('avif')},
-  {ext: 'heic', mime: 'image/heic', category: 'image', icon: 'mdi-cellphone', conversions: getConversions('heic')},
-  {ext: 'heif', mime: 'image/heif', category: 'image', icon: 'mdi-cellphone', conversions: getConversions('heif')},
+  // TODO: not working {ext: 'heic', mime: 'image/heic', category: 'image', icon: 'mdi-cellphone', conversions: getConversions('heic')},
+  // TODO: not working {ext: 'heif', mime: 'image/heif', category: 'image', icon: 'mdi-cellphone', conversions: getConversions('heif')},
   {ext: 'tiff', mime: 'image/tiff', category: 'image', icon: 'mdi-printer', conversions: getConversions('tiff')},
   {ext: 'tif', mime: 'image/tiff', category: 'image', icon: 'mdi-printer', conversions: getConversions('tif')},
 
