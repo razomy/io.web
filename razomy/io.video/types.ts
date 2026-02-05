@@ -1,4 +1,4 @@
-import {type FileTypeConfig} from '../io/FILE_TYPES';
+import {FILE_TYPES, type FileTypeConfig} from '../io/FILE_TYPES';
 
 // Списки целевых форматов (куда мы можем кодировать)
 // Внимание: кодировать В realmedia (.rm) или swf ffmpeg делает плохо, поэтому их лучше оставить только на вход.
@@ -73,3 +73,6 @@ export const audios: FileTypeConfig[] = [
   {ext: 'voc', mime: 'audio/x-voc', category: 'audio', icon: 'mdi-gamepad-variant', conversions: AUDIO_CONVERSIONS.filter(c => c !== 'voc')}, // Creative SoundBlaster (DOS Games)
   {ext: 'au', mime: 'audio/basic', category: 'audio', icon: 'mdi-server', conversions: AUDIO_CONVERSIONS.filter(c => c !== 'au')}, // Sun Microsystems / Java
 ] as const;
+
+export const videoExtensions = new Set(videos.map(i => i.ext));
+export const audioExtensions = new Set(audios.map(i => i.ext));

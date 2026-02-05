@@ -1,4 +1,6 @@
-import {FILE_TYPES} from '../razomy/io/FILE_TYPES';
+import type {FileTypeConfig} from '../razomy/io/FILE_TYPES';
+import {images} from '../razomy/io.image/types';
+import {audios, videos} from '../razomy/io.video/types';
 
 const subdomainName = 'io' as const;
 const domain = `${subdomainName}.razomy.org` as const;
@@ -6,6 +8,13 @@ const url = `https://${domain}` as const;
 const cookie = {
   session: {locale: `${subdomainName}.razomy.org-session-locale`,}
 } as const;
+
+export const FILE_TYPES: FileTypeConfig[] = [
+  ...images,
+  // ...documents,
+  ...videos,
+  ...audios,
+] as const;
 
 // Хелпер для получения иконки по расширению (для красоты)
 export const getFileIcon = (ext: string) => {
