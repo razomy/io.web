@@ -1,9 +1,8 @@
 <script setup>
-import DefaultLayout from '~~/razomy/vue.nuxt/DefaultLayout.vue'
 </script>
 
 <template>
-  <DefaultLayout>
+  <rzm-default-layout>
     <slot/>
-  </DefaultLayout>
+  </rzm-default-layout>
 </template>

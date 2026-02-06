@@ -1,9 +1,8 @@
 <script setup>
-import EmptyLayout from '~~/razomy/vue.nuxt/EmptyLayout.vue'
 </script>
 
 <template>
-  <EmptyLayout>
+  <rzm-empty-layout>
     <slot/>
-  </EmptyLayout>
+  </rzm-empty-layout>
 </template>

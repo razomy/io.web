@@ -1,9 +1,8 @@
 <script setup>
-import DefaultError from '~~/razomy/vue.nuxt/DefaultError.vue'
 </script>
 
 <template>
-  <DefaultError>
+  <rzm-default-error>
     <slot/>
-  </DefaultError>
+  </rzm-default-error>
 </template>

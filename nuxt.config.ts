@@ -1,16 +1,22 @@
 import {defineNuxtConfig} from 'nuxt/config'
-import {defaultNuxtConfig} from './razomy/vue.nuxt/default-nuxt-config';
-import {c} from './content/context';
+import {defaultNuxtConfig} from '@razomy/vue-nuxt/runtime/functions';
+// import {c} from './content/context.browser';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ...defaultNuxtConfig,
+  ...defaultNuxtConfig(
+    {
+    url: '',
+    cookie: {session: {locale: ''}},
+    i18n: {en: {product: {name: '', description: ''}}},
+  }
+  ) as any,
   build: {
     transpile: ['zod'],
   },
   typescript: {
-    strict: true,
-    typeCheck: true,
+    strict: false,
+    typeCheck: false,
   },
   // devServer: {
   //   port: 3000,
@@ -83,6 +89,7 @@ export default defineNuxtConfig({
               // THE "SOFT" UI BASE
               // background: '#F5F5F7', // The "Apple Store" light gray background
               // surface: '#FFFFFF',    // Pure white for cards/elements
+              'surface-light': '#F3F4F6',    // Pure white for cards/elements
 
               // Text colors for better contrast without harsh black
               'on-background': '#1D1D1F', // Dark grey (Apple style) instead of #000

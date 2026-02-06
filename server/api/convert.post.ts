@@ -1,6 +1,6 @@
 import formidable from 'formidable';
 
-import {convertToStream} from '../../razomy/io/convertToStream';
+import {convertToStream} from './convertToStream';
 
 export default defineEventHandler(async (event) => {
   // 1. Парсинг (загрузка файла во временную папку)
@@ -26,15 +26,15 @@ export default defineEventHandler(async (event) => {
 
   try {
     // 2. Получаем стрим
-    const { stream, mime, ext } = await convertToStream(
+    const { stream, mediaType, fileExtensionType } = await convertToStream(
       inputFile.filepath,
       targetFormat,
       inputFile.originalFilename || 'file.unknown'
     );
 
     // 3. Устанавливаем заголовки
-    setHeader(event, 'Content-Type', mime);
-    setHeader(event, 'Content-Disposition', `attachment; filename="converted.${ext}"`);
+    setHeader(event, 'Content-Type', mediaType);
+    setHeader(event, 'Content-Disposition', `attachment; filename="converted.${fileExtensionType}"`);
 
     // 4. Отправляем стрим (H3/Nuxt утилита)
     // sendStream сам обрабатывает pipe и закрытие

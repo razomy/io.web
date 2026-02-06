@@ -1,10 +1,9 @@
 <script setup>
 import '~/assets/css/main.css'
-import DefaultApp from '~~/razomy/vue.nuxt/DefaultApp.vue'
 </script>
 
 <template>
-  <DefaultApp>
+  <rzm-default-app>
     <slot/>
-  </DefaultApp>
+  </rzm-default-app>
 </template>

@@ -2,23 +2,50 @@
   <div class="bg-surface-light min-vh-100 pb-16">
 
     <!-- Hero Background -->
-    <div class="hero-bg bg-primary pt-16 pb-32 px-4 text-center">
+    <div class="hero-bg pt-12 pb-32 px-4 text-center">
       <v-container>
-        <v-chip color="white" variant="outlined" class="mb-4">
-          Online Converter
+        <!-- SEO Breadcrumb/Badge -->
+        <v-chip
+            color="primary"
+            variant="tonal"
+            class="mb-4 font-weight-bold"
+            size="small"
+        >
+          {{ t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }).split('|')[0] }}
         </v-chip>
-        <h1 class="text-h2 font-weight-black text-white mb-2">
-          {{ input.toUpperCase() }} <span class="text-white-50">to</span> {{ output.toUpperCase() }}
+
+        <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-grey-darken-4">
+          {{ input.toUpperCase() }} <span class="text-primary">to</span> {{ output.toUpperCase() }}
         </h1>
-        <p class="text-white-70 text-body-1">
+
+        <p class="text-medium-emphasis text-body-1 text-md-h6 mx-auto" style="max-width: 700px; line-height: 1.6;">
           {{ t('group.input.output.hero_sub', { s: input.toUpperCase(), t: output.toUpperCase() }) }}
         </p>
+
+        <!-- UI Tweak: Trust Badges (Преимущества) -->
+        <div class="d-flex justify-center gap-4 mt-6 flex-wrap">
+          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+            <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
+            {{ t('group.input.output.features.secure') }}
+          </div>
+          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+            <v-icon icon="mdi-flash" color="warning" class="mr-2" size="small"/>
+            {{ t('group.input.output.features.fast') }}
+          </div>
+          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+            <v-icon icon="mdi-cloud" color="info" class="mr-2" size="small"/>
+            {{ t('group.input.output.features.cloud') }}
+          </div>
+        </div>
+
       </v-container>
     </div>
 
-    <!-- Main Content Area (Overlapping Hero) -->
+    <!-- Main Content Area -->
     <v-container class="mt-n16 position-relative z-index-1">
-      <ModernDropzone
+
+      <!-- Карточка конвертера -->
+      <rzm-modern-dropzone
           v-model="file"
           :accept="`.${input}`"
           :is-processing="loading"
@@ -26,7 +53,8 @@
       />
 
       <!-- Ошибки -->
-      <v-snackbar v-model="hasError" color="error" location="top">
+      <v-snackbar v-model="hasError" color="error" location="top" timeout="5000">
+        <v-icon start icon="mdi-alert-circle" />
         {{ errorMsg }}
         <template v-slot:actions>
           <v-btn variant="text" @click="hasError = false">Close</v-btn>
@@ -34,17 +62,21 @@
       </v-snackbar>
 
       <!-- SEO Контент -->
-      <SeoSection :content="seoData" :input="input" :output="output" />
+      <!-- Передаем больше данных для генерации богатого сниппета -->
+      <SeoSection
+          class="mt-16"
+          :content="seoContent"
+          :input="input"
+          :output="output"
+      />
     </v-container>
 
   </div>
 </template>
 
 <script setup lang="ts">
-import ModernDropzone from '~~/razomy/vue.nuxt/ModernDropzone.vue';
-import SeoSection from '~~/razomy/vue.nuxt/SeoSection.vue';
+import SeoSection from '~/components/SeoSection.vue';
 import { isValidConversion } from '~~/content/isValidConversion';
-import Breadcrumbs from '~~/razomy/vue.nuxt/Breadcrumbs.vue';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -52,42 +84,52 @@ const route = useRoute();
 const input = (route.params.input as string).toLowerCase();
 const output = (route.params.output as string).toLowerCase();
 
-const generateSeoContent = (t: any, input: string, output: string) => {
+// --- SEO LOGIC ---
+const generateSeoContent = () => {
   const s = input.toUpperCase();
   const tgt = output.toUpperCase();
 
   return {
-    h1: t('group.input.output.seo.h1', {input: s, output: tgt}),
-    intro: t('group.input.output.seo.intro', {input: s, output: tgt}),
+    h1: t('group.input.output.seo.h1', { input: s, output: tgt }),
+    intro_title: t('group.input.output.seo.intro_title', { input: s, output: tgt }),
+    intro: t('group.input.output.seo.intro_text', { input: s, output: tgt }), // Более длинный текст
     steps: [
       {
-        title: t('group.input.output.steps.upload'),
-        icon: 'mdi-cloud-upload',
-        text: t('group.input.output.steps.upload_desc', {s})
+        title: t('group.input.output.steps.upload', { input: s }),
+        icon: 'mdi-cloud-upload-outline',
+        text: t('group.input.output.steps.upload_desc', { s })
       },
-      {title: t('group.input.output.steps.quality'), icon: 'mdi-tune', text: t('group.input.output.steps.quality_desc')},
       {
-        title: t('group.input.output.steps.download'),
-        icon: 'mdi-download',
-        text: t('group.input.output.steps.download_desc', {tgt})
+        title: t('group.input.output.steps.quality'),
+        icon: 'mdi-cog-transfer-outline', // Иконка шестеренки
+        text: t('group.input.output.steps.quality_desc')
+      },
+      {
+        title: t('group.input.output.steps.download', { output: tgt }),
+        icon: 'mdi-download-outline',
+        text: t('group.input.output.steps.download_desc', { tgt })
       },
     ],
     faq: [
-      {q: t('group.input.output.faq.q1', {s}), a: t('group.input.output.faq.a1')},
-      {q: t('group.input.output.faq.q2'), a: t('group.input.output.faq.a2')},
-      {q: t('group.input.output.faq.q3'), a: t('group.input.output.faq.a3')},
+      { q: t('group.input.output.faq.q1', { s, t: tgt }), a: t('group.input.output.faq.a1') },
+      { q: t('group.input.output.faq.q2', { s }), a: t('group.input.output.faq.a2') },
+      { q: t('group.input.output.faq.q3', { s, t: tgt }), a: t('group.input.output.faq.a3') },
     ]
   }
 }
 
-// SEO Meta
-const seoData = computed(() => generateSeoContent(t, input, output));
+const seoContent = computed(() => generateSeoContent());
+
+// Meta tags for Google
 useSeoMeta({
-  title: seoData.value.h1,
-  description: seoData.value.intro
+  title: () => t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }),
+  description: () => t('group.input.output.seo.description', { input: input.toUpperCase(), output: output.toUpperCase() }),
+  ogTitle: () => t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }),
+  ogDescription: () => t('group.input.output.seo.description', { input: input.toUpperCase(), output: output.toUpperCase() }),
+  robots: 'index, follow'
 });
 
-// Logic
+// --- CONVERSION LOGIC ---
 const file = ref<File | null>(null);
 const loading = ref(false);
 const hasError = ref(false);
@@ -95,22 +137,26 @@ const errorMsg = ref('');
 
 definePageMeta({
   validate: async (route) => {
-    const input = (route.params.input as string).toLowerCase();
-    const output = (route.params.output as string).toLowerCase();
-
-    // Валидация типов
-    return isValidConversion(input, output);
+    const i = (route.params.input as string).toLowerCase();
+    const o = (route.params.output as string).toLowerCase();
+    return isValidConversion(i, o);
   }
 });
-// utils/converter.constants.ts
- const CONVERTER_CONFIG = {
+
+const CONVERTER_CONFIG = {
   maxSize: 100 * 1024 * 1024, // 100 MB
-  endpoints: {
-    convert: '/api/convert'
-  }
+  endpoints: { convert: '/api/convert' }
 }
+
 const startConversion = async () => {
   if (!file.value) return;
+
+  // Validation Check
+  if (file.value.size > CONVERTER_CONFIG.maxSize) {
+    errorMsg.value = `File is too large. Max size is ${CONVERTER_CONFIG.maxSize / 1024 / 1024}MB.`;
+    hasError.value = true;
+    return;
+  }
 
   loading.value = true;
   hasError.value = false;
@@ -127,20 +173,26 @@ const startConversion = async () => {
       responseType: 'blob'
     });
 
-    if (error.value) throw new Error('Conversion API Error');
+    if (error.value) throw new Error(error.value.message || 'API Error');
 
-    // Скачивание
-    const url = window.URL.createObjectURL(data.value as Blob);
+    // Download Logic
+    const blob = data.value as Blob;
+    const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `converted.${output}`);
+    // Сохраняем имя файла если возможно, или генерируем новое
+    const originalName = file.value.name.replace(/\.[^/.]+$/, "");
+    link.setAttribute('download', `${originalName}.${output}`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-  } catch (e) {
+    // Очищаем после успеха (опционально)
+    // file.value = null;
+
+  } catch (e: any) {
     console.error(e);
-    errorMsg.value = t('error.generic');
+    errorMsg.value = e.message || t('error.generic');
     hasError.value = true;
   } finally {
     loading.value = false;
@@ -150,11 +202,17 @@ const startConversion = async () => {
 
 <style scoped>
 .hero-bg {
-  /* Градиентный фон */
-  background: rgb(var(--v-theme-primary));
-  padding-bottom: 120px; /* Место под нахлест карточки */
+  /* Легкий паттерн на фоне для профессионального вида */
+  background-color: rgb(var(--v-theme-surface-light));
+  background-image: radial-gradient(rgb(var(--v-theme-primary), 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
-.z-index-1 { z-index: 1; }
-.text-white-70 { color: rgba(255,255,255, 0.7); }
-.text-white-50 { color: rgba(255,255,255, 0.5); }
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
 </style>

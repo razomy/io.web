@@ -1,6 +1,7 @@
-import type {FileTypeConfig} from '../razomy/io/FILE_TYPES';
-import {images} from '../razomy/io.image/types';
-import {audios, videos} from '../razomy/io.video/types';
+import {type FileFormat} from '@razomy/fs-file-format';
+import {images} from '@razomy/images';
+import {videos} from '@razomy/videos';
+import {audios} from '@razomy/audios';
 
 const subdomainName = 'io' as const;
 const domain = `${subdomainName}.razomy.org` as const;
@@ -9,7 +10,7 @@ const cookie = {
   session: {locale: `${subdomainName}.razomy.org-session-locale`,}
 } as const;
 
-export const FILE_TYPES: FileTypeConfig[] = [
+export const FILE_TYPES: FileFormat[] = [
   ...images,
   // ...documents,
   ...videos,
@@ -18,11 +19,11 @@ export const FILE_TYPES: FileTypeConfig[] = [
 
 // Хелпер для получения иконки по расширению (для красоты)
 export const getFileIcon = (ext: string) => {
-  return FILE_TYPES[ext as any]?.icon || 'mdi-file-document-outline';
+  return FILE_TYPES[ext as any]?.iconUrl || 'mdi-file-document-outline';
 };
 
-export const EXT_TO_EXTS_MAP = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.conversions})));
-export const EXT_TO_GROUP_MAP: Record<string, string> = Object.assign({}, ...FILE_TYPES.map(i => ({[i.ext]: i.category})));
+export const EXT_TO_EXTS_MAP = Object.assign({}, ...FILE_TYPES.map(i => ({[i.fileExtensionType]: i.conversions})));
+export const EXT_TO_GROUP_MAP: Record<string, string> = Object.assign({}, ...FILE_TYPES.map(i => ({[i.fileExtensionType]: i.fileCategory})));
 // Конфиг категорий (иконки и названия)
 export const groups: Record<string, { icon: string, labelKey: string }> = {
   image: {icon: 'mdi-image-multiple', labelKey: 'groups.image'},
@@ -61,7 +62,7 @@ const headerLinks: any[] = [
 //   {}
 
 const pairRoutes = FILE_TYPES
-  .map(i => [i.conversions.map(o => `/${i.category}/${i.ext}/${o}`)])
+  .map(i => [i.conversions.map(o => `/${i.fileCategory}/${i.fileExtensionType}/${o}`)])
   .flat(2);
 
 export const pairRoutesSet = new Set(pairRoutes)
@@ -149,26 +150,36 @@ const i18n = {
         subtitle: 'Select output format for your .{input} files',
         available_conversions: 'Available conversions',
         output: {
-          hero_sub: 'Best way to convert {s} to {t} in seconds.',
+          hero_sub: 'Fast, free, and secure online tool to convert {s} to {t}. No registration or software installation required.',
+          features: {
+            fast: 'Fast Conversion',
+            secure: '100% Secure',
+            quality: 'High Quality',
+            cloud: 'Cloud Based'
+          },
+
           seo: {
-            h1: 'Convert {input} to {output} for free',
-            intro: 'Best way to convert {input} files to {output} format in seconds.',
+            title: 'Convert {input} to {output} Online | Free & Secure Tool',
+            h1: 'Free Online {input} to {output} Converter',
+            description: 'The best way to convert {input} files to {output} format online. Easy to use, completely free, and secure file conversion.',
+            intro_title: 'Why use our {input} to {output} tool?',
+            intro_text: 'Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {input} documents into {output}.'
           },
           steps: {
-            upload: 'Upload {input} file',
-            upload_desc: 'Select your {s} file to upload',
-            quality: 'Select quality (if applicable)',
-            quality_desc: 'Adjust settings as needed',
-            download: 'Download your {output}',
-            download_desc: 'Get your converted {tgt} file'
+            upload: '1. Upload {input} file',
+            upload_desc: 'Drag and drop your {s} file into the upload area. The maximum file size is 100MB.',
+            quality: '2. Conversion Process',
+            quality_desc: 'Our tool automatically converts your file to {t} format with the best possible settings.',
+            download: '3. Download {output}',
+            download_desc: 'Wait a moment for the process to finish, then download your new {tgt} file instantly.'
           },
           faq: {
-            q1: 'How to open {s}?',
-            a1: 'You can use standard tools...',
-            q2: 'Is it safe?',
-            a2: 'Yes, files are deleted automatically after 1 hour.',
-            q3: 'Size limits?',
-            a3: 'Up to 100 MB for free.'
+            q1: 'How do I convert {s} to {t}?',
+            a1: 'Simply upload your file, wait for the conversion, and click download. It works on Windows, Mac, Linux, and mobile devices.',
+            q2: 'Is it safe to convert {s} on Razomy?',
+            a2: 'Yes. We use HTTPS encryption. Your files are automatically deleted from our servers after 1 hour to ensure privacy.',
+            q3: 'Is this converter free?',
+            a3: 'Absolutely. You can convert {s} files to {t} for free without creating an account.'
           }
         }
       }
