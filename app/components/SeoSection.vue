@@ -69,11 +69,11 @@
 
       <!-- Technical Specs Table -->
       <v-col cols="12" md="5">
-        <div class="bg-surface border rounded-xl">
-          <div class="bg-grey-lighten-4 px-6 py-4 border-b rounded-t-xl">
-            <h3 class="text-h6 font-weight-bold mb-0">Conversion Specs</h3>
+          <div class="mb-6 rounded-t-xl">
+            <h3 class="text-h5 font-weight-bold">Conversion Specs</h3>
           </div>
 
+        <div class="bg-surface border rounded-xl">
           <v-table density="comfortable" class="px-2 w-full">
             <tbody>
             <tr>
@@ -90,18 +90,20 @@
               </td>
               <td class="font-weight-medium text-uppercase text-right">{{ output }}</td>
             </tr>
-            <tr>
-              <td class="text-medium-emphasis py-3">
-                <v-icon icon="mdi-star" size="small" class="mr-2"/>
-                User Rating
-              </td>
-              <td class="text-right">
-                <div class="d-flex justify-end align-center w-full max-w-full oveflow-hidden">
-                  <v-rating :model-value="4.9" color="amber" density="compact" size="small" readonly half-increments/>
-                  <span class="text-caption ml-1 font-weight-bold">4.9</span>
-                </div>
-              </td>
-            </tr>
+<!--            <tr>-->
+<!--              <td class="text-medium-emphasis py-3">-->
+<!--                <v-icon icon="mdi-star" size="small" class="mr-2"/>-->
+<!--                User Rating-->
+<!--              </td>-->
+<!--              <td class="text-right">-->
+<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+<!--                <span class="text-caption ml-1 font-weight-bold">4.9</span>-->
+<!--              </td>-->
+<!--            </tr>-->
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-shield-check" size="small" class="mr-2"/>

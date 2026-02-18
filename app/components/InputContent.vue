@@ -1,14 +1,14 @@
 <template>
   <div class="bg-surface-light min-vh-100">
     <!-- Hero Header -->
-    <div class="bg-primary pt-8 pb-24 px-4 text-center">
+    <div class="bg-surface pt-8 pb-8 px-4 text-center">
       <v-container max-width="900">
 
-        <v-avatar color="white" size="80" variant="flat" class="mb-6 mt-4 global-soft-card">
+        <v-avatar size="80" variant="flat" class="mb-6 global-soft-card">
           <v-icon :icon="icon" color="primary" size="40"/>
         </v-avatar>
 
-        <h1 class="text-h3 font-weight-black text-white mb-2">
+        <h1 class="text-h3 font-weight-black mb-2">
           {{ t('group.input.title', {input: input.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
@@ -18,7 +18,7 @@
     </div>
 
     <!-- Список доступных конвертаций -->
-    <v-container class="mt-n16 position-relative z-index-1" max-width="1000">
+    <v-container class="position-relative z-index-1" max-width="1000">
       <v-card class="rounded-xl pa-6 global-soft-card">
         <h2 class="text-h5 font-weight-bold mb-6">
           {{ t('group.input.available_conversions') }}
@@ -27,13 +27,13 @@
         <v-row>
           <v-col
               v-for="output in outputs"
-              :key="output"
+              :key="output.output"
               cols="12"
               xs="2"
               lg="4"
           >
             <v-card
-                :to="localePath(`/${group}/${input}/${output}`)"
+                :to="localePath(`/${inputs.join('/')}/${output.output}`)"
                 variant="outlined"
                 class="d-flex align-center pa-4 hover-card"
                 color="primary"
@@ -42,7 +42,7 @@
               <span class="font-weight-bold text-body-1 text-high-emphasis">
                   {{ input.toUpperCase() }}
                   <span class="text-medium-emphasis mx-1">to</span>
-                  {{ output.toUpperCase() }}
+                  {{ output.output.toUpperCase() }}
                 </span>
               <v-spacer/>
               <v-icon icon="mdi-chevron-right" color="grey"/>
@@ -55,24 +55,21 @@
 </template>
 
 <script setup lang="ts">
-import {EXT_TO_EXTS_MAP, getFileIcon} from '~~/content/context';
+import {ioFunctions} from '~~/content/io_functions';
 
 const {t} = useI18n();
 const localePath = useLocalePath();
 
-const route = useRoute();
-const input = (route.params.input as string).toLowerCase();
-const group = (route.params.group as string).toLowerCase();
+const props = defineProps<{
+  input: string[],
+}>()
 
-definePageMeta({
-  validate: async (route) => {
-    const input = (route.params.input as string).toLowerCase();
-    // Валидация типов
-    return !!EXT_TO_EXTS_MAP[route.params.input as keyof typeof EXT_TO_EXTS_MAP];
-  }
-});
-const outputs = EXT_TO_EXTS_MAP[input as keyof typeof EXT_TO_EXTS_MAP];
-const icon = getFileIcon(input);
+const inputs = props.input;
+const input = inputs[1];
+const group = inputs[0];
+
+const outputs = ioFunctions.filter(i => i.input.join('/') === inputs.join('/'));
+const icon = ioFunctions.find(i => i.input.join('/') === inputs.join('/')).iconName;
 </script>
 
 <style scoped>

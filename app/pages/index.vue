@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-surface-light min-vh-100 pb-16">
+  <div class="bg-surface-light min-vh-100">
 
     <!-- Hero Section with Search -->
-    <div class="hero-bg bg-primary pt-16 pb-32 px-4 text-center">
+    <div class="hero-bg bg-surface pt-8 pb-8 px-4 text-center">
       <v-container max-width="900">
-        <h1 class="text-h2 font-weight-black text-white mb-4">
+        <h1 class="text-h2 font-weight-black mb-4">
           {{ $t('group.title') }}
         </h1>
-        <p class="text-white-70 text-h6 mb-8 font-weight-regular">
+        <p class="text-70 text-h6 mb-8 font-weight-regular">
           {{ $t('group.subtitle') }}
         </p>
 
@@ -16,19 +16,19 @@
             v-model="search"
             :placeholder="$t('group.search_placeholder')"
             prepend-inner-icon="mdi-magnify"
-            variant="solo"
+            variant="outlined"
             rounded="xl"
             bg-color="surface"
             height="64"
             hide-details
-            class="search-input global-soft-card rounded-xl"
+            class="search-input rounded-xl"
             clearable
         />
       </v-container>
     </div>
 
     <!-- Список карточек -->
-    <v-container class="mt-n16 position-relative z-index-1" max-width="1200">
+    <v-container class="mt-8 position-relative z-index-1" max-width="1200">
 
       <!-- Если ничего не найдено -->
       <div v-if="filteredList.length === 0" class="text-center py-10">
@@ -40,30 +40,42 @@
       <v-row>
         <v-col
             v-for="item in filteredList"
-            :key="item.source"
+            :key="item.key"
             cols="12"
             sm="6"
             md="4"
         >
-          <v-card class="rounded-xl h-100 transition-swing global-soft-card"
-                  :href="localePath(`/${item.group}/${item.source}`)"
+          <v-card class="rounded-xl"
+                  :href="localePath(`/${item.key}`)"
                   hover
                   border>
             <v-card-item>
               <template v-slot:prepend>
                 <v-avatar color="primary-lighten-5" size="48" variant="flat">
-                  <v-icon :icon="getFileIcon(item.source)" color="primary"/>
+                  <v-icon :icon="ioGroups.find(i=>i.key==item.input[0]).iconName"/>
                 </v-avatar>
               </template>
-              <v-card-title class="font-weight-bold text-uppercase">
-                {{ item.source }}
-              </v-card-title>
               <v-card-subtitle>
-                {{ $t('group.convert_from') }}
+                {{ $t('group.convert_from') }}:
               </v-card-subtitle>
+              <v-card-title class="font-weight-bold text-uppercase">
+                <v-chip
+                    v-for="idx in Array.from({ length: item.input.length }, (_, i) => i)"
+                    :key="idx"
+                    :to="localePath('/'+item.input.slice(0, idx+1).join('/'))"
+                    color="d"
+                    variant="text"
+                    size="large"
+                    label
+                    class="font-weight-bold text-uppercase cursor-pointer"
+                >
+                  {{ item.input[idx] }}
+                </v-chip>
+              </v-card-title>
+
             </v-card-item>
 
-            <v-divider class="my-2"/>
+            <v-divider class="my-0"/>
 
             <v-card-text>
               <p class="text-caption text-medium-emphasis mb-2 font-weight-bold text-uppercase">
@@ -72,16 +84,16 @@
 
               <div class="d-flex flex-wrap gap-2">
                 <v-chip
-                    v-for="target in item.targets"
-                    :key="target"
-                    :to="localePath(`/${item.group}/${item.source}/${target}`)"
+                    v-for="target in item.records"
+                    :key="target.output"
+                    :to="localePath(`/${item.key}/${target.output}`)"
                     color="primary"
-                    variant="tonal"
+                    variant="text"
                     size="small"
                     label
                     class="font-weight-bold text-uppercase cursor-pointer px-3"
                 >
-                  {{ target }}
+                  {{ target.output }}
                   <v-icon end icon="mdi-arrow-right" size="14"/>
                 </v-chip>
               </div>
@@ -95,7 +107,8 @@
 </template>
 
 <script setup lang="ts">
-import {EXT_TO_EXTS_MAP, EXT_TO_GROUP_MAP, getFileIcon} from '~~/content/context';
+import {ioGroups} from '~~/content/io_groups';
+import {ioFilterBy} from '~~/content/io_functions';
 
 const localePath = useLocalePath();
 const {t} = useI18n();
@@ -104,21 +117,7 @@ const search = ref('');
 
 // Преобразуем объект в массив и фильтруем
 const filteredList = computed(() => {
-  const query = search.value.toLowerCase().trim();
-  const list = Object.entries(EXT_TO_EXTS_MAP).map(([source, targets]) => ({
-    group: EXT_TO_GROUP_MAP[source],
-    source,
-    targets: targets as readonly string[] // readonly из-за const assertion
-  }));
-
-  if (!query) return list;
-
-  return list.filter(item => {
-    // Ищем совпадение в имени источника (jpg) или в любом из целевых форматов (png)
-    const sourceMatch = item.source.includes(query);
-    const targetMatch = item.targets.some(t => t.includes(query));
-    return sourceMatch || targetMatch;
-  });
+  return ioFilterBy(search.value);
 });
 
 useSeoMeta({

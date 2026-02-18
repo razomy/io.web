@@ -11,7 +11,9 @@
             class="mb-4 font-weight-bold"
             size="small"
         >
-          {{ t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }).split('|')[0] }}
+          {{
+            t('group.input.output.seo.title', {input: input.toUpperCase(), output: output.toUpperCase()}).split('|')[0]
+          }}
         </v-chip>
 
         <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-grey-darken-4">
@@ -19,7 +21,7 @@
         </h1>
 
         <p class="text-medium-emphasis text-body-1 text-md-h6 mx-auto" style="max-width: 700px; line-height: 1.6;">
-          {{ t('group.input.output.hero_sub', { s: input.toUpperCase(), t: output.toUpperCase() }) }}
+          {{ t('group.input.output.hero_sub', {s: input.toUpperCase(), t: output.toUpperCase()}) }}
         </p>
 
         <!-- UI Tweak: Trust Badges (Преимущества) -->
@@ -46,7 +48,7 @@
 
       <!-- Карточка конвертера -->
       <rzm-modern-dropzone
-          v-model="file"
+          v-model="files"
           :accept="`.${input}`"
           :is-processing="loading"
           @convert="startConversion"
@@ -54,7 +56,7 @@
 
       <!-- Ошибки -->
       <v-snackbar v-model="hasError" color="error" location="top" timeout="5000">
-        <v-icon start icon="mdi-alert-circle" />
+        <v-icon start icon="mdi-alert-circle"/>
         {{ errorMsg }}
         <template v-slot:actions>
           <v-btn variant="text" @click="hasError = false">Close</v-btn>
@@ -76,13 +78,18 @@
 
 <script setup lang="ts">
 import SeoSection from '~/components/SeoSection.vue';
-import { isValidConversion } from '~~/content/isValidConversion';
+import {sendFile} from '~/components/sendFile';
 
-const { t } = useI18n();
-const route = useRoute();
+const {t} = useI18n();
+const props = defineProps<{
+  input: string[],
+  output: string,
+}>()
 
-const input = (route.params.input as string).toLowerCase();
-const output = (route.params.output as string).toLowerCase();
+const inputs = props.input;
+const input = inputs[1];
+const group = inputs[0];
+const output = props.output;
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
@@ -90,14 +97,14 @@ const generateSeoContent = () => {
   const tgt = output.toUpperCase();
 
   return {
-    h1: t('group.input.output.seo.h1', { input: s, output: tgt }),
-    intro_title: t('group.input.output.seo.intro_title', { input: s, output: tgt }),
-    intro: t('group.input.output.seo.intro_text', { input: s, output: tgt }), // Более длинный текст
+    h1: t('group.input.output.seo.h1', {input: s, output: tgt}),
+    intro_title: t('group.input.output.seo.intro_title', {input: s, output: tgt}),
+    intro: t('group.input.output.seo.intro_text', {input: s, output: tgt}), // Более длинный текст
     steps: [
       {
-        title: t('group.input.output.steps.upload', { input: s }),
+        title: t('group.input.output.steps.upload', {input: s}),
         icon: 'mdi-cloud-upload-outline',
-        text: t('group.input.output.steps.upload_desc', { s })
+        text: t('group.input.output.steps.upload_desc', {s})
       },
       {
         title: t('group.input.output.steps.quality'),
@@ -105,15 +112,15 @@ const generateSeoContent = () => {
         text: t('group.input.output.steps.quality_desc')
       },
       {
-        title: t('group.input.output.steps.download', { output: tgt }),
+        title: t('group.input.output.steps.download', {output: tgt}),
         icon: 'mdi-download-outline',
-        text: t('group.input.output.steps.download_desc', { tgt })
+        text: t('group.input.output.steps.download_desc', {tgt})
       },
     ],
     faq: [
-      { q: t('group.input.output.faq.q1', { s, t: tgt }), a: t('group.input.output.faq.a1') },
-      { q: t('group.input.output.faq.q2', { s }), a: t('group.input.output.faq.a2') },
-      { q: t('group.input.output.faq.q3', { s, t: tgt }), a: t('group.input.output.faq.a3') },
+      {q: t('group.input.output.faq.q1', {s, t: tgt}), a: t('group.input.output.faq.a1')},
+      {q: t('group.input.output.faq.q2', {s}), a: t('group.input.output.faq.a2')},
+      {q: t('group.input.output.faq.q3', {s, t: tgt}), a: t('group.input.output.faq.a3')},
     ]
   }
 }
@@ -122,82 +129,43 @@ const seoContent = computed(() => generateSeoContent());
 
 // Meta tags for Google
 useSeoMeta({
-  title: () => t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }),
-  description: () => t('group.input.output.seo.description', { input: input.toUpperCase(), output: output.toUpperCase() }),
-  ogTitle: () => t('group.input.output.seo.title', { input: input.toUpperCase(), output: output.toUpperCase() }),
-  ogDescription: () => t('group.input.output.seo.description', { input: input.toUpperCase(), output: output.toUpperCase() }),
+  title: () => t('group.input.output.seo.title', {input: input.toUpperCase(), output: output.toUpperCase()}),
+  description: () => t('group.input.output.seo.description', {
+    input: input.toUpperCase(),
+    output: output.toUpperCase()
+  }),
+  ogTitle: () => t('group.input.output.seo.title', {input: input.toUpperCase(), output: output.toUpperCase()}),
+  ogDescription: () => t('group.input.output.seo.description', {
+    input: input.toUpperCase(),
+    output: output.toUpperCase()
+  }),
   robots: 'index, follow'
 });
 
 // --- CONVERSION LOGIC ---
-const file = ref<File | null>(null);
+const files = ref<File[]>([]);
 const loading = ref(false);
 const hasError = ref(false);
 const errorMsg = ref('');
 
-definePageMeta({
-  validate: async (route) => {
-    const i = (route.params.input as string).toLowerCase();
-    const o = (route.params.output as string).toLowerCase();
-    return isValidConversion(i, o);
-  }
-});
-
 const CONVERTER_CONFIG = {
-  maxSize: 100 * 1024 * 1024, // 100 MB
-  endpoints: { convert: '/api/convert' }
+  endpoints: {convert: `/api/${group}`}
 }
 
 const startConversion = async () => {
-  if (!file.value) return;
-
-  // Validation Check
-  if (file.value.size > CONVERTER_CONFIG.maxSize) {
-    errorMsg.value = `File is too large. Max size is ${CONVERTER_CONFIG.maxSize / 1024 / 1024}MB.`;
-    hasError.value = true;
-    return;
-  }
+  if (!files.value || files.value.length === 0) return;
 
   loading.value = true;
   hasError.value = false;
-
-  const formData = new FormData();
-  formData.append('file', file.value);
-  formData.append('from', input);
-  formData.append('to', output);
-
   try {
-    const { data, error } = await useFetch(CONVERTER_CONFIG.endpoints.convert, {
-      method: 'POST',
-      body: formData,
-      responseType: 'blob'
-    });
+    await sendFile(files.value, input, output, CONVERTER_CONFIG.endpoints.convert);
 
-    if (error.value) throw new Error(error.value.message || 'API Error');
-
-    // Download Logic
-    const blob = data.value as Blob;
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    // Сохраняем имя файла если возможно, или генерируем новое
-    const originalName = file.value.name.replace(/\.[^/.]+$/, "");
-    link.setAttribute('download', `${originalName}.${output}`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    // Очищаем после успеха (опционально)
-    // file.value = null;
-
-  } catch (e: any) {
-    console.error(e);
-    errorMsg.value = e.message || t('error.generic');
+  } catch (e) {
     hasError.value = true;
-  } finally {
-    loading.value = false;
+    errorMsg.value = e.message + e.error;
   }
-};
+  loading.value = false;
+}
 </script>
 
 <style scoped>

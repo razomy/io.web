@@ -7,19 +7,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "analyze": "npx nuxi analyze"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/robots": "^5.7.0",
     "@nuxtjs/sitemap": "^7.6.0",
     "@razomy/audios": "0.0.1-alpha.2",
-    "@razomy/documents": "../../code/js.chunk/razomy/documents",
     "@razomy/fs-file-format": "0.0.1-alpha.2",
     "@razomy/images": "0.0.1-alpha.2",
-    "@razomy/schema": "../../code/js.chunk/razomy/schema",
     "@razomy/videos": "0.0.1-alpha.2",
-    "@razomy/vue": "../../code/js.chunk/razomy/vue",
     "@razomy/vue-nuxt": "../../code/js.chunk/razomy/vue-nuxt",
     "@vueuse/core": "^14.2.0",
     "@vueuse/nuxt": "^14.2.0",

@@ -1,35 +1,25 @@
 import {defineNuxtConfig} from 'nuxt/config'
 import {defaultNuxtConfig} from '@razomy/vue-nuxt/runtime/functions';
-// import {c} from './content/context.browser';
+import {c} from './content/context';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ...defaultNuxtConfig(
-    {
-    url: '',
-    cookie: {session: {locale: ''}},
-    i18n: {en: {product: {name: '', description: ''}}},
-  }
+    c
   ) as any,
-  build: {
-    transpile: ['zod'],
-  },
   typescript: {
     strict: false,
     typeCheck: false,
   },
-  // devServer: {
-  //   port: 3000,
-  //   host: '0.0.0.0' // allows access from network IP
-  // },
+  devServer: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
   nitro: {
     //TODO: performance issue
     // prerender: {
     //   routes: c.routes
     // },
-    externals: {
-      inline: ['zod']
-    }
   },
   vuetify: {
     moduleOptions: {
@@ -88,8 +78,9 @@ export default defineNuxtConfig({
 
               // THE "SOFT" UI BASE
               // background: '#F5F5F7', // The "Apple Store" light gray background
-              // surface: '#FFFFFF',    // Pure white for cards/elements
-              'surface-light': '#F3F4F6',    // Pure white for cards/elements
+              surface: '#FFFFFF',    // Pure white for cards/elements
+              'surface-light': '#FFFFFF',    // Pure white for cards/elements
+              // 'surface-light': '#F5F5F7',    // Pure white for cards/elements
 
               // Text colors for better contrast without harsh black
               'on-background': '#1D1D1F', // Dark grey (Apple style) instead of #000
