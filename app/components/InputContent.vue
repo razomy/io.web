@@ -9,10 +9,10 @@
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('group.input.title', {input: input.toUpperCase()}) }}
+          {{ t('ui.file_to_file.input.title', {input: input1.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('group.input.subtitle', {input: input.toUpperCase()}) }}
+          {{ t('ui.file_to_file.input.subtitle', {input: input1.toUpperCase()}) }}
         </p>
       </v-container>
     </div>
@@ -21,7 +21,7 @@
     <v-container class="position-relative z-index-1" max-width="1000">
       <v-card class="rounded-xl pa-6 global-soft-card">
         <h2 class="text-h5 font-weight-bold mb-6">
-          {{ t('group.input.available_conversions') }}
+          {{ t('ui.file_to_file.input.available_conversions') }}
         </h2>
 
         <v-row>
@@ -40,7 +40,7 @@
             >
               <v-icon icon="mdi-file-swap-outline" start/>
               <span class="font-weight-bold text-body-1 text-high-emphasis">
-                  {{ input.toUpperCase() }}
+                  {{ input1.toUpperCase() }}
                   <span class="text-medium-emphasis mx-1">to</span>
                   {{ output.output.toUpperCase() }}
                 </span>
@@ -55,21 +55,20 @@
 </template>
 
 <script setup lang="ts">
-import {ioFunctions} from '~~/content/io_functions';
+import {outputRecords} from '~~/content/outputRecords';
 
 const {t} = useI18n();
 const localePath = useLocalePath();
 
 const props = defineProps<{
-  input: string[],
+  inputs: string[],
 }>()
 
-const inputs = props.input;
-const input = inputs[1];
-const group = inputs[0];
+const inputs = props.inputs;
+const input1 = inputs[1]!;
 
-const outputs = ioFunctions.filter(i => i.input.join('/') === inputs.join('/'));
-const icon = ioFunctions.find(i => i.input.join('/') === inputs.join('/')).iconName;
+const outputs = outputRecords.filter(i => i.inputs.join('/') === inputs.join('/'));
+const icon = outputRecords.find(i => i.inputs.join('/') === inputs.join('/'))!.iconName;
 </script>
 
 <style scoped>

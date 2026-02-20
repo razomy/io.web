@@ -1,5 +1,5 @@
 import formidable from 'formidable';
-import { convertToStream } from './convertToStream';
+import { convertToStream } from '#server/functions/convertToStream';
 
 export default defineEventHandler(async (event) => {
   // 1. Настройка Formidable

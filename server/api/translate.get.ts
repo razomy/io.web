@@ -1,5 +1,5 @@
 import { H3Event } from 'h3';
-import {getUserLocales} from '@razomy/vue-nuxt/runtime/functions';
+import {getUserLocales} from '@razomy/nuxt/runtime/functions/server';
 import {c} from '~~/content/context';
 
 export default eventHandler(async (event: H3Event) => {

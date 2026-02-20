@@ -5,16 +5,16 @@
     <div class="hero-bg bg-surface pt-8 pb-8 px-4 text-center">
       <v-container max-width="900">
         <h1 class="text-h2 font-weight-black mb-4">
-          {{ $t('group.title') }}
+          {{ t('ui.file_to_file.title') }}
         </h1>
         <p class="text-70 text-h6 mb-8 font-weight-regular">
-          {{ $t('group.subtitle') }}
+          {{ t('ui.file_to_file.subtitle') }}
         </p>
 
         <!-- Поисковая строка -->
         <v-text-field
             v-model="search"
-            :placeholder="$t('group.search_placeholder')"
+            :placeholder="t('ui.file_to_file.search_placeholder')"
             prepend-inner-icon="mdi-magnify"
             variant="outlined"
             rounded="xl"
@@ -33,7 +33,7 @@
       <!-- Если ничего не найдено -->
       <div v-if="filteredList.length === 0" class="text-center py-10">
         <v-icon icon="mdi-file-remove-outline" size="64" color="grey"/>
-        <h3 class="text-h5 text-grey mt-4">{{ $t('group.no_results') }}</h3>
+        <h3 class="text-h5 text-grey mt-4">{{ t('ui.file_to_file.no_results') }}</h3>
       </div>
 
       <!-- Сетка форматов -->
@@ -52,24 +52,24 @@
             <v-card-item>
               <template v-slot:prepend>
                 <v-avatar color="primary-lighten-5" size="48" variant="flat">
-                  <v-icon :icon="ioGroups.find(i=>i.key==item.input[0]).iconName"/>
+                  <v-icon :icon="inputRecords.find(i=>i.key==item.inputs[0])!.iconName"/>
                 </v-avatar>
               </template>
               <v-card-subtitle>
-                {{ $t('group.convert_from') }}:
+                {{ t('ui.file_to_file.convert_from') }}:
               </v-card-subtitle>
               <v-card-title class="font-weight-bold text-uppercase">
                 <v-chip
-                    v-for="idx in Array.from({ length: item.input.length }, (_, i) => i)"
+                    v-for="idx in Array.from({ length: item.inputs.length }, (_, i) => i)"
                     :key="idx"
-                    :to="localePath('/'+item.input.slice(0, idx+1).join('/'))"
+                    :to="localePath('/'+item.inputs.slice(0, idx+1).join('/'))"
                     color="d"
                     variant="text"
                     size="large"
                     label
                     class="font-weight-bold text-uppercase cursor-pointer"
                 >
-                  {{ item.input[idx] }}
+                  {{ item.inputs[idx] }}
                 </v-chip>
               </v-card-title>
 
@@ -79,7 +79,7 @@
 
             <v-card-text>
               <p class="text-caption text-medium-emphasis mb-2 font-weight-bold text-uppercase">
-                {{ $t('group.convert_to') }}:
+                {{ t('ui.file_to_file.convert_to') }}:
               </p>
 
               <div class="d-flex flex-wrap gap-2">
@@ -107,8 +107,8 @@
 </template>
 
 <script setup lang="ts">
-import {ioGroups} from '~~/content/io_groups';
-import {ioFilterBy} from '~~/content/io_functions';
+import {inputRecords} from '~~/content/inputRecords';
+import {ioFilterBy} from '~~/content/outputRecords';
 
 const localePath = useLocalePath();
 const {t} = useI18n();
@@ -121,8 +121,8 @@ const filteredList = computed(() => {
 });
 
 useSeoMeta({
-  title: t('group.seo_title'),
-  description: t('group.seo_desc')
+  title: t('ui.file_to_file.seo_title'),
+  description: t('ui.file_to_file.seo_desc')
 });
 </script>
 

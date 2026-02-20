@@ -1,5 +1,5 @@
 {
-  "name": "@razomy/io.app.chunk",
+  "name": "@razomy/io-web",
   "type": "module",
   "private": true,
   "scripts": {
@@ -14,11 +14,11 @@
     "@nuxtjs/i18n": "^10.2.1",
     "@nuxtjs/robots": "^5.7.0",
     "@nuxtjs/sitemap": "^7.6.0",
-    "@razomy/audios": "0.0.1-alpha.2",
-    "@razomy/fs-file-format": "0.0.1-alpha.2",
-    "@razomy/images": "0.0.1-alpha.2",
-    "@razomy/videos": "0.0.1-alpha.2",
-    "@razomy/vue-nuxt": "../../code/js.chunk/razomy/vue-nuxt",
+    "@razomy/audios": "0.0.1-alpha.4",
+    "@razomy/fs-file-format": "0.0.1-alpha.4",
+    "@razomy/images": "0.0.1-alpha.4",
+    "@razomy/nuxt": "^0.0.1-alpha.5",
+    "@razomy/videos": "0.0.1-alpha.4",
     "@vueuse/core": "^14.2.0",
     "@vueuse/nuxt": "^14.2.0",
     "formidable": "^3.5.4",

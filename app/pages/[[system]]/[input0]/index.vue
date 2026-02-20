@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import DefaultIndex from '../../index.vue'
-import {ioGroupSet} from '~~/content/io_groups';
+import {inputRecordsSet} from '~~/content/inputRecords';
 
 definePageMeta({
   validate: async (route) => {
-    const group = (route.params.group as string).toLowerCase();
-    return !!ioGroupSet[group];
+    const input0 = (route.params.input0 as string).toLowerCase();
+    return !!inputRecordsSet[input0];
   }
 });
 </script>

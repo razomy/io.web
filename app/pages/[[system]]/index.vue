@@ -3,13 +3,13 @@ import DefaultIndex from '../index.vue'
 
 definePageMeta({
   validate: async (route) => {
-    const system = ((route.params.system || '') as string).toLowerCase();
+    const system = ((route.params.system || '') as any).toLowerCase();
     const systemSet = {
       'node': true,
       'curl': true,
     }
     // Валидация типов
-    return !!systemSet[system as string];
+    return systemSet[system as keyof typeof systemSet] || false;
   }
 });
 </script>
