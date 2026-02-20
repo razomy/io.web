@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import DefaultIndex from '../../index.vue'
-import {inputRecordsSet} from '~~/content/inputRecords';
+import {directories0Set} from '~~/content/io';
 
 definePageMeta({
   validate: async (route) => {
-    const input0 = (route.params.input0 as string).toLowerCase();
-    return !!inputRecordsSet[input0];
+    const directory0 = (route.params.directory0 as string).toLowerCase();
+    return !!directories0Set[directory0];
   }
 });
 </script>

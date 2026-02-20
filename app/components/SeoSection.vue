@@ -81,14 +81,14 @@
                 <v-icon icon="mdi-file-import" size="small" class="mr-2"/>
                 Input
               </td>
-              <td class="font-weight-medium text-uppercase text-right">{{ input }}</td>
+              <td class="font-weight-medium text-uppercase text-right">{{ directory }}</td>
             </tr>
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-file-export" size="small" class="mr-2"/>
                 Output
               </td>
-              <td class="font-weight-medium text-uppercase text-right">{{ output }}</td>
+              <td class="font-weight-medium text-uppercase text-right">{{ command }}</td>
             </tr>
 <!--            <tr>-->
 <!--              <td class="text-medium-emphasis py-3">-->
@@ -132,7 +132,7 @@
 import {computed} from 'vue';
 import {useHead} from '#imports';
 
-const props = defineProps<{ content: any, input: string, output: string }>()
+const props = defineProps<{ content: any, directory: string, command: string }>()
 
 /**
  * ГЕНЕРАЦИЯ SCHEMA.ORG (JSON-LD)
@@ -161,7 +161,7 @@ const jsonLd = computed(() => {
       // Schema для Инструкции
       {
         '@type': 'HowTo',
-        'name': `How to convert ${props.input.toUpperCase()} to ${props.output.toUpperCase()}`,
+        'name': `How to convert ${props.directory.toUpperCase()} to ${props.command.toUpperCase()}`,
         'step': steps
       },
       // Schema для FAQ
@@ -172,7 +172,7 @@ const jsonLd = computed(() => {
       // Schema для Софта (SoftwareApplication) - опционально, но полезно
       {
         '@type': 'SoftwareApplication',
-        'name': `${props.input.toUpperCase()} to ${props.output.toUpperCase()} Converter`,
+        'name': `${props.directory.toUpperCase()} to ${props.command.toUpperCase()} Converter`,
         'applicationCategory': 'MultimediaApplication',
         'operatingSystem': 'Any',
         'offers': {

@@ -1,6 +1,5 @@
 import {i18n} from './translates';
-import {outputRecords, outputRoutes} from './outputRecords';
-import {inputRecords} from './inputRecords';
+import {directories0, directoriesToCategories, commands} from './io';
 
 const subdomainName = 'io' as const;
 const domain = `${subdomainName}.razomy.org` as const;
@@ -42,11 +41,7 @@ const products = [
   // },
 ];
 
-export const categories = outputRecords.map(i => {
-  const slugs = [...i.inputs, i.output];
-  return slugs
-});
-
+export const routes = commands.map(r => r.url);
 
 export const c = {
   headerLinks: [],
@@ -55,9 +50,8 @@ export const c = {
   domain,
   url,
   cookie,
-  categories,
+  categories: directories0.map(directoriesToCategories),
   products,
-  groups: inputRecords,
   i18n,
-  routes: outputRoutes
+  routes: routes
 } as const

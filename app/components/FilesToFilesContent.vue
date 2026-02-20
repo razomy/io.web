@@ -12,31 +12,31 @@
             size="small"
         >
           {{
-            t('ui.file_to_file.input.output.seo.title', {input: input1.toUpperCase(), output: output.toUpperCase()}).split('|')[0]
+            t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}).split('|')[0]
           }}
         </v-chip>
 
         <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-grey-darken-4">
-          {{ input1.toUpperCase() }} <span class="text-primary">to</span> {{ output.toUpperCase() }}
+          {{ directory1.toUpperCase() }} <span class="text-primary">to</span> {{ command.toUpperCase() }}
         </h1>
 
         <p class="text-medium-emphasis text-body-1 text-md-h6 mx-auto" style="max-width: 700px; line-height: 1.6;">
-          {{ t('ui.file_to_file.input.output.hero_sub', {s: input1.toUpperCase(), t: output.toUpperCase()}) }}
+          {{ t('ui.file_to_file.directory.command.hero_sub', {s: directory1.toUpperCase(), t: command.toUpperCase()}) }}
         </p>
 
         <!-- UI Tweak: Trust Badges (Преимущества) -->
         <div class="d-flex justify-center gap-4 mt-6 flex-wrap">
           <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
             <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.input.output.features.secure') }}
+            {{ t('ui.file_to_file.directory.command.features.secure') }}
           </div>
           <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
             <v-icon icon="mdi-flash" color="warning" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.input.output.features.fast') }}
+            {{ t('ui.file_to_file.directory.command.features.fast') }}
           </div>
           <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
             <v-icon icon="mdi-cloud" color="info" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.input.output.features.cloud') }}
+            {{ t('ui.file_to_file.directory.command.features.cloud') }}
           </div>
         </div>
 
@@ -49,7 +49,7 @@
       <!-- Карточка конвертера -->
       <rzm-modern-dropzone
           v-model="files"
-          :accept="`.${input1}`"
+          :accept="`.${directory1}`"
           :is-processing="loading"
           @convert="startConversion"
       />
@@ -68,8 +68,8 @@
       <SeoSection
           class="mt-16"
           :content="seoContent"
-          :input="input1"
-          :output="output"
+          :directory="directory1"
+          :command="command"
       />
     </v-container>
 
@@ -82,45 +82,45 @@ import {sendFile} from '~/functions/sendFile';
 
 const {t} = useI18n();
 const props = defineProps<{
-  inputs: string[],
-  output: string,
+  directories: string[],
+  command: string,
 }>()
 
-const inputs = props.inputs;
-const input1 = inputs[1]!;
-const input0 = inputs[0]!;
-const output = props.output;
+const directories = props.directories;
+const directory1 = directories[1]!;
+const directory0 = directories[0]!;
+const command = props.command;
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
-  const in_ = input1.toUpperCase();
-  const out = output.toUpperCase();
+  const in_ = directory1.toUpperCase();
+  const out = command.toUpperCase();
 
   return {
-    h1: t('ui.file_to_file.input.output.seo.h1', {input: in_, output: out}),
-    intro_title: t('ui.file_to_file.input.output.seo.intro_title', {input: in_, output: out}),
-    intro: t('ui.file_to_file.input.output.seo.intro_text', {input: in_, output: out}), // Более длинный текст
+    h1: t('ui.file_to_file.directory.command.seo.h1', {directory: in_, command: out}),
+    intro_title: t('ui.file_to_file.directory.command.seo.intro_title', {directory: in_, command: out}),
+    intro: t('ui.file_to_file.directory.command.seo.intro_text', {directory: in_, command: out}), // Более длинный текст
     steps: [
       {
-        title: t('ui.file_to_file.input.output.steps.upload', {input: in_}),
+        title: t('ui.file_to_file.directory.command.steps.upload', {directory: in_}),
         icon: 'mdi-cloud-upload-outline',
-        text: t('ui.file_to_file.input.output.steps.upload_desc', {s: in_})
+        text: t('ui.file_to_file.directory.command.steps.upload_desc', {s: in_})
       },
       {
-        title: t('ui.file_to_file.input.output.steps.quality'),
+        title: t('ui.file_to_file.directory.command.steps.quality'),
         icon: 'mdi-cog-transfer-outline', // Иконка шестеренки
-        text: t('ui.file_to_file.input.output.steps.quality_desc')
+        text: t('ui.file_to_file.directory.command.steps.quality_desc')
       },
       {
-        title: t('ui.file_to_file.input.output.steps.download', {output: out}),
+        title: t('ui.file_to_file.directory.command.steps.download', {command: out}),
         icon: 'mdi-download-outline',
-        text: t('ui.file_to_file.input.output.steps.download_desc', {tgt: out})
+        text: t('ui.file_to_file.directory.command.steps.download_desc', {tgt: out})
       },
     ],
     faq: [
-      {q: t('ui.file_to_file.input.output.faq.q1', {s: in_, t: out}), a: t('ui.file_to_file.input.output.faq.a1')},
-      {q: t('ui.file_to_file.input.output.faq.q2', {s: in_}), a: t('ui.file_to_file.input.output.faq.a2')},
-      {q: t('ui.file_to_file.input.output.faq.q3', {s: in_, t: out}), a: t('ui.file_to_file.input.output.faq.a3')},
+      {q: t('ui.file_to_file.directory.command.faq.q1', {s: in_, t: out}), a: t('ui.file_to_file.directory.command.faq.a1')},
+      {q: t('ui.file_to_file.directory.command.faq.q2', {s: in_}), a: t('ui.file_to_file.directory.command.faq.a2')},
+      {q: t('ui.file_to_file.directory.command.faq.q3', {s: in_, t: out}), a: t('ui.file_to_file.directory.command.faq.a3')},
     ]
   }
 }
@@ -129,15 +129,15 @@ const seoContent = computed(() => generateSeoContent());
 
 // Meta tags for Google
 useSeoMeta({
-  title: () => t('ui.file_to_file.input.output.seo.title', {input: input1.toUpperCase(), output: output.toUpperCase()}),
-  description: () => t('ui.file_to_file.input.output.seo.description', {
-    input: input1.toUpperCase(),
-    output: output.toUpperCase()
+  title: () => t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
+  description: () => t('ui.file_to_file.directory.command.seo.description', {
+    directory: directory1.toUpperCase(),
+    command: command.toUpperCase()
   }),
-  ogTitle: () => t('ui.file_to_file.input.output.seo.title', {input: input1.toUpperCase(), output: output.toUpperCase()}),
-  ogDescription: () => t('ui.file_to_file.input.output.seo.description', {
-    input: input1.toUpperCase(),
-    output: output.toUpperCase()
+  ogTitle: () => t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
+  ogDescription: () => t('ui.file_to_file.directory.command.seo.description', {
+    directory: directory1.toUpperCase(),
+    command: command.toUpperCase()
   }),
   robots: 'index, follow'
 });
@@ -149,7 +149,7 @@ const hasError = ref(false);
 const errorMessage = ref('');
 
 const CONVERTER_CONFIG = {
-  endpoints: {convert: `/api/${input0}`}
+  endpoints: {convert: `/api/${directory0}`}
 }
 
 const startConversion = async () => {
@@ -160,7 +160,7 @@ const startConversion = async () => {
 
   for (const file of files.value) {
     try {
-      await sendFile(file, input1, output, CONVERTER_CONFIG.endpoints.convert);
+      await sendFile(file, directory1, command, CONVERTER_CONFIG.endpoints.convert);
     } catch (e: any) {
       const error = {
         message: `Error converting ${file.name}:`,
