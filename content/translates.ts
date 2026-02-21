@@ -1,5 +1,8 @@
+import {en as vuetifyEn} from 'vuetify/locale';
+
 export const i18n = {
   en: {
+    $vuetify: vuetifyEn,
     nuxt: {
       breadcrumb: {
         title: 'Home',
@@ -13,7 +16,6 @@ export const i18n = {
       footer: {
         blog: 'Blog',
         about: 'About Us',
-        github: 'Source Code Github',
         feedback: 'Feedback',
         contacts: 'Contacts',
         company: 'Company',
@@ -46,8 +48,22 @@ export const i18n = {
         },
         generic: 'Conversion failed. Please try again later.'
       },
+      text_to_text: {
+        directory: {
+          command: {
+            steps: {
+              paste: '1. Paste {directory} text',
+              paste_desc: 'Paste or type your {s} content into the input area.',
+              process: '2. Conversion Process',
+              process_desc: 'Our tool automatically converts your text to {t} format with the best possible settings.',
+              copy: '3. Copy {command}',
+              copy_desc: 'The conversion is complete. You can now copy the result directly to your clipboard.',
+            }
+          }
+        }
+      },
       file_to_file: {
-        title: 'Functions',
+        title: 'Io Functions',
         subtitle: 'Find the converter you need among 100+ formats',
         search_placeholder: 'e.g. pdf to docx, jpg...',
         no_results: 'No results found',
@@ -66,9 +82,9 @@ export const i18n = {
               fast: 'Fast Conversion',
               secure: '100% Secure',
               quality: 'High Quality',
-              cloud: 'Cloud Based'
+              cloud: 'Cloud Based',
+              accurate: 'High Accuracy',
             },
-
             seo: {
               title: 'Convert {directory} to {command} Online | Free & Secure Tool',
               h1: 'Free Online {directory} to {command} Converter',
@@ -101,13 +117,18 @@ export const i18n = {
         icon: 'mdi-transcribe'
       },
     },
-    ['io-web']: {
-      navbar: {
-        products: {
-          'monster-match': 'Monster Match',
-          'io': 'IO',
-          'razomy': 'Razomy',
-        }
+    io: {
+      web: {
+        footer: {
+          github: 'Source Code Github',
+        },
+        navbar: {
+          products: {
+            'monster-match': 'Monster Match',
+            'io': 'IO',
+            'razomy': 'Razomy',
+          }
+        },
       },
       db: {
         directories: {

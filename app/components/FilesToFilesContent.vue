@@ -12,31 +12,39 @@
             size="small"
         >
           {{
-            t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}).split('|')[0]
+            t('nuxt.file_to_file.directory.command.seo.title', {
+              directory: directoryLast.toUpperCase(),
+              command: commandKey.toUpperCase()
+            }).split('|')[0]
           }}
         </v-chip>
 
-        <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-grey-darken-4">
-          {{ directory1.toUpperCase() }} <span class="text-primary">to</span> {{ command.toUpperCase() }}
+        <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-darken-4">
+          {{ directoryLast.toUpperCase() }} <span class="text-primary">to</span> {{ commandKey.toUpperCase() }}
         </h1>
 
         <p class="text-medium-emphasis text-body-1 text-md-h6 mx-auto" style="max-width: 700px; line-height: 1.6;">
-          {{ t('ui.file_to_file.directory.command.hero_sub', {s: directory1.toUpperCase(), t: command.toUpperCase()}) }}
+          {{
+            t('nuxt.file_to_file.directory.command.hero_sub', {
+              s: directoryLast.toUpperCase(),
+              t: commandKey.toUpperCase()
+            })
+          }}
         </p>
 
         <!-- UI Tweak: Trust Badges (Преимущества) -->
         <div class="d-flex justify-center gap-4 mt-6 flex-wrap">
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.directory.command.features.secure') }}
+            {{ t('nuxt.file_to_file.directory.command.features.secure') }}
           </div>
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-flash" color="warning" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.directory.command.features.fast') }}
+            {{ t('nuxt.file_to_file.directory.command.features.fast') }}
           </div>
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-cloud" color="info" class="mr-2" size="small"/>
-            {{ t('ui.file_to_file.directory.command.features.cloud') }}
+            {{ t('nuxt.file_to_file.directory.command.features.cloud') }}
           </div>
         </div>
 
@@ -49,7 +57,7 @@
       <!-- Карточка конвертера -->
       <rzm-modern-dropzone
           v-model="files"
-          :accept="`.${directory1}`"
+          :accept="`.${directoryLast}`"
           :is-processing="loading"
           @convert="startConversion"
       />
@@ -68,8 +76,8 @@
       <SeoSection
           class="mt-16"
           :content="seoContent"
-          :directory="directory1"
-          :command="command"
+          :directory="directoryLast"
+          :command="commandKey"
       />
     </v-container>
 
@@ -82,45 +90,44 @@ import {sendFile} from '~/functions/sendFile';
 
 const {t} = useI18n();
 const props = defineProps<{
-  directories: string[],
-  command: string,
+  directoryPath: string[],
+  commandKey: string,
 }>()
 
-const directories = props.directories;
-const directory1 = directories[1]!;
-const directory0 = directories[0]!;
-const command = props.command;
+const directoryPath = props.directoryPath;
+const directoryLast = directoryPath.at(-1)!;
+const commandKey = props.commandKey;
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
-  const in_ = directory1.toUpperCase();
-  const out = command.toUpperCase();
+  const in_ = directoryLast.toUpperCase();
+  const out = commandKey.toUpperCase();
 
   return {
-    h1: t('ui.file_to_file.directory.command.seo.h1', {directory: in_, command: out}),
-    intro_title: t('ui.file_to_file.directory.command.seo.intro_title', {directory: in_, command: out}),
-    intro: t('ui.file_to_file.directory.command.seo.intro_text', {directory: in_, command: out}), // Более длинный текст
+    h1: t('nuxt.file_to_file.directory.command.seo.h1', {directory: in_, command: out}),
+    intro_title: t('nuxt.file_to_file.directory.command.seo.intro_title', {directory: in_, command: out}),
+    intro: t('nuxt.file_to_file.directory.command.seo.intro_text', {directory: in_, command: out}), // Более длинный текст
     steps: [
       {
-        title: t('ui.file_to_file.directory.command.steps.upload', {directory: in_}),
+        title: t('nuxt.file_to_file.directory.command.steps.upload', {directory: in_}),
         icon: 'mdi-cloud-upload-outline',
-        text: t('ui.file_to_file.directory.command.steps.upload_desc', {s: in_})
+        text: t('nuxt.file_to_file.directory.command.steps.upload_desc', {s: in_})
       },
       {
-        title: t('ui.file_to_file.directory.command.steps.quality'),
+        title: t('nuxt.file_to_file.directory.command.steps.quality'),
         icon: 'mdi-cog-transfer-outline', // Иконка шестеренки
-        text: t('ui.file_to_file.directory.command.steps.quality_desc')
+        text: t('nuxt.file_to_file.directory.command.steps.quality_desc')
       },
       {
-        title: t('ui.file_to_file.directory.command.steps.download', {command: out}),
+        title: t('nuxt.file_to_file.directory.command.steps.download', {command: out}),
         icon: 'mdi-download-outline',
-        text: t('ui.file_to_file.directory.command.steps.download_desc', {tgt: out})
+        text: t('nuxt.file_to_file.directory.command.steps.download_desc', {tgt: out})
       },
     ],
     faq: [
-      {q: t('ui.file_to_file.directory.command.faq.q1', {s: in_, t: out}), a: t('ui.file_to_file.directory.command.faq.a1')},
-      {q: t('ui.file_to_file.directory.command.faq.q2', {s: in_}), a: t('ui.file_to_file.directory.command.faq.a2')},
-      {q: t('ui.file_to_file.directory.command.faq.q3', {s: in_, t: out}), a: t('ui.file_to_file.directory.command.faq.a3')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q1', {s: in_, t: out}), a: t('nuxt.file_to_file.directory.command.faq.a1')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q2', {s: in_}), a: t('nuxt.file_to_file.directory.command.faq.a2')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q3', {s: in_, t: out}), a: t('nuxt.file_to_file.directory.command.faq.a3')},
     ]
   }
 }
@@ -129,15 +136,15 @@ const seoContent = computed(() => generateSeoContent());
 
 // Meta tags for Google
 useSeoMeta({
-  title: () => t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
-  description: () => t('ui.file_to_file.directory.command.seo.description', {
-    directory: directory1.toUpperCase(),
-    command: command.toUpperCase()
+  title: () => t('nuxt.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  description: () => t('nuxt.file_to_file.directory.command.seo.description', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
   }),
-  ogTitle: () => t('ui.file_to_file.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
-  ogDescription: () => t('ui.file_to_file.directory.command.seo.description', {
-    directory: directory1.toUpperCase(),
-    command: command.toUpperCase()
+  ogTitle: () => t('nuxt.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  ogDescription: () => t('nuxt.file_to_file.directory.command.seo.description', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
   }),
   robots: 'index, follow'
 });
@@ -148,9 +155,7 @@ const loading = ref(false);
 const hasError = ref(false);
 const errorMessage = ref('');
 
-const CONVERTER_CONFIG = {
-  endpoints: {convert: `/api/${directory0}`}
-}
+
 
 const startConversion = async () => {
   if (!files.value || files.value.length === 0) return;
@@ -160,7 +165,26 @@ const startConversion = async () => {
 
   for (const file of files.value) {
     try {
-      await sendFile(file, directory1, command, CONVERTER_CONFIG.endpoints.convert);
+      const result = await sendFile(directoryPath, commandKey, [file]);
+
+      // Логика скачивания одного файла
+      const blob = result as Blob;
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+
+      // Формируем имя. Если есть папки (webkitRelativePath), заменяем слеши на подчеркивания,
+      // чтобы сохранить видимость структуры в имени файла, т.к. создать папки браузер не даст.
+      const originalPath = file.webkitRelativePath || file.name;
+      const nameWithoutExt = originalPath.replace(/\.[^/.]+$/, '');
+      // Можно заменить слэши на подчеркивания, чтобы имя файла содержало путь: path_to_file.jpg
+      const safeName = nameWithoutExt.split('/').join('_');
+
+      link.setAttribute('download', `${safeName}.${commandKey}`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
     } catch (e: any) {
       const error = {
         message: `Error converting ${file.name}:`,

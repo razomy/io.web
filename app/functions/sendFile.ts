@@ -1,14 +1,26 @@
-export const sendFile = async (file: any, input: any, output: any, url2: any) => {
+import {commands} from '~~/razomy/db';
+
+export const sendFile = async (
+  directoryPath: string[],
+  commandKey: string,
+  arguments_: [File]
+) => {
+  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
+  if (command.environment.strategy === 'browser') {
+    return await command.environment.browser.execute(...arguments_);
+  }
+
+  if (command.environment.strategy === 'client_server') {
     // Проходимся по каждому файлу отдельно
     const formData = new FormData();
 
     // Отправляем конкретный файл
-    formData.append('file', file);
-    formData.append('from', input); // ваш формат, например, png
-    formData.append('to', output);  // ваш формат, например, webp
+    formData.append('file', arguments_[0]);
+    formData.append('from', directoryPath[0]!); // ваш формат, например, png
+    formData.append('to', commandKey);  // ваш формат, например, webp
 
 
-    const {data, error} = await useFetch(url2, {
+    const {data, error} = await useFetch(`/api/${directoryPath[0]}/${commandKey}`, {
       method: 'POST',
       body: formData,
       responseType: 'blob' // Ждем файл
@@ -16,22 +28,8 @@ export const sendFile = async (file: any, input: any, output: any, url2: any) =>
 
     if (error.value) throw new Error(error.value.message || 'API Error');
 
-    // Логика скачивания одного файла
-    const blob = data.value as Blob;
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-
-    // Формируем имя. Если есть папки (webkitRelativePath), заменяем слеши на подчеркивания,
-    // чтобы сохранить видимость структуры в имени файла, т.к. создать папки браузер не даст.
-    const originalPath = file.webkitRelativePath || file.name;
-    const nameWithoutExt = originalPath.replace(/\.[^/.]+$/, '');
-    // Можно заменить слэши на подчеркивания, чтобы имя файла содержало путь: path_to_file.jpg
-    const safeName = nameWithoutExt.split('/').join('_');
-
-    link.setAttribute('download', `${safeName}.${output}`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    return data.value;
   }
+
+  throw new Error('unknown sendFile arugments')
+}

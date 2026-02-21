@@ -12,31 +12,34 @@
             size="small"
         >
           {{
-            t('ui.text_tool.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}).split('|')[0]
+            t('nuxt.file_to_file.directory.command.seo.title', {
+              directory: directoryLast.toUpperCase(),
+              command: commandKey.toUpperCase()
+            }).split('|')[0]
           }}
         </v-chip>
 
-        <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-grey-darken-4">
-          {{ directory1.toUpperCase() }} <span class="text-primary">to</span> {{ command.toUpperCase() }}
+        <h1 class="text-h3 text-md-h2 font-weight-black mb-4 text-darken-4">
+          {{ directoryLast.toUpperCase() }} <span class="text-primary">to</span> {{ commandKey.toUpperCase() }}
         </h1>
 
         <p class="text-medium-emphasis text-body-1 text-md-h6 mx-auto" style="max-width: 700px; line-height: 1.6;">
-          {{ t('ui.text_tool.directory.command.hero_sub', {s: directory1.toUpperCase(), t: command.toUpperCase()}) }}
+          {{ t('nuxt.file_to_file.directory.command.hero_sub', {s: directoryLast.toUpperCase(), t: commandKey.toUpperCase()}) }}
         </p>
 
         <!-- Trust Badges (Преимущества) -->
         <div class="d-flex justify-center gap-4 mt-6 flex-wrap">
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
-            {{ t('ui.text_tool.directory.command.features.secure') }}
+            {{ t('nuxt.file_to_file.directory.command.features.secure') }}
           </div>
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-flash" color="warning" class="mr-2" size="small"/>
-            {{ t('ui.text_tool.directory.command.features.fast') }}
+            {{ t('nuxt.file_to_file.directory.command.features.fast') }}
           </div>
-          <div class="d-flex align-center px-3 py-1 text-caption text-grey-darken-2">
+          <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
             <v-icon icon="mdi-text-box-check" color="info" class="mr-2" size="small"/>
-            {{ t('ui.text_tool.directory.command.features.accurate') }}
+            {{ t('nuxt.file_to_file.directory.command.features.accurate') }}
           </div>
         </div>
 
@@ -72,7 +75,7 @@
             <div class="d-flex align-center justify-space-between mb-2">
               <div class="d-flex align-center">
                 <v-icon icon="mdi-code-braces" color="secondary" class="mr-2" />
-                <span class="font-weight-bold text-subtitle-1">{{ command.toUpperCase() }} Result</span>
+                <span class="font-weight-bold text-subtitle-1">{{ commandKey.toUpperCase() }} Result</span>
               </div>
               <v-btn
                   v-if="outputText"
@@ -87,7 +90,7 @@
             <v-textarea
                 v-model="outputText"
                 variant="outlined"
-                bg-color="grey-lighten-4"
+                bg-color="lighten-4"
                 placeholder="Result will appear here..."
                 auto-grow
                 rows="8"
@@ -110,7 +113,7 @@
               elevation="2"
               class="px-8 rounded-pill"
           >
-            Convert to {{ command.toUpperCase() }}
+            Convert to {{ commandKey.toUpperCase() }}
           </v-btn>
         </div>
       </v-card>
@@ -134,8 +137,8 @@
       <SeoSection
           class="mt-16"
           :content="seoContent"
-          :directory="directory1"
-          :command="command"
+          :directory="directoryLast"
+          :command="commandKey"
       />
     </v-container>
 
@@ -150,46 +153,45 @@ import { processText } from '~/functions/processText';
 
 const { t } = useI18n();
 const props = defineProps<{
-  directories: string[],
-  command: string, // Здесь передается название функции (например: 'base64', 'md5')
+  directoryPath: string[],
+  commandKey: string, // Здесь передается название функции (например: 'base64', 'md5')
 }>()
 
-const directories = props.directories;
-const directory1 = directories[1] || 'text';
-const directory0 = directories[0] || 'text';
-const command = props.command; // Название применяемой функции
+const directoryPath = props.directoryPath;
+const directoryLast = directoryPath.at(-1)!;
+const commandKey = props.commandKey; // Название применяемой функции
 
 // --- SEO LOGIC ---
 // Ключи локализации изменены с file_to_file на text_tool для семантики
 const generateSeoContent = () => {
-  const in_ = directory1.toUpperCase();
-  const out = command.toUpperCase();
+  const in_ = directoryLast.toUpperCase();
+  const out = commandKey.toUpperCase();
 
   return {
-    h1: t('ui.text_tool.directory.command.seo.h1', {directory: in_, command: out}),
-    intro_title: t('ui.text_tool.directory.command.seo.intro_title', {directory: in_, command: out}),
-    intro: t('ui.text_tool.directory.command.seo.intro_text', {directory: in_, command: out}),
+    h1: t('nuxt.file_to_file.directory.command.seo.h1', {directory: in_, command: out}),
+    intro_title: t('nuxt.file_to_file.directory.command.seo.intro_title', {directory: in_, command: out}),
+    intro: t('nuxt.file_to_file.directory.command.seo.intro_text', {directory: in_, command: out}),
     steps: [
       {
-        title: t('ui.text_tool.directory.command.steps.paste', {directory: in_}),
+        title: t('nuxt.text_to_text.directory.command.steps.paste', {directory: in_}),
         icon: 'mdi-clipboard-text-outline',
-        text: t('ui.text_tool.directory.command.steps.paste_desc', {s: in_})
+        text: t('nuxt.text_to_text.directory.command.steps.paste_desc', {s: in_})
       },
       {
-        title: t('ui.text_tool.directory.command.steps.process', {func: out}),
+        title: t('nuxt.text_to_text.directory.command.steps.process', {func: out}),
         icon: 'mdi-cog-transfer-outline',
-        text: t('ui.text_tool.directory.command.steps.process_desc', {func: out})
+        text: t('nuxt.text_to_text.directory.command.steps.process_desc', {func: out})
       },
       {
-        title: t('ui.text_tool.directory.command.steps.copy', {command: out}),
+        title: t('nuxt.text_to_text.directory.command.steps.copy', {command: out}),
         icon: 'mdi-content-copy',
-        text: t('ui.text_tool.directory.command.steps.copy_desc', {tgt: out})
+        text: t('nuxt.text_to_text.directory.command.steps.copy_desc', {tgt: out})
       },
     ],
     faq: [
-      {q: t('ui.text_tool.directory.command.faq.q1', {s: in_, t: out}), a: t('ui.text_tool.directory.command.faq.a1')},
-      {q: t('ui.text_tool.directory.command.faq.q2', {s: in_}), a: t('ui.text_tool.directory.command.faq.a2')},
-      {q: t('ui.text_tool.directory.command.faq.q3', {s: in_, t: out}), a: t('ui.text_tool.directory.command.faq.a3')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q1', {s: in_, t: out}), a: t('nuxt.file_to_file.directory.command.faq.a1')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q2', {s: in_}), a: t('nuxt.file_to_file.directory.command.faq.a2')},
+      {q: t('nuxt.file_to_file.directory.command.faq.q3', {s: in_, t: out}), a: t('nuxt.file_to_file.directory.command.faq.a3')},
     ]
   }
 }
@@ -197,15 +199,15 @@ const generateSeoContent = () => {
 const seoContent = computed(() => generateSeoContent());
 
 useSeoMeta({
-  title: () => t('ui.text_tool.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
-  description: () => t('ui.text_tool.directory.command.seo.description', {
-    directory: directory1.toUpperCase(),
-    command: command.toUpperCase()
+  title: () => t('nuxt.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  description: () => t('nuxt.file_to_file.directory.command.seo.description', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
   }),
-  ogTitle: () => t('ui.text_tool.directory.command.seo.title', {directory: directory1.toUpperCase(), command: command.toUpperCase()}),
-  ogDescription: () => t('ui.text_tool.directory.command.seo.description', {
-    directory: directory1.toUpperCase(),
-    command: command.toUpperCase()
+  ogTitle: () => t('nuxt.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  ogDescription: () => t('nuxt.file_to_file.directory.command.seo.description', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
   }),
   robots: 'index, follow'
 });
@@ -218,11 +220,6 @@ const hasError = ref(false);
 const errorMessage = ref('');
 const copied = ref(false);
 
-const PROCESS_CONFIG = {
-  // Эндпоинт строится из группы инструментов (directory0) и названия функции (command)
-  endpoints: { process: `/api/${directory0}/${command}` }
-}
-
 const processTextData = async () => {
   if (!inputText.value.trim()) return;
 
@@ -233,12 +230,12 @@ const processTextData = async () => {
   try {
     // Отправляем текст на бэкенд для обработки конкретной функцией
     const result = await processText(
-        inputText.value,
-        command, // передаем название функции (base64 и т.д.)
-        PROCESS_CONFIG.endpoints.process
+        directoryPath,
+        commandKey,
+        [inputText.value],
     );
 
-    outputText.value = result.data; // Предполагая, что бэк возвращает { data: "string" }
+    outputText.value = result;
   } catch (e: any) {
     console.error(`Error processing text:`, e);
     hasError.value = true;

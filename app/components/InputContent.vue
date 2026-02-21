@@ -9,10 +9,10 @@
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('ui.file_to_file.directory.title', {directory: directory1.toUpperCase()}) }}
+          {{ t('nuxt.file_to_file.directory.title', {directory: directory1.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('ui.file_to_file.directory.subtitle', {directory: directory1.toUpperCase()}) }}
+          {{ t('nuxt.file_to_file.directory.subtitle', {directory: directory1.toUpperCase()}) }}
         </p>
       </v-container>
     </div>
@@ -21,7 +21,7 @@
     <v-container class="position-relative z-index-1" max-width="1000">
       <v-card class="rounded-xl pa-6 global-soft-card">
         <h2 class="text-h5 font-weight-bold mb-6">
-          {{ t('ui.file_to_file.directory.available_conversions') }}
+          {{ t('nuxt.file_to_file.directory.available_conversions') }}
         </h2>
 
         <v-row>
@@ -33,7 +33,7 @@
               lg="4"
           >
             <v-card
-                :to="localePath(`/${directories.join('/')}/${command.commandKey}`)"
+                :to="localePath(`/${directoryPath.join('/')}/${command.commandKey}`)"
                 variant="outlined"
                 class="d-flex align-center pa-4 hover-card"
                 color="primary"
@@ -55,20 +55,20 @@
 </template>
 
 <script setup lang="ts">
-import {commands} from '~~/content/io';
+import {commands} from '~~/razomy/db';
 
 const {t} = useI18n();
 const localePath = useLocalePath();
 
 const props = defineProps<{
-  directories: string[],
+  directoryPath: string[],
 }>()
 
-const directories = props.directories;
-const directory1 = directories[1]!;
+const directoryPath = props.directoryPath;
+const directory1 = directoryPath[1]!;
 
-const outputs = commands.filter(i => i.directoryPath.join('/') === directories.join('/'));
-const icon = commands.find(i => i.directoryPath.join('/') === directories.join('/'))!.iconName;
+const outputs = commands.filter(i => i.directoryPath.join('/') === directoryPath.join('/'));
+const icon = commands.find(i => i.directoryPath.join('/') === directoryPath.join('/'))!.iconName;
 </script>
 
 <style scoped>

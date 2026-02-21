@@ -4,10 +4,10 @@
     <!-- 1. SEO Title & Intro -->
     <!-- Используем H2, так как H1 уже есть в Hero секции -->
     <div class="text-center mb-16">
-      <h2 class="text-h4 font-weight-bold mb-4 text-grey-darken-4">
+      <h2 class="text-h4 font-weight-bold mb-4 text-darken-4">
         {{ content.h1 }}
       </h2>
-      <p class="text-body-1 text-grey-darken-1 mx-auto" style="max-width: 700px; line-height: 1.8;">
+      <p class="text-body-1 text-darken-1 mx-auto" style="max-width: 700px; line-height: 1.8;">
         {{ content.intro }}
       </p>
     </div>
@@ -23,7 +23,7 @@
       <v-row>
         <v-col cols="12" md="4" v-for="(step, i) in content.steps" :key="i" class="position-relative">
           <!-- Стрелка между шагами (только десктоп) -->
-          <div v-if="i as any < 2" class="d-none d-md-block arrow-connector text-grey-lighten-2">
+          <div v-if="i as any < 2" class="d-none d-md-block arrow-connector text-lighten-2">
             <v-icon icon="mdi-chevron-right" size="40"/>
           </div>
 
@@ -55,12 +55,12 @@
               v-for="(item, i) in content.faq"
               :key="i"
               elevation="0"
-              class="bg-grey-lighten-5"
+              class="bg-surface-lighten"
           >
             <v-expansion-panel-title class="font-weight-medium">
               {{ item.q }}
             </v-expansion-panel-title>
-            <v-expansion-panel-text class="text-body-2 text-grey-darken-2 pt-2">
+            <v-expansion-panel-text class="text-body-2 text-darken-2 pt-2">
               {{ item.a }}
             </v-expansion-panel-text>
           </v-expansion-panel>

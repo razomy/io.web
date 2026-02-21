@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import {isValidConversion} from '~~/content/io';
+import {isCommandExists} from '~~/razomy/db';
 
 definePageMeta({
   validate: async (route) => {
     const directory0 = (route.params.directory0 as any).toLowerCase();
-    const directory1 = (route.params.directory1 as string).toLowerCase();
+    const directory1 = (route.params.directory1OrCommand0 as string).toLowerCase();
     const command1 = (route.params.command1 as string).toLowerCase();
-    return isValidConversion([directory0, directory1], command1);
+    return isCommandExists([directory0, directory1], command1);
   }
 });
 
 const route = useRoute();
 const directory0 = (route.params.directory0 as any).toLowerCase();
-const directory1 = (route.params.directory1 as string).toLowerCase();
+const directory1 = (route.params.directory1OrCommand0 as string).toLowerCase();
 const command1 = (route.params.command1 as string).toLowerCase();
 
 </script>
 
 <template>
-  <IoFactory :directories="[directory0, directory1]" :command="command1">
+  <IoFactory :directoryPath="[directory0, directory1]" :commandKey="command1">
     <slot/>
   </IoFactory>
 </template>

@@ -1,4 +1,5 @@
-import {type IoDirectory, lT} from '../directory';
+import {type IoDirectory} from '../../io/command';
+import {lT} from '../alies';
 
 export const documentDirectory = {
   key: 'file',
@@ -7,4 +8,4 @@ export const documentDirectory = {
   label: lT('document'),
   commands: [],
   directories: []
-}as const satisfies IoDirectory;
+} as const satisfies IoDirectory;

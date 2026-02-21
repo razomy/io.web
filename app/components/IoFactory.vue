@@ -1,22 +1,26 @@
 <template>
   <LazyFilesToFilesContent
-      :directories="directories"
-      :command="command"
-      v-if="record?.returnType === 'file_path'"><slot></slot></LazyFilesToFilesContent>
+      :directoryPath="directoryPath"
+      :commandKey="commandKey"
+      v-if="record?.returnType === 'file_path'">
+    <slot></slot>
+  </LazyFilesToFilesContent>
   <LazyStringToStringContent
-      :directories="directories"
-      :command="command"
-      v-else-if="record?.returnType === 'string'"><slot></slot></LazyStringToStringContent>
+      :directoryPath="directoryPath"
+      :commandKey="commandKey"
+      v-else-if="record?.returnType === 'string'">
+    <slot></slot>
+  </LazyStringToStringContent>
 </template>
 <script setup lang="ts">
-import {commands} from '~~/content/io';
+import {commands} from '~~/razomy/db';
 
 const props = defineProps<{
-  directories: string[],
-  command: string,
+  directoryPath: string[],
+  commandKey: string,
 }>()
 
-const directories = props.directories;
-const command = props.command;
-const record = commands.find(i=>i.directoryPath.join('/') === directories.join('/') && i.commandKey === command)
+const directoryPath = props.directoryPath;
+const commandKey = props.commandKey;
+const record = commands.find(i => i.directoryPath.join('/') === directoryPath.join('/') && i.commandKey === commandKey)
 </script>
