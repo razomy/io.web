@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import DefaultIndex from '../../index.vue'
 import {isDirectoryExists} from '~~/razomy/db';
 
 definePageMeta({
@@ -8,10 +7,14 @@ definePageMeta({
     return isDirectoryExists([directory0]);
   }
 });
+
+const route = useRoute();
+const directory0 =  computed(() => String(route.params.directory0).toLowerCase());
+
 </script>
 
 <template>
-  <DefaultIndex>
+  <SearchContent :defaultSearch="directory0">
     <slot/>
-  </DefaultIndex>
+  </SearchContent>
 </template>

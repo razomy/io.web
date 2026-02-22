@@ -1,10 +1,11 @@
 import {type IoEnvironment} from '../environment';
 import type {IoDirectoryPath} from './directory';
+import type {TaskRequirement} from '../system/task';
 
 // function name = file    = command    = uppercase = png,web-viewer = post(action to complete)
 export type  IoCommandKey = string;
 
-export interface IoCommandTemplate {
+export interface IoCommandTemplate extends TaskRequirement {
   directoryPath: IoDirectoryPath;
   commandKey: IoCommandKey;
   environment: IoEnvironment;
@@ -21,16 +22,20 @@ export function templateToCommand(template: IoCommandTemplate): IoCommand {
     environment: template.environment,
     commandKey: template.commandKey,
     iconName: template.iconName,
-    url: [...template.directoryPath, template.commandKey].join(),
+    url: [...template.directoryPath, template.commandKey].join('/'),
     label: {
       fullText: template.commandKey,
       shortText: template.commandKey,
-    }
+    },
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+    capabilities: template.capabilities,
+    hardwareResourceMinimal: template.hardwareResourceMinimal
   }
 }
 
 export interface IoCommand extends IoCommandTemplate {
   url: string;
+  updateDatetime: string;
   directoryPath: IoDirectoryPath;
   commandKey: IoCommandKey;
   argumentTypes: IoType[];

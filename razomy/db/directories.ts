@@ -21,7 +21,7 @@ export function flatDirectories(directoriesTree: IoDirectory[]): IoDirectory[] {
   }).flat(1);
 }
 
-const directories = flatDirectories(directoriesTree);
+export const directories = flatDirectories(directoriesTree);
 
 export const isDirectoryExists = (directoryPath: IoDirectoryPath) => {
   return !!directories.find(i => i.directoryPath.join('/') === directoryPath.join('/'))
@@ -34,13 +34,13 @@ export function getDirectoryByFilter(value: string) {
 
   return directories.filter(item => {
     if (queries.length === 1) {
-      const sourceMatch = queries.find(f => item.key.includes(f));
+      const sourceMatch = queries.find(f => item.directoryPath.find(d => d.includes(f)));
       const targetMatch = queries.find(f => item.commands.find(i => i.commandKey.includes(f)));
       return sourceMatch || targetMatch;
     } else {
       const fs = queries.slice(0, queries.length - 1);
       const e = queries.at(-1)!;
-      const sourceMatch = fs.find(f => item.key.includes(f));
+      const sourceMatch = fs.find(f => item.directoryPath.find(d => d.includes(f)));
       const targetMatch = item.commands.find(i => i.commandKey.includes(e));
       return sourceMatch && targetMatch;
     }

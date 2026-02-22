@@ -14,9 +14,9 @@ definePageMeta({
 });
 
 const route = useRoute();
-const directory0 = (route.params.directory0 as any).toLowerCase();
-const directory1OrCommand0 = (route.params.directory1OrCommand0 as string).toLowerCase();
-const isDirectory = isDirectoryExists([directory0, directory1OrCommand0]);
+const directory0 =  computed(() => String(route.params.directory0).toLowerCase());
+const directory1OrCommand0 = computed(() => String(route.params.directory1OrCommand0).toLowerCase());
+const isDirectory = computed(() => isDirectoryExists([directory0.value, directory1OrCommand0.value]));
 </script>
 <template>
   <InputContent v-if="isDirectory" :directoryPath="[directory0, directory1OrCommand0]">

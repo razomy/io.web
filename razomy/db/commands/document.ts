@@ -7,5 +7,6 @@ export const documentDirectory = {
   iconName: 'mdi-file-document-multiple',
   label: lT('document'),
   commands: [],
+  updateDatetime: '2026-02-22T23:22:59.211Z',
   directories: []
 } as const satisfies IoDirectory;

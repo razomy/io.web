@@ -1,14 +1,17 @@
-// import { db } from '~/server/db/database.js';
+import {directories} from '~~/razomy/db/directories';
+import {commands} from '~~/razomy/db';
 
-import {c} from '~~/content/context';
-
-export default defineSitemapEventHandler(async (event) => {
-  const config = useRuntimeConfig(event)
-  const routes = c.routes;
-  const buildTime = new Date(Number(process.env.BUILD_TIME) * 1000).toISOString();
-  return routes.map(page => ({
-      loc: page,
+export default defineSitemapEventHandler(async () => {
+  return [
+    ...directories.map(page => ({
+      loc: page.directoryPath.join('/'),
       _i18nTransform: true,
-      lastmod: buildTime,
-  }));
+      lastmod: page.updateDatetime,
+    })),
+    ...commands.map(page => ({
+      loc: page.url,
+      _i18nTransform: true,
+      lastmod: page.updateDatetime,
+    })),
+  ]
 })

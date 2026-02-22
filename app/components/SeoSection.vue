@@ -1,9 +1,23 @@
 <template>
-  <v-container class="mt-16 mw-900 pb-16">
+  <v-container class="mw-900 pb-16 px-0">
+    <div class="d-flex justify-center gap-4 flex-wrap">
+      <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
+        <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
+        {{ t('io.web.file_to_file.directory.command.features.secure') }}
+      </div>
+      <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
+        <v-icon icon="mdi-flash" color="warning" class="mr-2" size="small"/>
+        {{ t('io.web.file_to_file.directory.command.features.fast') }}
+      </div>
+      <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
+        <v-icon icon="mdi-text-box-check" color="info" class="mr-2" size="small"/>
+        {{ t('io.web.file_to_file.directory.command.features.accurate') }}
+      </div>
+    </div>
 
     <!-- 1. SEO Title & Intro -->
     <!-- Используем H2, так как H1 уже есть в Hero секции -->
-    <div class="text-center mb-16">
+    <div class="text-center mt-16 mb-16">
       <h2 class="text-h4 font-weight-bold mb-4 text-darken-4">
         {{ content.h1 }}
       </h2>
@@ -14,9 +28,9 @@
 
     <!-- 2. How-to Steps (Process) -->
     <div class="mb-16 position-relative">
-      <div class="d-flex justify-center mb-8">
-        <v-chip color="primary" variant="tonal" class="font-weight-bold">
-          How to convert
+      <div class="d-flex justify-center mb-4">
+        <v-chip variant="text" class="font-weight-bold">
+          {{ t('io.web.file_to_file.how_to_convert') }}
         </v-chip>
       </div>
 
@@ -27,8 +41,8 @@
             <v-icon icon="mdi-chevron-right" size="40"/>
           </div>
 
-          <v-card class="h-100 py-8 px-6 text-center rounded-xl border-thin" elevation="0" color="surface">
-            <v-avatar color="primary" variant="tonal" size="64" class="mb-4">
+          <v-card border="0" class="h-100 py-8 px-6 text-center rounded-xl" elevation="0" color="surface">
+            <v-avatar color="accent" variant="tonal" size="64" class="mb-4">
               <v-icon :icon="step.icon" size="32"/>
             </v-avatar>
 
@@ -47,20 +61,19 @@
       <v-col cols="12" md="7" class="pr-md-8">
         <div class="d-flex align-center mb-6">
           <!--          <v-icon icon="mdi-help-circle-outline" color="primary" class="mr-2" size="large"/>-->
-          <h2 class="text-h5 font-weight-bold">Frequently Asked Questions</h2>
+          <h2 class="text-h5 font-weight-bold">{{ t('io.web.file_to_file.faq_title') }}</h2>
         </div>
 
-        <v-expansion-panels variant="accordion" class="border custom-panels rounded-xl overflow-hidden">
+        <v-expansion-panels variant="accordion" class="rounded-xl overflow-hidden">
           <v-expansion-panel
               v-for="(item, i) in content.faq"
               :key="i"
               elevation="0"
-              class="bg-surface-lighten"
           >
             <v-expansion-panel-title class="font-weight-medium">
               {{ item.q }}
             </v-expansion-panel-title>
-            <v-expansion-panel-text class="text-body-2 text-darken-2 pt-2">
+            <v-expansion-panel-text class="text-body-2 text-darken-2 pt-2 mx-2">
               {{ item.a }}
             </v-expansion-panel-text>
           </v-expansion-panel>
@@ -69,55 +82,55 @@
 
       <!-- Technical Specs Table -->
       <v-col cols="12" md="5">
-          <div class="mb-6 rounded-t-xl">
-            <h3 class="text-h5 font-weight-bold">Conversion Specs</h3>
-          </div>
+        <div class="mb-6 rounded-t-xl">
+          <h3 class="text-h5 font-weight-bold">{{ t('io.web.file_to_file.specs_title') }}</h3>
+        </div>
 
-        <div class="bg-surface border rounded-xl">
+        <div class="bg-surface rounded-xl">
           <v-table density="comfortable" class="px-2 w-full">
             <tbody>
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-file-import" size="small" class="mr-2"/>
-                Input
+                {{ t('io.web.file_to_file.input') }}
               </td>
               <td class="font-weight-medium text-uppercase text-right">{{ directory }}</td>
             </tr>
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-file-export" size="small" class="mr-2"/>
-                Output
+                {{ t('io.web.file_to_file.output') }}
               </td>
               <td class="font-weight-medium text-uppercase text-right">{{ command }}</td>
             </tr>
-<!--            <tr>-->
-<!--              <td class="text-medium-emphasis py-3">-->
-<!--                <v-icon icon="mdi-star" size="small" class="mr-2"/>-->
-<!--                User Rating-->
-<!--              </td>-->
-<!--              <td class="text-right">-->
-<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
-<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
-<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
-<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
-<!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
-<!--                <span class="text-caption ml-1 font-weight-bold">4.9</span>-->
-<!--              </td>-->
-<!--            </tr>-->
+            <!--            <tr>-->
+            <!--              <td class="text-medium-emphasis py-3">-->
+            <!--                <v-icon icon="mdi-star" size="small" class="mr-2"/>-->
+            <!--                User Rating-->
+            <!--              </td>-->
+            <!--              <td class="text-right">-->
+            <!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+            <!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+            <!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+            <!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+            <!--                <v-icon icon="mdi-star" size="small" color="primary"/>-->
+            <!--                <span class="text-caption ml-1 font-weight-bold">4.9</span>-->
+            <!--              </td>-->
+            <!--            </tr>-->
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-shield-check" size="small" class="mr-2"/>
-                Safety
+                {{ t('io.web.file_to_file.safety') }}
               </td>
-              <td class="text-right text-success font-weight-medium">HTTPS / Auto-delete</td>
+              <td class="text-right text-success font-weight-medium">{{ t('file_to_file.safety_value') }}</td>
             </tr>
             <tr class="no-border">
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-tag" size="small" class="mr-2"/>
-                Price
+                {{ t('io.web.file_to_file.price') }}
               </td>
               <td class="text-right">
-                <v-chip color="success" size="small" variant="tonal" class="font-weight-bold">Free</v-chip>
+                <v-chip color="success" size="small" variant="tonal" class="font-weight-bold">{{ t('io.web.file_to_file.free') }}</v-chip>
               </td>
             </tr>
             </tbody>
@@ -133,6 +146,9 @@ import {computed} from 'vue';
 import {useHead} from '#imports';
 
 const props = defineProps<{ content: any, directory: string, command: string }>()
+
+const {t} = useI18n();
+
 
 /**
  * ГЕНЕРАЦИЯ SCHEMA.ORG (JSON-LD)
@@ -219,10 +235,6 @@ useHead({
   font-size: 1.2rem;
 }
 
-.border-thin {
-  border: 1px solid rgba(var(--v-theme-on-surface), 0.08);
-}
-
 /* Стрелочка между карточками шагов */
 .arrow-connector {
   position: absolute;
@@ -232,11 +244,6 @@ useHead({
   z-index: 1;
 }
 
-/* Стилизация FAQ */
-.custom-panels :deep(.v-expansion-panel-title--active) {
-  color: rgb(var(--v-theme-primary));
-}
-
 .shadow-sm {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -244,4 +251,10 @@ useHead({
 .no-border td {
   border-bottom: none !important;
 }
+
+.v-expansion-panel:not(:first-child)::after {
+  margin-left:8px;
+  margin-right:8px;
+}
+
 </style>

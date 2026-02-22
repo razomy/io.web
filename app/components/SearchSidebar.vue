@@ -1,27 +1,26 @@
 <template>
   <v-navigation-drawer
-      v-model="model"
+      v-model="isOpen"
       :floating="isMobile"
       :permanent="!isMobile"
       app
       border="1"
-      class="bordere-1 bg-surface-light sidebar"
+      class="bordere-1 bg-background sidebar"
       width="180"
   >
     <!-- Search Input -->
-    <div class="pa-1 sticky-top z-index-10 border-b">
+    <div class="px-2 sticky-top z-index-10 pt-1 pb-1">
       <v-text-field
           v-model="search"
-          :label="t('nuxt.sidebar.search')"
-          :placeholder="t('nuxt.sidebar.search')"
-          class="bg-surface-light"
+          :label="t('io.web.sidebar.search')"
+          :placeholder="t('io.web.sidebar.search')"
           clearable
           prepend-inner-icon="mdi-magnify"
           rounded="lg"
           variant="plain"
       />
     </div>
-
+    <v-divider class="mx-2"></v-divider>
     <v-list
         density="compact"
         nav
@@ -31,10 +30,10 @@
       <!-- Optional: Show search count / No results -->
       <div v-if="search" class="text-caption text-medium-emphasis mb-2">
         <span v-if="searchResultsGroups.length === 0">
-          {{ t('nuxt.sidebar.no_results') }}
+          {{ t('io.web.sidebar.no_results') }}
         </span>
         <span v-else>
-          {{ t('nuxt.sidebar.results_for') }} "{{ search }}"
+          {{ t('io.web.sidebar.results_for') }} "{{ search }}"
         </span>
       </div>
 
@@ -82,7 +81,7 @@
                 v-bind="props"
             >
               <template v-slot:title>
-                <v-btn density="compact" class="pl-0 text-left" spaced="end"
+                <v-btn density="compact" class="pl-0 text-left w-100" variant="plain" spaced="end"
                        :to="localePath(`/${directory0.key}/${directory1.key}`)">
                   {{ directory1.key }}
                 </v-btn>
@@ -113,12 +112,12 @@
   </v-navigation-drawer>
 
   <v-fab
-      v-if="!model"
+      v-if="isMobile && !isOpen"
       app
-      class="z-index-10 border-1"
+      class="z-index-10"
       fixed
       icon="mdi-magnify"
-      @click="model = !model"
+      @click="isOpen = !isOpen"
   ></v-fab>
 </template>
 
@@ -128,27 +127,34 @@ import {useDisplay} from 'vuetify';
 import {directoriesTree} from '~~/razomy/db';
 import {type IoDirectory} from '~~/razomy/io/command';
 
-const props = defineProps<{ modelValue: boolean }>();
-const emit = defineEmits(['update:modelValue']);
-const model = computed({
-  get: () => props.modelValue,
-  set: (val) => emit('update:modelValue', val)
-});
+const {xs} = useDisplay();
+const isMobile = computed(() => xs.value);
+const isOpen = ref<boolean>(!isMobile.value);
 
-const {xs: isMobile} = useDisplay();
-const {t} = useI18n();
+function useUnlocalePath(): string {
+  const path = route.path;
+
+  for (const locale of availableLocales) {
+    // Check if the path starts with a valid locale prefix (e.g., '/fr')
+    const prefix = '/' + locale;
+    if (path.startsWith(prefix) && (path.length === prefix.length || path.startsWith(prefix + '/'))) {
+      // Return the path without the prefix
+      return path.slice(prefix.length) || '/';
+    }
+  }
+  // If no locale prefix is found, return the original path
+  return path;
+}
+
+const {t, availableLocales} = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 
-if (isMobile.value) {
-  model.value = false;
-}
-
-const currentCategories = ref<string[]>([]);
-watch(() => route.path, (path) => {
+const currentCategories = computed(() => {
+  const path = useUnlocalePath();
   // Grab standard path parameters (e.g., audio, mp3, wav)
-  currentCategories.value = path.split('/').filter(Boolean);
-}, {immediate: true, deep: true});
+  return path.split('/').filter(Boolean);
+});
 
 const search = ref('');
 
@@ -196,7 +202,10 @@ function filterDirectoryRecursive(dir: IoDirectory, queryParts: string[]): IoDir
 // Automatically processes the search and reduces the group visually
 const searchResultsGroups = computed(() => {
   if (!search.value) {
-    return directoriesTree; // Return unmodified full tree when there is no search query
+    if (!currentCategories.value.length) {
+      return directoriesTree;
+    }
+    return directoriesTree.filter(d => d.key === currentCategories.value[0]!); // Return unmodified full tree when there is no search query
   }
 
   // Split query cleanly (e.g., "mp3 to wav" => ["mp3", "wav"])

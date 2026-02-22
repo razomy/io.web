@@ -2,5 +2,5 @@
 import SearchContent from '~/components/SearchContent.vue';
 </script>
 <template>
-  <SearchContent></SearchContent>
+  <SearchContent :defaultSearch="''"></SearchContent>
 </template>

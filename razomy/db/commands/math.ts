@@ -12,6 +12,7 @@ export const mathDirectory = {
   'iconName': 'mdi-math-compass',
   directoryPath: ['music'],
   label: lT('math'),
+  updateDatetime: '2026-02-22T23:22:59.211Z',
   commands: mathCommands.map(templateToCommand),
   directories: []
 } as const satisfies IoDirectory;

@@ -11,9 +11,9 @@ definePageMeta({
 });
 
 const route = useRoute();
-const directory0 = (route.params.directory0 as any).toLowerCase();
-const directory1 = (route.params.directory1OrCommand0 as string).toLowerCase();
-const command1 = (route.params.command1 as string).toLowerCase();
+const directory0 = computed(() => String(route.params.directory0).toLowerCase());
+const directory1 = computed(() => String(route.params.directory1OrCommand0).toLowerCase());
+const command1 = computed(() => String(route.params.command1).toLowerCase());
 
 </script>
 

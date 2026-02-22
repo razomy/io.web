@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import DefaultIndex from '../index.vue'
+import {systemSet} from '~~/razomy/db';
 
 definePageMeta({
   validate: async (route) => {
     const system = ((route.params.system || '') as any).toLowerCase();
-    const systemSet = {
-      'node': true,
-      'curl': true,
-    }
     // Валидация типов
     return systemSet[system as keyof typeof systemSet] || false;
   }
@@ -15,7 +11,7 @@ definePageMeta({
 </script>
 
 <template>
-  <DefaultIndex>
+  <SearchContent :defaultSearch="''">
     <slot/>
-  </DefaultIndex>
+  </SearchContent>
 </template>

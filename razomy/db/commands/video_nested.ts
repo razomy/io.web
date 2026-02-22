@@ -14,5 +14,6 @@ export const videoDirectory = {
   directoryPath: ['video'],
   label: lT('video'),
   commands: [],
+  updateDatetime: '2026-02-22T23:22:59.211Z',
   directories: videoSubDirectories
 } as const satisfies IoDirectory;

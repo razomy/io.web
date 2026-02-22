@@ -1,27 +1,27 @@
 <template>
-  <div class="bg-surface-light min-vh-100">
+  <div class="bg-background min-vh-100">
     <!-- Hero Header -->
     <div class="bg-surface pt-8 pb-8 px-4 text-center">
       <v-container max-width="900">
 
-        <v-avatar size="80" variant="flat" class="mb-6 global-soft-card">
-          <v-icon :icon="icon" color="primary" size="40"/>
+        <v-avatar size="80" variant="flat" class="mb-6">
+          <v-icon :icon="icon" color="accent" size="40"/>
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('nuxt.file_to_file.directory.title', {directory: directory1.toUpperCase()}) }}
+          {{ t('io.web.file_to_file.directory.title', {directory: directory1.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('nuxt.file_to_file.directory.subtitle', {directory: directory1.toUpperCase()}) }}
+          {{ t('io.web.file_to_file.directory.subtitle', {directory: directory1.toUpperCase()}) }}
         </p>
       </v-container>
     </div>
 
     <!-- Список доступных конвертаций -->
     <v-container class="position-relative z-index-1" max-width="1000">
-      <v-card class="rounded-xl pa-6 global-soft-card">
+      <v-card class="rounded-xl pa-6" border="0">
         <h2 class="text-h5 font-weight-bold mb-6">
-          {{ t('nuxt.file_to_file.directory.available_conversions') }}
+          {{ t('io.web.file_to_file.directory.available_conversions') }}
         </h2>
 
         <v-row>
@@ -38,7 +38,7 @@
                 class="d-flex align-center pa-4 hover-card"
                 color="primary"
             >
-              <v-icon icon="mdi-file-swap-outline" start/>
+              <v-icon icon="mdi-file-swap-outline" color="accent" start/>
               <span class="font-weight-bold text-body-1 text-high-emphasis">
                   {{ directory1.toUpperCase() }}
                   <span class="text-medium-emphasis mx-1">to</span>

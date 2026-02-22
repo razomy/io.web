@@ -14,5 +14,6 @@ export const imageDirectory = {
   iconName: 'mdi-image-multiple',
   label: lT('image'),
   commands: [],
+  updateDatetime: '2026-02-22T23:22:59.211Z',
   directories: imageSubDirectories
 } as const satisfies IoDirectory;
