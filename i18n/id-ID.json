@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Donasi",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Mengonversi",
+      "scanning_folders": "Memindai folder",
+      "drop_title": "Seret & Lepas file di sini",
+      "support_nested_folders": "Kami mendukung folder bersarang",
+      "select_files": "Pilih File",
+      "select_folder": "Pilih Folder",
+      "selected_files": "File terpilih",
+      "total_size": "Ukuran total",
+      "clear_all": "Hapus semua",
+      "add_files": "Tambah file",
+      "convert": "Konversi"
+    },
+    "error": {
+      "404": {
+        "title": "Halaman Tidak Ditemukan",
+        "back_btn": "Kembali ke Beranda"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Perintah input"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Kode Sumber Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Cari...",
+        "results_for": "Hasil untuk",
+        "no_results": "Pasangan tidak ditemukan"
+      },
+      "text_to_text": {
+        "input_text": "Input Teks",
+        "placeholder_input": "Tempel teks Anda di sini...",
+        "result_title": "Hasil {command}",
+        "copy_to_clipboard": "Salin ke papan klip",
+        "placeholder_output": "Hasil akan muncul di sini...",
+        "convert_btn": "Konversi ke {command}",
+        "copied_success": "Disalin ke papan klip!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Tempel teks {directory}",
+              "paste_desc": "Tempel atau ketik konten {s} Anda ke area input.",
+              "process": "2. Proses Konversi",
+              "process_desc": "Alat kami secara otomatis mengonversi teks Anda ke format {t} dengan pengaturan terbaik.",
+              "copy": "3. Salin {command}",
+              "copy_desc": "Konversi selesai. Anda sekarang dapat menyalin hasilnya langsung ke papan klip Anda."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Kesalahan mengonversi file:{fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Temukan konverter yang Anda butuhkan di antara 1000+ fungsi",
+        "search_placeholder": "cth. pdf ke docx, jpg...",
+        "no_results": "Hasil tidak ditemukan",
+        "convert_from": "Konversi dari",
+        "to": "ke",
+        "close": "Tutup",
+        "convert_to": "Konversi ke",
+        "how_to_convert": "Cara mengonversi",
+        "seo_title": "Katalog Konverter File",
+        "faq_title": "Pertanyaan yang Sering Diajukan",
+        "specs_title": "Spesifikasi Konversi",
+        "input": "Input",
+        "output": "Output",
+        "safety": "Keamanan",
+        "safety_value": "HTTPS / Hapus otomatis",
+        "price": "Harga",
+        "free": "Gratis",
+        "seo_desc": "Daftar lengkap format yang didukung untuk konversi. PDF, DOCX, JPG, PNG, dan lainnya.",
+        "directory": {
+          "title": "Konversi file .{directory}",
+          "subtitle": "Pilih format perintah untuk file .{directory} Anda",
+          "available_conversions": "Konversi yang tersedia",
+          "command": {
+            "hero_sub": "Alat online cepat, gratis, dan aman untuk mengonversi {s} ke {t}. Tidak perlu registrasi atau instalasi perangkat lunak.",
+            "features": {
+              "fast": "Konversi Cepat",
+              "secure": "100% Aman",
+              "quality": "Kualitas Tinggi",
+              "accurate": "Akurasi Tinggi"
+            },
+            "seo": {
+              "title": "Konversi {directory} ke {command} Online | Alat Gratis & Aman",
+              "h1": "Konverter {directory} ke {command} Online Gratis",
+              "description": "Cara terbaik untuk mengonversi file {directory} ke format {command} secara online. Mudah digunakan, sepenuhnya gratis, dan konversi file yang aman.",
+              "intro_title": "Mengapa menggunakan alat {directory} ke {command} kami?",
+              "intro_text": "Konverter kami memungkinkan Anda memproses file dengan presisi tinggi. Kami menjaga tata letak dan kualitas asli sambil mengubah dokumen {directory} Anda menjadi {command}."
+            },
+            "steps": {
+              "upload": "1. Unggah file {directory}",
+              "upload_desc": "Seret dan lepas file {s} Anda ke area unggah. Ukuran file maksimum adalah 100MB.",
+              "quality": "2. Proses Konversi",
+              "quality_desc": "Alat kami secara otomatis mengonversi file Anda ke format {t} dengan pengaturan terbaik.",
+              "download": "3. Unduh {command}",
+              "download_desc": "Tunggu sejenak hingga proses selesai, lalu unduh file {tgt} baru Anda secara instan."
+            },
+            "faq": {
+              "q1": "Bagaimana cara mengonversi {s} ke {t}?",
+              "a1": "Cukup unggah file Anda, tunggu konversi, dan klik unduh. Ini berfungsi di Windows, Mac, Linux, dan perangkat seluler.",
+              "q2": "Apakah aman mengonversi {s} di Razomy?",
+              "a2": "Ya. Kami menggunakan enkripsi HTTPS. File Anda dihapus secara otomatis dari server kami setelah 1 jam untuk memastikan privasi.",
+              "q3": "Apakah konverter ini gratis?",
+              "a3": "Tentu saja. Anda dapat mengonversi file {s} ke {t} secara gratis tanpa membuat akun."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Beranda",
+        "image": "Gambar",
+        "audio": "Audio",
+        "video": "Video",
+        "document": "Dokumen",
+        "math": "Matematika",
+        "string": "Teks"
+      }
+    }
+  }
+}

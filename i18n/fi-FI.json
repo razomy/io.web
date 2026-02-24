@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Lahjoita",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Muunnetaan",
+      "scanning_folders": "Skannataan kansioita",
+      "drop_title": "Vedä ja pudota tiedosto tähän",
+      "support_nested_folders": "Tuemme sisäkkäisiä kansioita",
+      "select_files": "Valitse tiedosto",
+      "select_folder": "Valitse kansio",
+      "selected_files": "Valitut tiedostot",
+      "total_size": "Kokonaiskoko",
+      "clear_all": "Tyhjennä kaikki",
+      "add_files": "Lisää tiedostoja",
+      "convert": "Muunna"
+    },
+    "error": {
+      "404": {
+        "title": "Sivua ei löydy",
+        "back_btn": "Takaisin etusivulle"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Syötekomento"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Lähdekoodi Githubissa"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Etsi...",
+        "results_for": "Tulokset haulle",
+        "no_results": "Pareja ei löytynyt"
+      },
+      "text_to_text": {
+        "input_text": "Syöteteksti",
+        "placeholder_input": "Liitä tekstisi tähän...",
+        "result_title": "{command} -tulos",
+        "copy_to_clipboard": "Kopioi leikepöydälle",
+        "placeholder_output": "Tulos ilmestyy tähän...",
+        "convert_btn": "Muunna muotoon {command}",
+        "copied_success": "Kopioitu leikepöydälle!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Liitä {directory} -teksti",
+              "paste_desc": "Liitä tai kirjoita {s}-sisältösi syötekenttään.",
+              "process": "2. Muunnosprosessi",
+              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {t}-muotoon parhailla mahdollisilla asetuksilla.",
+              "copy": "3. Kopioi {command}",
+              "copy_desc": "Muunnos on valmis. Voit nyt kopioida tuloksen suoraan leikepöydällesi."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Virhe tiedoston muuntamisessa: {fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Löydä tarvitsemasi muunnin yli 1000 toiminnon joukosta",
+        "search_placeholder": "esim. pdf docx:ksi, jpg...",
+        "no_results": "Tuloksia ei löytynyt",
+        "convert_from": "Muunna muodosta",
+        "to": "muotoon",
+        "close": "Sulje",
+        "convert_to": "Muunna muotoon",
+        "how_to_convert": "Kuinka muuntaa",
+        "seo_title": "Tiedostomuunninluettelo",
+        "faq_title": "Usein kysytyt kysymykset",
+        "specs_title": "Muunnostiedot",
+        "input": "Syöte",
+        "output": "Tuloste",
+        "safety": "Turvallisuus",
+        "safety_value": "HTTPS / Automaattinen poisto",
+        "price": "Hinta",
+        "free": "Ilmainen",
+        "seo_desc": "Täydellinen luettelo tuetuista muunnosmuodoista. PDF, DOCX, JPG, PNG ja muut.",
+        "directory": {
+          "title": "Muunna .{directory}-tiedostoja",
+          "subtitle": "Valitse komentomuoto .{directory}-tiedostoillesi",
+          "available_conversions": "Saatavilla olevat muunnokset",
+          "command": {
+            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {s} muotoon {t}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
+            "features": {
+              "fast": "Nopea muunnos",
+              "secure": "100% Turvallinen",
+              "quality": "Korkea laatu",
+              "accurate": "Korkea tarkkuus"
+            },
+            "seo": {
+              "title": "Muunna {directory} muotoon {command} verkossa | Ilmainen & turvallinen työkalu",
+              "h1": "Ilmainen {directory}–{command}-verkkomuunnin",
+              "description": "Paras tapa muuntaa {directory}-tiedostot {command}-muotoon verkossa. Helppokäyttöinen, täysin ilmainen ja turvallinen tiedostomuunnos.",
+              "intro_title": "Miksi käyttää {directory}–{command}-työkaluamme?",
+              "intro_text": "Muuntimemme avulla voit käsitellä tiedostoja suurella tarkkuudella. Säilytämme alkuperäisen asettelun ja laadun muuntaessamme {directory}-asiakirjasi muotoon {command}."
+            },
+            "steps": {
+              "upload": "1. Lataa {directory}-tiedosto",
+              "upload_desc": "Vedä ja pudota {s}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt.",
+              "quality": "2. Muunnosprosessi",
+              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {t}-muotoon parhailla mahdollisilla asetuksilla.",
+              "download": "3. Lataa {command}",
+              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {tgt}-tiedostosi välittömästi."
+            },
+            "faq": {
+              "q1": "Kuinka muunnan tiedoston {s} muotoon {t}?",
+              "a1": "Lataa vain tiedostosi, odota muunnosta ja napsauta latauspainiketta. Se toimii Windowsissa, Macissa, Linuxissa ja mobiililaitteissa.",
+              "q2": "Onko {s}:n muuntaminen Razomyssa turvallista?",
+              "a2": "Kyllä. Käytämme HTTPS-salausta. Tiedostosi poistetaan palvelimiltamme automaattisesti 1 tunnin kuluttua yksityisyyden takaamiseksi.",
+              "q3": "Onko tämä muunnin ilmainen?",
+              "a3": "Ehdottomasti. Voit muuntaa {s}-tiedostoja muotoon {t} ilmaiseksi luomatta tiliä."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Koti",
+        "image": "Kuva",
+        "audio": "Ääni",
+        "video": "Video",
+        "document": "Asiakirja",
+        "math": "Matematiikka",
+        "string": "Teksti"
+      }
+    }
+  }
+}

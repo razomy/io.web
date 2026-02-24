@@ -143,7 +143,7 @@ export const i18n = {
           image: 'Image',
           audio: 'Audio',
           video: 'Video',
-          document: 'Docmnt',
+          document: 'Document',
           math: 'Math',
           string: 'Text'
         },

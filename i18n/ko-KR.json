@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "후원하기",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "변환 중",
+      "scanning_folders": "폴더 스캔 중",
+      "drop_title": "여기에 파일을 드래그 앤 드롭하세요",
+      "support_nested_folders": "중첩 폴더도 지원합니다",
+      "select_files": "파일 선택",
+      "select_folder": "폴더 선택",
+      "selected_files": "선택된 파일",
+      "total_size": "전체 크기",
+      "clear_all": "모두 지우기",
+      "add_files": "파일 추가",
+      "convert": "변환"
+    },
+    "error": {
+      "404": {
+        "title": "페이지를 찾을 수 없습니다",
+        "back_btn": "홈페이지로 돌아가기"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "입력 명령어"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "소스 코드 Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "검색...",
+        "results_for": "검색 결과:",
+        "no_results": "일치하는 항목 없음"
+      },
+      "text_to_text": {
+        "input_text": "입력 텍스트",
+        "placeholder_input": "여기에 텍스트를 붙여넣으세요...",
+        "result_title": "{command} 결과",
+        "copy_to_clipboard": "클립보드에 복사",
+        "placeholder_output": "결과가 여기에 표시됩니다...",
+        "convert_btn": "{command}(으)로 변환",
+        "copied_success": "클립보드에 복사되었습니다!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. {directory} 텍스트 붙여넣기",
+              "paste_desc": "입력 영역에 {s} 내용을 붙여넣거나 입력하세요.",
+              "process": "2. 변환 과정",
+              "process_desc": "도구가 텍스트를 {t} 형식으로 자동 변환하며 최적의 설정을 적용합니다.",
+              "copy": "3. {command} 복사",
+              "copy_desc": "변환이 완료되었습니다. 이제 결과를 클립보드로 바로 복사할 수 있습니다."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "파일 변환 오류: {fileName}",
+        "title": "Razomy 입출력(Io)",
+        "subtitle": "1000개 이상의 기능 중에서 필요한 변환기를 찾아보세요",
+        "search_placeholder": "예: pdf to docx, jpg...",
+        "no_results": "결과를 찾을 수 없습니다",
+        "convert_from": "변환 원본",
+        "to": "변환 대상",
+        "close": "닫기",
+        "convert_to": "다음으로 변환",
+        "how_to_convert": "변환 방법",
+        "seo_title": "파일 변환기 카탈로그",
+        "faq_title": "자주 묻는 질문 (FAQ)",
+        "specs_title": "변환 사양",
+        "input": "입력",
+        "output": "출력",
+        "safety": "보안",
+        "safety_value": "HTTPS / 자동 삭제",
+        "price": "가격",
+        "free": "무료",
+        "seo_desc": "변환 가능한 모든 형식 목록입니다. PDF, DOCX, JPG, PNG 등이 포함됩니다.",
+        "directory": {
+          "title": ".{directory} 파일 변환",
+          "subtitle": ".{directory} 파일에 대한 변환 형식을 선택하세요",
+          "available_conversions": "사용 가능한 변환",
+          "command": {
+            "hero_sub": "{s}을(를) {t}(으)로 변환하는 빠르고 안전한 무료 온라인 도구입니다. 가입이나 소프트웨어 설치가 필요하지 않습니다.",
+            "features": {
+              "fast": "빠른 변환",
+              "secure": "100% 보안",
+              "quality": "고품질",
+              "accurate": "높은 정확도"
+            },
+            "seo": {
+              "title": "{directory} - {command} 온라인 변환 | 무료 & 보안 도구",
+              "h1": "무료 온라인 {directory} {command} 변환기",
+              "description": "{directory} 파일을 {command} 형식으로 변환하는 가장 좋은 방법입니다. 사용하기 쉽고 완전히 무료이며 안전하게 파일을 변환합니다.",
+              "intro_title": "왜 저희 {directory} -> {command} 도구를 사용해야 할까요?",
+              "intro_text": "저희 변환기는 높은 정밀도로 파일을 처리합니다. {directory} 문서를 {command}(으)로 변환하는 동안 원본 레이아웃과 품질을 보존합니다."
+            },
+            "steps": {
+              "upload": "1. {directory} 파일 업로드",
+              "upload_desc": "{s} 파일을 업로드 영역으로 드래그 앤 드롭하세요. 최대 파일 크기는 100MB입니다.",
+              "quality": "2. 변환 과정",
+              "quality_desc": "도구가 파일을 {t} 형식으로 자동 변환하며 최적의 설정을 적용합니다.",
+              "download": "3. {command} 다운로드",
+              "download_desc": "과정이 완료될 때까지 잠시 기다린 후, 새로운 {tgt} 파일을 즉시 다운로드하세요."
+            },
+            "faq": {
+              "q1": "{s}을(를) {t}(으)로 어떻게 변환하나요?",
+              "a1": "파일을 업로드하고 변환을 기다린 다음 다운로드를 클릭하기만 하면 됩니다. Windows, Mac, Linux 및 모바일 기기에서 작동합니다.",
+              "q2": "Razomy에서 {s}을(를) 변환하는 것은 안전한가요?",
+              "a2": "네, HTTPS 암호화를 사용합니다. 개인정보 보호를 위해 파일은 1시간 후 서버에서 자동으로 삭제됩니다.",
+              "q3": "이 변환기는 무료인가요?",
+              "a3": "물론입니다. 계정을 만들지 않고도 {s} 파일을 {t}(으)로 무료로 변환할 수 있습니다."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "홈",
+        "image": "이미지",
+        "audio": "오디오",
+        "video": "비디오",
+        "document": "문서",
+        "math": "수학",
+        "string": "텍스트"
+      }
+    }
+  }
+}

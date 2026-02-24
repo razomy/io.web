@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Doner",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Konverterer",
+      "scanning_folders": "Skanner mapper",
+      "drop_title": "Dra og slipp fil her",
+      "support_nested_folders": "Vi støtter nøstede mapper",
+      "select_files": "Velg fil",
+      "select_folder": "Velg mappe",
+      "selected_files": "Valgte filer",
+      "total_size": "Total størrelse",
+      "clear_all": "Fjern alle",
+      "add_files": "Legg til filer",
+      "convert": "Konverter"
+    },
+    "error": {
+      "404": {
+        "title": "Siden ble ikke funnet",
+        "back_btn": "Tilbake til startsiden"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Input-kommando"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Kildekode GitHub"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Finn...",
+        "results_for": "Resultater for",
+        "no_results": "Ingen par funnet"
+      },
+      "text_to_text": {
+        "input_text": "Inndatatekst",
+        "placeholder_input": "Lim inn teksten din her...",
+        "result_title": "{command} resultat",
+        "copy_to_clipboard": "Kopier til utklippstavlen",
+        "placeholder_output": "Resultatet vises her...",
+        "convert_btn": "Konverter til {command}",
+        "copied_success": "Kopiert til utklippstavlen!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Lim inn {directory}-tekst",
+              "paste_desc": "Lim inn eller skriv inn {s}-innholdet i inndatafeltet.",
+              "process": "2. Konverteringsprosess",
+              "process_desc": "Verktøyet vårt konverterer teksten din automatisk til {t}-format med best mulige innstillinger.",
+              "copy": "3. Kopier {command}",
+              "copy_desc": "Konverteringen er fullført. Du kan nå kopiere resultatet direkte til utklippstavlen."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Feil ved konvertering av fil: {fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Finn konvertereren du trenger blant 1000+ funksjoner",
+        "search_placeholder": "f.eks. pdf til docx, jpg...",
+        "no_results": "Ingen resultater funnet",
+        "convert_from": "Konverter fra",
+        "to": "til",
+        "close": "Lukk",
+        "convert_to": "Konverter til",
+        "how_to_convert": "Hvordan konvertere",
+        "seo_title": "Filkonverteringskatalog",
+        "faq_title": "Ofte stilte spørsmål",
+        "specs_title": "Konverteringsspesifikasjoner",
+        "input": "Input",
+        "output": "Output",
+        "safety": "Sikkerhet",
+        "safety_value": "HTTPS / Automatisk sletting",
+        "price": "Pris",
+        "free": "Gratis",
+        "seo_desc": "Fullstendig liste over støttede formater for konvertering. PDF, DOCX, JPG, PNG og andre.",
+        "directory": {
+          "title": "Konverter .{directory}-filer",
+          "subtitle": "Velg kommandoformat for dine .{directory}-filer",
+          "available_conversions": "Tilgjengelige konverteringer",
+          "command": {
+            "hero_sub": "Raskt, gratis og sikkert nettverktøy for å konvertere {s} til {t}. Ingen registrering eller programvareinstallasjon kreves.",
+            "features": {
+              "fast": "Rask konvertering",
+              "secure": "100 % sikkert",
+              "quality": "Høy kvalitet",
+              "accurate": "Høy nøyaktighet"
+            },
+            "seo": {
+              "title": "Konverter {directory} til {command} på nett | Gratis og sikkert verktøy",
+              "h1": "Gratis {directory} til {command}-konverterer på nett",
+              "description": "Den beste måten å konvertere {directory}-filer til {command}-format på nett. Enkel å bruke, helt gratis og sikker filkonvertering.",
+              "intro_title": "Hvorfor bruke vårt verktøy for {directory} til {command}?",
+              "intro_text": "Konvertereren vår lar deg behandle filer med høy presisjon. Vi bevarer den opprinnelige layouten og kvaliteten mens vi omdanner {directory}-dokumentene dine til {command}."
+            },
+            "steps": {
+              "upload": "1. Last opp {directory}-fil",
+              "upload_desc": "Dra og slipp {s}-filen i opplastingsområdet. Maksimal filstørrelse er 100 MB.",
+              "quality": "2. Konverteringsprosess",
+              "quality_desc": "Verktøyet vårt konverterer filen din automatisk til {t}-format med best mulige innstillinger.",
+              "download": "3. Last ned {command}",
+              "download_desc": "Vent et øyeblikk til prosessen er ferdig, og last deretter ned den nye {tgt}-filen din umiddelbart."
+            },
+            "faq": {
+              "q1": "Hvordan konverterer jeg {s} til {t}?",
+              "a1": "Bare last opp filen din, vent på konverteringen, og klikk på last ned. Det fungerer på Windows, Mac, Linux og mobile enheter.",
+              "q2": "Er det trygt å konvertere {s} på Razomy?",
+              "a2": "Ja. Vi bruker HTTPS-kryptering. Filene dine slettes automatisk fra serverne våre etter 1 time for å sikre personvern.",
+              "q3": "Er denne konvertereren gratis?",
+              "a3": "Absolutt. Du kan konvertere {s}-filer til {t} gratis uten å opprette en konto."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Hjem",
+        "image": "Bilde",
+        "audio": "Lyd",
+        "video": "Video",
+        "document": "Dokument",
+        "math": "Matematikk",
+        "string": "Tekst"
+      }
+    }
+  }
+}

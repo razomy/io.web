@@ -9,12 +9,10 @@ export const stringCommands = ([
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'kebabCase'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'lowerCase'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'pascalCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'slugify'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'snakeCase'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'titleCase'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'upperCase'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'abriviation'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'repeat'), [aT]: [s], [rT]: s},
   {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'reverse'), [aT]: [s], [rT]: s},
 ] as const satisfies IoCommandTemplate[]);
 

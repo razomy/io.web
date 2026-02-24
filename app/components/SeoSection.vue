@@ -122,7 +122,7 @@
                 <v-icon icon="mdi-shield-check" size="small" class="mr-2"/>
                 {{ t('io.web.file_to_file.safety') }}
               </td>
-              <td class="text-right text-success font-weight-medium">{{ t('file_to_file.safety_value') }}</td>
+              <td class="text-right text-success font-weight-medium">{{ t('io.web.file_to_file.safety_value') }}</td>
             </tr>
             <tr class="no-border">
               <td class="text-medium-emphasis py-3">

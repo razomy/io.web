@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Donera",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Konverterar",
+      "scanning_folders": "Skannar mappar",
+      "drop_title": "Dra och släpp fil här",
+      "support_nested_folders": "Vi stödjer undermappar",
+      "select_files": "Välj fil",
+      "select_folder": "Välj mapp",
+      "selected_files": "Valda filer",
+      "total_size": "Total storlek",
+      "clear_all": "Rensa alla",
+      "add_files": "Lägg till filer",
+      "convert": "Konvertera"
+    },
+    "error": {
+      "404": {
+        "title": "Sidan hittades inte",
+        "back_btn": "Tillbaka till startsidan"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Indatakommando"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Källkod Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Sök...",
+        "results_for": "Resultat för",
+        "no_results": "Inga par hittades"
+      },
+      "text_to_text": {
+        "input_text": "Indatatext",
+        "placeholder_input": "Klistra in din text här...",
+        "result_title": "{command} Resultat",
+        "copy_to_clipboard": "Kopiera till urklipp",
+        "placeholder_output": "Resultatet visas här...",
+        "convert_btn": "Konvertera till {command}",
+        "copied_success": "Kopierat till urklipp!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Klistra in {directory}-text",
+              "paste_desc": "Klistra in eller skriv ditt {s}-innehåll i inmatningsfältet.",
+              "process": "2. Konverteringsprocess",
+              "process_desc": "Vårt verktyg konverterar automatiskt din text till {t}-format med bästa möjliga inställningar.",
+              "copy": "3. Kopiera {command}",
+              "copy_desc": "Konverteringen är klar. Du kan nu kopiera resultatet direkt till ditt urklipp."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Fel vid konvertering av fil:{fileName}",
+        "title": "Razomy Indata Utdata",
+        "subtitle": "Hitta konverteraren du behöver bland 1000+ funktioner",
+        "search_placeholder": "t.ex. pdf till docx, jpg...",
+        "no_results": "Inga resultat hittades",
+        "convert_from": "Konvertera från",
+        "to": "till",
+        "close": "Stäng",
+        "convert_to": "Konvertera till",
+        "how_to_convert": "Hur man konverterar",
+        "seo_title": "Katalog för filkonverterare",
+        "faq_title": "Vanliga frågor och svar",
+        "specs_title": "Konverteringsspecifikationer",
+        "input": "Indata",
+        "output": "Utdata",
+        "safety": "Säkerhet",
+        "safety_value": "HTTPS / Automatisk radering",
+        "price": "Pris",
+        "free": "Gratis",
+        "seo_desc": "Fullständig lista över format som stöds för konvertering. PDF, DOCX, JPG, PNG och andra.",
+        "directory": {
+          "title": "Konvertera .{directory}-filer",
+          "subtitle": "Välj kommandoformat för dina .{directory}-filer",
+          "available_conversions": "Tillgängliga konverteringar",
+          "command": {
+            "hero_sub": "Snabbt, gratis och säkert onlineverktyg för att konvertera {s} till {t}. Ingen registrering eller programinstallation krävs.",
+            "features": {
+              "fast": "Snabb konvertering",
+              "secure": "100 % säkert",
+              "quality": "Hög kvalitet",
+              "accurate": "Hög precision"
+            },
+            "seo": {
+              "title": "Konvertera {directory} till {command} online | Gratis & säkert verktyg",
+              "h1": "Gratis {directory} till {command}-konverterare online",
+              "description": "Det bästa sättet att konvertera {directory}-filer till {command}-format online. Lättanvänd, helt gratis och säker filkonvertering.",
+              "intro_title": "Varför använda vårt verktyg för {directory} till {command}?",
+              "intro_text": "Vår konverterare låter dig bearbeta filer med hög precision. Vi bevarar den ursprungliga layouten och kvaliteten medan dina {directory}-dokument omvandlas till {command}."
+            },
+            "steps": {
+              "upload": "1. Ladda upp {directory}-fil",
+              "upload_desc": "Dra och släpp din {s}-fil i uppladdningsområdet. Den maximala filstorleken är 100 MB.",
+              "quality": "2. Konverteringsprocess",
+              "quality_desc": "Vårt verktyg konverterar automatiskt din fil till {t}-format med bästa möjliga inställningar.",
+              "download": "3. Ladda ner {command}",
+              "download_desc": "Vänta en stund tills processen är klar, ladda sedan ner din nya {tgt}-fil direkt."
+            },
+            "faq": {
+              "q1": "Hur konverterar jag {s} till {t}?",
+              "a1": "Ladda bara upp din fil, vänta på konverteringen och klicka på ladda ner. Det fungerar på Windows, Mac, Linux och mobila enheter.",
+              "q2": "Är det säkert att konvertera {s} på Razomy?",
+              "a2": "Ja. Vi använder HTTPS-kryptering. Dina filer raderas automatiskt från våra servrar efter 1 timme för att säkerställa integritet.",
+              "q3": "Är denna konverterare gratis?",
+              "a3": "Absolut. Du kan konvertera {s}-filer till {t} gratis utan att skapa ett konto."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Hem",
+        "image": "Bild",
+        "audio": "Ljud",
+        "video": "Video",
+        "document": "Dokument",
+        "math": "Matematik",
+        "string": "Text"
+      }
+    }
+  }
+}

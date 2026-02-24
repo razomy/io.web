@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Faire un don",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Conversion en cours",
+      "scanning_folders": "Analyse des dossiers",
+      "drop_title": "Glissez-déposez le fichier ici",
+      "support_nested_folders": "Nous prenons en charge les sous-dossiers",
+      "select_files": "Sélectionner un fichier",
+      "select_folder": "Sélectionner un dossier",
+      "selected_files": "Fichiers sélectionnés",
+      "total_size": "Taille totale",
+      "clear_all": "Tout effacer",
+      "add_files": "Ajouter des fichiers",
+      "convert": "Convertir"
+    },
+    "error": {
+      "404": {
+        "title": "Page non trouvée",
+        "back_btn": "Retour à la page d'accueil"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Commande d'entrée"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Code source Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Rechercher...",
+        "results_for": "Résultats pour",
+        "no_results": "Aucune paire trouvée"
+      },
+      "text_to_text": {
+        "input_text": "Texte d'entrée",
+        "placeholder_input": "Collez votre texte ici...",
+        "result_title": "Résultat {command}",
+        "copy_to_clipboard": "Copier dans le presse-papiers",
+        "placeholder_output": "Le résultat apparaîtra ici...",
+        "convert_btn": "Convertir en {command}",
+        "copied_success": "Copié dans le presse-papiers !",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Collez le texte {directory}",
+              "paste_desc": "Collez ou saisissez votre contenu {s} dans la zone de saisie.",
+              "process": "2. Processus de conversion",
+              "process_desc": "Notre outil convertit automatiquement votre texte au format {t} avec les meilleurs paramètres possibles.",
+              "copy": "3. Copier {command}",
+              "copy_desc": "La conversion est terminée. Vous pouvez maintenant copier le résultat directement dans votre presse-papiers."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Erreur lors de la conversion du fichier : {fileName}",
+        "title": "Razomy Entrées/Sorties",
+        "subtitle": "Trouvez le convertisseur dont vous avez besoin parmi plus de 1000 fonctions",
+        "search_placeholder": "ex : pdf en docx, jpg...",
+        "no_results": "Aucun résultat trouvé",
+        "convert_from": "Convertir de",
+        "to": "vers",
+        "close": "Fermer",
+        "convert_to": "Convertir en",
+        "how_to_convert": "Comment convertir",
+        "seo_title": "Catalogue de convertisseurs de fichiers",
+        "faq_title": "Foire Aux Questions",
+        "specs_title": "Spécifications de conversion",
+        "input": "Entrée",
+        "output": "Sortie",
+        "safety": "Sécurité",
+        "safety_value": "HTTPS / Suppression auto",
+        "price": "Prix",
+        "free": "Gratuit",
+        "seo_desc": "Liste complète des formats pris en charge pour la conversion. PDF, DOCX, JPG, PNG et autres.",
+        "directory": {
+          "title": "Convertir des fichiers .{directory}",
+          "subtitle": "Sélectionnez le format de commande pour vos fichiers .{directory}",
+          "available_conversions": "Conversions disponibles",
+          "command": {
+            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {s} en {t}. Aucune inscription ni installation de logiciel requise.",
+            "features": {
+              "fast": "Conversion rapide",
+              "secure": "100% Sécurisé",
+              "quality": "Haute qualité",
+              "accurate": "Haute précision"
+            },
+            "seo": {
+              "title": "Convertir {directory} en {command} en ligne | Outil gratuit et sécurisé",
+              "h1": "Convertisseur {directory} en {command} en ligne gratuit",
+              "description": "Le meilleur moyen de convertir des fichiers {directory} au format {command} en ligne. Facile à utiliser, entièrement gratuit et sécurisé.",
+              "intro_title": "Pourquoi utiliser notre outil {directory} vers {command} ?",
+              "intro_text": "Notre convertisseur vous permet de traiter des fichiers avec une grande précision. Nous préservons la mise en page et la qualité d'origine tout en transformant vos documents {directory} en {command}."
+            },
+            "steps": {
+              "upload": "1. Importer le fichier {directory}",
+              "upload_desc": "Glissez-déposez votre fichier {s} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo.",
+              "quality": "2. Processus de conversion",
+              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {t} avec les meilleurs paramètres possibles.",
+              "download": "3. Télécharger {command}",
+              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez votre nouveau fichier {tgt} instantanément."
+            },
+            "faq": {
+              "q1": "Comment convertir {s} en {t} ?",
+              "a1": "Il suffit d'importer votre fichier, d'attendre la conversion et de cliquer sur télécharger. Cela fonctionne sur Windows, Mac, Linux et les appareils mobiles.",
+              "q2": "Est-il sûr de convertir {s} sur Razomy ?",
+              "a2": "Oui. Nous utilisons le chiffrement HTTPS. Vos fichiers sont automatiquement supprimés de nos serveurs après 1 heure pour garantir la confidentialité.",
+              "q3": "Ce convertisseur est-il gratuit ?",
+              "a3": "Absolument. Vous pouvez convertir des fichiers {s} en {t} gratuitement sans créer de compte."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Accueil",
+        "image": "Image",
+        "audio": "Audio",
+        "video": "Vidéo",
+        "document": "Document",
+        "math": "Maths",
+        "string": "Texte"
+      }
+    }
+  }
+}

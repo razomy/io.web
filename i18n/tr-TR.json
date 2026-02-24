@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Bağış Yap",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Dönüştürülüyor",
+      "scanning_folders": "Klasörler taranıyor",
+      "drop_title": "Dosyayı buraya sürükleyip bırakın",
+      "support_nested_folders": "İç içe klasörleri destekliyoruz",
+      "select_files": "Dosya Seç",
+      "select_folder": "Klasör Seç",
+      "selected_files": "Seçilen dosyalar",
+      "total_size": "Toplam boyut",
+      "clear_all": "Tümünü temizle",
+      "add_files": "Dosya ekle",
+      "convert": "Dönüştür"
+    },
+    "error": {
+      "404": {
+        "title": "Sayfa Bulunamadı",
+        "back_btn": "Ana Sayfaya Dön"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Girdi komutu"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Github Kaynak Kodu"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Bul...",
+        "results_for": "Sonuçlar:",
+        "no_results": "Eşleşme bulunamadı"
+      },
+      "text_to_text": {
+        "input_text": "Girdi Metni",
+        "placeholder_input": "Metninizi buraya yapıştırın...",
+        "result_title": "{command} Sonucu",
+        "copy_to_clipboard": "Panoya kopyala",
+        "placeholder_output": "Sonuç burada görünecek...",
+        "convert_btn": "{command} formatına dönüştür",
+        "copied_success": "Panoya kopyalandı!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. {directory} metnini yapıştırın",
+              "paste_desc": "{s} içeriğinizi girdi alanına yapıştırın veya yazın.",
+              "process": "2. Dönüştürme İşlemi",
+              "process_desc": "Aracımız metninizi otomatik olarak en iyi ayarlarla {t} formatına dönüştürür.",
+              "copy": "3. {command} sonucunu kopyala",
+              "copy_desc": "Dönüştürme tamamlandı. Sonucu doğrudan panonuza kopyalayabilirsiniz."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Dosya dönüştürme hatası: {fileName}",
+        "title": "Razomy Girdi Çıktı",
+        "subtitle": "1000'den fazla fonksiyon arasından ihtiyacınız olan dönüştürücüyü bulun",
+        "search_placeholder": "örn. pdf to docx, jpg...",
+        "no_results": "Sonuç bulunamadı",
+        "convert_from": "Şundan dönüştür",
+        "to": "şuna",
+        "close": "Kapat",
+        "convert_to": "Şuna dönüştür",
+        "how_to_convert": "Nasıl dönüştürülür",
+        "seo_title": "Dosya Dönüştürücü Kataloğu",
+        "faq_title": "Sıkça Sorulan Sorular",
+        "specs_title": "Dönüştürme Özellikleri",
+        "input": "Girdi",
+        "output": "Çıktı",
+        "safety": "Güvenlik",
+        "safety_value": "HTTPS / Otomatik silme",
+        "price": "Fiyat",
+        "free": "Ücretsiz",
+        "seo_desc": "Dönüştürme için desteklenen formatların tam listesi. PDF, DOCX, JPG, PNG ve diğerleri.",
+        "directory": {
+          "title": ".{directory} dosyalarını dönüştür",
+          "subtitle": ".{directory} dosyalarınız için komut formatını seçin",
+          "available_conversions": "Mevcut dönüşümler",
+          "command": {
+            "hero_sub": "{s} dosyasını {t} formatına dönüştürmek için hızlı, ücretsiz ve güvenli çevrimiçi araç. Kayıt veya yazılım kurulumu gerekmez.",
+            "features": {
+              "fast": "Hızlı Dönüştürme",
+              "secure": "%100 Güvenli",
+              "quality": "Yüksek Kalite",
+              "accurate": "Yüksek Doğruluk"
+            },
+            "seo": {
+              "title": "Çevrimiçi {directory} - {command} Dönüştürücü | Ücretsiz & Güvenli Araç",
+              "h1": "Ücretsiz Çevrimiçi {directory} - {command} Dönüştürücü",
+              "description": "{directory} dosyalarını çevrimiçi olarak {command} formatına dönüştürmenin en iyi yolu. Kullanımı kolay, tamamen ücretsiz ve güvenli dosya dönüştürme.",
+              "intro_title": "Neden {directory} - {command} aracımızı kullanmalısınız?",
+              "intro_text": "Dönüştürücümüz dosyaları yüksek hassasiyetle işlemenizi sağlar. {directory} belgelerinizi {command} formatına dönüştürürken orijinal düzeni ve kaliteyi koruruz."
+            },
+            "steps": {
+              "upload": "1. {directory} dosyasını yükleyin",
+              "upload_desc": "{s} dosyanızı yükleme alanına sürükleyip bırakın. Maksimum dosya boyutu 100MB'dır.",
+              "quality": "2. Dönüştürme İşlemi",
+              "quality_desc": "Aracımız dosyanızı otomatik olarak en iyi ayarlarla {t} formatına dönüştürür.",
+              "download": "3. {command} dosyasını indirin",
+              "download_desc": "İşlemin bitmesi için biraz bekleyin, ardından yeni {tgt} dosyanızı anında indirin."
+            },
+            "faq": {
+              "q1": "{s} dosyasını {t} formatına nasıl dönüştürürüm?",
+              "a1": "Dosyanızı yükleyin, dönüştürmeyi bekleyin ve indire tıklayın. Windows, Mac, Linux ve mobil cihazlarda çalışır.",
+              "q2": "Razomy üzerinde {s} dönüştürmek güvenli mi?",
+              "a2": "Evet. HTTPS şifrelemesi kullanıyoruz. Dosyalarınız gizliliği sağlamak için 1 saat sonra sunucularımızdan otomatik olarak silinir.",
+              "q3": "Bu dönüştürücü ücretsiz mi?",
+              "a3": "Kesinlikle. {s} dosyalarını hesap oluşturmadan ücretsiz olarak {t} formatına dönüştürebilirsiniz."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Ana Sayfa",
+        "image": "Resim",
+        "audio": "Ses",
+        "video": "Video",
+        "document": "Belge",
+        "math": "Matematik",
+        "string": "Metin"
+      }
+    }
+  }
+}

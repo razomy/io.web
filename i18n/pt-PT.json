@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Doar",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "A converter",
+      "scanning_folders": "A analisar pastas",
+      "drop_title": "Arraste e largue o ficheiro aqui",
+      "support_nested_folders": "Suportamos pastas aninhadas",
+      "select_files": "Selecionar Ficheiro",
+      "select_folder": "Selecionar Pasta",
+      "selected_files": "Ficheiros selecionados",
+      "total_size": "Tamanho total",
+      "clear_all": "Limpar tudo",
+      "add_files": "Adicionar ficheiros",
+      "convert": "Converter"
+    },
+    "error": {
+      "404": {
+        "title": "Página não encontrada",
+        "back_btn": "Voltar à página inicial"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Comando de entrada"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Código Fonte Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Procurar...",
+        "results_for": "Resultados para",
+        "no_results": "Nenhum par encontrado"
+      },
+      "text_to_text": {
+        "input_text": "Texto de Entrada",
+        "placeholder_input": "Cole o seu texto aqui...",
+        "result_title": "Resultado de {command}",
+        "copy_to_clipboard": "Copiar para a área de transferência",
+        "placeholder_output": "O resultado aparecerá aqui...",
+        "convert_btn": "Converter para {command}",
+        "copied_success": "Copiado para a área de transferência!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Cole o texto {directory}",
+              "paste_desc": "Cole ou escreva o seu conteúdo {s} na área de entrada.",
+              "process": "2. Processo de Conversão",
+              "process_desc": "A nossa ferramenta converte automaticamente o seu texto para o formato {t} com as melhores definições possíveis.",
+              "copy": "3. Copiar {command}",
+              "copy_desc": "A conversão está concluída. Pode agora copiar o resultado diretamente para a sua área de transferência."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Erro ao converter o ficheiro:{fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Encontre o conversor de que precisa entre mais de 1000 funções",
+        "search_placeholder": "ex: pdf para docx, jpg...",
+        "no_results": "Sem resultados encontrados",
+        "convert_from": "Converter de",
+        "to": "para",
+        "close": "Fechar",
+        "convert_to": "Converter para",
+        "how_to_convert": "Como converter",
+        "seo_title": "Catálogo de Conversores de Ficheiros",
+        "faq_title": "Perguntas Frequentes",
+        "specs_title": "Especificações de Conversão",
+        "input": "Entrada",
+        "output": "Saída",
+        "safety": "Segurança",
+        "safety_value": "HTTPS / Eliminação automática",
+        "price": "Preço",
+        "free": "Grátis",
+        "seo_desc": "Lista completa de formatos suportados para conversão. PDF, DOCX, JPG, PNG e outros.",
+        "directory": {
+          "title": "Converter ficheiros .{directory}",
+          "subtitle": "Selecione o formato de comando para os seus ficheiros .{directory}",
+          "available_conversions": "Conversões disponíveis",
+          "command": {
+            "hero_sub": "Ferramenta online rápida, gratuita e segura para converter {s} em {t}. Sem registo ou instalação de software.",
+            "features": {
+              "fast": "Conversão Rápida",
+              "secure": "100% Seguro",
+              "quality": "Alta Qualidade",
+              "accurate": "Alta Precisão"
+            },
+            "seo": {
+              "title": "Converter {directory} em {command} Online | Ferramenta Gratuita e Segura",
+              "h1": "Conversor Online Gratuito de {directory} para {command}",
+              "description": "A melhor forma de converter ficheiros {directory} para o formato {command} online. Conversão de ficheiros fácil de usar, totalmente gratuita e segura.",
+              "intro_title": "Porquê usar a nossa ferramenta de {directory} para {command}?",
+              "intro_text": "O nosso conversor permite processar ficheiros com alta precisão. Preservamos o esquema e a qualidade originais ao transformar os seus documentos {directory} em {command}."
+            },
+            "steps": {
+              "upload": "1. Carregar ficheiro {directory}",
+              "upload_desc": "Arraste e largue o seu ficheiro {s} na área de carregamento. O tamanho máximo do ficheiro é 100MB.",
+              "quality": "2. Processo de Conversão",
+              "quality_desc": "A nossa ferramenta converte automaticamente o seu ficheiro para o formato {t} com as melhores definições possíveis.",
+              "download": "3. Descarregar {command}",
+              "download_desc": "Aguarde um momento para o processo terminar, depois descarregue o seu novo ficheiro {tgt} instantaneamente."
+            },
+            "faq": {
+              "q1": "Como converto {s} para {t}?",
+              "a1": "Basta carregar o seu ficheiro, aguardar pela conversão e clicar em descarregar. Funciona em Windows, Mac, Linux e dispositivos móveis.",
+              "q2": "É seguro converter {s} na Razomy?",
+              "a2": "Sim. Utilizamos encriptação HTTPS. Os seus ficheiros são automaticamente eliminados dos nossos servidores após 1 hora para garantir a privacidade.",
+              "q3": "Este conversor é gratuito?",
+              "a3": "Absolutamente. Pode converter ficheiros {s} para {t} gratuitamente sem criar uma conta."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Início",
+        "image": "Imagem",
+        "audio": "Áudio",
+        "video": "Vídeo",
+        "document": "Documento",
+        "math": "Matemática",
+        "string": "Texto"
+      }
+    }
+  }
+}

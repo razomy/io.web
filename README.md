@@ -50,7 +50,7 @@ We use **Nuxt** for development.
 
 ### 🤝 Contribution Checklist
 
-We follow strict architectural rules to keep the system reliable.
+We follow systematic architectural rules to keep the system reliable.
 
 **Structure**
 
@@ -107,11 +107,11 @@ Deployment is handled via **Docker**.
 
 1. **Build the image**
    ```shell
-   docker build -t razomy-io .
+   docker build -t razomy-io-web .
    ```
 
 2. **Run the container**
    ```shell
-   docker run -p 3000:3000 razomy-io
+   docker run -p 3000:3000 razomy-io-web
    ```
 

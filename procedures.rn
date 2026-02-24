@@ -1,0 +1,18 @@
+release:
+ui layout
+mobile
+i18n
+pages
+ /
+ /en
+ /en/string
+ /en/string/case
+ /en/string/case/camel-case
+file to file
+string to string
+dark theme
+sitemap
+typecheck
+build
+docker build
+docker run

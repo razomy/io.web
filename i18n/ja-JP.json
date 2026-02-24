@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "寄付",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "変換中",
+      "scanning_folders": "フォルダをスキャン中",
+      "drop_title": "ここにファイルをドラッグ＆ドロップ",
+      "support_nested_folders": "ネストされたフォルダにも対応",
+      "select_files": "ファイルを選択",
+      "select_folder": "フォルダを選択",
+      "selected_files": "選択されたファイル",
+      "total_size": "合計サイズ",
+      "clear_all": "すべてクリア",
+      "add_files": "ファイルを追加",
+      "convert": "変換"
+    },
+    "error": {
+      "404": {
+        "title": "ページが見つかりません",
+        "back_btn": "ホームに戻る"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "入力コマンド"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "GitHubソースコード"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "検索...",
+        "results_for": "検索結果:",
+        "no_results": "ペアが見つかりません"
+      },
+      "text_to_text": {
+        "input_text": "入力テキスト",
+        "placeholder_input": "ここにテキストを貼り付けてください...",
+        "result_title": "{command} の結果",
+        "copy_to_clipboard": "クリップボードにコピー",
+        "placeholder_output": "ここに結果が表示されます...",
+        "convert_btn": "{command} に変換",
+        "copied_success": "クリップボードにコピーしました！",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. {directory} テキストを貼り付け",
+              "paste_desc": "入力エリアに {s} の内容を貼り付けるか入力してください。",
+              "process": "2. 変換プロセス",
+              "process_desc": "ツールが自動的に最適な設定でテキストを {t} 形式に変換します。",
+              "copy": "3. {command} をコピー",
+              "copy_desc": "変換が完了しました。結果をクリップボードに直接コピーできます。"
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "ファイル変換エラー: {fileName}",
+        "title": "Razomy 入出力",
+        "subtitle": "1000以上の機能から必要なコンバーターを見つけましょう",
+        "search_placeholder": "例: pdf to docx, jpg...",
+        "no_results": "結果が見つかりません",
+        "convert_from": "変換元",
+        "to": "へ",
+        "close": "閉じる",
+        "convert_to": "変換先",
+        "how_to_convert": "変換方法",
+        "seo_title": "ファイル変換カタログ",
+        "faq_title": "よくある質問",
+        "specs_title": "変換仕様",
+        "input": "入力",
+        "output": "出力",
+        "safety": "安全性",
+        "safety_value": "HTTPS / 自動削除",
+        "price": "価格",
+        "free": "無料",
+        "seo_desc": "変換対応フォーマットの完全リスト。PDF、DOCX、JPG、PNGなど。",
+        "directory": {
+          "title": ".{directory} ファイルを変換",
+          "subtitle": ".{directory} ファイルの変換形式を選択してください",
+          "available_conversions": "利用可能な変換",
+          "command": {
+            "hero_sub": "{s} を {t} に変換する、高速・無料・安全なオンラインツールです。登録やソフトウェアのインストールは不要です。",
+            "features": {
+              "fast": "高速変換",
+              "secure": "100%安全",
+              "quality": "高品質",
+              "accurate": "高精度"
+            },
+            "seo": {
+              "title": "{directory} を {command} にオンライン変換 | 無料＆安全なツール",
+              "h1": "無料オンライン {directory} から {command} へのコンバーター",
+              "description": "{directory} ファイルを {command} 形式にオンラインで変換する最良の方法。使いやすく、完全無料、安全なファイル変換です。",
+              "intro_title": "なぜ当サイトの {directory} から {command} への変換ツールを使うのか？",
+              "intro_text": "当サイトのコンバーターは、ファイルを高精度で処理します。{directory} ドキュメントの元のレイアウトと品質を維持しながら {command} に変換します。"
+            },
+            "steps": {
+              "upload": "1. {directory} ファイルをアップロード",
+              "upload_desc": "{s} ファイルをアップロードエリアにドラッグ＆ドロップしてください。最大ファイルサイズは100MBです。",
+              "quality": "2. 変換プロセス",
+              "quality_desc": "ツールが自動的に最適な設定でファイルを {t} 形式に変換します。",
+              "download": "3. {command} をダウンロード",
+              "download_desc": "処理が完了するまで少しお待ちください。その後、新しい {tgt} ファイルをすぐにダウンロードできます。"
+            },
+            "faq": {
+              "q1": "{s} を {t} に変換するには？",
+              "a1": "ファイルをアップロードし、変換を待ってからダウンロードをクリックするだけです。Windows、Mac、Linux、モバイルデバイスで動作します。",
+              "q2": "Razomyで {s} を変換するのは安全ですか？",
+              "a2": "はい。HTTPS暗号化を使用しています。プライバシー保護のため、ファイルは1時間後にサーバーから自動的に削除されます。",
+              "q3": "このコンバーターは無料ですか？",
+              "a3": "もちろんです。アカウントを作成することなく、無料で {s} ファイルを {t} に変換できます。"
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "ホーム",
+        "image": "画像",
+        "audio": "音声",
+        "video": "動画",
+        "document": "ドキュメント",
+        "math": "数学",
+        "string": "テキスト"
+      }
+    }
+  }
+}

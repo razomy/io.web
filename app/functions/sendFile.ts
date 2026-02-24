@@ -20,7 +20,7 @@ export const sendFile = async (
     formData.append('to', commandKey);  // ваш формат, например, webp
 
 
-    const {data, error} = await useFetch(`/api/${directoryPath[0]}/${commandKey}`, {
+    const {data, error} = await useFetch(`/api/${directoryPath[0]}`, {
       method: 'POST',
       body: formData,
       responseType: 'blob' // Ждем файл

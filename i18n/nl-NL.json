@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Doneren",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Converteren",
+      "scanning_folders": "Mappen scannen",
+      "drop_title": "Sleep bestand hierheen",
+      "support_nested_folders": "We ondersteunen geneste mappen",
+      "select_files": "Bestand selecteren",
+      "select_folder": "Map selecteren",
+      "selected_files": "Geselecteerde bestanden",
+      "total_size": "Totale grootte",
+      "clear_all": "Alles wissen",
+      "add_files": "Bestanden toevoegen",
+      "convert": "Converteren"
+    },
+    "error": {
+      "404": {
+        "title": "Pagina niet gevonden",
+        "back_btn": "Terug naar startpagina"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Invoeropdracht"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Broncode Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Zoeken...",
+        "results_for": "Resultaten voor",
+        "no_results": "Geen paren gevonden"
+      },
+      "text_to_text": {
+        "input_text": "Invoertekst",
+        "placeholder_input": "Plak uw tekst hier...",
+        "result_title": "{command} Resultaat",
+        "copy_to_clipboard": "Kopiëren naar klembord",
+        "placeholder_output": "Resultaat verschijnt hier...",
+        "convert_btn": "Converteren naar {command}",
+        "copied_success": "Gekopieerd naar klembord!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Plak {directory} tekst",
+              "paste_desc": "Plak of typ uw {s}-inhoud in het invoerveld.",
+              "process": "2. Conversieproces",
+              "process_desc": "Onze tool converteert uw tekst automatisch naar {t}-formaat met de best mogelijke instellingen.",
+              "copy": "3. Kopieer {command}",
+              "copy_desc": "De conversie is voltooid. U kunt het resultaat nu direct naar uw klembord kopiëren."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Fout bij converteren bestand:{fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Vind de converter die u nodig heeft uit 1000+ functies",
+        "search_placeholder": "bijv. pdf naar docx, jpg...",
+        "no_results": "Geen resultaten gevonden",
+        "convert_from": "Converteren van",
+        "to": "naar",
+        "close": "Sluiten",
+        "convert_to": "Converteren naar",
+        "how_to_convert": "Hoe te converteren",
+        "seo_title": "Catalogus bestandsconversie",
+        "faq_title": "Veelgestelde vragen",
+        "specs_title": "Conversiespecificaties",
+        "input": "Invoer",
+        "output": "Uitvoer",
+        "safety": "Veiligheid",
+        "safety_value": "HTTPS / Auto-verwijderen",
+        "price": "Prijs",
+        "free": "Gratis",
+        "seo_desc": "Volledige lijst met ondersteunde formaten voor conversie. PDF, DOCX, JPG, PNG en anderen.",
+        "directory": {
+          "title": "Converteer .{directory}-bestanden",
+          "subtitle": "Selecteer opdrachtformaat voor uw .{directory}-bestanden",
+          "available_conversions": "Beschikbare conversies",
+          "command": {
+            "hero_sub": "Snelle, gratis en veilige online tool om {s} naar {t} te converteren. Geen registratie of software-installatie vereist.",
+            "features": {
+              "fast": "Snelle conversie",
+              "secure": "100% Veilig",
+              "quality": "Hoge kwaliteit",
+              "accurate": "Hoge nauwkeurigheid"
+            },
+            "seo": {
+              "title": "Converteer {directory} naar {command} Online | Gratis & Veilig",
+              "h1": "Gratis online {directory} naar {command} converter",
+              "description": "De beste manier om {directory}-bestanden online naar {command}-formaat te converteren. Eenvoudig in gebruik, volledig gratis en veilige bestandsconversie.",
+              "intro_title": "Waarom onze {directory} naar {command} tool gebruiken?",
+              "intro_text": "Onze converter stelt u in staat bestanden met hoge precisie te verwerken. We behouden de originele lay-out en kwaliteit tijdens het omzetten van uw {directory}-documenten naar {command}."
+            },
+            "steps": {
+              "upload": "1. Upload {directory}-bestand",
+              "upload_desc": "Sleep uw {s}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB.",
+              "quality": "2. Conversieproces",
+              "quality_desc": "Onze tool converteert uw bestand automatisch naar {t}-formaat met de best mogelijke instellingen.",
+              "download": "3. Download {command}",
+              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {tgt}-bestand."
+            },
+            "faq": {
+              "q1": "Hoe converteer ik {s} naar {t}?",
+              "a1": "Upload eenvoudig uw bestand, wacht op de conversie en klik op downloaden. Het werkt op Windows, Mac, Linux en mobiele apparaten.",
+              "q2": "Is het veilig om {s} te converteren op Razomy?",
+              "a2": "Ja. We gebruiken HTTPS-versleuteling. Uw bestanden worden na 1 uur automatisch van onze servers verwijderd om uw privacy te waarborgen.",
+              "q3": "Is deze converter gratis?",
+              "a3": "Absoluut. U kunt gratis {s}-bestanden naar {t} converteren zonder een account aan te maken."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Home",
+        "image": "Afbeelding",
+        "audio": "Audio",
+        "video": "Video",
+        "document": "Document",
+        "math": "Wiskunde",
+        "string": "Tekst"
+      }
+    }
+  }
+}

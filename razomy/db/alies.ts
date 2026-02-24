@@ -23,7 +23,7 @@ export const hRA = {
   } as HardwareResourceMinimal
 };
 export const ek =<T extends keyof typeof registry> (p: T, k: string) => ({
-  environment: eB(p, 'camelCase'),
+  environment: eB(p, k),
   commandKey: kebabCase(k)
 });
 

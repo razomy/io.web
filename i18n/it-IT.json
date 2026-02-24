@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "Dona",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "Conversione in corso",
+      "scanning_folders": "Scansione cartelle",
+      "drop_title": "Trascina e rilascia il file qui",
+      "support_nested_folders": "Supportiamo le cartelle nidificate",
+      "select_files": "Seleziona file",
+      "select_folder": "Seleziona cartella",
+      "selected_files": "File selezionati",
+      "total_size": "Dimensione totale",
+      "clear_all": "Cancella tutto",
+      "add_files": "Aggiungi file",
+      "convert": "Converti"
+    },
+    "error": {
+      "404": {
+        "title": "Pagina non trovata",
+        "back_btn": "Torna alla Home Page"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "Comando di input"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "Codice sorgente Github"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "Cerca...",
+        "results_for": "Risultati per",
+        "no_results": "Nessuna coppia trovata"
+      },
+      "text_to_text": {
+        "input_text": "Testo di input",
+        "placeholder_input": "Incolla il tuo testo qui...",
+        "result_title": "Risultato {command}",
+        "copy_to_clipboard": "Copia negli appunti",
+        "placeholder_output": "Il risultato apparirà qui...",
+        "convert_btn": "Converti in {command}",
+        "copied_success": "Copiato negli appunti!",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. Incolla il testo {directory}",
+              "paste_desc": "Incolla o digita il contenuto {s} nell'area di input.",
+              "process": "2. Processo di conversione",
+              "process_desc": "Il nostro strumento converte automaticamente il testo nel formato {t} con le migliori impostazioni possibili.",
+              "copy": "3. Copia {command}",
+              "copy_desc": "La conversione è completa. Ora puoi copiare il risultato direttamente nei tuoi appunti."
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "Errore durante la conversione del file:{fileName}",
+        "title": "Razomy Input Output",
+        "subtitle": "Trova il convertitore di cui hai bisogno tra oltre 1000 funzioni",
+        "search_placeholder": "es. pdf in docx, jpg...",
+        "no_results": "Nessun risultato trovato",
+        "convert_from": "Converti da",
+        "to": "a",
+        "close": "Chiudi",
+        "convert_to": "Converti in",
+        "how_to_convert": "Come convertire",
+        "seo_title": "Catalogo convertitori file",
+        "faq_title": "Domande frequenti",
+        "specs_title": "Specifiche di conversione",
+        "input": "Input",
+        "output": "Output",
+        "safety": "Sicurezza",
+        "safety_value": "HTTPS / Cancellazione automatica",
+        "price": "Prezzo",
+        "free": "Gratis",
+        "seo_desc": "Elenco completo dei formati supportati per la conversione. PDF, DOCX, JPG, PNG e altri.",
+        "directory": {
+          "title": "Converti file .{directory}",
+          "subtitle": "Seleziona il formato di comando per i tuoi file .{directory}",
+          "available_conversions": "Conversioni disponibili",
+          "command": {
+            "hero_sub": "Strumento online veloce, gratuito e sicuro per convertire {s} in {t}. Nessuna registrazione o installazione software richiesta.",
+            "features": {
+              "fast": "Conversione veloce",
+              "secure": "Sicuro al 100%",
+              "quality": "Alta qualità",
+              "accurate": "Alta precisione"
+            },
+            "seo": {
+              "title": "Converti {directory} in {command} Online | Strumento Gratuito e Sicuro",
+              "h1": "Convertitore Online Gratuito da {directory} a {command}",
+              "description": "Il modo migliore per convertire file {directory} in formato {command} online. Facile da usare, completamente gratuito e conversione file sicura.",
+              "intro_title": "Perché usare il nostro strumento da {directory} a {command}?",
+              "intro_text": "Il nostro convertitore ti permette di elaborare file con alta precisione. Preserviamo il layout e la qualità originale trasformando i tuoi documenti {directory} in {command}."
+            },
+            "steps": {
+              "upload": "1. Carica file {directory}",
+              "upload_desc": "Trascina e rilascia il tuo file {s} nell'area di caricamento. La dimensione massima del file è 100MB.",
+              "quality": "2. Processo di conversione",
+              "quality_desc": "Il nostro strumento converte automaticamente il tuo file in formato {t} con le migliori impostazioni possibili.",
+              "download": "3. Scarica {command}",
+              "download_desc": "Attendi un istante il termine del processo, quindi scarica subito il tuo nuovo file {tgt}."
+            },
+            "faq": {
+              "q1": "Come converto {s} in {t}?",
+              "a1": "Carica semplicemente il tuo file, attendi la conversione e clicca su scarica. Funziona su Windows, Mac, Linux e dispositivi mobili.",
+              "q2": "È sicuro convertire {s} su Razomy?",
+              "a2": "Sì. Usiamo la crittografia HTTPS. I tuoi file vengono cancellati automaticamente dai nostri server dopo 1 ora per garantire la privacy.",
+              "q3": "Questo convertitore è gratuito?",
+              "a3": "Assolutamente. Puoi convertire file {s} in {t} gratuitamente senza creare un account."
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "Home",
+        "image": "Immagine",
+        "audio": "Audio",
+        "video": "Video",
+        "document": "Documenti",
+        "math": "Matematica",
+        "string": "Testo"
+      }
+    }
+  }
+}

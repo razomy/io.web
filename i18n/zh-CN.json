@@ -1,0 +1,140 @@
+{
+  "nuxt": {
+    "footer": {
+      "donate": "捐赠",
+      "start_year": "2021",
+      "company_name": "Razomy"
+    },
+    "dropzone": {
+      "converting": "正在转换",
+      "scanning_folders": "正在扫描文件夹",
+      "drop_title": "将文件拖拽至此处",
+      "support_nested_folders": "支持嵌套文件夹",
+      "select_files": "选择文件",
+      "select_folder": "选择文件夹",
+      "selected_files": "已选文件",
+      "total_size": "总大小",
+      "clear_all": "清空所有",
+      "add_files": "添加文件",
+      "convert": "转换"
+    },
+    "error": {
+      "404": {
+        "title": "页面未找到",
+        "back_btn": "返回首页"
+      }
+    },
+    "product": {
+      "name": "Io",
+      "description": "输入命令"
+    }
+  },
+  "io": {
+    "web": {
+      "footer": {
+        "github": "GitHub 源代码"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "search": "查找...",
+        "results_for": "搜索结果",
+        "no_results": "未找到配对"
+      },
+      "text_to_text": {
+        "input_text": "输入文本",
+        "placeholder_input": "在此粘贴您的文本...",
+        "result_title": "{command} 结果",
+        "copy_to_clipboard": "复制到剪贴板",
+        "placeholder_output": "结果将显示在这里...",
+        "convert_btn": "转换为 {command}",
+        "copied_success": "已复制到剪贴板！",
+        "directory": {
+          "command": {
+            "steps": {
+              "paste": "1. 粘贴 {directory} 文本",
+              "paste_desc": "将您的 {s} 内容粘贴或输入到输入框中。",
+              "process": "2. 转换过程",
+              "process_desc": "我们的工具会自动以最佳设置将您的文本转换为 {t} 格式。",
+              "copy": "3. 复制 {command}",
+              "copy_desc": "转换完成。您现在可以直接将结果复制到剪贴板。"
+            }
+          }
+        }
+      },
+      "file_to_file": {
+        "error": "转换文件出错：{fileName}",
+        "title": "Razomy 输入输出",
+        "subtitle": "在 1000 多种功能中找到您需要的转换器",
+        "search_placeholder": "例如：pdf 转 docx, jpg...",
+        "no_results": "未找到结果",
+        "convert_from": "转换自",
+        "to": "至",
+        "close": "关闭",
+        "convert_to": "转换为",
+        "how_to_convert": "如何转换",
+        "seo_title": "文件转换器目录",
+        "faq_title": "常见问题解答",
+        "specs_title": "转换规格",
+        "input": "输入",
+        "output": "输出",
+        "safety": "安全性",
+        "safety_value": "HTTPS / 自动删除",
+        "price": "价格",
+        "free": "免费",
+        "seo_desc": "支持转换的完整格式列表。PDF, DOCX, JPG, PNG 等。",
+        "directory": {
+          "title": "转换 .{directory} 文件",
+          "subtitle": "为您的 .{directory} 文件选择目标格式",
+          "available_conversions": "可用的转换",
+          "command": {
+            "hero_sub": "快速、免费且安全的在线工具，可将 {s} 转换为 {t}。无需注册或安装软件。",
+            "features": {
+              "fast": "快速转换",
+              "secure": "100% 安全",
+              "quality": "高质量",
+              "accurate": "高精准度"
+            },
+            "seo": {
+              "title": "在线将 {directory} 转换为 {command} | 免费安全工具",
+              "h1": "免费在线 {directory} 转 {command} 转换器",
+              "description": "在线将 {directory} 文件转换为 {command} 格式的最佳方式。简单易用、完全免费且安全的文件转换。",
+              "intro_title": "为什么使用我们的 {directory} 转 {command} 工具？",
+              "intro_text": "我们的转换器允许您高精度地处理文件。我们在将您的 {directory} 文档转换为 {command} 时，保留原始布局和质量。"
+            },
+            "steps": {
+              "upload": "1. 上传 {directory} 文件",
+              "upload_desc": "将您的 {s} 文件拖拽至上传区域。最大文件大小为 100MB。",
+              "quality": "2. 转换过程",
+              "quality_desc": "我们的工具会自动以最佳设置将您的文件转换为 {t} 格式。",
+              "download": "3. 下载 {command}",
+              "download_desc": "稍等片刻待处理完成，然后立即下载您的新 {tgt} 文件。"
+            },
+            "faq": {
+              "q1": "如何将 {s} 转换为 {t}？",
+              "a1": "只需上传您的文件，等待转换完成，然后点击下载。它适用于 Windows、Mac、Linux 和移动设备。",
+              "q2": "在 Razomy 上转换 {s} 安全吗？",
+              "a2": "是的。我们使用 HTTPS 加密。您的文件会在 1 小时后自动从我们的服务器删除，以确保隐私。",
+              "q3": "此转换器免费吗？",
+              "a3": "当然。您可以免费将 {s} 文件转换为 {t}，无需创建帐户。"
+            }
+          }
+        }
+      }
+    },
+    "db": {
+      "directories": {
+        "home": "首页",
+        "image": "图像",
+        "audio": "音频",
+        "video": "视频",
+        "document": "文档",
+        "math": "数学",
+        "string": "文本"
+      }
+    }
+  }
+}

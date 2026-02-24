@@ -7,7 +7,7 @@ WORKDIR /app
 
 # 1. Install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm i
 
 # 2. Copy source code
 COPY . .
@@ -27,7 +27,7 @@ RUN npm run build
 # ==========================================
 # Stage 2: Production Runner
 # ==========================================
-FROM node:18-slim
+FROM node:25-slim
 
 # The script logic implied the final image runs from the root of .output
 WORKDIR /
