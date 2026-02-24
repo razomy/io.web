@@ -5,7 +5,7 @@
     <SeoHeader :directoryLast="directoryLast" :commandKey="commandKey"></SeoHeader>
 
     <!-- Main Content Area -->
-    <v-container class="position-relative z-index-1">
+    <v-container class="mw-900 position-relative z-index-1">
 
       <TextInput
           :loading="loading"
@@ -20,7 +20,7 @@
         <v-icon start icon="mdi-alert-circle"/>
         {{ errorMessage }}
         <template v-slot:actions>
-          <v-btn variant="text" @click="hasError = false">{{t('io.web.file_to_file.close')}}</v-btn>
+          <v-btn variant="text" @click="hasError = false">{{ t('io.web.file_to_file.close') }}</v-btn>
         </template>
       </v-snackbar>
 
@@ -30,18 +30,25 @@
           :directory="directoryLast"
           :command="commandKey"
       />
+      <v-container class="mw-900 pb-16 px-0">
+        <CodeBlock
+            :directoryPath="directoryPath"
+            :commandKey="commandKey"
+        ></CodeBlock>
+      </v-container>
     </v-container>
 
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import {computed, ref} from 'vue';
 import SeoSection from '~/components/SeoSection.vue';
 // Заменили sendFile на функцию для отправки текста, предполагается, что она принимает (text, functionName, url)
-import { processText } from '~/functions/processText';
+import {processText} from '~/functions/processText';
+import CodeBlock from '~/components/CodeBlock.vue';
 
-const { t } = useI18n();
+const {t} = useI18n();
 const props = defineProps<{
   directoryPath: string[],
   commandKey: string, // Здесь передается название функции (например: 'base64', 'md5')
@@ -79,9 +86,18 @@ const generateSeoContent = () => {
       },
     ],
     faq: [
-      {q: t('io.web.file_to_file.directory.command.faq.q1', {s: in_, t: out}), a: t('io.web.file_to_file.directory.command.faq.a1')},
-      {q: t('io.web.file_to_file.directory.command.faq.q2', {s: in_}), a: t('io.web.file_to_file.directory.command.faq.a2')},
-      {q: t('io.web.file_to_file.directory.command.faq.q3', {s: in_, t: out}), a: t('io.web.file_to_file.directory.command.faq.a3')},
+      {
+        q: t('io.web.file_to_file.directory.command.faq.q1', {s: in_, t: out}),
+        a: t('io.web.file_to_file.directory.command.faq.a1')
+      },
+      {
+        q: t('io.web.file_to_file.directory.command.faq.q2', {s: in_}),
+        a: t('io.web.file_to_file.directory.command.faq.a2')
+      },
+      {
+        q: t('io.web.file_to_file.directory.command.faq.q3', {s: in_, t: out}),
+        a: t('io.web.file_to_file.directory.command.faq.a3')
+      },
     ]
   }
 }
@@ -89,12 +105,18 @@ const generateSeoContent = () => {
 const seoContent = computed(() => generateSeoContent());
 
 useSeoMeta({
-  title: () => t('io.web.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  title: () => t('io.web.file_to_file.directory.command.seo.title', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
+  }),
   description: () => t('io.web.file_to_file.directory.command.seo.description', {
     directory: directoryLast.toUpperCase(),
     command: commandKey.toUpperCase()
   }),
-  ogTitle: () => t('io.web.file_to_file.directory.command.seo.title', {directory: directoryLast.toUpperCase(), command: commandKey.toUpperCase()}),
+  ogTitle: () => t('io.web.file_to_file.directory.command.seo.title', {
+    directory: directoryLast.toUpperCase(),
+    command: commandKey.toUpperCase()
+  }),
   ogDescription: () => t('io.web.file_to_file.directory.command.seo.description', {
     directory: directoryLast.toUpperCase(),
     command: commandKey.toUpperCase()
@@ -136,6 +158,11 @@ const processTextData = async () => {
 </script>
 
 <style scoped>
+.mw-900 {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .z-index-1 {
   z-index: 1;
 }

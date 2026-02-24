@@ -14,7 +14,7 @@ function fileFormatOutputToCommandTemplate(directoryPath: string[], fileFormat: 
         execute() {
         }
       }
-    },
+    } as any,
     capabilities: ['node_js'],
     hardwareResourceMinimal: {
       cpuMinimal: 1,
@@ -22,8 +22,17 @@ function fileFormatOutputToCommandTemplate(directoryPath: string[], fileFormat: 
       timeMinimal: 0,
       ramMbMinimal: 1,
     } as HardwareResourceMinimal,
-    argumentTypes: ['file_path', fileFormatOutput],
-    returnType: 'file_path'
+    spec: {
+      description: '',
+      examples: [],
+      name: '',
+      parameters: [{
+        description: '',
+        name: '',
+        type: 'file_path'
+      }],
+      returns: {description: '', type: 'file_path'}
+    }
   } as IoCommandTemplate;
 }
 

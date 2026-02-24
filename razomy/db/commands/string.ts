@@ -1,19 +1,19 @@
 import {type IoCommandTemplate, type IoDirectory, templateToCommand} from '../../io/command';
-import {aT, cA, dP, ek, hRA, iN, lT, rT, s} from '../alies';
+import {cA, dP, ek, hRA, iN, lT, s} from '../alies';
 
 const p = '@razomy/string-case';
 export const stringCommands = ([
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'camelCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'capitalize'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'humanize'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'kebabCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'lowerCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'pascalCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'snakeCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'titleCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'upperCase'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'abriviation'), [aT]: [s], [rT]: s},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'reverse'), [aT]: [s], [rT]: s},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'camelCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'capitalize')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'humanize')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'kebabCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'lowerCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'pascalCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'snakeCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'titleCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'upperCase')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'abriviation')},
+  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'reverse')},
 ] as const satisfies IoCommandTemplate[]);
 
 export const stringCaseDirectory = {

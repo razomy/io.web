@@ -2,11 +2,11 @@ import {type IoEnvironmentBrowser} from '../io/environment';
 import type {Capability} from '../io/system/system';
 import {kebabCase} from '@razomy/string-case';
 import type {HardwareResourceMinimal} from '../io/system/task';
+import spec from '@razomy/string-case/specifications.json';
+import type {IoCammandSpec} from '../io/command/command';
 
 export const lT = (n: string) => ({fullText: 'io.db.directories.' + n})
 export const dP = 'directoryPath';
-export const aT = 'argumentTypes';
-export const rT = 'returnType';
 export const en = 'environment';
 export const cK = 'commandKey';
 export const iN = 'iconName';
@@ -22,8 +22,9 @@ export const hRA = {
     ramMbMinimal: 1,
   } as HardwareResourceMinimal
 };
-export const ek =<T extends keyof typeof registry> (p: T, k: string) => ({
+export const ek = <T extends keyof typeof registry>(p: T, k: string) => ({
   environment: eB(p, k),
+  spec: spec.find(i => i.name === k)! as IoCammandSpec,
   commandKey: kebabCase(k)
 });
 

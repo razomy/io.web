@@ -1,0 +1,23 @@
+challenge Folder/Package Organization {
+description
+ Real-world domains are naturally "hypergraphs"
+  but folder systems force them into strict "hierarchies"
+ This forced translation leads to missing logic and lost relationships
+ Therefore
+  the best approach is to keep structures in a "single flat layer"
+  and group items dynamically using properties like tags or search filter
+priority schema (when folders are required) follow a strict directional flow
+ source → target
+ parent → child
+ abstract → concrete
+ general → unique
+examples
+ user1 / transfer / user2 # source → target
+ tree / node / leaf       # parent → child
+ user / name / first      # abstract → concrete
+ animal / cat / jack      # general → unique
+conclusion
+ A directory, route, or folder is simply an aggregator of data
+ Therefore, we need a way to:
+  describe everything in a convenient relative model
+  describe everything in a hierarchy using atomic and compound blocks

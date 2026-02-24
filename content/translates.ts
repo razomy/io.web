@@ -1,5 +1,5 @@
 import {en as vuetifyEn} from 'vuetify/locale';
-import type {LeafPathGenerator, RzmNuxtTranslate} from '@razomy/nuxt/runtime/functions';
+import type {RzmNuxtTranslate} from '@razomy/nuxt/runtime/functions';
 
 const nuxtTranslates = {
   footer: {
@@ -77,8 +77,17 @@ export const i18n = {
             }
           }
         },
+        code: {
+          title: 'Using code',
+          parameters: 'Parameters',
+          name: 'Name',
+          type: 'Type',
+          description: 'Description',
+          returns: 'Returns',
+          typescript_javascript: 'Typescript/Javascript'
+        },
         file_to_file: {
-          error:'Error converting file:{fileName}',
+          error: 'Error converting file:{fileName}',
           title: 'Razomy Input Ouput',
           subtitle: 'Find the converter you need among 1000+ functions',
           search_placeholder: 'e.g. pdf to docx, jpg...',

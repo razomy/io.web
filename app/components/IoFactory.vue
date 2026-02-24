@@ -2,13 +2,13 @@
   <LazyFilesToFilesContent
       :directoryPath="directoryPath"
       :commandKey="commandKey"
-      v-if="record?.returnType === 'file_path'">
+      v-if="record?.spec.returns.type === 'file_path'">
     <slot></slot>
   </LazyFilesToFilesContent>
   <LazyStringToStringContent
       :directoryPath="directoryPath"
       :commandKey="commandKey"
-      v-else-if="record?.returnType === 'string'">
+      v-else-if="record?.spec.returns.type === 'string'">
     <slot></slot>
   </LazyStringToStringContent>
 </template>

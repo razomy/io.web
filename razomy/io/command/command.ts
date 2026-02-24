@@ -5,19 +5,37 @@ import type {TaskRequirement} from '../system/task';
 // function name = file    = command    = uppercase = png,web-viewer = post(action to complete)
 export type  IoCommandKey = string;
 
+export interface IoCammandSpec{
+  name: string,
+  description: string,
+  parameters: [
+    {
+      name: string,
+      type: IoType,
+      description: string
+    }
+  ],
+  returns: {
+    type: IoType,
+    description: string
+  },
+  examples: {
+    code: string,
+    expected: string
+  }[]
+}
+
 export interface IoCommandTemplate extends TaskRequirement {
   directoryPath: IoDirectoryPath;
   commandKey: IoCommandKey;
   environment: IoEnvironment;
-  argumentTypes: string[];
-  returnType: string;
+  spec: IoCammandSpec;
   iconName: string;
 }
 
 export function templateToCommand(template: IoCommandTemplate): IoCommand {
   return {
-    argumentTypes: template.argumentTypes as IoType[],
-    returnType: template.returnType as IoType,
+    spec: template.spec,
     directoryPath: template.directoryPath as any,
     environment: template.environment,
     commandKey: template.commandKey,
@@ -38,8 +56,6 @@ export interface IoCommand extends IoCommandTemplate {
   updateDatetime: string;
   directoryPath: IoDirectoryPath;
   commandKey: IoCommandKey;
-  argumentTypes: IoType[];
-  returnType: IoType;
   environment: IoEnvironment;
   iconName: string;
   label: {

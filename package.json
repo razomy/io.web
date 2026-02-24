@@ -15,9 +15,10 @@
     "@razomy/fs-file-format": "0.0.1-alpha.4",
     "@razomy/images": "0.0.1-alpha.4",
     "@razomy/nuxt": "0.0.1-alpha.7",
-    "@razomy/string-case": "0.0.1-alpha.4",
+    "@razomy/string-case": "0.0.1-beta.1",
     "@razomy/videos": "0.0.1-alpha.4",
-    "formidable": "^3.5.4"
+    "formidable": "^3.5.4",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "@types/formidable": "^3.4.6",

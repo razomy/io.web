@@ -14,6 +14,8 @@
             :placeholder="t('io.web.text_to_text.placeholder_input')"
             rounded="xl"
             rows="8"
+            auto-grow
+            maxHeight="500px"
             :disabled="loading"
         ></v-textarea>
       </v-col>
@@ -44,6 +46,7 @@
             rounded="xl"
             auto-grow
             rows="8"
+            maxHeight="500px"
             readonly
             :loading="loading"
         ></v-textarea>

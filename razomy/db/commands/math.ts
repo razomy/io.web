@@ -1,5 +1,5 @@
 import {type IoCommandTemplate, type IoDirectory, templateToCommand} from '../../io/command';
-import {aT, cK, dP, eB, en, iN, lT, rT, n} from '../alies';
+import {cK, dP, eB, en, iN, lT, n} from '../alies';
 
 const p = '@razomy/maths';
 const mathCommands = ([
