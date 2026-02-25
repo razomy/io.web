@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. {directory} metnini yapıştırın",
-              "paste_desc": "{s} içeriğinizi girdi alanına yapıştırın veya yazın.",
+              "paste_desc": "{source} içeriğinizi girdi alanına yapıştırın veya yazın.",
               "process": "2. Dönüştürme İşlemi",
-              "process_desc": "Aracımız metninizi otomatik olarak en iyi ayarlarla {t} formatına dönüştürür.",
+              "process_desc": "Aracımız metninizi otomatik olarak en iyi ayarlarla {target} formatına dönüştürür.",
               "copy": "3. {command} sonucunu kopyala",
               "copy_desc": "Dönüştürme tamamlandı. Sonucu doğrudan panonuza kopyalayabilirsiniz."
             }
@@ -87,11 +87,11 @@
         "free": "Ücretsiz",
         "seo_desc": "Dönüştürme için desteklenen formatların tam listesi. PDF, DOCX, JPG, PNG ve diğerleri.",
         "directory": {
-          "title": ".{directory} dosyalarını dönüştür",
-          "subtitle": ".{directory} dosyalarınız için komut formatını seçin",
+          "title": "{directory} dosyalarını dönüştür",
+          "subtitle": "{directory} dosyalarınız için komut formatını seçin",
           "available_conversions": "Mevcut dönüşümler",
           "command": {
-            "hero_sub": "{s} dosyasını {t} formatına dönüştürmek için hızlı, ücretsiz ve güvenli çevrimiçi araç. Kayıt veya yazılım kurulumu gerekmez.",
+            "hero_sub": "{source} dosyasını {target} formatına dönüştürmek için hızlı, ücretsiz ve güvenli çevrimiçi araç. Kayıt veya yazılım kurulumu gerekmez.",
             "features": {
               "fast": "Hızlı Dönüştürme",
               "secure": "%100 Güvenli",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. {directory} dosyasını yükleyin",
-              "upload_desc": "{s} dosyanızı yükleme alanına sürükleyip bırakın. Maksimum dosya boyutu 100MB'dır.",
+              "upload_desc": "{source} dosyanızı yükleme alanına sürükleyip bırakın. Maksimum dosya boyutu 100MB'dır.",
               "quality": "2. Dönüştürme İşlemi",
-              "quality_desc": "Aracımız dosyanızı otomatik olarak en iyi ayarlarla {t} formatına dönüştürür.",
+              "quality_desc": "Aracımız dosyanızı otomatik olarak en iyi ayarlarla {target} formatına dönüştürür.",
               "download": "3. {command} dosyasını indirin",
-              "download_desc": "İşlemin bitmesi için biraz bekleyin, ardından yeni {tgt} dosyanızı anında indirin."
+              "download_desc": "İşlemin bitmesi için biraz bekleyin, ardından yeni {target} dosyanızı anında indirin."
             },
             "faq": {
-              "q1": "{s} dosyasını {t} formatına nasıl dönüştürürüm?",
+              "q1": "{source} dosyasını {target} formatına nasıl dönüştürürüm?",
               "a1": "Dosyanızı yükleyin, dönüştürmeyi bekleyin ve indire tıklayın. Windows, Mac, Linux ve mobil cihazlarda çalışır.",
-              "q2": "Razomy üzerinde {s} dönüştürmek güvenli mi?",
+              "q2": "Razomy üzerinde {source} dönüştürmek güvenli mi?",
               "a2": "Evet. HTTPS şifrelemesi kullanıyoruz. Dosyalarınız gizliliği sağlamak için 1 saat sonra sunucularımızdan otomatik olarak silinir.",
               "q3": "Bu dönüştürücü ücretsiz mi?",
-              "a3": "Kesinlikle. {s} dosyalarını hesap oluşturmadan ücretsiz olarak {t} formatına dönüştürebilirsiniz."
+              "a3": "Kesinlikle. {source} dosyalarını hesap oluşturmadan ücretsiz olarak {target} formatına dönüştürebilirsiniz."
             }
           }
         }

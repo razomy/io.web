@@ -8,7 +8,7 @@
   <LazyStringToStringContent
       :directoryPath="directoryPath"
       :commandKey="commandKey"
-      v-else-if="record?.spec.returns.type === 'string'">
+      v-else-if="record?.spec.returns.type === 'string' || record?.spec.returns.type === 'boolean'">
     <slot></slot>
   </LazyStringToStringContent>
 </template>

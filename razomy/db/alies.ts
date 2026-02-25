@@ -1,9 +1,6 @@
 import {type IoEnvironmentBrowser} from '../io/environment';
 import type {Capability} from '../io/system/system';
-import {kebabCase} from '@razomy/string-case';
 import type {HardwareResourceMinimal} from '../io/system/task';
-import spec from '@razomy/string-case/specifications.json';
-import type {IoCammandSpec} from '../io/command/command';
 
 export const lT = (n: string) => ({fullText: 'io.db.directories.' + n})
 export const dP = 'directoryPath';
@@ -22,20 +19,12 @@ export const hRA = {
     ramMbMinimal: 1,
   } as HardwareResourceMinimal
 };
-export const ek = <T extends keyof typeof registry>(p: T, k: string) => ({
-  environment: eB(p, k),
-  spec: spec.find(i => i.name === k)! as IoCammandSpec,
-  commandKey: kebabCase(k)
-});
 
-const registry = {
-  '@razomy/string-case': () => import('@razomy/string-case')
-}
-export const eB = <T extends keyof typeof registry>(pN: T, fN: string) => ({
+export const eB = <R extends Record<string, ()=>Promise<any>>,T extends keyof R>(r:R, pN: T, fN: string) => ({
   strategy: 'browser',
   browser: {
     async execute(...input: any[]) {
-      return await registry[pN]().then(module => {
+      return await r[pN]!().then(module => {
         const fn = module [fN as keyof typeof module] as (...s: any[]) => any;
         const result = fn(...input);
         return result;

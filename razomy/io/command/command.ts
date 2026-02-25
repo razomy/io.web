@@ -5,16 +5,14 @@ import type {TaskRequirement} from '../system/task';
 // function name = file    = command    = uppercase = png,web-viewer = post(action to complete)
 export type  IoCommandKey = string;
 
-export interface IoCammandSpec{
+export interface IoCammandSpec {
   name: string,
   description: string,
-  parameters: [
-    {
-      name: string,
-      type: IoType,
-      description: string
-    }
-  ],
+  parameters: {
+    name: string,
+    type: IoType,
+    description: string
+  }[],
   returns: {
     type: IoType,
     description: string
@@ -64,4 +62,4 @@ export interface IoCommand extends IoCommandTemplate {
   }
 }
 
-export type IoType = 'number' | 'string' | 'file_path';
+export type IoType = 'number' | 'string' | 'file_path' | 'boolean';

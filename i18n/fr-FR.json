@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Collez le texte {directory}",
-              "paste_desc": "Collez ou saisissez votre contenu {s} dans la zone de saisie.",
+              "paste_desc": "Collez ou saisissez votre contenu {source} dans la zone de saisie.",
               "process": "2. Processus de conversion",
-              "process_desc": "Notre outil convertit automatiquement votre texte au format {t} avec les meilleurs paramètres possibles.",
+              "process_desc": "Notre outil convertit automatiquement votre texte au format {target} avec les meilleurs paramètres possibles.",
               "copy": "3. Copier {command}",
               "copy_desc": "La conversion est terminée. Vous pouvez maintenant copier le résultat directement dans votre presse-papiers."
             }
@@ -87,11 +87,11 @@
         "free": "Gratuit",
         "seo_desc": "Liste complète des formats pris en charge pour la conversion. PDF, DOCX, JPG, PNG et autres.",
         "directory": {
-          "title": "Convertir des fichiers .{directory}",
-          "subtitle": "Sélectionnez le format de commande pour vos fichiers .{directory}",
+          "title": "Convertir des fichiers {directory}",
+          "subtitle": "Sélectionnez le format de commande pour vos fichiers {directory}",
           "available_conversions": "Conversions disponibles",
           "command": {
-            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {s} en {t}. Aucune inscription ni installation de logiciel requise.",
+            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {source} en {target}. Aucune inscription ni installation de logiciel requise.",
             "features": {
               "fast": "Conversion rapide",
               "secure": "100% Sécurisé",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Importer le fichier {directory}",
-              "upload_desc": "Glissez-déposez votre fichier {s} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo.",
+              "upload_desc": "Glissez-déposez votre fichier {source} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo.",
               "quality": "2. Processus de conversion",
-              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {t} avec les meilleurs paramètres possibles.",
+              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {target} avec les meilleurs paramètres possibles.",
               "download": "3. Télécharger {command}",
-              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez votre nouveau fichier {tgt} instantanément."
+              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez votre nouveau fichier {target} instantanément."
             },
             "faq": {
-              "q1": "Comment convertir {s} en {t} ?",
+              "q1": "Comment convertir {source} en {target} ?",
               "a1": "Il suffit d'importer votre fichier, d'attendre la conversion et de cliquer sur télécharger. Cela fonctionne sur Windows, Mac, Linux et les appareils mobiles.",
-              "q2": "Est-il sûr de convertir {s} sur Razomy ?",
+              "q2": "Est-il sûr de convertir {source} sur Razomy ?",
               "a2": "Oui. Nous utilisons le chiffrement HTTPS. Vos fichiers sont automatiquement supprimés de nos serveurs après 1 heure pour garantir la confidentialité.",
               "q3": "Ce convertisseur est-il gratuit ?",
-              "a3": "Absolument. Vous pouvez convertir des fichiers {s} en {t} gratuitement sans créer de compte."
+              "a3": "Absolument. Vous pouvez convertir des fichiers {source} en {target} gratuitement sans créer de compte."
             }
           }
         }

@@ -68,9 +68,9 @@ export const i18n = {
             command: {
               steps: {
                 paste: '1. Paste {directory} text',
-                paste_desc: 'Paste or type your {s} content into the input area.',
+                paste_desc: 'Paste or type your {source} content into the input area.',
                 process: '2. Conversion Process',
-                process_desc: 'Our tool automatically converts your text to {t} format with the best possible settings.',
+                process_desc: 'Our tool automatically converts your text to {target} format with the best possible settings.',
                 copy: '3. Copy {command}',
                 copy_desc: 'The conversion is complete. You can now copy the result directly to your clipboard.',
               }
@@ -87,9 +87,9 @@ export const i18n = {
           typescript_javascript: 'Typescript/Javascript'
         },
         file_to_file: {
-          error: 'Error converting file:{fileName}',
-          title: 'Razomy Input Ouput',
-          subtitle: 'Find the converter you need among 1000+ functions',
+          error: 'Error converting file: {fileName}',
+          title: 'Razomy Input Output',
+          subtitle: 'Find the converter you need among 1000+ tools',
           search_placeholder: 'e.g. pdf to docx, jpg...',
           no_results: 'No results found',
           convert_from: 'Convert from',
@@ -108,11 +108,11 @@ export const i18n = {
           free: 'Free',
           seo_desc: 'Full list of supported formats for conversion. PDF, DOCX, JPG, PNG and others.',
           directory: {
-            title: 'Convert .{directory} files',
-            subtitle: 'Select command format for your .{directory} files',
+            title: 'Convert {directory} files',
+            subtitle: 'Select command format for your {directory} files',
             available_conversions: 'Available conversions',
             command: {
-              hero_sub: 'Fast, free, and secure online tool to convert {s} to {t}. No registration or software installation required.',
+              hero_sub: 'Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.',
               features: {
                 fast: 'Fast Conversion',
                 secure: '100% Secure',
@@ -128,19 +128,19 @@ export const i18n = {
               },
               steps: {
                 upload: '1. Upload {directory} file',
-                upload_desc: 'Drag and drop your {s} file into the upload area. The maximum file size is 100MB.',
+                upload_desc: 'Drag and drop your {source} file into the upload area. The maximum file size is 100MB.',
                 quality: '2. Conversion Process',
-                quality_desc: 'Our tool automatically converts your file to {t} format with the best possible settings.',
+                quality_desc: 'Our tool automatically converts your file to {target} format with the best possible settings.',
                 download: '3. Download {command}',
-                download_desc: 'Wait a moment for the process to finish, then download your new {tgt} file instantly.'
+                download_desc: 'Wait a moment for the process to finish, then download your new {target} file instantly.'
               },
               faq: {
-                q1: 'How do I convert {s} to {t}?',
+                q1: 'How do I convert {source} to {target}?',
                 a1: 'Simply upload your file, wait for the conversion, and click download. It works on Windows, Mac, Linux, and mobile devices.',
-                q2: 'Is it safe to convert {s} on Razomy?',
+                q2: 'Is it safe to convert {source} on Razomy?',
                 a2: 'Yes. We use HTTPS encryption. Your files are automatically deleted from our servers after 1 hour to ensure privacy.',
                 q3: 'Is this converter free?',
-                a3: 'Absolutely. You can convert {s} files to {t} for free without creating an account.'
+                a3: 'Absolutely. You can convert {source} files to {target} for free without creating an account.'
               }
             }
           }

@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Klistra in {directory}-text",
-              "paste_desc": "Klistra in eller skriv ditt {s}-innehåll i inmatningsfältet.",
+              "paste_desc": "Klistra in eller skriv ditt {source}-innehåll i inmatningsfältet.",
               "process": "2. Konverteringsprocess",
-              "process_desc": "Vårt verktyg konverterar automatiskt din text till {t}-format med bästa möjliga inställningar.",
+              "process_desc": "Vårt verktyg konverterar automatiskt din text till {target}-format med bästa möjliga inställningar.",
               "copy": "3. Kopiera {command}",
               "copy_desc": "Konverteringen är klar. Du kan nu kopiera resultatet direkt till ditt urklipp."
             }
@@ -87,11 +87,11 @@
         "free": "Gratis",
         "seo_desc": "Fullständig lista över format som stöds för konvertering. PDF, DOCX, JPG, PNG och andra.",
         "directory": {
-          "title": "Konvertera .{directory}-filer",
-          "subtitle": "Välj kommandoformat för dina .{directory}-filer",
+          "title": "Konvertera {directory}-filer",
+          "subtitle": "Välj kommandoformat för dina {directory}-filer",
           "available_conversions": "Tillgängliga konverteringar",
           "command": {
-            "hero_sub": "Snabbt, gratis och säkert onlineverktyg för att konvertera {s} till {t}. Ingen registrering eller programinstallation krävs.",
+            "hero_sub": "Snabbt, gratis och säkert onlineverktyg för att konvertera {source} till {target}. Ingen registrering eller programinstallation krävs.",
             "features": {
               "fast": "Snabb konvertering",
               "secure": "100 % säkert",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Ladda upp {directory}-fil",
-              "upload_desc": "Dra och släpp din {s}-fil i uppladdningsområdet. Den maximala filstorleken är 100 MB.",
+              "upload_desc": "Dra och släpp din {source}-fil i uppladdningsområdet. Den maximala filstorleken är 100 MB.",
               "quality": "2. Konverteringsprocess",
-              "quality_desc": "Vårt verktyg konverterar automatiskt din fil till {t}-format med bästa möjliga inställningar.",
+              "quality_desc": "Vårt verktyg konverterar automatiskt din fil till {target}-format med bästa möjliga inställningar.",
               "download": "3. Ladda ner {command}",
-              "download_desc": "Vänta en stund tills processen är klar, ladda sedan ner din nya {tgt}-fil direkt."
+              "download_desc": "Vänta en stund tills processen är klar, ladda sedan ner din nya {target}-fil direkt."
             },
             "faq": {
-              "q1": "Hur konverterar jag {s} till {t}?",
+              "q1": "Hur konverterar jag {source} till {target}?",
               "a1": "Ladda bara upp din fil, vänta på konverteringen och klicka på ladda ner. Det fungerar på Windows, Mac, Linux och mobila enheter.",
-              "q2": "Är det säkert att konvertera {s} på Razomy?",
+              "q2": "Är det säkert att konvertera {source} på Razomy?",
               "a2": "Ja. Vi använder HTTPS-kryptering. Dina filer raderas automatiskt från våra servrar efter 1 timme för att säkerställa integritet.",
               "q3": "Är denna konverterare gratis?",
-              "a3": "Absolut. Du kan konvertera {s}-filer till {t} gratis utan att skapa ett konto."
+              "a3": "Absolut. Du kan konvertera {source}-filer till {target} gratis utan att skapa ett konto."
             }
           }
         }

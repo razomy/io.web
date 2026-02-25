@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Plak {directory} tekst",
-              "paste_desc": "Plak of typ uw {s}-inhoud in het invoerveld.",
+              "paste_desc": "Plak of typ uw {source}-inhoud in het invoerveld.",
               "process": "2. Conversieproces",
-              "process_desc": "Onze tool converteert uw tekst automatisch naar {t}-formaat met de best mogelijke instellingen.",
+              "process_desc": "Onze tool converteert uw tekst automatisch naar {target}-formaat met de best mogelijke instellingen.",
               "copy": "3. Kopieer {command}",
               "copy_desc": "De conversie is voltooid. U kunt het resultaat nu direct naar uw klembord kopiëren."
             }
@@ -87,11 +87,11 @@
         "free": "Gratis",
         "seo_desc": "Volledige lijst met ondersteunde formaten voor conversie. PDF, DOCX, JPG, PNG en anderen.",
         "directory": {
-          "title": "Converteer .{directory}-bestanden",
-          "subtitle": "Selecteer opdrachtformaat voor uw .{directory}-bestanden",
+          "title": "Converteer {directory}-bestanden",
+          "subtitle": "Selecteer opdrachtformaat voor uw {directory}-bestanden",
           "available_conversions": "Beschikbare conversies",
           "command": {
-            "hero_sub": "Snelle, gratis en veilige online tool om {s} naar {t} te converteren. Geen registratie of software-installatie vereist.",
+            "hero_sub": "Snelle, gratis en veilige online tool om {source} naar {target} te converteren. Geen registratie of software-installatie vereist.",
             "features": {
               "fast": "Snelle conversie",
               "secure": "100% Veilig",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Upload {directory}-bestand",
-              "upload_desc": "Sleep uw {s}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB.",
+              "upload_desc": "Sleep uw {source}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB.",
               "quality": "2. Conversieproces",
-              "quality_desc": "Onze tool converteert uw bestand automatisch naar {t}-formaat met de best mogelijke instellingen.",
+              "quality_desc": "Onze tool converteert uw bestand automatisch naar {target}-formaat met de best mogelijke instellingen.",
               "download": "3. Download {command}",
-              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {tgt}-bestand."
+              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {target}-bestand."
             },
             "faq": {
-              "q1": "Hoe converteer ik {s} naar {t}?",
+              "q1": "Hoe converteer ik {source} naar {target}?",
               "a1": "Upload eenvoudig uw bestand, wacht op de conversie en klik op downloaden. Het werkt op Windows, Mac, Linux en mobiele apparaten.",
-              "q2": "Is het veilig om {s} te converteren op Razomy?",
+              "q2": "Is het veilig om {source} te converteren op Razomy?",
               "a2": "Ja. We gebruiken HTTPS-versleuteling. Uw bestanden worden na 1 uur automatisch van onze servers verwijderd om uw privacy te waarborgen.",
               "q3": "Is deze converter gratis?",
-              "a3": "Absoluut. U kunt gratis {s}-bestanden naar {t} converteren zonder een account aan te maken."
+              "a3": "Absoluut. U kunt gratis {source}-bestanden naar {target} converteren zonder een account aan te maken."
             }
           }
         }

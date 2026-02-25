@@ -1,24 +1,31 @@
 import {type IoCommandTemplate, type IoDirectory, templateToCommand} from '../../io/command';
-import {cA, dP, ek, hRA, iN, lT, s} from '../alies';
+import {cA, eB, hRA, lT, s} from '../alies';
+import packageJson from '@razomy/string-case/package.json';
+import specifications from '@razomy/string-case/specifications.json';
+import {kebabCase} from '@razomy/string-case';
+import type {IoCammandSpec} from '../../io/command/command';
+const dpPackage = packageJson.name.replace('@razomy/', '').split('-');
 
-const p = '@razomy/string-case';
-export const stringCommands = ([
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'camelCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'capitalize')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'humanize')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'kebabCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'lowerCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'pascalCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'snakeCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'titleCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'upperCase')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'abriviation')},
-  {[iN]: 'mdi-text', ...cA, ...hRA, [dP]: [s, 'case'], ...ek(p, 'reverse')},
-] as const satisfies IoCommandTemplate[]);
+const registry = {
+  [packageJson.name]: () => import('@razomy/string-case')
+}
+
+export const stringCommands = specifications
+  .map(s => {
+    return {
+      iconName: 'mdi-text',
+      ...cA,
+      ...hRA,
+      directoryPath: dpPackage,
+      environment: eB(registry, packageJson.name, s.name),
+      spec: s,
+      commandKey: kebabCase(s.name)
+    } as IoCommandTemplate;
+  }) satisfies IoCommandTemplate[];
 
 export const stringCaseDirectory = {
   key: 'case',
-  directoryPath: [s, 'case'],
+  directoryPath: dpPackage,
   iconName: 'mdi-text',
   label: {fullText: 'case'},
   updateDatetime: '2026-02-22T23:22:59.211Z',

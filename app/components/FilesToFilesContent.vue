@@ -61,7 +61,7 @@ const generateSeoContent = () => {
       {
         title: t('io.web.file_to_file.directory.command.steps.upload', {directory: in_}),
         icon: 'mdi-cloud-upload-outline',
-        text: t('io.web.file_to_file.directory.command.steps.upload_desc', {s: in_})
+        text: t('io.web.file_to_file.directory.command.steps.upload_desc', {source: in_})
       },
       {
         title: t('io.web.file_to_file.directory.command.steps.quality'),
@@ -71,20 +71,20 @@ const generateSeoContent = () => {
       {
         title: t('io.web.file_to_file.directory.command.steps.download', {command: out}),
         icon: 'mdi-download-outline',
-        text: t('io.web.file_to_file.directory.command.steps.download_desc', {tgt: out})
+        text: t('io.web.file_to_file.directory.command.steps.download_desc', {target: out})
       },
     ],
     faq: [
       {
-        q: t('io.web.file_to_file.directory.command.faq.q1', {s: in_, t: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q1', {source: in_, target: out}),
         a: t('io.web.file_to_file.directory.command.faq.a1')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q2', {s: in_}),
+        q: t('io.web.file_to_file.directory.command.faq.q2', {source: in_}),
         a: t('io.web.file_to_file.directory.command.faq.a2')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q3', {s: in_, t: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q3', {source: in_, target: out}),
         a: t('io.web.file_to_file.directory.command.faq.a3')
       },
     ]

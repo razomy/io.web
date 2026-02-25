@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Liitä {directory} -teksti",
-              "paste_desc": "Liitä tai kirjoita {s}-sisältösi syötekenttään.",
+              "paste_desc": "Liitä tai kirjoita {source}-sisältösi syötekenttään.",
               "process": "2. Muunnosprosessi",
-              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {t}-muotoon parhailla mahdollisilla asetuksilla.",
+              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
               "copy": "3. Kopioi {command}",
               "copy_desc": "Muunnos on valmis. Voit nyt kopioida tuloksen suoraan leikepöydällesi."
             }
@@ -87,11 +87,11 @@
         "free": "Ilmainen",
         "seo_desc": "Täydellinen luettelo tuetuista muunnosmuodoista. PDF, DOCX, JPG, PNG ja muut.",
         "directory": {
-          "title": "Muunna .{directory}-tiedostoja",
-          "subtitle": "Valitse komentomuoto .{directory}-tiedostoillesi",
+          "title": "Muunna {directory}-tiedostoja",
+          "subtitle": "Valitse komentomuoto {directory}-tiedostoillesi",
           "available_conversions": "Saatavilla olevat muunnokset",
           "command": {
-            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {s} muotoon {t}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
+            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {source} muotoon {target}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
             "features": {
               "fast": "Nopea muunnos",
               "secure": "100% Turvallinen",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Lataa {directory}-tiedosto",
-              "upload_desc": "Vedä ja pudota {s}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt.",
+              "upload_desc": "Vedä ja pudota {source}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt.",
               "quality": "2. Muunnosprosessi",
-              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {t}-muotoon parhailla mahdollisilla asetuksilla.",
+              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
               "download": "3. Lataa {command}",
-              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {tgt}-tiedostosi välittömästi."
+              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {target}-tiedostosi välittömästi."
             },
             "faq": {
-              "q1": "Kuinka muunnan tiedoston {s} muotoon {t}?",
+              "q1": "Kuinka muunnan tiedoston {source} muotoon {target}?",
               "a1": "Lataa vain tiedostosi, odota muunnosta ja napsauta latauspainiketta. Se toimii Windowsissa, Macissa, Linuxissa ja mobiililaitteissa.",
-              "q2": "Onko {s}:n muuntaminen Razomyssa turvallista?",
+              "q2": "Onko {source}:n muuntaminen Razomyssa turvallista?",
               "a2": "Kyllä. Käytämme HTTPS-salausta. Tiedostosi poistetaan palvelimiltamme automaattisesti 1 tunnin kuluttua yksityisyyden takaamiseksi.",
               "q3": "Onko tämä muunnin ilmainen?",
-              "a3": "Ehdottomasti. Voit muuntaa {s}-tiedostoja muotoon {t} ilmaiseksi luomatta tiliä."
+              "a3": "Ehdottomasti. Voit muuntaa {source}-tiedostoja muotoon {target} ilmaiseksi luomatta tiliä."
             }
           }
         }

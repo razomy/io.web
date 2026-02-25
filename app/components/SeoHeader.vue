@@ -9,8 +9,8 @@
       <p class="text-body-2 text-md-body-1  text-medium-emphasis mx-auto" style="max-width: 700px; line-height: 1.6;">
         {{
           t('io.web.file_to_file.directory.command.hero_sub', {
-            s: directoryLast.toUpperCase(),
-            t: commandKey.toUpperCase()
+            source: directoryLast.toUpperCase(),
+            target: commandKey.toUpperCase()
           })
         }}
       </p>

@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Pega el texto {directory}",
-              "paste_desc": "Pega o escribe tu contenido {s} en el área de entrada.",
+              "paste_desc": "Pega o escribe tu contenido {source} en el área de entrada.",
               "process": "2. Proceso de conversión",
-              "process_desc": "Nuestra herramienta convierte automáticamente tu texto al formato {t} con la mejor configuración posible.",
+              "process_desc": "Nuestra herramienta convierte automáticamente tu texto al formato {target} con la mejor configuración posible.",
               "copy": "3. Copiar {command}",
               "copy_desc": "La conversión se ha completado. Ahora puedes copiar el resultado directamente a tu portapapeles."
             }
@@ -87,11 +87,11 @@
         "free": "Gratis",
         "seo_desc": "Lista completa de formatos admitidos para la conversión. PDF, DOCX, JPG, PNG y otros.",
         "directory": {
-          "title": "Convertir archivos .{directory}",
-          "subtitle": "Selecciona el formato de comando para tus archivos .{directory}",
+          "title": "Convertir archivos {directory}",
+          "subtitle": "Selecciona el formato de comando para tus archivos {directory}",
           "available_conversions": "Conversiones disponibles",
           "command": {
-            "hero_sub": "Herramienta online rápida, gratuita y segura para convertir {s} a {t}. No requiere registro ni instalación de software.",
+            "hero_sub": "Herramienta online rápida, gratuita y segura para convertir {source} a {target}. No requiere registro ni instalación de software.",
             "features": {
               "fast": "Conversión rápida",
               "secure": "100% Seguro",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Sube el archivo {directory}",
-              "upload_desc": "Arrastra y suelta tu archivo {s} en el área de carga. El tamaño máximo de archivo es 100 MB.",
+              "upload_desc": "Arrastra y suelta tu archivo {source} en el área de carga. El tamaño máximo de archivo es 100 MB.",
               "quality": "2. Proceso de conversión",
-              "quality_desc": "Nuestra herramienta convierte automáticamente tu archivo al formato {t} con la mejor configuración posible.",
+              "quality_desc": "Nuestra herramienta convierte automáticamente tu archivo al formato {target} con la mejor configuración posible.",
               "download": "3. Descargar {command}",
-              "download_desc": "Espera un momento a que termine el proceso y luego descarga tu nuevo archivo {tgt} al instante."
+              "download_desc": "Espera un momento a que termine el proceso y luego descarga tu nuevo archivo {target} al instante."
             },
             "faq": {
-              "q1": "¿Cómo convierto {s} a {t}?",
+              "q1": "¿Cómo convierto {source} a {target}?",
               "a1": "Simplemente sube tu archivo, espera la conversión y haz clic en descargar. Funciona en Windows, Mac, Linux y dispositivos móviles.",
-              "q2": "¿Es seguro convertir {s} en Razomy?",
+              "q2": "¿Es seguro convertir {source} en Razomy?",
               "a2": "Sí. Usamos encriptación HTTPS. Tus archivos se eliminan automáticamente de nuestros servidores después de 1 hora para garantizar la privacidad.",
               "q3": "¿Es gratuito este convertidor?",
-              "a3": "Absolutamente. Puedes convertir archivos {s} a {t} gratis sin crear una cuenta."
+              "a3": "Absolutamente. Puedes convertir archivos {source} a {target} gratis sin crear una cuenta."
             }
           }
         }

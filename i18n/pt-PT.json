@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Cole o texto {directory}",
-              "paste_desc": "Cole ou escreva o seu conteúdo {s} na área de entrada.",
+              "paste_desc": "Cole ou escreva o seu conteúdo {source} na área de entrada.",
               "process": "2. Processo de Conversão",
-              "process_desc": "A nossa ferramenta converte automaticamente o seu texto para o formato {t} com as melhores definições possíveis.",
+              "process_desc": "A nossa ferramenta converte automaticamente o seu texto para o formato {target} com as melhores definições possíveis.",
               "copy": "3. Copiar {command}",
               "copy_desc": "A conversão está concluída. Pode agora copiar o resultado diretamente para a sua área de transferência."
             }
@@ -87,11 +87,11 @@
         "free": "Grátis",
         "seo_desc": "Lista completa de formatos suportados para conversão. PDF, DOCX, JPG, PNG e outros.",
         "directory": {
-          "title": "Converter ficheiros .{directory}",
-          "subtitle": "Selecione o formato de comando para os seus ficheiros .{directory}",
+          "title": "Converter ficheiros {directory}",
+          "subtitle": "Selecione o formato de comando para os seus ficheiros {directory}",
           "available_conversions": "Conversões disponíveis",
           "command": {
-            "hero_sub": "Ferramenta online rápida, gratuita e segura para converter {s} em {t}. Sem registo ou instalação de software.",
+            "hero_sub": "Ferramenta online rápida, gratuita e segura para converter {source} em {target}. Sem registo ou instalação de software.",
             "features": {
               "fast": "Conversão Rápida",
               "secure": "100% Seguro",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Carregar ficheiro {directory}",
-              "upload_desc": "Arraste e largue o seu ficheiro {s} na área de carregamento. O tamanho máximo do ficheiro é 100MB.",
+              "upload_desc": "Arraste e largue o seu ficheiro {source} na área de carregamento. O tamanho máximo do ficheiro é 100MB.",
               "quality": "2. Processo de Conversão",
-              "quality_desc": "A nossa ferramenta converte automaticamente o seu ficheiro para o formato {t} com as melhores definições possíveis.",
+              "quality_desc": "A nossa ferramenta converte automaticamente o seu ficheiro para o formato {target} com as melhores definições possíveis.",
               "download": "3. Descarregar {command}",
-              "download_desc": "Aguarde um momento para o processo terminar, depois descarregue o seu novo ficheiro {tgt} instantaneamente."
+              "download_desc": "Aguarde um momento para o processo terminar, depois descarregue o seu novo ficheiro {target} instantaneamente."
             },
             "faq": {
-              "q1": "Como converto {s} para {t}?",
+              "q1": "Como converto {source} para {target}?",
               "a1": "Basta carregar o seu ficheiro, aguardar pela conversão e clicar em descarregar. Funciona em Windows, Mac, Linux e dispositivos móveis.",
-              "q2": "É seguro converter {s} na Razomy?",
+              "q2": "É seguro converter {source} na Razomy?",
               "a2": "Sim. Utilizamos encriptação HTTPS. Os seus ficheiros são automaticamente eliminados dos nossos servidores após 1 hora para garantir a privacidade.",
               "q3": "Este conversor é gratuito?",
-              "a3": "Absolutamente. Pode converter ficheiros {s} para {t} gratuitamente sem criar uma conta."
+              "a3": "Absolutamente. Pode converter ficheiros {source} para {target} gratuitamente sem criar uma conta."
             }
           }
         }

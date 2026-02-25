@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. Indsæt {directory}-tekst",
-              "paste_desc": "Indsæt eller skriv dit {s}-indhold i inputfeltet.",
+              "paste_desc": "Indsæt eller skriv dit {source}-indhold i inputfeltet.",
               "process": "2. Konverteringsproces",
-              "process_desc": "Vores værktøj konverterer automatisk din tekst til {t}-format med de bedst mulige indstillinger.",
+              "process_desc": "Vores værktøj konverterer automatisk din tekst til {target}-format med de bedst mulige indstillinger.",
               "copy": "3. Kopiér {command}",
               "copy_desc": "Konverteringen er færdig. Du kan nu kopiere resultatet direkte til din udklipsholder."
             }
@@ -87,11 +87,11 @@
         "free": "Gratis",
         "seo_desc": "Komplet liste over understøttede formater til konvertering. PDF, DOCX, JPG, PNG og andre.",
         "directory": {
-          "title": "Konvertér .{directory}-filer",
-          "subtitle": "Vælg kommandoformat for dine .{directory}-filer",
+          "title": "Konvertér {directory}-filer",
+          "subtitle": "Vælg kommandoformat for dine {directory}-filer",
           "available_conversions": "Tilgængelige konverteringer",
           "command": {
-            "hero_sub": "Hurtigt, gratis og sikkert onlineværktøj til at konvertere {s} til {t}. Ingen registrering eller softwareinstallation påkrævet.",
+            "hero_sub": "Hurtigt, gratis og sikkert onlineværktøj til at konvertere {source} til {target}. Ingen registrering eller softwareinstallation påkrævet.",
             "features": {
               "fast": "Hurtig konvertering",
               "secure": "100% sikker",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. Upload {directory}-fil",
-              "upload_desc": "Træk og slip din {s}-fil i uploadområdet. Den maksimale filstørrelse er 100 MB.",
+              "upload_desc": "Træk og slip din {source}-fil i uploadområdet. Den maksimale filstørrelse er 100 MB.",
               "quality": "2. Konverteringsproces",
-              "quality_desc": "Vores værktøj konverterer automatisk din fil til {t}-format med de bedst mulige indstillinger.",
+              "quality_desc": "Vores værktøj konverterer automatisk din fil til {target}-format med de bedst mulige indstillinger.",
               "download": "3. Download {command}",
-              "download_desc": "Vent et øjeblik, til processen er færdig, og download derefter din nye {tgt}-fil med det samme."
+              "download_desc": "Vent et øjeblik, til processen er færdig, og download derefter din nye {target}-fil med det samme."
             },
             "faq": {
-              "q1": "Hvordan konverterer jeg {s} til {t}?",
+              "q1": "Hvordan konverterer jeg {source} til {target}?",
               "a1": "Upload blot din fil, vent på konverteringen og klik på download. Det fungerer på Windows, Mac, Linux og mobile enheder.",
-              "q2": "Er det sikkert at konvertere {s} på Razomy?",
+              "q2": "Er det sikkert at konvertere {source} på Razomy?",
               "a2": "Ja. Vi bruger HTTPS-kryptering. Dine filer slettes automatisk fra vores servere efter 1 time for at sikre privatlivets fred.",
               "q3": "Er denne konverter gratis?",
-              "a3": "Absolut. Du kan konvertere {s}-filer til {t} gratis uden at oprette en konto."
+              "a3": "Absolut. Du kan konvertere {source}-filer til {target} gratis uden at oprette en konto."
             }
           }
         }

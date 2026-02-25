@@ -72,7 +72,7 @@ const generateSeoContent = () => {
       {
         title: t('io.web.text_to_text.directory.command.steps.paste', {directory: in_}),
         icon: 'mdi-clipboard-text-outline',
-        text: t('io.web.text_to_text.directory.command.steps.paste_desc', {s: in_})
+        text: t('io.web.text_to_text.directory.command.steps.paste_desc', {source: in_})
       },
       {
         title: t('io.web.text_to_text.directory.command.steps.process', {func: out}),
@@ -87,15 +87,15 @@ const generateSeoContent = () => {
     ],
     faq: [
       {
-        q: t('io.web.file_to_file.directory.command.faq.q1', {s: in_, t: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q1', {source: in_, target: out}),
         a: t('io.web.file_to_file.directory.command.faq.a1')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q2', {s: in_}),
+        q: t('io.web.file_to_file.directory.command.faq.q2', {source: in_}),
         a: t('io.web.file_to_file.directory.command.faq.a2')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q3', {s: in_, t: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q3', {source: in_, target: out}),
         a: t('io.web.file_to_file.directory.command.faq.a3')
       },
     ]

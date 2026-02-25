@@ -56,9 +56,9 @@
           "command": {
             "steps": {
               "paste": "1. 粘贴 {directory} 文本",
-              "paste_desc": "将您的 {s} 内容粘贴或输入到输入框中。",
+              "paste_desc": "将您的 {source} 内容粘贴或输入到输入框中。",
               "process": "2. 转换过程",
-              "process_desc": "我们的工具会自动以最佳设置将您的文本转换为 {t} 格式。",
+              "process_desc": "我们的工具会自动以最佳设置将您的文本转换为 {target} 格式。",
               "copy": "3. 复制 {command}",
               "copy_desc": "转换完成。您现在可以直接将结果复制到剪贴板。"
             }
@@ -87,11 +87,11 @@
         "free": "免费",
         "seo_desc": "支持转换的完整格式列表。PDF, DOCX, JPG, PNG 等。",
         "directory": {
-          "title": "转换 .{directory} 文件",
-          "subtitle": "为您的 .{directory} 文件选择目标格式",
+          "title": "转换 {directory} 文件",
+          "subtitle": "为您的 {directory} 文件选择目标格式",
           "available_conversions": "可用的转换",
           "command": {
-            "hero_sub": "快速、免费且安全的在线工具，可将 {s} 转换为 {t}。无需注册或安装软件。",
+            "hero_sub": "快速、免费且安全的在线工具，可将 {source} 转换为 {target}。无需注册或安装软件。",
             "features": {
               "fast": "快速转换",
               "secure": "100% 安全",
@@ -107,19 +107,19 @@
             },
             "steps": {
               "upload": "1. 上传 {directory} 文件",
-              "upload_desc": "将您的 {s} 文件拖拽至上传区域。最大文件大小为 100MB。",
+              "upload_desc": "将您的 {source} 文件拖拽至上传区域。最大文件大小为 100MB。",
               "quality": "2. 转换过程",
-              "quality_desc": "我们的工具会自动以最佳设置将您的文件转换为 {t} 格式。",
+              "quality_desc": "我们的工具会自动以最佳设置将您的文件转换为 {target} 格式。",
               "download": "3. 下载 {command}",
-              "download_desc": "稍等片刻待处理完成，然后立即下载您的新 {tgt} 文件。"
+              "download_desc": "稍等片刻待处理完成，然后立即下载您的新 {target} 文件。"
             },
             "faq": {
-              "q1": "如何将 {s} 转换为 {t}？",
+              "q1": "如何将 {source} 转换为 {target}？",
               "a1": "只需上传您的文件，等待转换完成，然后点击下载。它适用于 Windows、Mac、Linux 和移动设备。",
-              "q2": "在 Razomy 上转换 {s} 安全吗？",
+              "q2": "在 Razomy 上转换 {source} 安全吗？",
               "a2": "是的。我们使用 HTTPS 加密。您的文件会在 1 小时后自动从我们的服务器删除，以确保隐私。",
               "q3": "此转换器免费吗？",
-              "a3": "当然。您可以免费将 {s} 文件转换为 {t}，无需创建帐户。"
+              "a3": "当然。您可以免费将 {source} 文件转换为 {target}，无需创建帐户。"
             }
           }
         }
