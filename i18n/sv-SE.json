@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Donera",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Bricka",
+    "calendar": {
+      "moreEvents": "{0} fler",
+      "today": "Idag"
     },
-    "dropzone": {
-      "converting": "Konverterar",
-      "scanning_folders": "Skannar mappar",
-      "drop_title": "Dra och släpp fil här",
-      "support_nested_folders": "Vi stödjer undermappar",
-      "select_files": "Välj fil",
-      "select_folder": "Välj mapp",
-      "selected_files": "Valda filer",
-      "total_size": "Total storlek",
-      "clear_all": "Rensa alla",
-      "add_files": "Lägg till filer",
-      "convert": "Konvertera"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Karusellbild {0} av {1}"
+      },
+      "next": "Nästa bild",
+      "prev": "Föregående bild"
     },
-    "error": {
-      "404": {
-        "title": "Sidan hittades inte",
-        "back_btn": "Tillbaka till startsidan"
+    "close": "Stäng",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Alfa-värde",
+        "alphaSlider": "Alfa",
+        "blueInput": "Blå-värde",
+        "changeFormat": "Ändra färgformat",
+        "eyedropper": "Välj färg med pipett",
+        "greenInput": "Grön-värde",
+        "hexInput": "HEX-värde",
+        "hexaInput": "HEX med alfavärde",
+        "hueInput": "Nyans-värde",
+        "hueSlider": "Nyans",
+        "lightnessInput": "Ljushetsvärde",
+        "redInput": "Röd-värde",
+        "saturationInput": "Mättnadsvärde"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Indatakommando"
+    "confirmEdit": {
+      "cancel": "Avbryt",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Första sidan",
+      "itemsPerPageAll": "Alla",
+      "itemsPerPageText": "Objekt per sida:",
+      "lastPage": "Sista sidan",
+      "nextPage": "Nästa sida",
+      "pageText": "{0}-{1} av {2}",
+      "prevPage": "Föregående sida"
+    },
+    "dataIterator": {
+      "loadingText": "Laddar objekt...",
+      "noResultsText": "Inga matchande poster hittades"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Aktivera för att sortera stigande.",
+        "activateDescending": "Aktivera för att sortera fallande.",
+        "activateNone": "Aktivera för att ta bort sortering.",
+        "sortAscending": "Sorterat stigande.",
+        "sortDescending": "Sorterat fallande.",
+        "sortNone": "Ej sorterat."
+      },
+      "itemsPerPageText": "Rader per sida:",
+      "sortBy": "Sortera efter"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Idag, {0}",
+        "nextMonth": "Nästa månad",
+        "nextYear": "Nästa år",
+        "previousMonth": "Föregående månad",
+        "previousYear": "Föregående år",
+        "selectDate": "{0}",
+        "selectMonth": "Välj månad",
+        "selectYear": "Välj år"
+      },
+      "header": "Ange datum",
+      "input": {
+        "placeholder": "Ange datum"
+      },
+      "itemsSelected": "{0} valda",
+      "range": {
+        "header": "Ange datum",
+        "title": "Välj datum"
+      },
+      "title": "Välj datum"
+    },
+    "dateRangeInput": {
+      "divider": "till"
+    },
+    "dismiss": "Avfärda",
+    "fileInput": {
+      "counter": "{0} filer",
+      "counterSize": "{0} filer ({1} totalt)"
+    },
+    "fileUpload": {
+      "browse": "Bläddra efter filer",
+      "divider": "eller",
+      "title": "Dra och släpp filer här"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backsteg",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Pil ned",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Pil vänster",
+      "option": "Option",
+      "or": "eller",
+      "plus": "plus",
+      "rightArrow": "Pil höger",
+      "shift": "Skift",
+      "shortcut": "Kortkommando: {0}",
+      "space": "Mellanslag",
+      "then": "sedan",
+      "upArrow": "Pil upp"
+    },
+    "infiniteScroll": {
+      "empty": "Inget mer",
+      "loadMore": "Ladda mer"
+    },
+    "input": {
+      "appendAction": "{0} efterföljande åtgärd",
+      "clear": "Rensa {0}",
+      "otp": "Vänligen ange OTP-tecken {0}",
+      "prependAction": "{0} inledande åtgärd"
+    },
+    "loading": "Laddar...",
+    "noDataText": "Ingen data tillgänglig",
+    "open": "Öppna",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Sida {0}, Nuvarande sida",
+        "first": "Första sidan",
+        "last": "Sista sidan",
+        "next": "Nästa sida",
+        "page": "Gå till sida {0}",
+        "previous": "Föregående sida",
+        "root": "Paginering navigering"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Betyg {0} av {1}"
+      }
+    },
+    "rules": {
+      "capital": "Detta fält kan endast innehålla stora bokstäver",
+      "email": "Ange en giltig e-postadress",
+      "exclude": "Tecknet {0} är inte tillåtet",
+      "integer": "Detta fält kan endast innehålla heltal",
+      "maxLength": "Du får ange högst {0} tecken",
+      "minLength": "Du måste ange minst {0} tecken",
+      "notEmpty": "Vänligen välj minst ett värde",
+      "number": "Detta fält kan endast innehålla siffror",
+      "pattern": "Ogiltigt format",
+      "required": "Detta fält är obligatoriskt",
+      "strictLength": "Längden på det angivna fältet är ogiltig"
+    },
+    "stepper": {
+      "next": "Nästa",
+      "prev": "Föregående"
+    },
+    "timePicker": {
+      "am": "FM",
+      "hour": "Timme",
+      "minute": "Minut",
+      "pm": "EM",
+      "second": "Sekund",
+      "title": "Välj tid"
+    },
+    "video": {
+      "enterFullscreen": "Helskärm",
+      "exitFullscreen": "Lämna helskärm",
+      "mute": "Ljud av",
+      "pause": "Pausa",
+      "play": "Spela upp",
+      "seek": "Sök",
+      "showVolume": "Visa volymkontroll",
+      "unmute": "Ljud på",
+      "volume": "Volym"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Ljud",
+        "document": "Dokument",
+        "home": "Hem",
+        "image": "Bild",
+        "math": "Matematik",
+        "string": "Text",
+        "video": "Video"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Beskrivning",
+        "name": "Namn",
+        "parameters": "Parametrar",
+        "returns": "Returnerar",
+        "title": "Använda kod",
+        "type": "Typ",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Stäng",
+        "convert_from": "Konvertera från",
+        "convert_to": "Konvertera till",
+        "directory": {
+          "available_conversions": "Tillgängliga konverteringar",
+          "command": {
+            "faq": {
+              "a1": "Ladda bara upp din fil, vänta på konverteringen och klicka på ladda ner. Det fungerar på Windows, Mac, Linux och mobila enheter.",
+              "a2": "Ja. Vi använder HTTPS-kryptering. Dina filer raderas automatiskt från våra servrar efter 1 timme för att säkerställa integritet.",
+              "a3": "Absolut. Du kan konvertera {source}-filer till {target} gratis utan att skapa ett konto.",
+              "q1": "Hur konverterar jag {source} till {target}?",
+              "q2": "Är det säkert att konvertera {source} på Razomy?",
+              "q3": "Är denna konverterare gratis?"
+            },
+            "features": {
+              "accurate": "Hög precision",
+              "fast": "Snabb konvertering",
+              "quality": "Hög kvalitet",
+              "secure": "100 % säkert"
+            },
+            "hero_sub": "Snabbt, gratis och säkert onlineverktyg för att konvertera {source} till {target}. Ingen registrering eller programinstallation krävs.",
+            "seo": {
+              "description": "Det bästa sättet att konvertera {source}-filer till {target}-format online. Lättanvänd, helt gratis och säker filkonvertering.",
+              "h1": "Gratis {source} till {target}-konverterare online",
+              "intro_text": "Vår konverterare låter dig bearbeta filer med hög precision. Vi bevarar den ursprungliga layouten och kvaliteten medan dina {source}-dokument omvandlas till {target}.",
+              "intro_title": "Varför använda vårt verktyg för {source} till {target}?",
+              "title": "Konvertera {source} till {target} online | Gratis & säkert verktyg"
+            },
+            "steps": {
+              "download": "3. Ladda ner {target}",
+              "download_desc": "Vänta ett ögonblick tills processen är klar och ladda sedan ner din nya {target}-fil direkt.",
+              "quality": "2. Konverteringsprocess",
+              "quality_desc": "Vårt verktyg konverterar automatiskt din fil till {target}-format med bästa möjliga inställningar.",
+              "upload": "1. Ladda upp {source}-fil",
+              "upload_desc": "Dra och släpp din {source}-fil i uppladdningsområdet. Den maximala filstorleken är 100 MB."
+            }
+          },
+          "subtitle": "Välj kommandoformat för dina {source}-filer",
+          "title": "Konvertera {source}-filer"
+        },
+        "error": "Fel vid konvertering av fil: {fileName}",
+        "faq_title": "Vanliga frågor och svar",
+        "free": "Gratis",
+        "how_to_convert": "Hur man konverterar",
+        "input": "Indata",
+        "no_results": "Inga resultat hittades",
+        "output": "Utdata",
+        "price": "Pris",
+        "safety": "Säkerhet",
+        "safety_value": "HTTPS / Automatisk radering",
+        "search_placeholder": "t.ex. pdf till docx, jpg...",
+        "seo_desc": "Fullständig lista över format som stöds för konvertering. PDF, DOCX, JPG, PNG och andra.",
+        "seo_title": "Katalog för filkonverterare",
+        "specs_title": "Konverteringsspecifikationer",
+        "subtitle": "Hitta konverteraren du behöver bland över 1000 verktyg",
+        "title": "Razomy Input Output",
+        "to": "till"
+      },
       "footer": {
         "github": "Källkod Github"
+      },
+      "input": {
+        "subtitle": "Välj utdataformat för din {source}-data",
+        "title": "Konvertera {source}-data"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Sök...",
+        "no_results": "Inga par hittades",
         "results_for": "Resultat för",
-        "no_results": "Inga par hittades"
+        "search": "Sök..."
       },
       "text_to_text": {
-        "input_text": "Indatatext",
-        "placeholder_input": "Klistra in din text här...",
-        "result_title": "{command} Resultat",
-        "copy_to_clipboard": "Kopiera till urklipp",
-        "placeholder_output": "Resultatet visas här...",
-        "convert_btn": "Konvertera till {command}",
+        "convert_btn": "Konvertera till {target}",
         "copied_success": "Kopierat till urklipp!",
+        "copy_to_clipboard": "Kopiera till urklipp",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Klistra bara in din sträng i vårt onlineverktyg och klicka på konvertera. Det tillämpar automatiskt reglerna för {target}. Sedan kopierar du bara resultatet.",
+              "a2": "Absolut. Vi värnar om integritet. Din text behandlas säkert och vi lagrar eller sparar inget av ditt inklistrade innehåll eller kod.",
+              "a3": "Ja, detta textkonverteringsverktyg är 100 % gratis att använda utan dolda gränser.",
+              "q1": "Hur konverterar jag text till {target}?",
+              "q2": "Är min text och kod säker?",
+              "q3": "Är denna strängformaterare gratis?"
+            },
+            "hero_sub": "Gratis och direkt onlineverktyg för att konvertera vanlig text, strängar eller variabler till {target}.",
+            "seo": {
+              "description": "Konvertera enkelt din text, strängar eller kodvariabler till {target} online. Ett gratis, snabbt och säkert textformateringsverktyg för utvecklare och skribenter.",
+              "h1": "Gratis {target}-konverterare online",
+              "intro_text": "Vårt strängformateringsverktyg omvandlar omedelbart din vanliga text, meningar eller kodvariabler till {target}. Klistra bara in ditt innehåll så hanterar verktyget automatiskt mellanslag och versalisering.",
+              "intro_title": "Varför använda vår {target}-generator?",
+              "title": "Konvertera text till {target} online | Gratis stränggenerator"
+            },
             "steps": {
-              "paste": "1. Klistra in {directory}-text",
+              "copy": "3. Kopiera {target}",
+              "copy_desc": "Konverteringen är klar. Du kan nu kopiera resultatet direkt till ditt urklipp.",
+              "paste": "1. Klistra in {source}-text",
               "paste_desc": "Klistra in eller skriv ditt {source}-innehåll i inmatningsfältet.",
               "process": "2. Konverteringsprocess",
-              "process_desc": "Vårt verktyg konverterar automatiskt din text till {target}-format med bästa möjliga inställningar.",
-              "copy": "3. Kopiera {command}",
-              "copy_desc": "Konverteringen är klar. Du kan nu kopiera resultatet direkt till ditt urklipp."
+              "process_desc": "Vårt verktyg konverterar automatiskt din text till {target}-format med bästa möjliga inställningar."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Fel vid konvertering av fil:{fileName}",
-        "title": "Razomy Indata Utdata",
-        "subtitle": "Hitta konverteraren du behöver bland 1000+ funktioner",
-        "search_placeholder": "t.ex. pdf till docx, jpg...",
-        "no_results": "Inga resultat hittades",
-        "convert_from": "Konvertera från",
-        "to": "till",
-        "close": "Stäng",
-        "convert_to": "Konvertera till",
-        "how_to_convert": "Hur man konverterar",
-        "seo_title": "Katalog för filkonverterare",
-        "faq_title": "Vanliga frågor och svar",
-        "specs_title": "Konverteringsspecifikationer",
-        "input": "Indata",
-        "output": "Utdata",
-        "safety": "Säkerhet",
-        "safety_value": "HTTPS / Automatisk radering",
-        "price": "Pris",
-        "free": "Gratis",
-        "seo_desc": "Fullständig lista över format som stöds för konvertering. PDF, DOCX, JPG, PNG och andra.",
-        "directory": {
-          "title": "Konvertera {directory}-filer",
-          "subtitle": "Välj kommandoformat för dina {directory}-filer",
-          "available_conversions": "Tillgängliga konverteringar",
-          "command": {
-            "hero_sub": "Snabbt, gratis och säkert onlineverktyg för att konvertera {source} till {target}. Ingen registrering eller programinstallation krävs.",
-            "features": {
-              "fast": "Snabb konvertering",
-              "secure": "100 % säkert",
-              "quality": "Hög kvalitet",
-              "accurate": "Hög precision"
-            },
-            "seo": {
-              "title": "Konvertera {directory} till {command} online | Gratis & säkert verktyg",
-              "h1": "Gratis {directory} till {command}-konverterare online",
-              "description": "Det bästa sättet att konvertera {directory}-filer till {command}-format online. Lättanvänd, helt gratis och säker filkonvertering.",
-              "intro_title": "Varför använda vårt verktyg för {directory} till {command}?",
-              "intro_text": "Vår konverterare låter dig bearbeta filer med hög precision. Vi bevarar den ursprungliga layouten och kvaliteten medan dina {directory}-dokument omvandlas till {command}."
-            },
-            "steps": {
-              "upload": "1. Ladda upp {directory}-fil",
-              "upload_desc": "Dra och släpp din {source}-fil i uppladdningsområdet. Den maximala filstorleken är 100 MB.",
-              "quality": "2. Konverteringsprocess",
-              "quality_desc": "Vårt verktyg konverterar automatiskt din fil till {target}-format med bästa möjliga inställningar.",
-              "download": "3. Ladda ner {command}",
-              "download_desc": "Vänta en stund tills processen är klar, ladda sedan ner din nya {target}-fil direkt."
-            },
-            "faq": {
-              "q1": "Hur konverterar jag {source} till {target}?",
-              "a1": "Ladda bara upp din fil, vänta på konverteringen och klicka på ladda ner. Det fungerar på Windows, Mac, Linux och mobila enheter.",
-              "q2": "Är det säkert att konvertera {source} på Razomy?",
-              "a2": "Ja. Vi använder HTTPS-kryptering. Dina filer raderas automatiskt från våra servrar efter 1 timme för att säkerställa integritet.",
-              "q3": "Är denna konverterare gratis?",
-              "a3": "Absolut. Du kan konvertera {source}-filer till {target} gratis utan att skapa ett konto."
-            }
-          }
-        }
+        },
+        "input_text": "Indatatext",
+        "placeholder_input": "Klistra in din text här...",
+        "placeholder_output": "Resultatet visas här...",
+        "result_title": "{target} Resultat"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Lägg till filer",
+      "clear_all": "Rensa alla",
+      "convert": "Konvertera",
+      "converting": "Konverterar",
+      "drop_title": "Dra och släpp fil här",
+      "scanning_folders": "Skannar mappar",
+      "select_files": "Välj fil",
+      "select_folder": "Välj mapp",
+      "selected_files": "Valda filer",
+      "support_nested_folders": "Vi stödjer undermappar",
+      "total_size": "Total storlek"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Tillbaka till startsidan",
+        "title": "Sidan hittades inte"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Hem",
-        "image": "Bild",
-        "audio": "Ljud",
-        "video": "Video",
-        "document": "Dokument",
-        "math": "Matematik",
-        "string": "Text"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Donera",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Indatakommando",
+      "name": "Io"
     }
   }
 }

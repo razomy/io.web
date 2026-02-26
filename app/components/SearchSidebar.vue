@@ -134,6 +134,7 @@ import { computed, ref, watch } from 'vue';
 import { useDisplay } from 'vuetify';
 import { directoriesTree } from '~~/razomy/db';
 import { type IoDirectory } from '~~/razomy/io/command';
+import {Debounce} from '~~/razomy/functions';
 
 const { t, availableLocales } = useI18n();
 const localePath = useLocalePath();
@@ -166,7 +167,7 @@ const currentCategories = computed(() => {
 const searchInputValue = ref(''); // What the user sees in input
 const activeSearchQuery = ref(''); // What triggers the filter
 const isCalculating = ref(false);
-let debounceTimeout: any = null;
+let debouncer = new Debounce();
 
 /**
  * Debounce Function:
@@ -176,9 +177,7 @@ function handleSearchInput(newValue: string | null) {
   const val = newValue || '';
   isCalculating.value = true;
 
-  if (debounceTimeout) clearTimeout(debounceTimeout);
-
-  debounceTimeout = setTimeout(() => {
+  debouncer.debounce(() => {
     activeSearchQuery.value = val;
     isCalculating.value = false;
   }, 350); // 350ms delay

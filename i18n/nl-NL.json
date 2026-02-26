@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Doneren",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Badge",
+    "calendar": {
+      "moreEvents": "{0} meer",
+      "today": "Vandaag"
     },
-    "dropzone": {
-      "converting": "Converteren",
-      "scanning_folders": "Mappen scannen",
-      "drop_title": "Sleep bestand hierheen",
-      "support_nested_folders": "We ondersteunen geneste mappen",
-      "select_files": "Bestand selecteren",
-      "select_folder": "Map selecteren",
-      "selected_files": "Geselecteerde bestanden",
-      "total_size": "Totale grootte",
-      "clear_all": "Alles wissen",
-      "add_files": "Bestanden toevoegen",
-      "convert": "Converteren"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Carrousel dia {0} van {1}"
+      },
+      "next": "Volgende afbeelding",
+      "prev": "Vorige afbeelding"
     },
-    "error": {
-      "404": {
-        "title": "Pagina niet gevonden",
-        "back_btn": "Terug naar startpagina"
+    "close": "Sluiten",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Alphawaarde",
+        "alphaSlider": "Alpha",
+        "blueInput": "Blauwwaarde",
+        "changeFormat": "Kleurformaat wijzigen",
+        "eyedropper": "Kies kleur met pipet",
+        "greenInput": "Groenwaarde",
+        "hexInput": "HEX-waarde",
+        "hexaInput": "HEX met alphawaarde",
+        "hueInput": "Tintwaarde",
+        "hueSlider": "Tint",
+        "lightnessInput": "Helderheidswaarde",
+        "redInput": "Roodwaarde",
+        "saturationInput": "Verzadigingswaarde"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Invoeropdracht"
+    "confirmEdit": {
+      "cancel": "Annuleren",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Eerste pagina",
+      "itemsPerPageAll": "Alles",
+      "itemsPerPageText": "Items per pagina:",
+      "lastPage": "Laatste pagina",
+      "nextPage": "Volgende pagina",
+      "pageText": "{0}-{1} van {2}",
+      "prevPage": "Vorige pagina"
+    },
+    "dataIterator": {
+      "loadingText": "Items laden...",
+      "noResultsText": "Geen overeenkomende records gevonden"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Activeer om oplopend te sorteren.",
+        "activateDescending": "Activeer om aflopend te sorteren.",
+        "activateNone": "Activeer om sortering te verwijderen.",
+        "sortAscending": "Oplopend gesorteerd.",
+        "sortDescending": "Aflopend gesorteerd.",
+        "sortNone": "Niet gesorteerd."
+      },
+      "itemsPerPageText": "Rijen per pagina:",
+      "sortBy": "Sorteer op"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Vandaag, {0}",
+        "nextMonth": "Volgende maand",
+        "nextYear": "Volgend jaar",
+        "previousMonth": "Vorige maand",
+        "previousYear": "Vorig jaar",
+        "selectDate": "{0}",
+        "selectMonth": "Selecteer maand",
+        "selectYear": "Selecteer jaar"
+      },
+      "header": "Voer datum in",
+      "input": {
+        "placeholder": "Voer datum in"
+      },
+      "itemsSelected": "{0} geselecteerd",
+      "range": {
+        "header": "Voer datums in",
+        "title": "Selecteer datums"
+      },
+      "title": "Selecteer datum"
+    },
+    "dateRangeInput": {
+      "divider": "tot"
+    },
+    "dismiss": "Negeren",
+    "fileInput": {
+      "counter": "{0} bestanden",
+      "counterSize": "{0} bestanden ({1} in totaal)"
+    },
+    "fileUpload": {
+      "browse": "Bestanden bladeren",
+      "divider": "of",
+      "title": "Sleep bestanden hierheen"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backspace",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Pijl omlaag",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Pijl links",
+      "option": "Option",
+      "or": "of",
+      "plus": "plus",
+      "rightArrow": "Pijl rechts",
+      "shift": "Shift",
+      "shortcut": "Sneltoets: {0}",
+      "space": "Spatie",
+      "then": "dan",
+      "upArrow": "Pijl omhoog"
+    },
+    "infiniteScroll": {
+      "empty": "Niets meer",
+      "loadMore": "Meer laden"
+    },
+    "input": {
+      "appendAction": "{0} actie achteraf",
+      "clear": "{0} wissen",
+      "otp": "Voer OTP-teken {0} in",
+      "prependAction": "{0} actie vooraf"
+    },
+    "loading": "Laden...",
+    "noDataText": "Geen gegevens beschikbaar",
+    "open": "Openen",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Pagina {0}, Huidige pagina",
+        "first": "Eerste pagina",
+        "last": "Laatste pagina",
+        "next": "Volgende pagina",
+        "page": "Ga naar pagina {0}",
+        "previous": "Vorige pagina",
+        "root": "Paginering navigatie"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Beoordeling {0} van {1}"
+      }
+    },
+    "rules": {
+      "capital": "Dit veld mag alleen hoofdletters bevatten",
+      "email": "Voer een geldig e-mailadres in",
+      "exclude": "Het teken {0} is niet toegestaan",
+      "integer": "Dit veld mag alleen gehele getallen bevatten",
+      "maxLength": "U mag maximaal {0} tekens invoeren",
+      "minLength": "U moet minimaal {0} tekens invoeren",
+      "notEmpty": "Kies minimaal één waarde",
+      "number": "Dit veld mag alleen cijfers bevatten",
+      "pattern": "Ongeldig formaat",
+      "required": "Dit veld is verplicht",
+      "strictLength": "De lengte van de invoer is ongeldig"
+    },
+    "stepper": {
+      "next": "Volgende",
+      "prev": "Vorige"
+    },
+    "timePicker": {
+      "am": "AM",
+      "hour": "Uur",
+      "minute": "Minuut",
+      "pm": "PM",
+      "second": "Seconde",
+      "title": "Selecteer tijd"
+    },
+    "video": {
+      "enterFullscreen": "Volledig scherm",
+      "exitFullscreen": "Volledig scherm sluiten",
+      "mute": "Dempen",
+      "pause": "Pauzeren",
+      "play": "Afspelen",
+      "seek": "Zoeken",
+      "showVolume": "Toon volumeregelaar",
+      "unmute": "Dempen opheffen",
+      "volume": "Volume"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Audio",
+        "document": "Document",
+        "home": "Home",
+        "image": "Afbeelding",
+        "math": "Wiskunde",
+        "string": "Tekst",
+        "video": "Video"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Beschrijving",
+        "name": "Naam",
+        "parameters": "Parameters",
+        "returns": "Geeft terug",
+        "title": "Gebruik van code",
+        "type": "Type",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Sluiten",
+        "convert_from": "Converteren van",
+        "convert_to": "Converteren naar",
+        "directory": {
+          "available_conversions": "Beschikbare conversies",
+          "command": {
+            "faq": {
+              "a1": "Upload eenvoudig uw bestand, wacht op de conversie en klik op downloaden. Het werkt op Windows, Mac, Linux en mobiele apparaten.",
+              "a2": "Ja. We gebruiken HTTPS-versleuteling. Uw bestanden worden na 1 uur automatisch van onze servers verwijderd om uw privacy te waarborgen.",
+              "a3": "Absoluut. U kunt gratis {source}-bestanden naar {target} converteren zonder een account aan te maken.",
+              "q1": "Hoe converteer ik {source} naar {target}?",
+              "q2": "Is het veilig om {source} te converteren op Razomy?",
+              "q3": "Is deze converter gratis?"
+            },
+            "features": {
+              "accurate": "Hoge nauwkeurigheid",
+              "fast": "Snelle conversie",
+              "quality": "Hoge kwaliteit",
+              "secure": "100% Veilig"
+            },
+            "hero_sub": "Snelle, gratis en veilige online tool om {source} naar {target} te converteren. Geen registratie of software-installatie vereist.",
+            "seo": {
+              "description": "De beste manier om {source}-bestanden online naar {target}-formaat te converteren. Eenvoudig in gebruik, volledig gratis en veilige bestandsconversie.",
+              "h1": "Gratis online {source} naar {target} converter",
+              "intro_text": "Onze converter stelt u in staat bestanden met hoge precisie te verwerken. We behouden de originele lay-out en kwaliteit tijdens het omzetten van uw {source}-documenten naar {target}.",
+              "intro_title": "Waarom onze {source} naar {target} tool gebruiken?",
+              "title": "Converteer {source} naar {target} Online | Gratis & Veilig"
+            },
+            "steps": {
+              "download": "3. Download {target}",
+              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {target}-bestand.",
+              "quality": "2. Conversieproces",
+              "quality_desc": "Onze tool converteert uw bestand automatisch naar {target}-formaat met de best mogelijke instellingen.",
+              "upload": "1. Upload {source}-bestand",
+              "upload_desc": "Sleep uw {source}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB."
+            }
+          },
+          "subtitle": "Selecteer opdrachtformaat voor uw {source}-bestanden",
+          "title": "Converteer {source}-bestanden"
+        },
+        "error": "Fout bij converteren van bestand: {fileName}",
+        "faq_title": "Veelgestelde vragen",
+        "free": "Gratis",
+        "how_to_convert": "Hoe te converteren",
+        "input": "Invoer",
+        "no_results": "Geen resultaten gevonden",
+        "output": "Uitvoer",
+        "price": "Prijs",
+        "safety": "Veiligheid",
+        "safety_value": "HTTPS / Auto-verwijderen",
+        "search_placeholder": "bijv. pdf naar docx, jpg...",
+        "seo_desc": "Volledige lijst met ondersteunde formaten voor conversie. PDF, DOCX, JPG, PNG en anderen.",
+        "seo_title": "Catalogus bestandsconversie",
+        "specs_title": "Conversiespecificaties",
+        "subtitle": "Vind de converter die u nodig heeft tussen 1000+ tools",
+        "title": "Razomy Input Output",
+        "to": "naar"
+      },
       "footer": {
         "github": "Broncode Github"
+      },
+      "input": {
+        "subtitle": "Selecteer uitvoerformaat voor uw {source}-data",
+        "title": "Converteer {source}-data"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Zoeken...",
+        "no_results": "Geen paren gevonden",
         "results_for": "Resultaten voor",
-        "no_results": "Geen paren gevonden"
+        "search": "Zoeken..."
       },
       "text_to_text": {
-        "input_text": "Invoertekst",
-        "placeholder_input": "Plak uw tekst hier...",
-        "result_title": "{command} Resultaat",
-        "copy_to_clipboard": "Kopiëren naar klembord",
-        "placeholder_output": "Resultaat verschijnt hier...",
-        "convert_btn": "Converteren naar {command}",
+        "convert_btn": "Converteren naar {target}",
         "copied_success": "Gekopieerd naar klembord!",
+        "copy_to_clipboard": "Kopiëren naar klembord",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Plak uw string in onze online tool en klik op converteren. De {target}-hoofdletterregels worden automatisch toegepast. Kopieer vervolgens het resultaat.",
+              "a2": "Absoluut. Wij geven om privacy. Uw tekst wordt veilig verwerkt en we bewaren of slaan geen van uw geplakte inhoud of code op.",
+              "a3": "Ja, deze tekstconversietool is 100% gratis te gebruiken zonder verborgen limieten.",
+              "q1": "Hoe converteer ik tekst naar {target}?",
+              "q2": "Zijn mijn tekst en code veilig?",
+              "q3": "Is deze string-formatter gratis?"
+            },
+            "hero_sub": "Gratis en directe online tool om gewone tekst, strings of variabelen om te zetten naar {target}.",
+            "seo": {
+              "description": "Converteer eenvoudig uw tekst, strings of codevariabelen online naar {target}. Een gratis, snelle en veilige tool voor tekstformattering voor ontwikkelaars en schrijvers.",
+              "h1": "Gratis Online {target} Converter",
+              "intro_text": "Onze string-formatting tool zet uw gewone tekst, zinnen of codevariabelen direct om in {target}. Plak eenvoudigweg uw inhoud en de tool verwerkt automatisch spaties en hoofdlettergebruik.",
+              "intro_title": "Waarom onze {target} generator gebruiken?",
+              "title": "Converteer Tekst naar {target} Online | Gratis String Generator"
+            },
             "steps": {
-              "paste": "1. Plak {directory} tekst",
+              "copy": "3. Kopieer {target}",
+              "copy_desc": "De conversie is voltooid. U kunt het resultaat nu direct naar uw klembord kopiëren.",
+              "paste": "1. Plak {source} tekst",
               "paste_desc": "Plak of typ uw {source}-inhoud in het invoerveld.",
               "process": "2. Conversieproces",
-              "process_desc": "Onze tool converteert uw tekst automatisch naar {target}-formaat met de best mogelijke instellingen.",
-              "copy": "3. Kopieer {command}",
-              "copy_desc": "De conversie is voltooid. U kunt het resultaat nu direct naar uw klembord kopiëren."
+              "process_desc": "Onze tool converteert uw tekst automatisch naar {target}-formaat met de best mogelijke instellingen."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Fout bij converteren bestand:{fileName}",
-        "title": "Razomy Input Output",
-        "subtitle": "Vind de converter die u nodig heeft uit 1000+ functies",
-        "search_placeholder": "bijv. pdf naar docx, jpg...",
-        "no_results": "Geen resultaten gevonden",
-        "convert_from": "Converteren van",
-        "to": "naar",
-        "close": "Sluiten",
-        "convert_to": "Converteren naar",
-        "how_to_convert": "Hoe te converteren",
-        "seo_title": "Catalogus bestandsconversie",
-        "faq_title": "Veelgestelde vragen",
-        "specs_title": "Conversiespecificaties",
-        "input": "Invoer",
-        "output": "Uitvoer",
-        "safety": "Veiligheid",
-        "safety_value": "HTTPS / Auto-verwijderen",
-        "price": "Prijs",
-        "free": "Gratis",
-        "seo_desc": "Volledige lijst met ondersteunde formaten voor conversie. PDF, DOCX, JPG, PNG en anderen.",
-        "directory": {
-          "title": "Converteer {directory}-bestanden",
-          "subtitle": "Selecteer opdrachtformaat voor uw {directory}-bestanden",
-          "available_conversions": "Beschikbare conversies",
-          "command": {
-            "hero_sub": "Snelle, gratis en veilige online tool om {source} naar {target} te converteren. Geen registratie of software-installatie vereist.",
-            "features": {
-              "fast": "Snelle conversie",
-              "secure": "100% Veilig",
-              "quality": "Hoge kwaliteit",
-              "accurate": "Hoge nauwkeurigheid"
-            },
-            "seo": {
-              "title": "Converteer {directory} naar {command} Online | Gratis & Veilig",
-              "h1": "Gratis online {directory} naar {command} converter",
-              "description": "De beste manier om {directory}-bestanden online naar {command}-formaat te converteren. Eenvoudig in gebruik, volledig gratis en veilige bestandsconversie.",
-              "intro_title": "Waarom onze {directory} naar {command} tool gebruiken?",
-              "intro_text": "Onze converter stelt u in staat bestanden met hoge precisie te verwerken. We behouden de originele lay-out en kwaliteit tijdens het omzetten van uw {directory}-documenten naar {command}."
-            },
-            "steps": {
-              "upload": "1. Upload {directory}-bestand",
-              "upload_desc": "Sleep uw {source}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB.",
-              "quality": "2. Conversieproces",
-              "quality_desc": "Onze tool converteert uw bestand automatisch naar {target}-formaat met de best mogelijke instellingen.",
-              "download": "3. Download {command}",
-              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {target}-bestand."
-            },
-            "faq": {
-              "q1": "Hoe converteer ik {source} naar {target}?",
-              "a1": "Upload eenvoudig uw bestand, wacht op de conversie en klik op downloaden. Het werkt op Windows, Mac, Linux en mobiele apparaten.",
-              "q2": "Is het veilig om {source} te converteren op Razomy?",
-              "a2": "Ja. We gebruiken HTTPS-versleuteling. Uw bestanden worden na 1 uur automatisch van onze servers verwijderd om uw privacy te waarborgen.",
-              "q3": "Is deze converter gratis?",
-              "a3": "Absoluut. U kunt gratis {source}-bestanden naar {target} converteren zonder een account aan te maken."
-            }
-          }
-        }
+        },
+        "input_text": "Invoertekst",
+        "placeholder_input": "Plak uw tekst hier...",
+        "placeholder_output": "Resultaat verschijnt hier...",
+        "result_title": "{target} Resultaat"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Bestanden toevoegen",
+      "clear_all": "Alles wissen",
+      "convert": "Converteren",
+      "converting": "Converteren",
+      "drop_title": "Sleep bestand hierheen",
+      "scanning_folders": "Mappen scannen",
+      "select_files": "Bestand selecteren",
+      "select_folder": "Map selecteren",
+      "selected_files": "Geselecteerde bestanden",
+      "support_nested_folders": "We ondersteunen geneste mappen",
+      "total_size": "Totale grootte"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Terug naar startpagina",
+        "title": "Pagina niet gevonden"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Home",
-        "image": "Afbeelding",
-        "audio": "Audio",
-        "video": "Video",
-        "document": "Document",
-        "math": "Wiskunde",
-        "string": "Tekst"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Doneren",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Invoeropdracht",
+      "name": "Io"
     }
   }
 }

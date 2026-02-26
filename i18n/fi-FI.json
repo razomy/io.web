@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Lahjoita",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Merkki",
+    "calendar": {
+      "moreEvents": "{0} lisää",
+      "today": "Tänään"
     },
-    "dropzone": {
-      "converting": "Muunnetaan",
-      "scanning_folders": "Skannataan kansioita",
-      "drop_title": "Vedä ja pudota tiedosto tähän",
-      "support_nested_folders": "Tuemme sisäkkäisiä kansioita",
-      "select_files": "Valitse tiedosto",
-      "select_folder": "Valitse kansio",
-      "selected_files": "Valitut tiedostot",
-      "total_size": "Kokonaiskoko",
-      "clear_all": "Tyhjennä kaikki",
-      "add_files": "Lisää tiedostoja",
-      "convert": "Muunna"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Karusellin dia {0} / {1}"
+      },
+      "next": "Seuraava kuva",
+      "prev": "Edellinen kuva"
     },
-    "error": {
-      "404": {
-        "title": "Sivua ei löydy",
-        "back_btn": "Takaisin etusivulle"
+    "close": "Sulje",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Alfa-arvo",
+        "alphaSlider": "Alfa",
+        "blueInput": "Sininen arvo",
+        "changeFormat": "Vaihda värimuotoa",
+        "eyedropper": "Valitse väri pipetillä",
+        "greenInput": "Vihreä arvo",
+        "hexInput": "HEX-arvo",
+        "hexaInput": "HEX alfa-arvolla",
+        "hueInput": "Sävyarvo",
+        "hueSlider": "Sävy",
+        "lightnessInput": "Valoisuusarvo",
+        "redInput": "Punainen arvo",
+        "saturationInput": "Kylläisyysarvo"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Syötekomento"
+    "confirmEdit": {
+      "cancel": "Peruuta",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Ensimmäinen sivu",
+      "itemsPerPageAll": "Kaikki",
+      "itemsPerPageText": "Kohteita sivulla:",
+      "lastPage": "Viimeinen sivu",
+      "nextPage": "Seuraava sivu",
+      "pageText": "{0}-{1} / {2}",
+      "prevPage": "Edellinen sivu"
+    },
+    "dataIterator": {
+      "loadingText": "Ladataan kohteita...",
+      "noResultsText": "Vastaavia tietueita ei löytynyt"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Aktivoi lajitellaksesi nousevasti.",
+        "activateDescending": "Aktivoi lajitellaksesi laskevasti.",
+        "activateNone": "Aktivoi poistaaksesi lajittelun.",
+        "sortAscending": "Järjestetty nousevasti.",
+        "sortDescending": "Järjestetty laskevasti.",
+        "sortNone": "Ei järjestetty."
+      },
+      "itemsPerPageText": "Rivejä sivulla:",
+      "sortBy": "Lajittele"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Tänään, {0}",
+        "nextMonth": "Seuraava kuukausi",
+        "nextYear": "Seuraava vuosi",
+        "previousMonth": "Edellinen kuukausi",
+        "previousYear": "Edellinen vuosi",
+        "selectDate": "{0}",
+        "selectMonth": "Valitse kuukausi",
+        "selectYear": "Valitse vuosi"
+      },
+      "header": "Syötä päivämäärä",
+      "input": {
+        "placeholder": "Syötä päivämäärä"
+      },
+      "itemsSelected": "{0} valittu",
+      "range": {
+        "header": "Syötä päivämäärät",
+        "title": "Valitse päivämäärät"
+      },
+      "title": "Valitse päivämäärä"
+    },
+    "dateRangeInput": {
+      "divider": "–"
+    },
+    "dismiss": "Hylkää",
+    "fileInput": {
+      "counter": "{0} tiedostoa",
+      "counterSize": "{0} tiedostoa ({1} yhteensä)"
+    },
+    "fileUpload": {
+      "browse": "Selaa tiedostoja",
+      "divider": "tai",
+      "title": "Vedä ja pudota tiedostot tähän"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Askelpalautin",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Nuoli alas",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Nuoli vasemmalle",
+      "option": "Option",
+      "or": "tai",
+      "plus": "plus",
+      "rightArrow": "Nuoli oikealle",
+      "shift": "Vaihto",
+      "shortcut": "Pikanäppäin: {0}",
+      "space": "Välilyönti",
+      "then": "sitten",
+      "upArrow": "Nuoli ylös"
+    },
+    "infiniteScroll": {
+      "empty": "Ei enempää",
+      "loadMore": "Lataa lisää"
+    },
+    "input": {
+      "appendAction": "{0} seuraava toiminto",
+      "clear": "Tyhjennä {0}",
+      "otp": "Syötä OTP-merkki {0}",
+      "prependAction": "{0} edeltävä toiminto"
+    },
+    "loading": "Ladataan...",
+    "noDataText": "Ei dataa saatavilla",
+    "open": "Avaa",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Sivu {0}, nykyinen sivu",
+        "first": "Ensimmäinen sivu",
+        "last": "Viimeinen sivu",
+        "next": "Seuraava sivu",
+        "page": "Mene sivulle {0}",
+        "previous": "Edellinen sivu",
+        "root": "Sivutusnavigaatio"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Arvio {0} / {1}"
+      }
+    },
+    "rules": {
+      "capital": "Tämä kenttä voi sisältää vain isoja kirjaimia",
+      "email": "Syötä voimassa oleva sähköpostiosoite",
+      "exclude": "Merkki {0} ei ole sallittu",
+      "integer": "Tämä kenttä voi sisältää vain kokonaislukuja",
+      "maxLength": "Voit syöttää enintään {0} merkkiä",
+      "minLength": "Sinun on syötettävä vähintään {0} merkkiä",
+      "notEmpty": "Valitse vähintään yksi arvo",
+      "number": "Tämä kenttä voi sisältää vain numeroita",
+      "pattern": "Virheellinen muoto",
+      "required": "Tämä kenttä on pakollinen",
+      "strictLength": "Syötetyn kentän pituus on virheellinen"
+    },
+    "stepper": {
+      "next": "Seuraava",
+      "prev": "Edellinen"
+    },
+    "timePicker": {
+      "am": "ap.",
+      "hour": "Tunti",
+      "minute": "Minuutti",
+      "pm": "ip.",
+      "second": "Sekunti",
+      "title": "Valitse aika"
+    },
+    "video": {
+      "enterFullscreen": "Koko näyttö",
+      "exitFullscreen": "Poistu koko näytöstä",
+      "mute": "Mykistä",
+      "pause": "Tauko",
+      "play": "Toista",
+      "seek": "Siirry",
+      "showVolume": "Näytä äänenvoimakkuuden säädin",
+      "unmute": "Poista mykistys",
+      "volume": "Äänenvoimakkuus"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Ääni",
+        "document": "Asiakirja",
+        "home": "Koti",
+        "image": "Kuva",
+        "math": "Matematiikka",
+        "string": "Teksti",
+        "video": "Video"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Kuvaus",
+        "name": "Nimi",
+        "parameters": "Parametrit",
+        "returns": "Palauttaa",
+        "title": "Koodin käyttäminen",
+        "type": "Tyyppi",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Sulje",
+        "convert_from": "Muunna muodosta",
+        "convert_to": "Muunna muotoon",
+        "directory": {
+          "available_conversions": "Saatavilla olevat muunnokset",
+          "command": {
+            "faq": {
+              "a1": "Lataa vain tiedostosi, odota muunnosta ja napsauta latauspainiketta. Se toimii Windowsissa, Macissa, Linuxissa ja mobiililaitteissa.",
+              "a2": "Kyllä. Käytämme HTTPS-salausta. Tiedostosi poistetaan palvelimiltamme automaattisesti 1 tunnin kuluttua yksityisyyden takaamiseksi.",
+              "a3": "Ehdottomasti. Voit muuntaa {source}-tiedostoja muotoon {target} ilmaiseksi luomatta tiliä.",
+              "q1": "Kuinka muunnan tiedoston {source} muotoon {target}?",
+              "q2": "Onko {source}:n muuntaminen Razomyssa turvallista?",
+              "q3": "Onko tämä muunnin ilmainen?"
+            },
+            "features": {
+              "accurate": "Korkea tarkkuus",
+              "fast": "Nopea muunnos",
+              "quality": "Korkea laatu",
+              "secure": "100% Turvallinen"
+            },
+            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {source} muotoon {target}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
+            "seo": {
+              "description": "Paras tapa muuntaa {source}-tiedostot {target}-muotoon verkossa. Helppokäyttöinen, täysin ilmainen ja turvallinen tiedostomuunnos.",
+              "h1": "Ilmainen {source}–{target}-verkkomuunnin",
+              "intro_text": "Muuntimemme avulla voit käsitellä tiedostoja suurella tarkkuudella. Säilytämme alkuperäisen asettelun ja laadun muuntaessamme {source}-asiakirjasi muotoon {target}.",
+              "intro_title": "Miksi käyttää {source}–{target}-työkaluamme?",
+              "title": "Muunna {source} muotoon {target} verkossa | Ilmainen & turvallinen työkalu"
+            },
+            "steps": {
+              "download": "3. Lataa {target}",
+              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {target}-tiedostosi välittömästi.",
+              "quality": "2. Muunnosprosessi",
+              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
+              "upload": "1. Lataa {source}-tiedosto",
+              "upload_desc": "Vedä ja pudota {source}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt."
+            }
+          },
+          "subtitle": "Valitse komentomuoto {source}-tiedostoillesi",
+          "title": "Muunna {source}-tiedostoja"
+        },
+        "error": "Virhe tiedoston muuntamisessa: {fileName}",
+        "faq_title": "Usein kysytyt kysymykset",
+        "free": "Ilmainen",
+        "how_to_convert": "Kuinka muuntaa",
+        "input": "Syöte",
+        "no_results": "Tuloksia ei löytynyt",
+        "output": "Tuloste",
+        "price": "Hinta",
+        "safety": "Turvallisuus",
+        "safety_value": "HTTPS / Automaattinen poisto",
+        "search_placeholder": "esim. pdf docx:ksi, jpg...",
+        "seo_desc": "Täydellinen luettelo tuetuista muunnosmuodoista. PDF, DOCX, JPG, PNG ja muut.",
+        "seo_title": "Tiedostomuunninluettelo",
+        "specs_title": "Muunnostiedot",
+        "subtitle": "Löydä tarvitsemasi muunnin yli 1000 työkalun joukosta",
+        "title": "Razomy Input Output",
+        "to": "muotoon"
+      },
       "footer": {
         "github": "Lähdekoodi Githubissa"
+      },
+      "input": {
+        "subtitle": "Valitse tulostusmuoto {source}-datallesi",
+        "title": "Muunna {source}-data"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Etsi...",
+        "no_results": "Pareja ei löytynyt",
         "results_for": "Tulokset haulle",
-        "no_results": "Pareja ei löytynyt"
+        "search": "Etsi..."
       },
       "text_to_text": {
-        "input_text": "Syöteteksti",
-        "placeholder_input": "Liitä tekstisi tähän...",
-        "result_title": "{command} -tulos",
-        "copy_to_clipboard": "Kopioi leikepöydälle",
-        "placeholder_output": "Tulos ilmestyy tähän...",
-        "convert_btn": "Muunna muotoon {command}",
+        "convert_btn": "Muunna muotoon {target}",
         "copied_success": "Kopioitu leikepöydälle!",
+        "copy_to_clipboard": "Kopioi leikepöydälle",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Liitä vain merkkijonosi verkkotyökaluumme ja napsauta muunna. Se soveltaa automaattisesti muodon {target} sääntöjä. Kopioi sitten tulos.",
+              "a2": "Ehdottomasti. Välitämme yksityisyydestä. Tekstisi käsitellään turvallisesti, emmekä tallenna tai säästä mitään liittämääsi sisältöä tai koodia.",
+              "a3": "Kyllä, tämä tekstinmuunnostyökalu on 100 % ilmainen käyttää ilman piilorajoituksia.",
+              "q1": "Kuinka muunnan tekstin muotoon {target}?",
+              "q2": "Ovatko tekstini ja koodini turvassa?",
+              "q3": "Onko tämä merkkijonomuotoilija ilmainen?"
+            },
+            "hero_sub": "Ilmainen ja välitön verkkotyökalu tavallisen tekstin, merkkijonojen tai muuttujien muuntamiseen muotoon {target}.",
+            "seo": {
+              "description": "Muunna tekstisi, merkkijonosi tai koodimuuttujasi helposti muotoon {target} verkossa. Ilmainen, nopea ja turvallinen tekstin muotoilutyökalu kehittäjille ja kirjoittajille.",
+              "h1": "Ilmainen {target}-muunnin verkossa",
+              "intro_text": "Merkkijonojen muotoilutyökalumme muuntaa tavallisen tekstin, lauseet tai koodimuuttujat välittömästi muotoon {target}. Liitä vain sisältösi, ja työkalu käsittelee välilyönnit ja isot kirjaimet automaattisesti.",
+              "intro_title": "Miksi käyttää {target}-generaattoriamme?",
+              "title": "Muunna teksti muotoon {target} verkossa | Ilmainen merkkijonogeneraattori"
+            },
             "steps": {
-              "paste": "1. Liitä {directory} -teksti",
+              "copy": "3. Kopioi {target}",
+              "copy_desc": "Muunnos on valmis. Voit nyt kopioida tuloksen suoraan leikepöydällesi.",
+              "paste": "1. Liitä {source} -teksti",
               "paste_desc": "Liitä tai kirjoita {source}-sisältösi syötekenttään.",
               "process": "2. Muunnosprosessi",
-              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
-              "copy": "3. Kopioi {command}",
-              "copy_desc": "Muunnos on valmis. Voit nyt kopioida tuloksen suoraan leikepöydällesi."
+              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Virhe tiedoston muuntamisessa: {fileName}",
-        "title": "Razomy Input Output",
-        "subtitle": "Löydä tarvitsemasi muunnin yli 1000 toiminnon joukosta",
-        "search_placeholder": "esim. pdf docx:ksi, jpg...",
-        "no_results": "Tuloksia ei löytynyt",
-        "convert_from": "Muunna muodosta",
-        "to": "muotoon",
-        "close": "Sulje",
-        "convert_to": "Muunna muotoon",
-        "how_to_convert": "Kuinka muuntaa",
-        "seo_title": "Tiedostomuunninluettelo",
-        "faq_title": "Usein kysytyt kysymykset",
-        "specs_title": "Muunnostiedot",
-        "input": "Syöte",
-        "output": "Tuloste",
-        "safety": "Turvallisuus",
-        "safety_value": "HTTPS / Automaattinen poisto",
-        "price": "Hinta",
-        "free": "Ilmainen",
-        "seo_desc": "Täydellinen luettelo tuetuista muunnosmuodoista. PDF, DOCX, JPG, PNG ja muut.",
-        "directory": {
-          "title": "Muunna {directory}-tiedostoja",
-          "subtitle": "Valitse komentomuoto {directory}-tiedostoillesi",
-          "available_conversions": "Saatavilla olevat muunnokset",
-          "command": {
-            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {source} muotoon {target}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
-            "features": {
-              "fast": "Nopea muunnos",
-              "secure": "100% Turvallinen",
-              "quality": "Korkea laatu",
-              "accurate": "Korkea tarkkuus"
-            },
-            "seo": {
-              "title": "Muunna {directory} muotoon {command} verkossa | Ilmainen & turvallinen työkalu",
-              "h1": "Ilmainen {directory}–{command}-verkkomuunnin",
-              "description": "Paras tapa muuntaa {directory}-tiedostot {command}-muotoon verkossa. Helppokäyttöinen, täysin ilmainen ja turvallinen tiedostomuunnos.",
-              "intro_title": "Miksi käyttää {directory}–{command}-työkaluamme?",
-              "intro_text": "Muuntimemme avulla voit käsitellä tiedostoja suurella tarkkuudella. Säilytämme alkuperäisen asettelun ja laadun muuntaessamme {directory}-asiakirjasi muotoon {command}."
-            },
-            "steps": {
-              "upload": "1. Lataa {directory}-tiedosto",
-              "upload_desc": "Vedä ja pudota {source}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt.",
-              "quality": "2. Muunnosprosessi",
-              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
-              "download": "3. Lataa {command}",
-              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {target}-tiedostosi välittömästi."
-            },
-            "faq": {
-              "q1": "Kuinka muunnan tiedoston {source} muotoon {target}?",
-              "a1": "Lataa vain tiedostosi, odota muunnosta ja napsauta latauspainiketta. Se toimii Windowsissa, Macissa, Linuxissa ja mobiililaitteissa.",
-              "q2": "Onko {source}:n muuntaminen Razomyssa turvallista?",
-              "a2": "Kyllä. Käytämme HTTPS-salausta. Tiedostosi poistetaan palvelimiltamme automaattisesti 1 tunnin kuluttua yksityisyyden takaamiseksi.",
-              "q3": "Onko tämä muunnin ilmainen?",
-              "a3": "Ehdottomasti. Voit muuntaa {source}-tiedostoja muotoon {target} ilmaiseksi luomatta tiliä."
-            }
-          }
-        }
+        },
+        "input_text": "Syöteteksti",
+        "placeholder_input": "Liitä tekstisi tähän...",
+        "placeholder_output": "Tulos ilmestyy tähän...",
+        "result_title": "{target} -tulos"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Lisää tiedostoja",
+      "clear_all": "Tyhjennä kaikki",
+      "convert": "Muunna",
+      "converting": "Muunnetaan",
+      "drop_title": "Vedä ja pudota tiedosto tähän",
+      "scanning_folders": "Skannataan kansioita",
+      "select_files": "Valitse tiedosto",
+      "select_folder": "Valitse kansio",
+      "selected_files": "Valitut tiedostot",
+      "support_nested_folders": "Tuemme sisäkkäisiä kansioita",
+      "total_size": "Kokonaiskoko"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Takaisin etusivulle",
+        "title": "Sivua ei löydy"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Koti",
-        "image": "Kuva",
-        "audio": "Ääni",
-        "video": "Video",
-        "document": "Asiakirja",
-        "math": "Matematiikka",
-        "string": "Teksti"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Lahjoita",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Syötekomento",
+      "name": "Io"
     }
   }
 }

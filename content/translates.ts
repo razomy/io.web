@@ -66,13 +66,13 @@ export const i18n = {
           copied_success: 'Copied to clipboard!',
           directory: {
             command: {
-              hero_sub: 'Free and instant online tool to convert normal text, strings, or variables into {format}.',
+              hero_sub: 'Free and instant online tool to convert normal text, strings, or variables into {target}.',
               seo: {
                 title: 'Convert Text to {target} Online | Free String Generator',
-                h1: 'Free Online {format} Converter',
-                description: 'Easily convert your text, strings, or code variables to {format} online. A free, fast, and secure text formatting tool for developers and writers.',
-                intro_title: 'Why use our {format} generator?',
-                intro_text: 'Our string formatting tool instantly transforms your normal text, sentences, or code variables into {format}. Simply paste your content, and the tool will automatically handle spaces and capitalization.'
+                h1: 'Free Online {target} Converter',
+                description: 'Easily convert your text, strings, or code variables to {target} online. A free, fast, and secure text formatting tool for developers and writers.',
+                intro_title: 'Why use our {target} generator?',
+                intro_text: 'Our string formatting tool instantly transforms your normal text, sentences, or code variables into {target}. Simply paste your content, and the tool will automatically handle spaces and capitalization.'
               },
               steps: {
                 paste: '1. Paste {source} text',

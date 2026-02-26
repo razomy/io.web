@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Donasi",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Lencana",
+    "calendar": {
+      "moreEvents": "{0} lagi",
+      "today": "Hari ini"
     },
-    "dropzone": {
-      "converting": "Mengonversi",
-      "scanning_folders": "Memindai folder",
-      "drop_title": "Seret & Lepas file di sini",
-      "support_nested_folders": "Kami mendukung folder bersarang",
-      "select_files": "Pilih File",
-      "select_folder": "Pilih Folder",
-      "selected_files": "File terpilih",
-      "total_size": "Ukuran total",
-      "clear_all": "Hapus semua",
-      "add_files": "Tambah file",
-      "convert": "Konversi"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Slide korsel {0} dari {1}"
+      },
+      "next": "Visual selanjutnya",
+      "prev": "Visual sebelumnya"
     },
-    "error": {
-      "404": {
-        "title": "Halaman Tidak Ditemukan",
-        "back_btn": "Kembali ke Beranda"
+    "close": "Tutup",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Nilai alpha",
+        "alphaSlider": "Alpha",
+        "blueInput": "Nilai biru",
+        "changeFormat": "Ubah format warna",
+        "eyedropper": "Pilih warna dengan pipet",
+        "greenInput": "Nilai hijau",
+        "hexInput": "Nilai HEX",
+        "hexaInput": "HEX dengan nilai alpha",
+        "hueInput": "Nilai hue",
+        "hueSlider": "Hue",
+        "lightnessInput": "Nilai kecerahan",
+        "redInput": "Nilai merah",
+        "saturationInput": "Nilai saturasi"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Perintah input"
+    "confirmEdit": {
+      "cancel": "Batal",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Halaman pertama",
+      "itemsPerPageAll": "Semua",
+      "itemsPerPageText": "Item per halaman:",
+      "lastPage": "Halaman terakhir",
+      "nextPage": "Halaman selanjutnya",
+      "pageText": "{0}-{1} dari {2}",
+      "prevPage": "Halaman sebelumnya"
+    },
+    "dataIterator": {
+      "loadingText": "Memuat item...",
+      "noResultsText": "Tidak ada catatan yang cocok ditemukan"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Aktifkan untuk mengurutkan menaik.",
+        "activateDescending": "Aktifkan untuk mengurutkan menurun.",
+        "activateNone": "Aktifkan untuk menghapus pengurutan.",
+        "sortAscending": "Diurutkan menaik.",
+        "sortDescending": "Diurutkan menurun.",
+        "sortNone": "Tidak diurutkan."
+      },
+      "itemsPerPageText": "Baris per halaman:",
+      "sortBy": "Urutkan berdasarkan"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Hari ini, {0}",
+        "nextMonth": "Bulan depan",
+        "nextYear": "Tahun depan",
+        "previousMonth": "Bulan sebelumnya",
+        "previousYear": "Tahun sebelumnya",
+        "selectDate": "{0}",
+        "selectMonth": "Pilih bulan",
+        "selectYear": "Pilih tahun"
+      },
+      "header": "Masukkan tanggal",
+      "input": {
+        "placeholder": "Masukkan tanggal"
+      },
+      "itemsSelected": "{0} dipilih",
+      "range": {
+        "header": "Masukkan tanggal",
+        "title": "Pilih tanggal"
+      },
+      "title": "Pilih tanggal"
+    },
+    "dateRangeInput": {
+      "divider": "hingga"
+    },
+    "dismiss": "Tutup",
+    "fileInput": {
+      "counter": "{0} file",
+      "counterSize": "{0} file ({1} total)"
+    },
+    "fileUpload": {
+      "browse": "Jelajahi File",
+      "divider": "atau",
+      "title": "Tarik dan lepas file di sini"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backspace",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Panah Bawah",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Panah Kiri",
+      "option": "Opsi",
+      "or": "atau",
+      "plus": "tambah",
+      "rightArrow": "Panah Kanan",
+      "shift": "Shift",
+      "shortcut": "Pintasan keyboard: {0}",
+      "space": "Spasi",
+      "then": "kemudian",
+      "upArrow": "Panah Atas"
+    },
+    "infiniteScroll": {
+      "empty": "Tidak ada lagi",
+      "loadMore": "Muat lebih banyak"
+    },
+    "input": {
+      "appendAction": "{0} tindakan akhir",
+      "clear": "Hapus {0}",
+      "otp": "Silakan masukkan karakter OTP {0}",
+      "prependAction": "{0} tindakan awal"
+    },
+    "loading": "Memuat...",
+    "noDataText": "Data tidak tersedia",
+    "open": "Buka",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Halaman {0}, Halaman saat ini",
+        "first": "Halaman pertama",
+        "last": "Halaman terakhir",
+        "next": "Halaman selanjutnya",
+        "page": "Ke halaman {0}",
+        "previous": "Halaman sebelumnya",
+        "root": "Navigasi Halaman"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Peringkat {0} dari {1}"
+      }
+    },
+    "rules": {
+      "capital": "Bidang ini hanya boleh berisi huruf besar",
+      "email": "Silakan masukkan email yang valid",
+      "exclude": "Karakter {0} tidak diperbolehkan",
+      "integer": "Bidang ini hanya boleh berisi nilai bilangan bulat",
+      "maxLength": "Anda harus memasukkan maksimal {0} karakter",
+      "minLength": "Anda harus memasukkan minimal {0} karakter",
+      "notEmpty": "Silakan pilih setidaknya satu nilai",
+      "number": "Bidang ini hanya boleh berisi angka",
+      "pattern": "Format tidak valid",
+      "required": "Bidang ini wajib diisi",
+      "strictLength": "Panjang bidang yang dimasukkan tidak valid"
+    },
+    "stepper": {
+      "next": "Selanjutnya",
+      "prev": "Sebelumnya"
+    },
+    "timePicker": {
+      "am": "AM",
+      "hour": "Jam",
+      "minute": "Menit",
+      "pm": "PM",
+      "second": "Detik",
+      "title": "Pilih Waktu"
+    },
+    "video": {
+      "enterFullscreen": "Layar penuh",
+      "exitFullscreen": "Keluar dari layar penuh",
+      "mute": "Bisukan",
+      "pause": "Jeda",
+      "play": "Putar",
+      "seek": "Cari",
+      "showVolume": "Tampilkan kontrol volume",
+      "unmute": "Bunyikan",
+      "volume": "Volume"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Audio",
+        "document": "Dokumen",
+        "home": "Beranda",
+        "image": "Gambar",
+        "math": "Matematika",
+        "string": "Teks",
+        "video": "Video"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Deskripsi",
+        "name": "Nama",
+        "parameters": "Parameter",
+        "returns": "Nilai Kembali",
+        "title": "Menggunakan kode",
+        "type": "Tipe",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Tutup",
+        "convert_from": "Konversi dari",
+        "convert_to": "Konversi ke",
+        "directory": {
+          "available_conversions": "Konversi yang tersedia",
+          "command": {
+            "faq": {
+              "a1": "Cukup unggah file Anda, tunggu konversi, dan klik unduh. Ini berfungsi di Windows, Mac, Linux, dan perangkat seluler.",
+              "a2": "Ya. Kami menggunakan enkripsi HTTPS. File Anda dihapus secara otomatis dari server kami setelah 1 jam untuk memastikan privasi.",
+              "a3": "Tentu saja. Anda dapat mengonversi file {source} ke {target} secara gratis tanpa membuat akun.",
+              "q1": "Bagaimana cara mengonversi {source} ke {target}?",
+              "q2": "Apakah aman mengonversi {source} di Razomy?",
+              "q3": "Apakah konverter ini gratis?"
+            },
+            "features": {
+              "accurate": "Akurasi Tinggi",
+              "fast": "Konversi Cepat",
+              "quality": "Kualitas Tinggi",
+              "secure": "100% Aman"
+            },
+            "hero_sub": "Alat online cepat, gratis, dan aman untuk mengonversi {source} ke {target}. Tidak perlu registrasi atau instalasi perangkat lunak.",
+            "seo": {
+              "description": "Cara terbaik untuk mengonversi file {source} ke format {target} secara online. Mudah digunakan, sepenuhnya gratis, dan konversi file yang aman.",
+              "h1": "Konverter {source} ke {target} Online Gratis",
+              "intro_text": "Konverter kami memungkinkan Anda memproses file dengan presisi tinggi. Kami menjaga tata letak dan kualitas asli sambil mengubah dokumen {source} Anda menjadi {target}.",
+              "intro_title": "Mengapa menggunakan alat {source} ke {target} kami?",
+              "title": "Konversi {source} ke {target} Online | Alat Gratis & Aman"
+            },
+            "steps": {
+              "download": "3. Unduh {target}",
+              "download_desc": "Tunggu sebentar hingga proses selesai, lalu unduh file {target} baru Anda secara instan.",
+              "quality": "2. Proses Konversi",
+              "quality_desc": "Alat kami secara otomatis mengonversi file Anda ke format {target} dengan pengaturan terbaik.",
+              "upload": "1. Unggah file {source}",
+              "upload_desc": "Seret dan lepas file {source} Anda ke area unggah. Ukuran file maksimum adalah 100MB."
+            }
+          },
+          "subtitle": "Pilih format perintah untuk file {source} Anda",
+          "title": "Konversi file {source}"
+        },
+        "error": "Kesalahan saat mengonversi file: {fileName}",
+        "faq_title": "Pertanyaan yang Sering Diajukan",
+        "free": "Gratis",
+        "how_to_convert": "Cara mengonversi",
+        "input": "Input",
+        "no_results": "Hasil tidak ditemukan",
+        "output": "Output",
+        "price": "Harga",
+        "safety": "Keamanan",
+        "safety_value": "HTTPS / Hapus otomatis",
+        "search_placeholder": "cth. pdf ke docx, jpg...",
+        "seo_desc": "Daftar lengkap format yang didukung untuk konversi. PDF, DOCX, JPG, PNG, dan lainnya.",
+        "seo_title": "Katalog Konverter File",
+        "specs_title": "Spesifikasi Konversi",
+        "subtitle": "Temukan konverter yang Anda butuhkan di antara 1000+ alat",
+        "title": "Razomy Input Output",
+        "to": "ke"
+      },
       "footer": {
         "github": "Kode Sumber Github"
+      },
+      "input": {
+        "subtitle": "Pilih format output untuk data {source} Anda",
+        "title": "Konversi data {source}"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Cari...",
+        "no_results": "Pasangan tidak ditemukan",
         "results_for": "Hasil untuk",
-        "no_results": "Pasangan tidak ditemukan"
+        "search": "Cari..."
       },
       "text_to_text": {
-        "input_text": "Input Teks",
-        "placeholder_input": "Tempel teks Anda di sini...",
-        "result_title": "Hasil {command}",
-        "copy_to_clipboard": "Salin ke papan klip",
-        "placeholder_output": "Hasil akan muncul di sini...",
-        "convert_btn": "Konversi ke {command}",
+        "convert_btn": "Konversi ke {target}",
         "copied_success": "Disalin ke papan klip!",
+        "copy_to_clipboard": "Salin ke papan klip",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Cukup tempel string Anda ke alat online kami dan klik konversi. Aturan penulisan {target} akan diterapkan secara otomatis. Kemudian, cukup salin hasilnya.",
+              "a2": "Tentu saja. Kami peduli dengan privasi. Teks Anda diproses secara aman, dan kami tidak menyimpan konten atau kode yang Anda tempel.",
+              "a3": "Ya, alat konversi teks ini 100% gratis digunakan tanpa batasan tersembunyi.",
+              "q1": "Bagaimana cara mengubah teks ke {target}?",
+              "q2": "Apakah teks dan kode saya aman?",
+              "q3": "Apakah pemformat string ini gratis?"
+            },
+            "hero_sub": "Alat online gratis dan instan untuk mengubah teks biasa, string, atau variabel menjadi {target}.",
+            "seo": {
+              "description": "Ubah teks, string, atau variabel kode Anda ke {target} secara online dengan mudah. Alat pemformatan teks yang gratis, cepat, dan aman untuk pengembang dan penulis.",
+              "h1": "Konverter {target} Online Gratis",
+              "intro_text": "Alat pemformatan string kami secara instan mengubah teks biasa, kalimat, atau variabel kode Anda menjadi {target}. Cukup tempel konten Anda, dan alat ini akan menangani spasi dan kapitalisasi secara otomatis.",
+              "intro_title": "Mengapa menggunakan generator {target} kami?",
+              "title": "Ubah Teks ke {target} Online | Generator String Gratis"
+            },
             "steps": {
-              "paste": "1. Tempel teks {directory}",
+              "copy": "3. Salin {target}",
+              "copy_desc": "Konversi selesai. Anda sekarang dapat menyalin hasilnya langsung ke papan klip Anda.",
+              "paste": "1. Tempel teks {source}",
               "paste_desc": "Tempel atau ketik konten {source} Anda ke area input.",
               "process": "2. Proses Konversi",
-              "process_desc": "Alat kami secara otomatis mengonversi teks Anda ke format {target} dengan pengaturan terbaik.",
-              "copy": "3. Salin {command}",
-              "copy_desc": "Konversi selesai. Anda sekarang dapat menyalin hasilnya langsung ke papan klip Anda."
+              "process_desc": "Alat kami secara otomatis mengonversi teks Anda ke format {target} dengan pengaturan terbaik."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Kesalahan mengonversi file:{fileName}",
-        "title": "Razomy Input Output",
-        "subtitle": "Temukan konverter yang Anda butuhkan di antara 1000+ fungsi",
-        "search_placeholder": "cth. pdf ke docx, jpg...",
-        "no_results": "Hasil tidak ditemukan",
-        "convert_from": "Konversi dari",
-        "to": "ke",
-        "close": "Tutup",
-        "convert_to": "Konversi ke",
-        "how_to_convert": "Cara mengonversi",
-        "seo_title": "Katalog Konverter File",
-        "faq_title": "Pertanyaan yang Sering Diajukan",
-        "specs_title": "Spesifikasi Konversi",
-        "input": "Input",
-        "output": "Output",
-        "safety": "Keamanan",
-        "safety_value": "HTTPS / Hapus otomatis",
-        "price": "Harga",
-        "free": "Gratis",
-        "seo_desc": "Daftar lengkap format yang didukung untuk konversi. PDF, DOCX, JPG, PNG, dan lainnya.",
-        "directory": {
-          "title": "Konversi file {directory}",
-          "subtitle": "Pilih format perintah untuk file {directory} Anda",
-          "available_conversions": "Konversi yang tersedia",
-          "command": {
-            "hero_sub": "Alat online cepat, gratis, dan aman untuk mengonversi {source} ke {target}. Tidak perlu registrasi atau instalasi perangkat lunak.",
-            "features": {
-              "fast": "Konversi Cepat",
-              "secure": "100% Aman",
-              "quality": "Kualitas Tinggi",
-              "accurate": "Akurasi Tinggi"
-            },
-            "seo": {
-              "title": "Konversi {directory} ke {command} Online | Alat Gratis & Aman",
-              "h1": "Konverter {directory} ke {command} Online Gratis",
-              "description": "Cara terbaik untuk mengonversi file {directory} ke format {command} secara online. Mudah digunakan, sepenuhnya gratis, dan konversi file yang aman.",
-              "intro_title": "Mengapa menggunakan alat {directory} ke {command} kami?",
-              "intro_text": "Konverter kami memungkinkan Anda memproses file dengan presisi tinggi. Kami menjaga tata letak dan kualitas asli sambil mengubah dokumen {directory} Anda menjadi {command}."
-            },
-            "steps": {
-              "upload": "1. Unggah file {directory}",
-              "upload_desc": "Seret dan lepas file {source} Anda ke area unggah. Ukuran file maksimum adalah 100MB.",
-              "quality": "2. Proses Konversi",
-              "quality_desc": "Alat kami secara otomatis mengonversi file Anda ke format {target} dengan pengaturan terbaik.",
-              "download": "3. Unduh {command}",
-              "download_desc": "Tunggu sejenak hingga proses selesai, lalu unduh file {target} baru Anda secara instan."
-            },
-            "faq": {
-              "q1": "Bagaimana cara mengonversi {source} ke {target}?",
-              "a1": "Cukup unggah file Anda, tunggu konversi, dan klik unduh. Ini berfungsi di Windows, Mac, Linux, dan perangkat seluler.",
-              "q2": "Apakah aman mengonversi {source} di Razomy?",
-              "a2": "Ya. Kami menggunakan enkripsi HTTPS. File Anda dihapus secara otomatis dari server kami setelah 1 jam untuk memastikan privasi.",
-              "q3": "Apakah konverter ini gratis?",
-              "a3": "Tentu saja. Anda dapat mengonversi file {source} ke {target} secara gratis tanpa membuat akun."
-            }
-          }
-        }
+        },
+        "input_text": "Input Teks",
+        "placeholder_input": "Tempel teks Anda di sini...",
+        "placeholder_output": "Hasil akan muncul di sini...",
+        "result_title": "Hasil {target}"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Tambah file",
+      "clear_all": "Hapus semua",
+      "convert": "Konversi",
+      "converting": "Mengonversi",
+      "drop_title": "Seret & Lepas file di sini",
+      "scanning_folders": "Memindai folder",
+      "select_files": "Pilih File",
+      "select_folder": "Pilih Folder",
+      "selected_files": "File terpilih",
+      "support_nested_folders": "Kami mendukung folder bersarang",
+      "total_size": "Ukuran total"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Kembali ke Beranda",
+        "title": "Halaman Tidak Ditemukan"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Beranda",
-        "image": "Gambar",
-        "audio": "Audio",
-        "video": "Video",
-        "document": "Dokumen",
-        "math": "Matematika",
-        "string": "Teks"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Donasi",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Perintah input",
+      "name": "Io"
     }
   }
 }

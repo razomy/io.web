@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Faire un don",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Badge",
+    "calendar": {
+      "moreEvents": "{0} de plus",
+      "today": "Aujourd'hui"
     },
-    "dropzone": {
-      "converting": "Conversion en cours",
-      "scanning_folders": "Analyse des dossiers",
-      "drop_title": "Glissez-déposez le fichier ici",
-      "support_nested_folders": "Nous prenons en charge les sous-dossiers",
-      "select_files": "Sélectionner un fichier",
-      "select_folder": "Sélectionner un dossier",
-      "selected_files": "Fichiers sélectionnés",
-      "total_size": "Taille totale",
-      "clear_all": "Tout effacer",
-      "add_files": "Ajouter des fichiers",
-      "convert": "Convertir"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Diapositive {0} sur {1}"
+      },
+      "next": "Visuel suivant",
+      "prev": "Visuel précédent"
     },
-    "error": {
-      "404": {
-        "title": "Page non trouvée",
-        "back_btn": "Retour à la page d'accueil"
+    "close": "Fermer",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Valeur alpha",
+        "alphaSlider": "Alpha",
+        "blueInput": "Valeur bleue",
+        "changeFormat": "Changer le format de couleur",
+        "eyedropper": "Sélectionner une couleur avec la pipette",
+        "greenInput": "Valeur verte",
+        "hexInput": "Valeur HEX",
+        "hexaInput": "HEX avec valeur alpha",
+        "hueInput": "Valeur de teinte",
+        "hueSlider": "Teinte",
+        "lightnessInput": "Valeur de luminosité",
+        "redInput": "Valeur rouge",
+        "saturationInput": "Valeur de saturation"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Commande d'entrée"
+    "confirmEdit": {
+      "cancel": "Annuler",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Première page",
+      "itemsPerPageAll": "Tous",
+      "itemsPerPageText": "Éléments par page :",
+      "lastPage": "Dernière page",
+      "nextPage": "Page suivante",
+      "pageText": "{0}-{1} sur {2}",
+      "prevPage": "Page précédente"
+    },
+    "dataIterator": {
+      "loadingText": "Chargement des éléments...",
+      "noResultsText": "Aucun enregistrement correspondant trouvé"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Activer pour trier par ordre croissant.",
+        "activateDescending": "Activer pour trier par ordre décroissant.",
+        "activateNone": "Activer pour retirer le tri.",
+        "sortAscending": "Tri croissant.",
+        "sortDescending": "Tri décroissant.",
+        "sortNone": "Non trié."
+      },
+      "itemsPerPageText": "Lignes par page :",
+      "sortBy": "Trier par"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Aujourd'hui, {0}",
+        "nextMonth": "Mois suivant",
+        "nextYear": "Année suivante",
+        "previousMonth": "Mois précédent",
+        "previousYear": "Année précédente",
+        "selectDate": "{0}",
+        "selectMonth": "Sélectionner un mois",
+        "selectYear": "Sélectionner une année"
+      },
+      "header": "Saisir une date",
+      "input": {
+        "placeholder": "Saisir une date"
+      },
+      "itemsSelected": "{0} sélectionné(s)",
+      "range": {
+        "header": "Saisir des dates",
+        "title": "Sélectionner des dates"
+      },
+      "title": "Sélectionner une date"
+    },
+    "dateRangeInput": {
+      "divider": "à"
+    },
+    "dismiss": "Ignorer",
+    "fileInput": {
+      "counter": "{0} fichiers",
+      "counterSize": "{0} fichiers ({1} au total)"
+    },
+    "fileUpload": {
+      "browse": "Parcourir les fichiers",
+      "divider": "ou",
+      "title": "Glissez et déposez des fichiers ici"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Retour arrière",
+      "command": "Commande",
+      "ctrl": "Ctrl",
+      "downArrow": "Flèche bas",
+      "enter": "Entrée",
+      "escape": "Échap",
+      "leftArrow": "Flèche gauche",
+      "option": "Option",
+      "or": "ou",
+      "plus": "plus",
+      "rightArrow": "Flèche droite",
+      "shift": "Maj",
+      "shortcut": "Raccourci clavier : {0}",
+      "space": "Espace",
+      "then": "puis",
+      "upArrow": "Flèche haut"
+    },
+    "infiniteScroll": {
+      "empty": "Plus rien",
+      "loadMore": "Charger plus"
+    },
+    "input": {
+      "appendAction": "{0} action suffixée",
+      "clear": "Effacer {0}",
+      "otp": "Veuillez saisir le caractère OTP {0}",
+      "prependAction": "{0} action préfixée"
+    },
+    "loading": "Chargement...",
+    "noDataText": "Aucune donnée disponible",
+    "open": "Ouvrir",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Page {0}, page actuelle",
+        "first": "Première page",
+        "last": "Dernière page",
+        "next": "Page suivante",
+        "page": "Aller à la page {0}",
+        "previous": "Page précédente",
+        "root": "Navigation de pagination"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Note {0} sur {1}"
+      }
+    },
+    "rules": {
+      "capital": "Ce champ ne peut contenir que des lettres majuscules",
+      "email": "Veuillez saisir une adresse e-mail valide",
+      "exclude": "Le caractère {0} n'est pas autorisé",
+      "integer": "Ce champ ne peut contenir que des valeurs entières",
+      "maxLength": "Vous devez saisir un maximum de {0} caractères",
+      "minLength": "Vous devez saisir un minimum de {0} caractères",
+      "notEmpty": "Veuillez choisir au moins une valeur",
+      "number": "Ce champ ne peut contenir que des chiffres",
+      "pattern": "Format invalide",
+      "required": "Ce champ est requis",
+      "strictLength": "La longueur du champ saisi est invalide"
+    },
+    "stepper": {
+      "next": "Suivant",
+      "prev": "Précédent"
+    },
+    "timePicker": {
+      "am": "AM",
+      "hour": "Heure",
+      "minute": "Minute",
+      "pm": "PM",
+      "second": "Seconde",
+      "title": "Sélectionner l'heure"
+    },
+    "video": {
+      "enterFullscreen": "Plein écran",
+      "exitFullscreen": "Quitter le plein écran",
+      "mute": "Muet",
+      "pause": "Pause",
+      "play": "Lecture",
+      "seek": "Chercher",
+      "showVolume": "Afficher le contrôle du volume",
+      "unmute": "Rétablir le son",
+      "volume": "Volume"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Audio",
+        "document": "Document",
+        "home": "Accueil",
+        "image": "Image",
+        "math": "Maths",
+        "string": "Texte",
+        "video": "Vidéo"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Description",
+        "name": "Nom",
+        "parameters": "Paramètres",
+        "returns": "Renvoie",
+        "title": "Utilisation du code",
+        "type": "Type",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Fermer",
+        "convert_from": "Convertir de",
+        "convert_to": "Convertir en",
+        "directory": {
+          "available_conversions": "Conversions disponibles",
+          "command": {
+            "faq": {
+              "a1": "Il suffit d'importer votre fichier, d'attendre la conversion et de cliquer sur télécharger. Cela fonctionne sur Windows, Mac, Linux et les appareils mobiles.",
+              "a2": "Oui. Nous utilisons le chiffrement HTTPS. Vos fichiers sont automatiquement supprimés de nos serveurs après 1 heure pour garantir la confidentialité.",
+              "a3": "Absolument. Vous pouvez convertir des fichiers {source} en {target} gratuitement sans créer de compte.",
+              "q1": "Comment convertir {source} en {target} ?",
+              "q2": "Est-il sûr de convertir {source} sur Razomy ?",
+              "q3": "Ce convertisseur est-il gratuit ?"
+            },
+            "features": {
+              "accurate": "Haute précision",
+              "fast": "Conversion rapide",
+              "quality": "Haute qualité",
+              "secure": "100% Sécurisé"
+            },
+            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {source} en {target}. Aucune inscription ni installation de logiciel requise.",
+            "seo": {
+              "description": "Le meilleur moyen de convertir des fichiers {source} au format {target} en ligne. Facile à utiliser, entièrement gratuit et sécurisé.",
+              "h1": "Convertisseur {source} en {target} en ligne gratuit",
+              "intro_text": "Notre convertisseur vous permet de traiter des fichiers avec une grande précision. Nous préservons la mise en page et la qualité d'origine tout en transformant vos documents {source} en {target}.",
+              "intro_title": "Pourquoi utiliser notre outil {source} vers {target} ?",
+              "title": "Convertir {source} en {target} en ligne | Outil gratuit et sécurisé"
+            },
+            "steps": {
+              "download": "3. Télécharger {target}",
+              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez instantanément votre nouveau fichier {target}.",
+              "quality": "2. Processus de conversion",
+              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {target} avec les meilleurs paramètres possibles.",
+              "upload": "1. Importer le fichier {source}",
+              "upload_desc": "Glissez-déposez votre fichier {source} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo."
+            }
+          },
+          "subtitle": "Sélectionnez le format de commande pour vos fichiers {source}",
+          "title": "Convertir des fichiers {source}"
+        },
+        "error": "Erreur lors de la conversion du fichier : {fileName}",
+        "faq_title": "Foire Aux Questions",
+        "free": "Gratuit",
+        "how_to_convert": "Comment convertir",
+        "input": "Entrée",
+        "no_results": "Aucun résultat trouvé",
+        "output": "Sortie",
+        "price": "Prix",
+        "safety": "Sécurité",
+        "safety_value": "HTTPS / Suppression auto",
+        "search_placeholder": "ex : pdf en docx, jpg...",
+        "seo_desc": "Liste complète des formats pris en charge pour la conversion. PDF, DOCX, JPG, PNG et autres.",
+        "seo_title": "Catalogue de convertisseurs de fichiers",
+        "specs_title": "Spécifications de conversion",
+        "subtitle": "Trouvez le convertisseur dont vous avez besoin parmi plus de 1000 outils",
+        "title": "Razomy Input Output",
+        "to": "vers"
+      },
       "footer": {
         "github": "Code source Github"
+      },
+      "input": {
+        "subtitle": "Sélectionnez le format de sortie pour vos données {source}",
+        "title": "Convertir les données {source}"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Rechercher...",
+        "no_results": "Aucune paire trouvée",
         "results_for": "Résultats pour",
-        "no_results": "Aucune paire trouvée"
+        "search": "Rechercher..."
       },
       "text_to_text": {
-        "input_text": "Texte d'entrée",
-        "placeholder_input": "Collez votre texte ici...",
-        "result_title": "Résultat {command}",
-        "copy_to_clipboard": "Copier dans le presse-papiers",
-        "placeholder_output": "Le résultat apparaîtra ici...",
-        "convert_btn": "Convertir en {command}",
+        "convert_btn": "Convertir en {target}",
         "copied_success": "Copié dans le presse-papiers !",
+        "copy_to_clipboard": "Copier dans le presse-papiers",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Collez simplement votre chaîne dans notre outil en ligne et cliquez sur convertir. Il appliquera automatiquement les règles de casse {target}. Ensuite, copiez simplement le résultat.",
+              "a2": "Absolument. Nous nous soucions de la confidentialité. Votre texte est traité en toute sécurité et nous ne stockons ni ne sauvegardons aucun de vos contenus ou codes collés.",
+              "a3": "Oui, cet outil de conversion de texte est 100 % gratuit, sans limites cachées.",
+              "q1": "Comment convertir du texte en {target} ?",
+              "q2": "Mon texte et mon code sont-ils sécurisés ?",
+              "q3": "Ce formateur de chaînes est-il gratuit ?"
+            },
+            "hero_sub": "Outil en ligne gratuit et instantané pour convertir du texte normal, des chaînes ou des variables en {target}.",
+            "seo": {
+              "description": "Convertissez facilement votre texte, vos chaînes ou vos variables de code en {target} en ligne. Un outil de formatage de texte gratuit, rapide et sécurisé pour les développeurs et les rédacteurs.",
+              "h1": "Convertisseur {target} en ligne gratuit",
+              "intro_text": "Notre outil de formatage de chaînes transforme instantanément votre texte normal, vos phrases ou vos variables de code en {target}. Collez simplement votre contenu, et l'outil gérera automatiquement les espaces et la capitalisation.",
+              "intro_title": "Pourquoi utiliser notre générateur {target} ?",
+              "title": "Convertir du texte en {target} en ligne | Générateur de chaînes gratuit"
+            },
             "steps": {
-              "paste": "1. Collez le texte {directory}",
+              "copy": "3. Copier {target}",
+              "copy_desc": "La conversion est terminée. Vous pouvez maintenant copier le résultat directement dans votre presse-papiers.",
+              "paste": "1. Collez le texte {source}",
               "paste_desc": "Collez ou saisissez votre contenu {source} dans la zone de saisie.",
               "process": "2. Processus de conversion",
-              "process_desc": "Notre outil convertit automatiquement votre texte au format {target} avec les meilleurs paramètres possibles.",
-              "copy": "3. Copier {command}",
-              "copy_desc": "La conversion est terminée. Vous pouvez maintenant copier le résultat directement dans votre presse-papiers."
+              "process_desc": "Notre outil convertit automatiquement votre texte au format {target} avec les meilleurs paramètres possibles."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Erreur lors de la conversion du fichier : {fileName}",
-        "title": "Razomy Entrées/Sorties",
-        "subtitle": "Trouvez le convertisseur dont vous avez besoin parmi plus de 1000 fonctions",
-        "search_placeholder": "ex : pdf en docx, jpg...",
-        "no_results": "Aucun résultat trouvé",
-        "convert_from": "Convertir de",
-        "to": "vers",
-        "close": "Fermer",
-        "convert_to": "Convertir en",
-        "how_to_convert": "Comment convertir",
-        "seo_title": "Catalogue de convertisseurs de fichiers",
-        "faq_title": "Foire Aux Questions",
-        "specs_title": "Spécifications de conversion",
-        "input": "Entrée",
-        "output": "Sortie",
-        "safety": "Sécurité",
-        "safety_value": "HTTPS / Suppression auto",
-        "price": "Prix",
-        "free": "Gratuit",
-        "seo_desc": "Liste complète des formats pris en charge pour la conversion. PDF, DOCX, JPG, PNG et autres.",
-        "directory": {
-          "title": "Convertir des fichiers {directory}",
-          "subtitle": "Sélectionnez le format de commande pour vos fichiers {directory}",
-          "available_conversions": "Conversions disponibles",
-          "command": {
-            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {source} en {target}. Aucune inscription ni installation de logiciel requise.",
-            "features": {
-              "fast": "Conversion rapide",
-              "secure": "100% Sécurisé",
-              "quality": "Haute qualité",
-              "accurate": "Haute précision"
-            },
-            "seo": {
-              "title": "Convertir {directory} en {command} en ligne | Outil gratuit et sécurisé",
-              "h1": "Convertisseur {directory} en {command} en ligne gratuit",
-              "description": "Le meilleur moyen de convertir des fichiers {directory} au format {command} en ligne. Facile à utiliser, entièrement gratuit et sécurisé.",
-              "intro_title": "Pourquoi utiliser notre outil {directory} vers {command} ?",
-              "intro_text": "Notre convertisseur vous permet de traiter des fichiers avec une grande précision. Nous préservons la mise en page et la qualité d'origine tout en transformant vos documents {directory} en {command}."
-            },
-            "steps": {
-              "upload": "1. Importer le fichier {directory}",
-              "upload_desc": "Glissez-déposez votre fichier {source} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo.",
-              "quality": "2. Processus de conversion",
-              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {target} avec les meilleurs paramètres possibles.",
-              "download": "3. Télécharger {command}",
-              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez votre nouveau fichier {target} instantanément."
-            },
-            "faq": {
-              "q1": "Comment convertir {source} en {target} ?",
-              "a1": "Il suffit d'importer votre fichier, d'attendre la conversion et de cliquer sur télécharger. Cela fonctionne sur Windows, Mac, Linux et les appareils mobiles.",
-              "q2": "Est-il sûr de convertir {source} sur Razomy ?",
-              "a2": "Oui. Nous utilisons le chiffrement HTTPS. Vos fichiers sont automatiquement supprimés de nos serveurs après 1 heure pour garantir la confidentialité.",
-              "q3": "Ce convertisseur est-il gratuit ?",
-              "a3": "Absolument. Vous pouvez convertir des fichiers {source} en {target} gratuitement sans créer de compte."
-            }
-          }
-        }
+        },
+        "input_text": "Texte d'entrée",
+        "placeholder_input": "Collez votre texte ici...",
+        "placeholder_output": "Le résultat apparaîtra ici...",
+        "result_title": "Résultat {target}"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Ajouter des fichiers",
+      "clear_all": "Tout effacer",
+      "convert": "Convertir",
+      "converting": "Conversion en cours",
+      "drop_title": "Glissez-déposez le fichier ici",
+      "scanning_folders": "Analyse des dossiers",
+      "select_files": "Sélectionner un fichier",
+      "select_folder": "Sélectionner un dossier",
+      "selected_files": "Fichiers sélectionnés",
+      "support_nested_folders": "Nous prenons en charge les sous-dossiers",
+      "total_size": "Taille totale"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Retour à la page d'accueil",
+        "title": "Page non trouvée"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Accueil",
-        "image": "Image",
-        "audio": "Audio",
-        "video": "Vidéo",
-        "document": "Document",
-        "math": "Maths",
-        "string": "Texte"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Faire un don",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Commande d'entrée",
+      "name": "Io"
     }
   }
 }

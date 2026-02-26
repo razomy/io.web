@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "寄付",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "バッジ",
+    "calendar": {
+      "moreEvents": "他 {0} 件",
+      "today": "今日"
     },
-    "dropzone": {
-      "converting": "変換中",
-      "scanning_folders": "フォルダをスキャン中",
-      "drop_title": "ここにファイルをドラッグ＆ドロップ",
-      "support_nested_folders": "ネストされたフォルダにも対応",
-      "select_files": "ファイルを選択",
-      "select_folder": "フォルダを選択",
-      "selected_files": "選択されたファイル",
-      "total_size": "合計サイズ",
-      "clear_all": "すべてクリア",
-      "add_files": "ファイルを追加",
-      "convert": "変換"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "カルーセルスライド {0} / {1}"
+      },
+      "next": "次のビジュアル",
+      "prev": "前のビジュアル"
     },
-    "error": {
-      "404": {
-        "title": "ページが見つかりません",
-        "back_btn": "ホームに戻る"
+    "close": "閉じる",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "アルファの数値",
+        "alphaSlider": "アルファ",
+        "blueInput": "青の数値",
+        "changeFormat": "色の形式を変更",
+        "eyedropper": "スポイトで色を選択",
+        "greenInput": "緑の数値",
+        "hexInput": "HEX値",
+        "hexaInput": "HEX値（アルファ付き）",
+        "hueInput": "色相の数値",
+        "hueSlider": "色相",
+        "lightnessInput": "明度の数値",
+        "redInput": "赤の数値",
+        "saturationInput": "彩度の数値"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "入力コマンド"
+    "confirmEdit": {
+      "cancel": "キャンセル",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "最初のページ",
+      "itemsPerPageAll": "すべて",
+      "itemsPerPageText": "ページあたりの件数:",
+      "lastPage": "最後のページ",
+      "nextPage": "次のページ",
+      "pageText": "{2} 件中 {0}-{1}",
+      "prevPage": "前のページ"
+    },
+    "dataIterator": {
+      "loadingText": "項目を読み込み中...",
+      "noResultsText": "一致するレコードが見つかりません"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "昇順に並べ替えるには有効にしてください。",
+        "activateDescending": "降順に並べ替えるには有効にしてください。",
+        "activateNone": "並べ替えを解除するには有効にしてください。",
+        "sortAscending": "昇順に並べ替えられました。",
+        "sortDescending": "降順に並べ替えられました。",
+        "sortNone": "並べ替えられていません。"
+      },
+      "itemsPerPageText": "ページあたりの行数:",
+      "sortBy": "並べ替え"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "今日、{0}",
+        "nextMonth": "翌月",
+        "nextYear": "翌年",
+        "previousMonth": "前月",
+        "previousYear": "前年",
+        "selectDate": "{0} を選択",
+        "selectMonth": "月を選択",
+        "selectYear": "年を選択"
+      },
+      "header": "日付を入力",
+      "input": {
+        "placeholder": "日付を入力"
+      },
+      "itemsSelected": "{0} 選択中",
+      "range": {
+        "header": "日付を入力",
+        "title": "日付を選択"
+      },
+      "title": "日付を選択"
+    },
+    "dateRangeInput": {
+      "divider": "～"
+    },
+    "dismiss": "閉じる",
+    "fileInput": {
+      "counter": "{0} ファイル",
+      "counterSize": "{0} ファイル (合計 {1})"
+    },
+    "fileUpload": {
+      "browse": "ファイルを参照",
+      "divider": "または",
+      "title": "ここにファイルをドラッグ＆ドロップ"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backspace",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "下矢印",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "左矢印",
+      "option": "Option",
+      "or": "または",
+      "plus": "プラス",
+      "rightArrow": "右矢印",
+      "shift": "Shift",
+      "shortcut": "キーボードショートカット: {0}",
+      "space": "Space",
+      "then": "、その後",
+      "upArrow": "上矢印"
+    },
+    "infiniteScroll": {
+      "empty": "これ以上ありません",
+      "loadMore": "さらに読み込む"
+    },
+    "input": {
+      "appendAction": "{0} 後のアクション",
+      "clear": "{0} をクリア",
+      "otp": "OTP文字 {0} を入力してください",
+      "prependAction": "{0} 前のアクション"
+    },
+    "loading": "読み込み中...",
+    "noDataText": "データがありません",
+    "open": "開く",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "{0} ページ目、現在のページ",
+        "first": "最初のページ",
+        "last": "最後のページ",
+        "next": "次のページ",
+        "page": "{0} ページへ移動",
+        "previous": "前のページ",
+        "root": "ページネーションナビゲーション"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "評価 {1} 中 {0}"
+      }
+    },
+    "rules": {
+      "capital": "このフィールドには大文字のみ入力できます",
+      "email": "有効なメールアドレスを入力してください",
+      "exclude": "{0} という文字は使用できません",
+      "integer": "このフィールドには整数のみ入力できます",
+      "maxLength": "最大 {0} 文字以内で入力してください",
+      "minLength": "最小 {0} 文字以上で入力してください",
+      "notEmpty": "少なくとも1つの値を選択してください",
+      "number": "このフィールドには数字のみ入力できます",
+      "pattern": "形式が無効です",
+      "required": "このフィールドは必須です",
+      "strictLength": "入力されたフィールドの長さが無効です"
+    },
+    "stepper": {
+      "next": "次へ",
+      "prev": "前へ"
+    },
+    "timePicker": {
+      "am": "午前",
+      "hour": "時",
+      "minute": "分",
+      "pm": "午後",
+      "second": "秒",
+      "title": "時間を選択"
+    },
+    "video": {
+      "enterFullscreen": "全画面表示",
+      "exitFullscreen": "全画面終了",
+      "mute": "ミュート",
+      "pause": "一時停止",
+      "play": "再生",
+      "seek": "シーク",
+      "showVolume": "音量コントロールを表示",
+      "unmute": "ミュート解除",
+      "volume": "音量"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "音声",
+        "document": "ドキュメント",
+        "home": "ホーム",
+        "image": "画像",
+        "math": "数学",
+        "string": "テキスト",
+        "video": "動画"
+      }
+    },
     "web": {
+      "code": {
+        "description": "説明",
+        "name": "名前",
+        "parameters": "パラメータ",
+        "returns": "戻り値",
+        "title": "コードの使用",
+        "type": "型",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "閉じる",
+        "convert_from": "変換元",
+        "convert_to": "変換先",
+        "directory": {
+          "available_conversions": "利用可能な変換",
+          "command": {
+            "faq": {
+              "a1": "ファイルをアップロードし、変換を待ってからダウンロードをクリックするだけです。Windows、Mac、Linux、モバイルデバイスで動作します。",
+              "a2": "はい。HTTPS暗号化を使用しています。プライバシー保護のため、ファイルは1時間後にサーバーから自動的に削除されます。",
+              "a3": "もちろんです。アカウントを作成することなく、無料で {source} ファイルを {target} に変換できます。",
+              "q1": "{source} を {target} に変換するには？",
+              "q2": "Razomyで {source} を変換するのは安全ですか？",
+              "q3": "このコンバーターは無料ですか？"
+            },
+            "features": {
+              "accurate": "高精度",
+              "fast": "高速変換",
+              "quality": "高品質",
+              "secure": "100%安全"
+            },
+            "hero_sub": "{source} を {target} に変換する、高速・無料・安全なオンラインツールです。登録やソフトウェアのインストールは不要です。",
+            "seo": {
+              "description": "{source} ファイルを {target} 形式にオンラインで変換する最良の方法。使いやすく、完全無料、安全なファイル変換です。",
+              "h1": "無料オンライン {source} から {target} へのコンバーター",
+              "intro_text": "当サイトのコンバーターは、ファイルを高精度で処理します。{source} ドキュメントの元のレイアウトと品質を維持しながら {target} に変換します。",
+              "intro_title": "なぜ当サイトの {source} から {target} への変換ツールを使うのか？",
+              "title": "{source} を {target} にオンライン変換 | 無料＆安全なツール"
+            },
+            "steps": {
+              "download": "3. {target} をダウンロード",
+              "download_desc": "処理が完了するまで少し待ち、その後すぐに新しい{target}ファイルをダウンロードしてください。",
+              "quality": "2. 変換プロセス",
+              "quality_desc": "ツールが自動的に最適な設定でファイルを {target} 形式に変換します。",
+              "upload": "1. {source} ファイルをアップロード",
+              "upload_desc": "{source} ファイルをアップロードエリアにドラッグ＆ドロップしてください。最大ファイルサイズは100MBです。"
+            }
+          },
+          "subtitle": "{source} ファイルの変換形式を選択してください",
+          "title": "{source} ファイルを変換"
+        },
+        "error": "ファイルの変換エラー: {fileName}",
+        "faq_title": "よくある質問",
+        "free": "無料",
+        "how_to_convert": "変換方法",
+        "input": "入力",
+        "no_results": "結果が見つかりません",
+        "output": "出力",
+        "price": "価格",
+        "safety": "安全性",
+        "safety_value": "HTTPS / 自動削除",
+        "search_placeholder": "例: pdf to docx, jpg...",
+        "seo_desc": "変換対応フォーマットの完全リスト。PDF、DOCX、JPG、PNGなど。",
+        "seo_title": "ファイル変換カタログ",
+        "specs_title": "変換仕様",
+        "subtitle": "1000以上のツールから必要なコンバーターを見つけましょう",
+        "title": "Razomy Input Output",
+        "to": "へ"
+      },
       "footer": {
         "github": "GitHubソースコード"
+      },
+      "input": {
+        "subtitle": "{source}データの出力形式を選択",
+        "title": "{source}データを変換"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "検索...",
+        "no_results": "ペアが見つかりません",
         "results_for": "検索結果:",
-        "no_results": "ペアが見つかりません"
+        "search": "検索..."
       },
       "text_to_text": {
-        "input_text": "入力テキスト",
-        "placeholder_input": "ここにテキストを貼り付けてください...",
-        "result_title": "{command} の結果",
-        "copy_to_clipboard": "クリップボードにコピー",
-        "placeholder_output": "ここに結果が表示されます...",
-        "convert_btn": "{command} に変換",
+        "convert_btn": "{target} に変換",
         "copied_success": "クリップボードにコピーしました！",
+        "copy_to_clipboard": "クリップボードにコピー",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "文字列をオンラインツールに貼り付けて変換をクリックするだけです。自動的に{target}のケーシング（大文字小文字）ルールが適用されます。その後、結果をコピーしてください。",
+              "a2": "もちろんです。私たちはプライバシーを重視しています。テキストは安全に処理され、貼り付けられたコンテンツやコードが保存・蓄積されることはありません。",
+              "a3": "はい、このテキスト変換ツールは100%無料で使用でき、隠された制限はありません。",
+              "q1": "テキストを{target}に変換するにはどうすればよいですか？",
+              "q2": "テキストやコードは安全ですか？",
+              "q3": "この文字列フォーマッターは無料ですか？"
+            },
+            "hero_sub": "通常のテキスト、文字列、または変数を{target}に変換するための、無料で即座に使えるオンラインツールです。",
+            "seo": {
+              "description": "テキスト、文字列、コード変数をオンラインで簡単に{target}に変換できます。開発者やライター向けの、無料、高速、かつ安全なテキストフォーマットツールです。",
+              "h1": "無料オンライン{target}コンバーター",
+              "intro_text": "当社の文字列フォーマットツールは、通常のテキスト、文章、またはコード変数を即座に{target}に変換します。コンテンツを貼り付けるだけで、スペースや大文字小文字を自動的に処理します。",
+              "intro_title": "当社の{target}ジェネレーターを使用する理由",
+              "title": "テキストを{target}にオンライン変換 | 無料文字列ジェネレーター"
+            },
             "steps": {
-              "paste": "1. {directory} テキストを貼り付け",
+              "copy": "3. {target} をコピー",
+              "copy_desc": "変換が完了しました。結果をクリップボードに直接コピーできます。",
+              "paste": "1. {source} テキストを貼り付け",
               "paste_desc": "入力エリアに {source} の内容を貼り付けるか入力してください。",
               "process": "2. 変換プロセス",
-              "process_desc": "ツールが自動的に最適な設定でテキストを {target} 形式に変換します。",
-              "copy": "3. {command} をコピー",
-              "copy_desc": "変換が完了しました。結果をクリップボードに直接コピーできます。"
+              "process_desc": "ツールが自動的に最適な設定でテキストを {target} 形式に変換します。"
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "ファイル変換エラー: {fileName}",
-        "title": "Razomy 入出力",
-        "subtitle": "1000以上の機能から必要なコンバーターを見つけましょう",
-        "search_placeholder": "例: pdf to docx, jpg...",
-        "no_results": "結果が見つかりません",
-        "convert_from": "変換元",
-        "to": "へ",
-        "close": "閉じる",
-        "convert_to": "変換先",
-        "how_to_convert": "変換方法",
-        "seo_title": "ファイル変換カタログ",
-        "faq_title": "よくある質問",
-        "specs_title": "変換仕様",
-        "input": "入力",
-        "output": "出力",
-        "safety": "安全性",
-        "safety_value": "HTTPS / 自動削除",
-        "price": "価格",
-        "free": "無料",
-        "seo_desc": "変換対応フォーマットの完全リスト。PDF、DOCX、JPG、PNGなど。",
-        "directory": {
-          "title": "{directory} ファイルを変換",
-          "subtitle": "{directory} ファイルの変換形式を選択してください",
-          "available_conversions": "利用可能な変換",
-          "command": {
-            "hero_sub": "{source} を {target} に変換する、高速・無料・安全なオンラインツールです。登録やソフトウェアのインストールは不要です。",
-            "features": {
-              "fast": "高速変換",
-              "secure": "100%安全",
-              "quality": "高品質",
-              "accurate": "高精度"
-            },
-            "seo": {
-              "title": "{directory} を {command} にオンライン変換 | 無料＆安全なツール",
-              "h1": "無料オンライン {directory} から {command} へのコンバーター",
-              "description": "{directory} ファイルを {command} 形式にオンラインで変換する最良の方法。使いやすく、完全無料、安全なファイル変換です。",
-              "intro_title": "なぜ当サイトの {directory} から {command} への変換ツールを使うのか？",
-              "intro_text": "当サイトのコンバーターは、ファイルを高精度で処理します。{directory} ドキュメントの元のレイアウトと品質を維持しながら {command} に変換します。"
-            },
-            "steps": {
-              "upload": "1. {directory} ファイルをアップロード",
-              "upload_desc": "{source} ファイルをアップロードエリアにドラッグ＆ドロップしてください。最大ファイルサイズは100MBです。",
-              "quality": "2. 変換プロセス",
-              "quality_desc": "ツールが自動的に最適な設定でファイルを {target} 形式に変換します。",
-              "download": "3. {command} をダウンロード",
-              "download_desc": "処理が完了するまで少しお待ちください。その後、新しい {target} ファイルをすぐにダウンロードできます。"
-            },
-            "faq": {
-              "q1": "{source} を {target} に変換するには？",
-              "a1": "ファイルをアップロードし、変換を待ってからダウンロードをクリックするだけです。Windows、Mac、Linux、モバイルデバイスで動作します。",
-              "q2": "Razomyで {source} を変換するのは安全ですか？",
-              "a2": "はい。HTTPS暗号化を使用しています。プライバシー保護のため、ファイルは1時間後にサーバーから自動的に削除されます。",
-              "q3": "このコンバーターは無料ですか？",
-              "a3": "もちろんです。アカウントを作成することなく、無料で {source} ファイルを {target} に変換できます。"
-            }
-          }
-        }
+        },
+        "input_text": "入力テキスト",
+        "placeholder_input": "ここにテキストを貼り付けてください...",
+        "placeholder_output": "ここに結果が表示されます...",
+        "result_title": "{target} の結果"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "ファイルを追加",
+      "clear_all": "すべてクリア",
+      "convert": "変換",
+      "converting": "変換中",
+      "drop_title": "ここにファイルをドラッグ＆ドロップ",
+      "scanning_folders": "フォルダをスキャン中",
+      "select_files": "ファイルを選択",
+      "select_folder": "フォルダを選択",
+      "selected_files": "選択されたファイル",
+      "support_nested_folders": "ネストされたフォルダにも対応",
+      "total_size": "合計サイズ"
+    },
+    "error": {
+      "404": {
+        "back_btn": "ホームに戻る",
+        "title": "ページが見つかりません"
       }
     },
-    "db": {
-      "directories": {
-        "home": "ホーム",
-        "image": "画像",
-        "audio": "音声",
-        "video": "動画",
-        "document": "ドキュメント",
-        "math": "数学",
-        "string": "テキスト"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "寄付",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "入力コマンド",
+      "name": "Io"
     }
   }
 }

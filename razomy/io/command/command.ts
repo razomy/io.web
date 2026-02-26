@@ -13,6 +13,11 @@ export interface IoCammandSpec {
     type: IoType,
     description: string
   }[],
+  performance: {
+    timeDataSizeComplexityFn: string;
+    memoryDataSizeComplexityFn: string;
+    history: {time:number, memory:number}[];
+  };
   returns: {
     type: IoType,
     description: string

@@ -26,6 +26,11 @@ function fileFormatOutputToCommandTemplate(directoryPath: string[], fileFormat: 
       description: '',
       examples: [],
       name: '',
+      performance: {
+        memoryDataSizeComplexityFn: 'O(n^2)',
+        timeDataSizeComplexityFn: 'O(n^2)',
+        history: [],
+      },
       parameters: [{
         description: '',
         name: '',

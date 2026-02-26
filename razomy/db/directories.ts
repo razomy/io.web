@@ -5,11 +5,11 @@ import {stringDirectory} from './commands/string';
 import type {IoDirectory, IoDirectoryPath} from '../io/command';
 
 export const directoriesTree = [
-  videoDirectory,
-  audioDirectory,
-  imageDirectory,
-  // mathDirectory,
   stringDirectory,
+  // mathDirectory,
+  imageDirectory,
+  audioDirectory,
+  videoDirectory,
 ] as const satisfies IoDirectory[];
 
 export function flatDirectories(directoriesTree: IoDirectory[]): IoDirectory[] {

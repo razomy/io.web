@@ -1,5 +1,5 @@
 <template>
-  <v-card border="0" class="rounded-xl pa-4 pa-md-6 mb-8">
+  <v-card border="0" class="rounded-xl pa-4 pa-md-6">
     <v-row>
       <v-col cols="12" md="6">
         <div class="d-flex align-center mb-2">

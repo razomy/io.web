@@ -1,38 +1,271 @@
 {
-  "nuxt": {
-    "footer": {
-      "donate": "Doner",
-      "start_year": "2021",
-      "company_name": "Razomy"
+  "$vuetify": {
+    "badge": "Merke",
+    "calendar": {
+      "moreEvents": "{0} flere",
+      "today": "I dag"
     },
-    "dropzone": {
-      "converting": "Konverterer",
-      "scanning_folders": "Skanner mapper",
-      "drop_title": "Dra og slipp fil her",
-      "support_nested_folders": "Vi støtter nøstede mapper",
-      "select_files": "Velg fil",
-      "select_folder": "Velg mappe",
-      "selected_files": "Valgte filer",
-      "total_size": "Total størrelse",
-      "clear_all": "Fjern alle",
-      "add_files": "Legg til filer",
-      "convert": "Konverter"
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Karusellbilde {0} av {1}"
+      },
+      "next": "Neste bilde",
+      "prev": "Forrige bilde"
     },
-    "error": {
-      "404": {
-        "title": "Siden ble ikke funnet",
-        "back_btn": "Tilbake til startsiden"
+    "close": "Lukk",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Alfa-verdi",
+        "alphaSlider": "Alfa",
+        "blueInput": "Blå verdi",
+        "changeFormat": "Endre fargeformat",
+        "eyedropper": "Velg farge med pipette",
+        "greenInput": "Grønn verdi",
+        "hexInput": "HEX-verdi",
+        "hexaInput": "HEX med alfa-verdi",
+        "hueInput": "Nyanse-verdi",
+        "hueSlider": "Nyanse",
+        "lightnessInput": "Lyshetsverdi",
+        "redInput": "Rød verdi",
+        "saturationInput": "Metningsverdi"
       }
     },
-    "product": {
-      "name": "Io",
-      "description": "Input-kommando"
+    "confirmEdit": {
+      "cancel": "Avbryt",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "Første side",
+      "itemsPerPageAll": "Alle",
+      "itemsPerPageText": "Elementer per side:",
+      "lastPage": "Siste side",
+      "nextPage": "Neste side",
+      "pageText": "{0}-{1} av {2}",
+      "prevPage": "Forrige side"
+    },
+    "dataIterator": {
+      "loadingText": "Laster elementer...",
+      "noResultsText": "Ingen samsvarende poster funnet"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Aktiver for å sortere stigende.",
+        "activateDescending": "Aktiver for å sortere synkende.",
+        "activateNone": "Aktiver for å fjerne sortering.",
+        "sortAscending": "Sortert stigende.",
+        "sortDescending": "Sortert synkende.",
+        "sortNone": "Ikke sortert."
+      },
+      "itemsPerPageText": "Rader per side:",
+      "sortBy": "Sorter etter"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "I dag, {0}",
+        "nextMonth": "Neste måned",
+        "nextYear": "Neste år",
+        "previousMonth": "Forrige måned",
+        "previousYear": "Forrige år",
+        "selectDate": "{0}",
+        "selectMonth": "Velg måned",
+        "selectYear": "Velg år"
+      },
+      "header": "Angi dato",
+      "input": {
+        "placeholder": "Angi dato"
+      },
+      "itemsSelected": "{0} valgt",
+      "range": {
+        "header": "Angi datoer",
+        "title": "Velg datoer"
+      },
+      "title": "Velg dato"
+    },
+    "dateRangeInput": {
+      "divider": "til"
+    },
+    "dismiss": "Lukk",
+    "fileInput": {
+      "counter": "{0} filer",
+      "counterSize": "{0} filer ({1} totalt)"
+    },
+    "fileUpload": {
+      "browse": "Bla gjennom filer",
+      "divider": "eller",
+      "title": "Dra og slipp filer her"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backspace",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Pil ned",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Venstrepil",
+      "option": "Option",
+      "or": "eller",
+      "plus": "pluss",
+      "rightArrow": "Høyrepil",
+      "shift": "Shift",
+      "shortcut": "Tastatursnarvei: {0}",
+      "space": "Mellomrom",
+      "then": "så",
+      "upArrow": "Pil opp"
+    },
+    "infiniteScroll": {
+      "empty": "Ikke mer",
+      "loadMore": "Last mer"
+    },
+    "input": {
+      "appendAction": "{0} etterstilt handling",
+      "clear": "Tøm {0}",
+      "otp": "Vennligst skriv inn OTP-tegn {0}",
+      "prependAction": "{0} foranstilt handling"
+    },
+    "loading": "Laster inn...",
+    "noDataText": "Ingen data tilgjengelig",
+    "open": "Åpne",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Side {0}, Nåværende side",
+        "first": "Første side",
+        "last": "Siste side",
+        "next": "Neste side",
+        "page": "Gå til side {0}",
+        "previous": "Forrige side",
+        "root": "Sidenavigasjon"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Vurdering {0} av {1}"
+      }
+    },
+    "rules": {
+      "capital": "Dette feltet kan kun inneholde store bokstaver",
+      "email": "Vennligst skriv inn en gyldig e-post",
+      "exclude": "Tegnet {0} er ikke tillatt",
+      "integer": "Dette feltet kan kun inneholde heltall",
+      "maxLength": "Du må angi maksimalt {0} tegn",
+      "minLength": "Du må angi minst {0} tegn",
+      "notEmpty": "Vennligst velg minst én verdi",
+      "number": "Dette feltet kan kun inneholde tall",
+      "pattern": "Ugyldig format",
+      "required": "Dette feltet er påkrevd",
+      "strictLength": "Lengden på det angitte feltet er ugyldig"
+    },
+    "stepper": {
+      "next": "Neste",
+      "prev": "Forrige"
+    },
+    "timePicker": {
+      "am": "AM",
+      "hour": "Time",
+      "minute": "Minutt",
+      "pm": "PM",
+      "second": "Sekund",
+      "title": "Velg tid"
+    },
+    "video": {
+      "enterFullscreen": "Fullskjerm",
+      "exitFullscreen": "Avslutt fullskjerm",
+      "mute": "Demp lyd",
+      "pause": "Pause",
+      "play": "Spill av",
+      "seek": "Søk",
+      "showVolume": "Vis volumkontroll",
+      "unmute": "Slå på lyd",
+      "volume": "Volum"
     }
   },
   "io": {
+    "db": {
+      "directories": {
+        "audio": "Lyd",
+        "document": "Dokument",
+        "home": "Hjem",
+        "image": "Bilde",
+        "math": "Matematikk",
+        "string": "Tekst",
+        "video": "Video"
+      }
+    },
     "web": {
+      "code": {
+        "description": "Beskrivelse",
+        "name": "Navn",
+        "parameters": "Parametere",
+        "returns": "Returnerer",
+        "title": "Bruk av kode",
+        "type": "Type",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Lukk",
+        "convert_from": "Konverter fra",
+        "convert_to": "Konverter til",
+        "directory": {
+          "available_conversions": "Tilgjengelige konverteringer",
+          "command": {
+            "faq": {
+              "a1": "Bare last opp filen din, vent på konverteringen, og klikk på last ned. Det fungerer på Windows, Mac, Linux og mobile enheter.",
+              "a2": "Ja. Vi bruker HTTPS-kryptering. Filene dine slettes automatisk fra serverne våre etter 1 time for å sikre personvern.",
+              "a3": "Absolutt. Du kan konvertere {source}-filer til {target} gratis uten å opprette en konto.",
+              "q1": "Hvordan konverterer jeg {source} til {target}?",
+              "q2": "Er det trygt å konvertere {source} på Razomy?",
+              "q3": "Er denne konvertereren gratis?"
+            },
+            "features": {
+              "accurate": "Høy nøyaktighet",
+              "fast": "Rask konvertering",
+              "quality": "Høy kvalitet",
+              "secure": "100 % sikkert"
+            },
+            "hero_sub": "Raskt, gratis og sikkert nettverktøy for å konvertere {source} til {target}. Ingen registrering eller programvareinstallasjon kreves.",
+            "seo": {
+              "description": "Den beste måten å konvertere {source}-filer til {target}-format på nett. Enkel å bruke, helt gratis og sikker filkonvertering.",
+              "h1": "Gratis {source} til {target}-konverterer på nett",
+              "intro_text": "Konvertereren vår lar deg behandle filer med høy presisjon. Vi bevarer den opprinnelige layouten og kvaliteten mens vi omdanner {source}-dokumentene dine til {target}.",
+              "intro_title": "Hvorfor bruke vårt verktøy for {source} til {target}?",
+              "title": "Konverter {source} til {target} på nett | Gratis og sikkert verktøy"
+            },
+            "steps": {
+              "download": "3. Last ned {target}",
+              "download_desc": "Vent et øyeblikk til prosessen er ferdig, og last deretter ned den nye {target}-filen umiddelbart.",
+              "quality": "2. Konverteringsprosess",
+              "quality_desc": "Verktøyet vårt konverterer filen din automatisk til {target}-format med best mulige innstillinger.",
+              "upload": "1. Last opp {source}-fil",
+              "upload_desc": "Dra og slipp {source}-filen i opplastingsområdet. Maksimal filstørrelse er 100 MB."
+            }
+          },
+          "subtitle": "Velg kommandoformat for dine {source}-filer",
+          "title": "Konverter {source}-filer"
+        },
+        "error": "Feil ved konvertering av fil: {fileName}",
+        "faq_title": "Ofte stilte spørsmål",
+        "free": "Gratis",
+        "how_to_convert": "Hvordan konvertere",
+        "input": "Input",
+        "no_results": "Ingen resultater funnet",
+        "output": "Output",
+        "price": "Pris",
+        "safety": "Sikkerhet",
+        "safety_value": "HTTPS / Automatisk sletting",
+        "search_placeholder": "f.eks. pdf til docx, jpg...",
+        "seo_desc": "Fullstendig liste over støttede formater for konvertering. PDF, DOCX, JPG, PNG og andre.",
+        "seo_title": "Filkonverteringskatalog",
+        "specs_title": "Konverteringsspesifikasjoner",
+        "subtitle": "Finn konvertereren du trenger blant 1000+ verktøy",
+        "title": "Razomy Input Output",
+        "to": "til"
+      },
       "footer": {
         "github": "Kildekode GitHub"
+      },
+      "input": {
+        "subtitle": "Velg utdataformat for dine {source}-data",
+        "title": "Konverter {source}-data"
       },
       "navbar": {
         "products": {
@@ -40,101 +273,77 @@
         }
       },
       "sidebar": {
-        "search": "Finn...",
+        "no_results": "Ingen par funnet",
         "results_for": "Resultater for",
-        "no_results": "Ingen par funnet"
+        "search": "Finn..."
       },
       "text_to_text": {
-        "input_text": "Inndatatekst",
-        "placeholder_input": "Lim inn teksten din her...",
-        "result_title": "{command} resultat",
-        "copy_to_clipboard": "Kopier til utklippstavlen",
-        "placeholder_output": "Resultatet vises her...",
-        "convert_btn": "Konverter til {command}",
+        "convert_btn": "Konverter til {target}",
         "copied_success": "Kopiert til utklippstavlen!",
+        "copy_to_clipboard": "Kopier til utklippstavlen",
         "directory": {
           "command": {
+            "faq": {
+              "a1": "Bare lim inn strengen din i vårt nettverktøy og klikk på konverter. Det vil automatisk bruke reglene for {target}. Deretter kopierer du enkelt resultatet.",
+              "a2": "Absolutt. Vi bryr oss om personvern. Teksten din behandles sikkert, og vi lagrer ikke noe av innholdet eller koden du limer inn.",
+              "a3": "Ja, dette tekstkonverteringsverktøyet er 100 % gratis å bruke uten skjulte begrensninger.",
+              "q1": "Hvordan konverterer jeg tekst til {target}?",
+              "q2": "Er teksten og koden min trygg?",
+              "q3": "Er denne strengformatereren gratis?"
+            },
+            "hero_sub": "Gratis og umiddelbart nettverktøy for å konvertere vanlig tekst, strenger eller variabler til {target}.",
+            "seo": {
+              "description": "Konverter enkelt tekst, strenger eller kodevariabler til {target} på nett. Et gratis, raskt og trygt tekstformateringsverktøy for utviklere og skribenter.",
+              "h1": "Gratis {target}-konverterer på nett",
+              "intro_text": "Vårt strengformateringsverktøy forvandler umiddelbart din vanlige tekst, setninger eller kodevariabler til {target}. Bare lim inn innholdet ditt, så håndterer verktøyet mellomrom og store/små bokstaver automatisk.",
+              "intro_title": "Hvorfor bruke vår {target}-generator?",
+              "title": "Konverter tekst til {target} på nett | Gratis streng-generator"
+            },
             "steps": {
-              "paste": "1. Lim inn {directory}-tekst",
+              "copy": "3. Kopier {target}",
+              "copy_desc": "Konverteringen er fullført. Du kan nå kopiere resultatet direkte til utklippstavlen.",
+              "paste": "1. Lim inn {source}-tekst",
               "paste_desc": "Lim inn eller skriv inn {source}-innholdet i inndatafeltet.",
               "process": "2. Konverteringsprosess",
-              "process_desc": "Verktøyet vårt konverterer teksten din automatisk til {target}-format med best mulige innstillinger.",
-              "copy": "3. Kopier {command}",
-              "copy_desc": "Konverteringen er fullført. Du kan nå kopiere resultatet direkte til utklippstavlen."
+              "process_desc": "Verktøyet vårt konverterer teksten din automatisk til {target}-format med best mulige innstillinger."
             }
           }
-        }
-      },
-      "file_to_file": {
-        "error": "Feil ved konvertering av fil: {fileName}",
-        "title": "Razomy Input Output",
-        "subtitle": "Finn konvertereren du trenger blant 1000+ funksjoner",
-        "search_placeholder": "f.eks. pdf til docx, jpg...",
-        "no_results": "Ingen resultater funnet",
-        "convert_from": "Konverter fra",
-        "to": "til",
-        "close": "Lukk",
-        "convert_to": "Konverter til",
-        "how_to_convert": "Hvordan konvertere",
-        "seo_title": "Filkonverteringskatalog",
-        "faq_title": "Ofte stilte spørsmål",
-        "specs_title": "Konverteringsspesifikasjoner",
-        "input": "Input",
-        "output": "Output",
-        "safety": "Sikkerhet",
-        "safety_value": "HTTPS / Automatisk sletting",
-        "price": "Pris",
-        "free": "Gratis",
-        "seo_desc": "Fullstendig liste over støttede formater for konvertering. PDF, DOCX, JPG, PNG og andre.",
-        "directory": {
-          "title": "Konverter {directory}-filer",
-          "subtitle": "Velg kommandoformat for dine {directory}-filer",
-          "available_conversions": "Tilgjengelige konverteringer",
-          "command": {
-            "hero_sub": "Raskt, gratis og sikkert nettverktøy for å konvertere {source} til {target}. Ingen registrering eller programvareinstallasjon kreves.",
-            "features": {
-              "fast": "Rask konvertering",
-              "secure": "100 % sikkert",
-              "quality": "Høy kvalitet",
-              "accurate": "Høy nøyaktighet"
-            },
-            "seo": {
-              "title": "Konverter {directory} til {command} på nett | Gratis og sikkert verktøy",
-              "h1": "Gratis {directory} til {command}-konverterer på nett",
-              "description": "Den beste måten å konvertere {directory}-filer til {command}-format på nett. Enkel å bruke, helt gratis og sikker filkonvertering.",
-              "intro_title": "Hvorfor bruke vårt verktøy for {directory} til {command}?",
-              "intro_text": "Konvertereren vår lar deg behandle filer med høy presisjon. Vi bevarer den opprinnelige layouten og kvaliteten mens vi omdanner {directory}-dokumentene dine til {command}."
-            },
-            "steps": {
-              "upload": "1. Last opp {directory}-fil",
-              "upload_desc": "Dra og slipp {source}-filen i opplastingsområdet. Maksimal filstørrelse er 100 MB.",
-              "quality": "2. Konverteringsprosess",
-              "quality_desc": "Verktøyet vårt konverterer filen din automatisk til {target}-format med best mulige innstillinger.",
-              "download": "3. Last ned {command}",
-              "download_desc": "Vent et øyeblikk til prosessen er ferdig, og last deretter ned den nye {target}-filen din umiddelbart."
-            },
-            "faq": {
-              "q1": "Hvordan konverterer jeg {source} til {target}?",
-              "a1": "Bare last opp filen din, vent på konverteringen, og klikk på last ned. Det fungerer på Windows, Mac, Linux og mobile enheter.",
-              "q2": "Er det trygt å konvertere {source} på Razomy?",
-              "a2": "Ja. Vi bruker HTTPS-kryptering. Filene dine slettes automatisk fra serverne våre etter 1 time for å sikre personvern.",
-              "q3": "Er denne konvertereren gratis?",
-              "a3": "Absolutt. Du kan konvertere {source}-filer til {target} gratis uten å opprette en konto."
-            }
-          }
-        }
+        },
+        "input_text": "Inndatatekst",
+        "placeholder_input": "Lim inn teksten din her...",
+        "placeholder_output": "Resultatet vises her...",
+        "result_title": "{target} resultat"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Legg til filer",
+      "clear_all": "Fjern alle",
+      "convert": "Konverter",
+      "converting": "Konverterer",
+      "drop_title": "Dra og slipp fil her",
+      "scanning_folders": "Skanner mapper",
+      "select_files": "Velg fil",
+      "select_folder": "Velg mappe",
+      "selected_files": "Valgte filer",
+      "support_nested_folders": "Vi støtter nøstede mapper",
+      "total_size": "Total størrelse"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Tilbake til startsiden",
+        "title": "Siden ble ikke funnet"
       }
     },
-    "db": {
-      "directories": {
-        "home": "Hjem",
-        "image": "Bilde",
-        "audio": "Lyd",
-        "video": "Video",
-        "document": "Dokument",
-        "math": "Matematikk",
-        "string": "Tekst"
-      }
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Doner",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Input-kommando",
+      "name": "Io"
     }
   }
 }

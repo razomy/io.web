@@ -54,6 +54,8 @@ import SeoSection from '~/components/SeoSection.vue';
 // Заменили sendFile на функцию для отправки текста, предполагается, что она принимает (text, functionName, url)
 import {processText} from '~/functions/processText';
 import CodeBlock from '~/components/CodeBlock.vue';
+import {Debounce} from '~~/razomy/functions';
+import {commands} from '~~/razomy/db';
 
 const {t} = useI18n();
 const props = defineProps<{
@@ -81,14 +83,14 @@ const generateSeoContent = () => {
         text: t('io.web.text_to_text.directory.command.steps.paste_desc', {source: in_})
       },
       {
-        title: t('io.web.text_to_text.directory.command.steps.process', {func: out}),
+        title: t('io.web.text_to_text.directory.command.steps.process', {target: out}),
         icon: 'mdi-cog-transfer-outline',
-        text: t('io.web.text_to_text.directory.command.steps.process_desc', {func: out})
+        text: t('io.web.text_to_text.directory.command.steps.process_desc', {target: out})
       },
       {
         title: t('io.web.text_to_text.directory.command.steps.copy', {target: out}),
         icon: 'mdi-content-copy',
-        text: t('io.web.text_to_text.directory.command.steps.copy_desc', {tgt: out})
+        text: t('io.web.text_to_text.directory.command.steps.copy_desc', {target: out})
       },
     ],
     faq: [
@@ -137,13 +139,17 @@ const loading = ref(false);
 const hasError = ref(false);
 const errorMessage = ref('');
 
-const processTextData = async () => {
-  if (!inputText.value.trim()) return;
+let debouncer = new Debounce();
 
-  loading.value = true;
-  hasError.value = false;
-  outputText.value = '';
+watch(inputText, () => {
+  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
 
+  if (command.spec.performance.memoryDataSizeComplexityFn === 'O(n)') {
+    debouncer.debounce(processTextData, 350)
+  }
+});
+
+async function request() {
   try {
     // Отправляем текст на бэкенд для обработки конкретной функцией
     const result = await processText(
@@ -161,6 +167,16 @@ const processTextData = async () => {
     loading.value = false;
   }
 }
+
+const processTextData = async () => {
+  if (!inputText.value.trim()) return;
+
+  loading.value = true;
+  hasError.value = false;
+  outputText.value = '';
+
+  debouncer.debounce(request, 350)
+}
 </script>
 
 <style scoped>
@@ -169,6 +185,7 @@ const processTextData = async () => {
   margin-left: auto;
   margin-right: auto;
 }
+
 .z-index-1 {
   z-index: 1;
 }

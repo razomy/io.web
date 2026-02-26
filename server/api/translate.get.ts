@@ -1,6 +1,7 @@
 import { H3Event } from 'h3';
 import {getUserLocales} from '@razomy/nuxt/runtime/functions/server';
 import {c} from '~~/content/context';
+import en from '~~/i18n/en-EN.json';
 import uk from '~~/i18n/uk-UA.json';
 import es from '~~/i18n/es-ES.json';
 import fr from '~~/i18n/fr-FR.json';
@@ -22,7 +23,7 @@ import hi from '~~/i18n/hi-IN.json';
 import th from '~~/i18n/th-TH.json';
 import id from '~~/i18n/id-ID.json';
 const translates = {
-  en: c.i18n.en,
+  en,
   uk,
   es,
   fr,

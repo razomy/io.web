@@ -107,6 +107,9 @@
               {{ copiedId === tab.value + '-run' ? 'mdi-check' : 'mdi-content-copy' }}
             </v-icon>
           </v-btn>
+          <v-chip :href="`https://www.npmjs.com/package/@razomy/${tab.directoryPath.join('-')}`">Npm</v-chip>
+          <v-chip :href="`https://github.com/razomy/js/tree/main/razomy/${tab.directoryPath.join('-')}`">GitHub</v-chip>
+<!--          <v-chip :href="`https://io.razomy.org/${tab.directoryPath.join('/')}`">Io</v-chip>-->
           <pre><code class="hljs rounded-xl pa-4" v-html="highlightCode(tab.codeRun, tab.language)"></code></pre>
         </div>
       </v-window-item>
@@ -151,11 +154,12 @@ const tabs = computed(() => {
   const p = '@razomy/' + command.value.directoryPath.join('-')
   return ([
     {
-      label: t('io.web.code.typescript_javascript'),
+      label: 'Npm Ts/Js',
       value: 'ts',
       language: 'typescript',
       icon: 'mdi-language-javascript',
       color: 'blue',
+      directoryPath: command.value.directoryPath,
       codeInstall: `npm i ${p}`,
       codeRun: `import {${command.value.spec.name}} from '${p}';\n\n` + command.value.spec.examples.map((i: any) => i.code + '\n// => ' + i.expected).join('\n\n')
     }

@@ -1,4 +1,5 @@
 release {
+test {
 ui layout
 mobile
 i18n

@@ -1,0 +1,349 @@
+{
+  "$vuetify": {
+    "badge": "Badge",
+    "calendar": {
+      "moreEvents": "{0} more",
+      "today": "Today"
+    },
+    "carousel": {
+      "ariaLabel": {
+        "delimiter": "Carousel slide {0} of {1}"
+      },
+      "next": "Next visual",
+      "prev": "Previous visual"
+    },
+    "close": "Close",
+    "colorPicker": {
+      "ariaLabel": {
+        "alphaInput": "Alpha value",
+        "alphaSlider": "Alpha",
+        "blueInput": "Blue value",
+        "changeFormat": "Change color format",
+        "eyedropper": "Select color with eyedropper",
+        "greenInput": "Green value",
+        "hexInput": "HEX value",
+        "hexaInput": "HEX with alpha value",
+        "hueInput": "Hue value",
+        "hueSlider": "Hue",
+        "lightnessInput": "Lightness value",
+        "redInput": "Red value",
+        "saturationInput": "Saturation value"
+      }
+    },
+    "confirmEdit": {
+      "cancel": "Cancel",
+      "ok": "OK"
+    },
+    "dataFooter": {
+      "firstPage": "First page",
+      "itemsPerPageAll": "All",
+      "itemsPerPageText": "Items per page:",
+      "lastPage": "Last page",
+      "nextPage": "Next page",
+      "pageText": "{0}-{1} of {2}",
+      "prevPage": "Previous page"
+    },
+    "dataIterator": {
+      "loadingText": "Loading items...",
+      "noResultsText": "No matching records found"
+    },
+    "dataTable": {
+      "ariaLabel": {
+        "activateAscending": "Activate to sort ascending.",
+        "activateDescending": "Activate to sort descending.",
+        "activateNone": "Activate to remove sorting.",
+        "sortAscending": "Sorted ascending.",
+        "sortDescending": "Sorted descending.",
+        "sortNone": "Not sorted."
+      },
+      "itemsPerPageText": "Rows per page:",
+      "sortBy": "Sort by"
+    },
+    "datePicker": {
+      "ariaLabel": {
+        "currentDate": "Today, {0}",
+        "nextMonth": "Next month",
+        "nextYear": "Next year",
+        "previousMonth": "Previous month",
+        "previousYear": "Previous year",
+        "selectDate": "{0}",
+        "selectMonth": "Select month",
+        "selectYear": "Select year"
+      },
+      "header": "Enter date",
+      "input": {
+        "placeholder": "Enter date"
+      },
+      "itemsSelected": "{0} selected",
+      "range": {
+        "header": "Enter dates",
+        "title": "Select dates"
+      },
+      "title": "Select date"
+    },
+    "dateRangeInput": {
+      "divider": "to"
+    },
+    "dismiss": "Dismiss",
+    "fileInput": {
+      "counter": "{0} files",
+      "counterSize": "{0} files ({1} in total)"
+    },
+    "fileUpload": {
+      "browse": "Browse Files",
+      "divider": "or",
+      "title": "Drag and drop files here"
+    },
+    "hotkey": {
+      "alt": "Alt",
+      "backspace": "Backspace",
+      "command": "Command",
+      "ctrl": "Ctrl",
+      "downArrow": "Down Arrow",
+      "enter": "Enter",
+      "escape": "Escape",
+      "leftArrow": "Left Arrow",
+      "option": "Option",
+      "or": "or",
+      "plus": "plus",
+      "rightArrow": "Right Arrow",
+      "shift": "Shift",
+      "shortcut": "Keyboard shortcut: {0}",
+      "space": "Space",
+      "then": "then",
+      "upArrow": "Up Arrow"
+    },
+    "infiniteScroll": {
+      "empty": "No more",
+      "loadMore": "Load more"
+    },
+    "input": {
+      "appendAction": "{0} appended action",
+      "clear": "Clear {0}",
+      "otp": "Please enter OTP character {0}",
+      "prependAction": "{0} prepended action"
+    },
+    "loading": "Loading...",
+    "noDataText": "No data available",
+    "open": "Open",
+    "pagination": {
+      "ariaLabel": {
+        "currentPage": "Page {0}, Current page",
+        "first": "First page",
+        "last": "Last page",
+        "next": "Next page",
+        "page": "Go to page {0}",
+        "previous": "Previous page",
+        "root": "Pagination Navigation"
+      }
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Rating {0} of {1}"
+      }
+    },
+    "rules": {
+      "capital": "This field can only contain uppercase letters",
+      "email": "Please enter a valid email",
+      "exclude": "The {0} character is not allowed",
+      "integer": "This field can only contain integer values",
+      "maxLength": "You must enter a maximum of {0} characters",
+      "minLength": "You must enter a minimum of {0} characters",
+      "notEmpty": "Please choose at least one value",
+      "number": "This field can only contain numbers",
+      "pattern": "Invalid format",
+      "required": "This field is required",
+      "strictLength": "The length of the entered field is invalid"
+    },
+    "stepper": {
+      "next": "Next",
+      "prev": "Previous"
+    },
+    "timePicker": {
+      "am": "AM",
+      "hour": "Hour",
+      "minute": "Minute",
+      "pm": "PM",
+      "second": "Second",
+      "title": "Select Time"
+    },
+    "video": {
+      "enterFullscreen": "Full screen",
+      "exitFullscreen": "Exit full screen",
+      "mute": "Mute",
+      "pause": "Pause",
+      "play": "Play",
+      "seek": "Seek",
+      "showVolume": "Show volume control",
+      "unmute": "Unmute",
+      "volume": "Volume"
+    }
+  },
+  "io": {
+    "db": {
+      "directories": {
+        "audio": "Audio",
+        "document": "Document",
+        "home": "Home",
+        "image": "Image",
+        "math": "Math",
+        "string": "Text",
+        "video": "Video"
+      }
+    },
+    "web": {
+      "code": {
+        "description": "Description",
+        "name": "Name",
+        "parameters": "Parameters",
+        "returns": "Returns",
+        "title": "Using code",
+        "type": "Type",
+        "typescript_javascript": "Typescript/Javascript"
+      },
+      "file_to_file": {
+        "close": "Close",
+        "convert_from": "Convert from",
+        "convert_to": "Convert to",
+        "directory": {
+          "available_conversions": "Available conversions",
+          "command": {
+            "faq": {
+              "a1": "Simply upload your file, wait for the conversion, and click download. It works on Windows, Mac, Linux, and mobile devices.",
+              "a2": "Yes. We use HTTPS encryption. Your files are automatically deleted from our servers after 1 hour to ensure privacy.",
+              "a3": "Absolutely. You can convert {source} files to {target} for free without creating an account.",
+              "q1": "How do I convert {source} to {target}?",
+              "q2": "Is it safe to convert {source} on Razomy?",
+              "q3": "Is this converter free?"
+            },
+            "features": {
+              "accurate": "High Accuracy",
+              "fast": "Fast Conversion",
+              "quality": "High Quality",
+              "secure": "100% Secure"
+            },
+            "hero_sub": "Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.",
+            "seo": {
+              "description": "The best way to convert {source} files to {target} format online. Easy to use, completely free, and secure file conversion.",
+              "h1": "Free Online {source} to {target} Converter",
+              "intro_text": "Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {source} documents into {target}.",
+              "intro_title": "Why use our {source} to {target} tool?",
+              "title": "Convert {source} to {target} Online | Free & Secure Tool"
+            },
+            "steps": {
+              "download": "3. Download {target}",
+              "download_desc": "Wait a moment for the process to finish, then download your new {target} file instantly.",
+              "quality": "2. Conversion Process",
+              "quality_desc": "Our tool automatically converts your file to {target} format with the best possible settings.",
+              "upload": "1. Upload {source} file",
+              "upload_desc": "Drag and drop your {source} file into the upload area. The maximum file size is 100MB."
+            }
+          },
+          "subtitle": "Choose format {source}",
+          "title": "Manage {source}"
+        },
+        "error": "Error converting file: {fileName}",
+        "faq_title": "Frequently Asked Questions",
+        "free": "Free",
+        "how_to_convert": "How to convert",
+        "input": "Input",
+        "no_results": "No results found",
+        "output": "Output",
+        "price": "Price",
+        "safety": "Safety",
+        "safety_value": "HTTPS / Auto-delete",
+        "search_placeholder": "e.g. pdf to docx, jpg...",
+        "seo_desc": "Full list of supported formats for conversion. PDF, DOCX, JPG, PNG and others.",
+        "seo_title": "File Converter Catalog",
+        "specs_title": "Conversion Specs",
+        "subtitle": "Find the converter you need among 1000+ tools",
+        "title": "Razomy Input Output",
+        "to": "to"
+      },
+      "footer": {
+        "github": "Source Code Github"
+      },
+      "input": {
+        "subtitle": "Select output format for your {source} data",
+        "title": "Convert {source} data"
+      },
+      "navbar": {
+        "products": {
+          "io": "IO"
+        }
+      },
+      "sidebar": {
+        "no_results": "No pairs found",
+        "results_for": "Results for",
+        "search": "Find..."
+      },
+      "text_to_text": {
+        "convert_btn": "Convert to {target}",
+        "copied_success": "Copied to clipboard!",
+        "copy_to_clipboard": "Copy to clipboard",
+        "directory": {
+          "command": {
+            "faq": {
+              "a1": "Just paste your string into our online tool and click convert. It will automatically apply the {target} casing rules. Then, simply copy the result.",
+              "a2": "Absolutely. We care about privacy. Your text is processed securely, and we do not store or save any of your pasted content or code.",
+              "a3": "Yes, this text conversion tool is 100% free to use with no hidden limits.",
+              "q1": "How do I convert text to {target}?",
+              "q2": "Is my text and code secure?",
+              "q3": "Is this string formatter free?"
+            },
+            "hero_sub": "Free and instant online tool to convert normal text, strings, or variables into {target}.",
+            "seo": {
+              "description": "Easily convert your text, strings, or code variables to {target} online. A free, fast, and secure text formatting tool for developers and writers.",
+              "h1": "Free Online {target} Converter",
+              "intro_text": "Our string formatting tool instantly transforms your normal text, sentences, or code variables into {target}. Simply paste your content, and the tool will automatically handle spaces and capitalization.",
+              "intro_title": "Why use our {target} generator?",
+              "title": "Convert Text to {target} Online | Free String Generator"
+            },
+            "steps": {
+              "copy": "3. Copy {target}",
+              "copy_desc": "The conversion is complete. You can now copy the result directly to your clipboard.",
+              "paste": "1. Paste {source} text",
+              "paste_desc": "Paste or type your {source} content into the input area.",
+              "process": "2. Conversion Process",
+              "process_desc": "Our tool automatically converts your text to {target} format with the best possible settings."
+            }
+          }
+        },
+        "input_text": "Input Text",
+        "placeholder_input": "Paste your text here...",
+        "placeholder_output": "Result will appear here...",
+        "result_title": "{target} Result"
+      }
+    }
+  },
+  "nuxt": {
+    "dropzone": {
+      "add_files": "Add files",
+      "clear_all": "Clear all",
+      "convert": "Convert",
+      "converting": "Converting",
+      "drop_title": "Drag & Drop file here",
+      "scanning_folders": "Scanning folders",
+      "select_files": "Select File",
+      "select_folder": "Select Folder",
+      "selected_files": "Selected files",
+      "support_nested_folders": "We support nested folders",
+      "total_size": "Total size"
+    },
+    "error": {
+      "404": {
+        "back_btn": "Back to Home Page",
+        "title": "Page Not Found"
+      }
+    },
+    "footer": {
+      "company_name": "Razomy",
+      "donate": "Donate",
+      "start_year": "2021"
+    },
+    "product": {
+      "description": "Input command",
+      "name": "Io"
+    }
+  }
+}

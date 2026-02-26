@@ -144,11 +144,8 @@ const startConversion = async () => {
       const link = document.createElement('a');
       link.href = url;
 
-      // Формируем имя. Если есть папки (webkitRelativePath), заменяем слеши на подчеркивания,
-      // чтобы сохранить видимость структуры в имени файла, т.к. создать папки браузер не даст.
       const originalPath = file.webkitRelativePath || file.name;
       const nameWithoutExt = originalPath.replace(/\.[^/.]+$/, '');
-      // Можно заменить слэши на подчеркивания, чтобы имя файла содержало путь: path_to_file.jpg
       const safeName = nameWithoutExt.split('/').join('_');
 
       link.setAttribute('download', `${safeName}.${commandKey}`);
