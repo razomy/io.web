@@ -27,7 +27,7 @@
         <v-row>
           <v-col
               v-for="command in outputs"
-              :key="command.commandKey"
+              :key="command.url"
               cols="12"
               xs="2"
               lg="4"

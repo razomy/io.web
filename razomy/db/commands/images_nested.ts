@@ -15,5 +15,6 @@ export const imageDirectory = {
   label: lT('image'),
   commands: [],
   updateDatetime: '2026-02-22T23:22:59.211Z',
-  directories: imageSubDirectories
+  directories: imageSubDirectories,
+  url: '/image'
 } as const satisfies IoDirectory;

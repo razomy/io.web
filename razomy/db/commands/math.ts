@@ -14,5 +14,6 @@ export const mathDirectory = {
   label: lT('math'),
   updateDatetime: '2026-02-22T23:22:59.211Z',
   commands: mathCommands.map(templateToCommand),
-  directories: []
+  directories: [],
+  url: '/math'
 } as const satisfies IoDirectory;

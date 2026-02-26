@@ -30,7 +30,8 @@ export const stringCaseDirectory = {
   label: {fullText: 'case'},
   updateDatetime: '2026-02-22T23:22:59.211Z',
   commands: stringCommands.map(templateToCommand),
-  directories: []
+  directories: [],
+  url: '/' + dpPackage.join('/')
 } as const satisfies IoDirectory;
 
 export const stringDirectory = {
@@ -40,6 +41,7 @@ export const stringDirectory = {
   updateDatetime: '2026-02-22T23:22:59.211Z',
   label: lT('string'),
   commands: [],
-  directories: [stringCaseDirectory]
+  directories: [stringCaseDirectory],
+  url: '/string'
 } as const satisfies IoDirectory;
 

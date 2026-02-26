@@ -15,5 +15,6 @@ export const audioDirectory = {
   label: lT('audio'),
   commands: [],
   updateDatetime: '2026-02-22T23:22:59.211Z',
-  directories: audioSubDirectories
+  directories: audioSubDirectories,
+  url: '/audio'
 } as const satisfies IoDirectory;

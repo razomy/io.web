@@ -73,6 +73,13 @@ export const i18n = {
                 process_desc: 'Our tool automatically converts your text to {target} format with the best possible settings.',
                 copy: '3. Copy {command}',
                 copy_desc: 'The conversion is complete. You can now copy the result directly to your clipboard.',
+              faq: {
+                q1: 'How do I convert text to {target}?',
+                a1: 'Just paste your string into our online tool and click convert. It will automatically apply the {target} casing rules. Then, simply copy the result.',
+                q2: 'Is my text and code secure?',
+                a2: 'Absolutely. We care about privacy. Your text is processed securely, and we do not store or save any of your pasted content or code.',
+                q3: 'Is this string formatter free?',
+                a3: 'Yes, this text conversion tool is 100% free to use with no hidden limits.'
               }
             }
           }
@@ -109,7 +116,7 @@ export const i18n = {
           seo_desc: 'Full list of supported formats for conversion. PDF, DOCX, JPG, PNG and others.',
           directory: {
             title: 'Convert {directory} files',
-            subtitle: 'Select command format for your {directory} files',
+            subtitle: 'Select output format for your {directory} files',
             available_conversions: 'Available conversions',
             command: {
               hero_sub: 'Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.',

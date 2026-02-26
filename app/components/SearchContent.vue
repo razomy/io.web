@@ -39,7 +39,7 @@
       <v-row>
         <v-col
             v-for="item in filteredList"
-            :key="item.key"
+            :key="item.url"
             cols="12"
             xs="12"
             sm="12"
@@ -65,6 +65,7 @@
                 >
                   <v-chip
                       v-if="item.directoryPath[idx] !== defaultSearch"
+                      :key="idx"
                       :to="localePath('/'+item.directoryPath.slice(0, idx+1).join('/'))"
                       color="primary"
                       variant="outlined"
@@ -89,7 +90,7 @@
               <div class="d-flex flex-wrap gap-2">
                 <v-chip
                     v-for="target in item.commands"
-                    :key="target.commandKey"
+                    :key="target.url"
                     :to="localePath(`/${item.directoryPath.join('/')}/${target.commandKey}`)"
                     color="primary"
                     variant="text"

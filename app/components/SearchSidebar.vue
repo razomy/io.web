@@ -8,6 +8,7 @@
       class="bordere-1 bg-background sidebar"
       width="180"
   >
+    <template v-slot:prepend>
     <!-- Search Input -->
     <div class="px-2 sticky-top z-index-10 pt-1 pb-1">
       <v-text-field
@@ -21,6 +22,7 @@
       />
     </div>
     <v-divider class="mx-2"></v-divider>
+    </template>
     <v-list
         density="compact"
         nav
@@ -40,7 +42,7 @@
       <!-- Unified Tree View (Reduces automatically on search) -->
       <div
           v-for="directory0 in searchResultsGroups"
-          :key="directory0.key"
+          :key="directory0.url"
       >
         <!-- Level 1: Group Title -->
         <div class="my-1 text-caption font-weight-bold text-uppercase text-darken-1">
@@ -49,7 +51,7 @@
 
         <v-list-item
             v-for="command0 in directory0.commands"
-            :key="command0.commandKey"
+            :key="command0.url"
             :active="command0.commandKey === currentCategories[1]"
             class="pa-0 pl-2"
             :to="localePath(`/${directory0.key}/${command0.commandKey}`)"
@@ -66,7 +68,7 @@
         <!-- Level 2: Categories -->
         <v-list-group
             v-for="directory1 in directory0.directories"
-            :key="directory1.key"
+            :key="directory1.url"
             :active="directory1.key === currentCategories[1]"
             :value="directory1.key"
             class="pa-0 pl-2"
@@ -92,7 +94,7 @@
           <!-- Level 3: Target Formats / Commands -->
           <v-list-item
               v-for="command1 in directory1.commands"
-              :key="command1.commandKey"
+              :key="command1.url"
               :active="directory1.key === currentCategories[1] && command1.commandKey === currentCategories[2]"
               :to="localePath(`/${directory0.key}/${directory1.key}/${command1.commandKey}`)"
               class="pa-0"
@@ -164,17 +166,17 @@ const search = ref('');
  * Recursively filters the directory tree. Returns a pruned copy of the directory
  * if it matches, or null if neither it nor its children match.
  */
-function filterDirectoryRecursive(dir: IoDirectory, queryParts: string[]): IoDirectory | null {
+function filterDirectoryRecursive(directory: IoDirectory, queryParts: string[]): IoDirectory | null {
   // 1. Text related to current directory
-  const dirSearchText = `${dir.key} ${t(dir.label.fullText)}`.toLowerCase();
+  const dirSearchText = `${directory.key} ${(directory.label.fullText)}`.toLowerCase();
 
   // 2. Filter Sub-Directories (Level 2+)
-  const prunedDirectories = (dir.directories || [])
+  const prunedDirectories = (directory.directories || [])
       .map(child => filterDirectoryRecursive(child, queryParts))
       .filter((child): child is IoDirectory => child !== null);
 
   // 3. Filter Commands (Level 3)
-  const prunedCommands = (dir.commands || []).filter(cmd => {
+  const prunedCommands = (directory.commands || []).filter(cmd => {
     // Combine directory info and command info for cross-searching (e.g. "mp3 to wav")
     const cmdSearchText = `${cmd.commandKey} ${dirSearchText} ${cmd.directoryPath?.join(' ') || ''}`.toLowerCase();
     // Ensures all words typed in the search exist somewhere in the path/command
@@ -191,11 +193,11 @@ function filterDirectoryRecursive(dir: IoDirectory, queryParts: string[]): IoDir
 
   // 5. If there's a match, return a cloned & reduced version of the directory
   return {
-    ...dir,
+    ...directory,
     // Show matching children. If the parent matched directly and had no matching children,
     // keep the original children so the user can see what's inside.
-    directories: prunedDirectories.length > 0 ? prunedDirectories : (isExactMatch ? dir.directories : []),
-    commands: prunedCommands.length > 0 ? prunedCommands : (isExactMatch ? dir.commands : [])
+    directories: prunedDirectories.length > 0 ? prunedDirectories : (isExactMatch ? directory.directories : []),
+    commands: prunedCommands.length > 0 ? prunedCommands : (isExactMatch ? directory.commands : [])
   };
 }
 

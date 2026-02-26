@@ -87,16 +87,16 @@ const generateSeoContent = () => {
     ],
     faq: [
       {
-        q: t('io.web.file_to_file.directory.command.faq.q1', {source: in_, target: out}),
-        a: t('io.web.file_to_file.directory.command.faq.a1')
+        q: t('io.web.text_to_text.directory.command.faq.q1', {source: in_, target: out}),
+        a: t('io.web.text_to_text.directory.command.faq.a1')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q2', {source: in_}),
-        a: t('io.web.file_to_file.directory.command.faq.a2')
+        q: t('io.web.text_to_text.directory.command.faq.q2', {source: in_}),
+        a: t('io.web.text_to_text.directory.command.faq.a2')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q3', {source: in_, target: out}),
-        a: t('io.web.file_to_file.directory.command.faq.a3')
+        q: t('io.web.text_to_text.directory.command.faq.q3', {source: in_, target: out}),
+        a: t('io.web.text_to_text.directory.command.faq.a3')
       },
     ]
   }

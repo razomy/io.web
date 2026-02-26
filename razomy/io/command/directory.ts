@@ -6,6 +6,7 @@ export type  IoDirectoryPath = string[];
 
 export interface IoDirectory {
   key: string;
+  url: string;
   updateDatetime: string;
   directoryPath: IoDirectoryPath;
   iconName: string;

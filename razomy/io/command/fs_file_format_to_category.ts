@@ -47,6 +47,7 @@ function fsFileFormatToCommandTemplate(directoryPath: string[], fileFormat: File
 export function fsFileFormatToDirectory(directoryPath: string[], fireFormat: FileFormat) {
   return ({
     key: fireFormat.fileExtensionType,
+    url: '/' + directoryPath.join('/'),
     updateDatetime: '2026-02-22T23:22:59.211Z',
     directoryPath: [...directoryPath, fireFormat.fileExtensionType],
     iconName: 'mdi-file',

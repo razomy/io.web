@@ -8,5 +8,6 @@ export const documentDirectory = {
   label: lT('document'),
   commands: [],
   updateDatetime: '2026-02-22T23:22:59.211Z',
-  directories: []
+  directories: [],
+  url: '/file'
 } as const satisfies IoDirectory;
