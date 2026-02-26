@@ -59,20 +59,29 @@ export const i18n = {
         text_to_text: {
           input_text: 'Input Text',
           placeholder_input: 'Paste your text here...',
-          result_title: '{command} Result',
+          result_title: '{target} Result',
           copy_to_clipboard: 'Copy to clipboard',
           placeholder_output: 'Result will appear here...',
-          convert_btn: 'Convert to {command}',
+          convert_btn: 'Convert to {target}',
           copied_success: 'Copied to clipboard!',
           directory: {
             command: {
+              hero_sub: 'Free and instant online tool to convert normal text, strings, or variables into {format}.',
+              seo: {
+                title: 'Convert Text to {target} Online | Free String Generator',
+                h1: 'Free Online {format} Converter',
+                description: 'Easily convert your text, strings, or code variables to {format} online. A free, fast, and secure text formatting tool for developers and writers.',
+                intro_title: 'Why use our {format} generator?',
+                intro_text: 'Our string formatting tool instantly transforms your normal text, sentences, or code variables into {format}. Simply paste your content, and the tool will automatically handle spaces and capitalization.'
+              },
               steps: {
-                paste: '1. Paste {directory} text',
+                paste: '1. Paste {source} text',
                 paste_desc: 'Paste or type your {source} content into the input area.',
                 process: '2. Conversion Process',
                 process_desc: 'Our tool automatically converts your text to {target} format with the best possible settings.',
-                copy: '3. Copy {command}',
+                copy: '3. Copy {target}',
                 copy_desc: 'The conversion is complete. You can now copy the result directly to your clipboard.',
+              },
               faq: {
                 q1: 'How do I convert text to {target}?',
                 a1: 'Just paste your string into our online tool and click convert. It will automatically apply the {target} casing rules. Then, simply copy the result.',
@@ -92,6 +101,10 @@ export const i18n = {
           description: 'Description',
           returns: 'Returns',
           typescript_javascript: 'Typescript/Javascript'
+        },
+        input: {
+          title: 'Convert {source} data',
+          subtitle: 'Select output format for your {source} data',
         },
         file_to_file: {
           error: 'Error converting file: {fileName}',
@@ -115,8 +128,6 @@ export const i18n = {
           free: 'Free',
           seo_desc: 'Full list of supported formats for conversion. PDF, DOCX, JPG, PNG and others.',
           directory: {
-            title: 'Convert {directory} files',
-            subtitle: 'Select output format for your {directory} files',
             available_conversions: 'Available conversions',
             command: {
               hero_sub: 'Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.',
@@ -127,18 +138,18 @@ export const i18n = {
                 accurate: 'High Accuracy',
               },
               seo: {
-                title: 'Convert {directory} to {command} Online | Free & Secure Tool',
-                h1: 'Free Online {directory} to {command} Converter',
-                description: 'The best way to convert {directory} files to {command} format online. Easy to use, completely free, and secure file conversion.',
-                intro_title: 'Why use our {directory} to {command} tool?',
-                intro_text: 'Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {directory} documents into {command}.'
+                title: 'Convert {source} to {target} Online | Free & Secure Tool',
+                h1: 'Free Online {source} to {target} Converter',
+                description: 'The best way to convert {source} files to {target} format online. Easy to use, completely free, and secure file conversion.',
+                intro_title: 'Why use our {source} to {target} tool?',
+                intro_text: 'Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {source} documents into {target}.'
               },
               steps: {
-                upload: '1. Upload {directory} file',
+                upload: '1. Upload {source} file',
                 upload_desc: 'Drag and drop your {source} file into the upload area. The maximum file size is 100MB.',
                 quality: '2. Conversion Process',
                 quality_desc: 'Our tool automatically converts your file to {target} format with the best possible settings.',
-                download: '3. Download {command}',
+                download: '3. Download {target}',
                 download_desc: 'Wait a moment for the process to finish, then download your new {target} file instantly.'
               },
               faq: {

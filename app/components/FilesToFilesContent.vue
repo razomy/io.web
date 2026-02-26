@@ -1,7 +1,14 @@
 <template>
   <div class="min-vh-100 pb-16">
 
-    <SeoHeader :directoryLast="directoryLast" :commandKey="commandKey"></SeoHeader>
+    <SeoHeader :directoryLast="directoryLast" :commandKey="commandKey">
+      {{
+        t('io.web.file_to_file.directory.command.hero_sub', {
+          source: directoryLast.toUpperCase(),
+          target: commandKey.toUpperCase()
+        })
+      }}
+    </SeoHeader>
 
     <!-- Main Content Area -->
     <v-container class="position-relative z-index-1">
@@ -54,12 +61,12 @@ const generateSeoContent = () => {
   const out = commandKey.toUpperCase();
 
   return {
-    h1: t('io.web.file_to_file.directory.command.seo.h1', {directory: in_, command: out}),
-    intro_title: t('io.web.file_to_file.directory.command.seo.intro_title', {directory: in_, command: out}),
-    intro: t('io.web.file_to_file.directory.command.seo.intro_text', {directory: in_, command: out}), // Более длинный текст
+    h1: t('io.web.file_to_file.directory.command.seo.h1', {source: in_, target: out}),
+    intro_title: t('io.web.file_to_file.directory.command.seo.intro_title', {source: in_, target: out}),
+    intro: t('io.web.file_to_file.directory.command.seo.intro_text', {source: in_, target: out}), // Более длинный текст
     steps: [
       {
-        title: t('io.web.file_to_file.directory.command.steps.upload', {directory: in_}),
+        title: t('io.web.file_to_file.directory.command.steps.upload', {source: in_}),
         icon: 'mdi-cloud-upload-outline',
         text: t('io.web.file_to_file.directory.command.steps.upload_desc', {source: in_})
       },
@@ -69,7 +76,7 @@ const generateSeoContent = () => {
         text: t('io.web.file_to_file.directory.command.steps.quality_desc')
       },
       {
-        title: t('io.web.file_to_file.directory.command.steps.download', {command: out}),
+        title: t('io.web.file_to_file.directory.command.steps.download', {target: out}),
         icon: 'mdi-download-outline',
         text: t('io.web.file_to_file.directory.command.steps.download_desc', {target: out})
       },
@@ -96,20 +103,20 @@ const seoContent = computed(() => generateSeoContent());
 // Meta tags for Google
 useSeoMeta({
   title: () => t('io.web.file_to_file.directory.command.seo.title', {
-    directory: directoryLast.toUpperCase(),
-    command: commandKey.toUpperCase()
+    source: directoryLast.toUpperCase(),
+    target: commandKey.toUpperCase()
   }),
   description: () => t('io.web.file_to_file.directory.command.seo.description', {
-    directory: directoryLast.toUpperCase(),
-    command: commandKey.toUpperCase()
+    source: directoryLast.toUpperCase(),
+    target: commandKey.toUpperCase()
   }),
   ogTitle: () => t('io.web.file_to_file.directory.command.seo.title', {
-    directory: directoryLast.toUpperCase(),
-    command: commandKey.toUpperCase()
+    source: directoryLast.toUpperCase(),
+    target: commandKey.toUpperCase()
   }),
   ogDescription: () => t('io.web.file_to_file.directory.command.seo.description', {
-    directory: directoryLast.toUpperCase(),
-    command: commandKey.toUpperCase()
+    source: directoryLast.toUpperCase(),
+    target: commandKey.toUpperCase()
   }),
   robots: 'index, follow'
 });

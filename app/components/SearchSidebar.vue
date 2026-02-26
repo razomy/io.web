@@ -9,37 +9,44 @@
       width="180"
   >
     <template v-slot:prepend>
-    <!-- Search Input -->
-    <div class="px-2 sticky-top z-index-10 pt-1 pb-1">
-      <v-text-field
-          v-model="search"
-          :label="t('io.web.sidebar.search')"
-          :placeholder="t('io.web.sidebar.search')"
-          clearable
-          prepend-inner-icon="mdi-magnify"
-          rounded="lg"
-          variant="plain"
-      />
-    </div>
-    <v-divider class="mx-2"></v-divider>
+      <!-- Search Input -->
+      <div class="px-2 sticky-top z-index-10 pt-1 pb-1">
+        <v-text-field
+            v-model="searchInputValue"
+            :label="t('io.web.sidebar.search')"
+            :placeholder="t('io.web.sidebar.search')"
+            clearable
+            prepend-inner-icon="mdi-magnify"
+            rounded="lg"
+            variant="plain"
+            @update:model-value="handleSearchInput"
+        >
+          <!-- Show a tiny loader while waiting for debounce -->
+          <template v-if="isCalculating" v-slot:append-inner>
+            <v-progress-circular indeterminate size="20" width="2" color="primary" />
+          </template>
+        </v-text-field>
+      </div>
+      <v-divider class="mx-2"></v-divider>
     </template>
+
     <v-list
         density="compact"
         nav
         v-model:opened="openedGroups"
         open-strategy="multiple"
     >
-      <!-- Optional: Show search count / No results -->
-      <div v-if="search" class="text-caption text-medium-emphasis mb-2">
+      <!-- Search Status -->
+      <div v-if="activeSearchQuery" class="text-caption text-medium-emphasis mb-2">
         <span v-if="searchResultsGroups.length === 0">
           {{ t('io.web.sidebar.no_results') }}
         </span>
         <span v-else>
-          {{ t('io.web.sidebar.results_for') }} "{{ search }}"
+          {{ t('io.web.sidebar.results_for') }} "{{ activeSearchQuery }}"
         </span>
       </div>
 
-      <!-- Unified Tree View (Reduces automatically on search) -->
+      <!-- Recursive Tree Rendering -->
       <div
           v-for="directory0 in searchResultsGroups"
           :key="directory0.url"
@@ -49,6 +56,7 @@
           {{ t(directory0.label.fullText) }}
         </div>
 
+        <!-- Direct Commands in Level 1 -->
         <v-list-item
             v-for="command0 in directory0.commands"
             :key="command0.url"
@@ -58,9 +66,8 @@
             color="secondary"
             density="compact"
         >
-          <!-- Show swap icon when actively searching for a conversion -->
           <template v-slot:title>
-            <v-icon v-if="search" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
+            <v-icon v-if="activeSearchQuery" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
             {{ command0.commandKey }}
           </template>
         </v-list-item>
@@ -101,9 +108,8 @@
               color="secondary"
               density="compact"
           >
-            <!-- Show swap icon when actively searching for a conversion -->
             <template v-slot:title>
-              <v-icon v-if="search" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
+              <v-icon v-if="activeSearchQuery" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
               {{ command1.commandKey }}
             </template>
           </v-list-item>
@@ -124,108 +130,121 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, ref, watch} from 'vue';
-import {useDisplay} from 'vuetify';
-import {directoriesTree} from '~~/razomy/db';
-import {type IoDirectory} from '~~/razomy/io/command';
+import { computed, ref, watch } from 'vue';
+import { useDisplay } from 'vuetify';
+import { directoriesTree } from '~~/razomy/db';
+import { type IoDirectory } from '~~/razomy/io/command';
 
-const {xs} = useDisplay();
+const { t, availableLocales } = useI18n();
+const localePath = useLocalePath();
+const route = useRoute();
+const { xs } = useDisplay();
+
 const isMobile = computed(() => xs.value);
 const isOpen = ref<boolean>(!isMobile.value);
+const openedGroups = ref<string[]>([]);
 
 function useUnlocalePath(): string {
   const path = route.path;
-
   for (const locale of availableLocales) {
-    // Check if the path starts with a valid locale prefix (e.g., '/fr')
     const prefix = '/' + locale;
     if (path.startsWith(prefix) && (path.length === prefix.length || path.startsWith(prefix + '/'))) {
-      // Return the path without the prefix
       return path.slice(prefix.length) || '/';
     }
   }
-  // If no locale prefix is found, return the original path
   return path;
 }
 
-const {t, availableLocales} = useI18n();
-const localePath = useLocalePath();
-const route = useRoute();
-
 const currentCategories = computed(() => {
   const path = useUnlocalePath();
-  // Grab standard path parameters (e.g., audio, mp3, wav)
   return path.split('/').filter(Boolean);
 });
 
-const search = ref('');
+// --- OPTIMIZATION START ---
 
-// --- Unified Search & Tree Logic ---
+// 1. Separate Input Value from Search Query
+const searchInputValue = ref(''); // What the user sees in input
+const activeSearchQuery = ref(''); // What triggers the filter
+const isCalculating = ref(false);
+let debounceTimeout: any = null;
 
 /**
- * Recursively filters the directory tree. Returns a pruned copy of the directory
- * if it matches, or null if neither it nor its children match.
+ * Debounce Function:
+ * Only updates 'activeSearchQuery' 350ms after the user STOPS typing.
  */
+function handleSearchInput(newValue: string | null) {
+  const val = newValue || '';
+  isCalculating.value = true;
+
+  if (debounceTimeout) clearTimeout(debounceTimeout);
+
+  debounceTimeout = setTimeout(() => {
+    activeSearchQuery.value = val;
+    isCalculating.value = false;
+  }, 350); // 350ms delay
+}
+
+// ... (Keep filterDirectoryRecursive logic exactly as is) ...
 function filterDirectoryRecursive(directory: IoDirectory, queryParts: string[]): IoDirectory | null {
-  // 1. Text related to current directory
   const dirSearchText = `${directory.key} ${(directory.label.fullText)}`.toLowerCase();
 
-  // 2. Filter Sub-Directories (Level 2+)
   const prunedDirectories = (directory.directories || [])
       .map(child => filterDirectoryRecursive(child, queryParts))
       .filter((child): child is IoDirectory => child !== null);
 
-  // 3. Filter Commands (Level 3)
   const prunedCommands = (directory.commands || []).filter(cmd => {
-    // Combine directory info and command info for cross-searching (e.g. "mp3 to wav")
     const cmdSearchText = `${cmd.commandKey} ${dirSearchText} ${cmd.directoryPath?.join(' ') || ''}`.toLowerCase();
-    // Ensures all words typed in the search exist somewhere in the path/command
     return queryParts.every(part => cmdSearchText.includes(part));
   });
 
-  // Check if the directory itself perfectly matched the search
   const isExactMatch = queryParts.every(part => dirSearchText.includes(part));
 
-  // 4. If nothing matched, prune this branch entirely
   if (!isExactMatch && prunedDirectories.length === 0 && prunedCommands.length === 0) {
     return null;
   }
 
-  // 5. If there's a match, return a cloned & reduced version of the directory
   return {
     ...directory,
-    // Show matching children. If the parent matched directly and had no matching children,
-    // keep the original children so the user can see what's inside.
     directories: prunedDirectories.length > 0 ? prunedDirectories : (isExactMatch ? directory.directories : []),
     commands: prunedCommands.length > 0 ? prunedCommands : (isExactMatch ? directory.commands : [])
   };
 }
 
-// Automatically processes the search and reduces the group visually
+// Computed property now listens to activeSearchQuery instead of search directly
 const searchResultsGroups = computed(() => {
-  if (!search.value) {
+  // Use activeSearchQuery here
+  if (!activeSearchQuery.value) {
     if (!currentCategories.value.length) {
       return directoriesTree;
     }
-    return directoriesTree.filter(d => d.key === currentCategories.value[0]!); // Return unmodified full tree when there is no search query
+    return directoriesTree.filter(d => d.key === currentCategories.value[0]!);
   }
 
-  // Split query cleanly (e.g., "mp3 to wav" => ["mp3", "wav"])
-  const q = search.value.toLowerCase().trim();
+  const q = activeSearchQuery.value.toLowerCase().trim();
   const parts = q.split(/[\s\-\/>]+|\sto\s+/).filter(Boolean);
 
-  // Map over top level, filter out branches that returned null
-  const directories = directoriesTree
+  // Performance Note: This is the heavy part
+  return directoriesTree
       .map(group => filterDirectoryRecursive(group, parts))
       .filter((group): group is IoDirectory => group !== null);
-  return directories;
 });
 
+// Watcher Optimization
 watch(searchResultsGroups, (directories) => {
-  openedGroups.value = directories.map(d => d.directories.map(d => d.key)).flat(1);
-});
+  // Only auto-expand if we have search results
+  if (!activeSearchQuery.value) return;
 
-const openedGroups = ref<string[]>([]);
+  const allKeys = directories.map(d => d.directories.map(child => child.key)).flat(1);
+
+  // SAFETY: If search matches > 20 groups, do not expand all of them automatically.
+  // This prevents the UI from freezing due to massive layout shifts.
+  if (allKeys.length < 20) {
+    openedGroups.value = allKeys;
+  } else {
+    // Optionally collapse everything or keep current state if too many results
+    // openedGroups.value = [];
+  }
+});
 </script>
 
 <style scoped>
@@ -235,7 +254,6 @@ const openedGroups = ref<string[]>([]);
   padding: 0;
   margin: 0;
 }
-
 .v-list-group__items .v-list-item {
   padding-inline-start: 12px !important;
 }

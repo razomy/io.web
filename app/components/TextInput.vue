@@ -25,7 +25,7 @@
           <div class="d-flex align-center">
             <v-icon color="accent" icon="mdi-code-braces" class="mr-2" />
             <span class="text-subtitle-1">
-              {{ t('io.web.text_to_text.result_title', { command: commandKey.toUpperCase() }) }}
+              {{ t('io.web.text_to_text.result_title', { target: commandKey.toUpperCase() }) }}
             </span>
           </div>
           <v-btn
@@ -63,7 +63,7 @@
           @click="emit('convert')"
           class="px-8 rounded-pill"
       >
-        {{ t('io.web.text_to_text.convert_btn', { command: commandKey.toUpperCase() }) }}
+        {{ t('io.web.text_to_text.convert_btn', { target: commandKey.toUpperCase() }) }}
       </v-btn>
     </div>
   </v-card>

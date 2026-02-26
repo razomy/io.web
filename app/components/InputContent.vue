@@ -9,10 +9,10 @@
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('io.web.file_to_file.directory.title', {directory: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.title', {source: directory1.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('io.web.file_to_file.directory.subtitle', {directory: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.subtitle', {source: directory1.toUpperCase()}) }}
         </p>
       </v-container>
     </div>
