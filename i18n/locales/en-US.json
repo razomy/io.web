@@ -181,9 +181,70 @@
   },
   "io": {
     "db": {
-
       "string": {
-        "title": "Text"
+        "title": "Text",
+        "children": {
+          "camelCase": {
+            "title": "Camel Case"
+          },
+          "capitalize": {
+            "title": "Capitalize"
+          },
+          "constantCase": {
+            "title": "Constant Case"
+          },
+          "dotCase": {
+            "title": "Dot Case"
+          },
+          "getAbbreviation": {
+            "title": "Get Abbreviation"
+          },
+          "headerCase": {
+            "title": "Header Case"
+          },
+          "humanize": {
+            "title": "Humanize"
+          },
+          "isLowerCase": {
+            "title": "Is Lower Case"
+          },
+          "isUpperCase": {
+            "title": "Is Upper Case"
+          },
+          "kebabCase": {
+            "title": "Kebab Case"
+          },
+          "lowerCase": {
+            "title": "Lower Case"
+          },
+          "pascalCase": {
+            "title": "Pascal Case"
+          },
+          "pathCase": {
+            "title": "Path Case"
+          },
+          "reverse": {
+            "title": "Reverse"
+          },
+          "sentenceCase": {
+            "title": "Sentence Case"
+          },
+          "slugify": {
+            "title": "Slugify"
+          },
+          "snakeCase": {
+            "title": "Snake Case"
+          },
+          "swapCase": {
+            "title": "Swap Case"
+          },
+          "titleCase": {
+            "title": "Title Case"
+          },
+          "upperCase": {
+            "title": "Upper Case"
+          }
+        }
       },
       "audio": {
         "title": "Audio"
