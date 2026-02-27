@@ -4,8 +4,9 @@
       :floating="isMobile"
       :permanent="!isMobile"
       app
-      border="1"
-      class="bordere-1 bg-background sidebar"
+      border="0"
+      color=""
+      class="bg-background mx-2"
       width="180"
   >
     <template v-slot:prepend>

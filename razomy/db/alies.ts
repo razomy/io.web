@@ -2,7 +2,7 @@ import {type IoEnvironmentBrowser} from '../io/environment';
 import type {Capability} from '../io/system/system';
 import type {HardwareResourceMinimal} from '../io/system/task';
 
-export const lT = (n: string) => ({fullText: 'io.db.directories.' + n})
+export const lT = (n: string) => ({fullText: `io.db.${n}.title`})
 export const dP = 'directoryPath';
 export const en = 'environment';
 export const cK = 'commandKey';

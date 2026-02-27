@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-background min-vh-100">
+  <div class="min-vh-100">
     <!-- Hero Header -->
-    <div class="bg-surface pt-8 pb-8 px-4 text-center">
-      <v-container max-width="900">
+    <v-container>
+      <div class="bg-surface mt-4 rounded-xl pt-8 pb-8 px-4 text-center">
 
         <v-avatar size="80" variant="flat" class="mb-6">
           <v-icon :icon="icon" color="accent" size="40"/>
@@ -14,11 +14,11 @@
         <p class="text-white-70 text-h6 font-weight-regular">
           {{ t('io.web.input.subtitle', {source: directory1.toUpperCase()}) }}
         </p>
-      </v-container>
-    </div>
+      </div>
+    </v-container>
 
     <!-- Список доступных конвертаций -->
-    <v-container class="position-relative z-index-1" max-width="1000">
+    <v-container class="position-relative z-index-1">
       <v-card class="rounded-xl pa-6" border="0">
         <h2 class="text-h5 font-weight-bold mb-6">
           {{ t('io.web.file_to_file.directory.available_conversions') }}

@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "Аудио",
-        "document": "Документы",
-        "home": "Главная",
-        "image": "Изображения",
-        "math": "Математика",
-        "string": "Текст",
-        "video": "Видео"
+
+      "string": {
+        "title": "Текст"
+      },
+      "audio": {
+        "title": "Аудио"
+      },
+      "document": {
+        "title": "Документы"
+      },
+      "home": {
+        "title": "Главная"
+      },
+      "image": {
+        "title": "Изображения"
+      },
+      "math": {
+        "title": "Математика"
+      },
+      "video": {
+        "title": "Видео"
       }
     },
     "web": {

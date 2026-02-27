@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "ऑडियो",
-        "document": "दस्तावेज़",
-        "home": "होम",
-        "image": "इमेज",
-        "math": "गणित",
-        "string": "टेक्स्ट",
-        "video": "वीडियो"
+
+      "string": {
+        "title": "टेक्स्ट"
+      },
+      "audio": {
+        "title": "ऑडियो"
+      },
+      "document": {
+        "title": "दस्तावेज़"
+      },
+      "home": {
+        "title": "होम"
+      },
+      "image": {
+        "title": "इमेज"
+      },
+      "math": {
+        "title": "गणित"
+      },
+      "video": {
+        "title": "वीडियो"
       }
     },
     "web": {

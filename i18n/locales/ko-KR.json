@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "오디오",
-        "document": "문서",
-        "home": "홈",
-        "image": "이미지",
-        "math": "수학",
-        "string": "텍스트",
-        "video": "비디오"
+
+      "string": {
+        "title": "텍스트"
+      },
+      "audio": {
+        "title": "오디오"
+      },
+      "document": {
+        "title": "문서"
+      },
+      "home": {
+        "title": "홈"
+      },
+      "image": {
+        "title": "이미지"
+      },
+      "math": {
+        "title": "수학"
+      },
+      "video": {
+        "title": "비디오"
       }
     },
     "web": {

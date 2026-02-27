@@ -6,7 +6,7 @@
         {{ directoryLast.toUpperCase() }} <span class="text-accent">{{ t('io.web.file_to_file.to') }}</span> {{ commandKey.toUpperCase() }}
       </h1>
 
-      <p class="text-body-2 text-md-body-1  text-medium-emphasis mx-auto" style="max-width: 700px; line-height: 1.6;">
+      <p class="text-body-2 text-md-body-1  text-medium-emphasis mx-auto" style="line-height: 1.6;">
         <slot></slot>
       </p>
     </v-container>

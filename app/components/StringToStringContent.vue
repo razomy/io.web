@@ -12,7 +12,7 @@
     </SeoHeader>
 
     <!-- Main Content Area -->
-    <v-container class="mw-900 position-relative z-index-1">
+    <v-container class="position-relative z-index-1">
 
       <TextInput
           :loading="loading"
@@ -37,7 +37,7 @@
           :directory="directoryLast"
           :command="commandKey"
       />
-      <v-container class="mw-900 pb-16 px-0">
+      <v-container class="pb-16 px-0">
         <CodeBlock
             :directoryPath="directoryPath"
             :commandKey="commandKey"
@@ -180,12 +180,6 @@ const processTextData = async () => {
 </script>
 
 <style scoped>
-.mw-900 {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .z-index-1 {
   z-index: 1;
 }

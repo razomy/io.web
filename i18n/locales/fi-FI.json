@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "Ääni",
-        "document": "Asiakirja",
-        "home": "Koti",
-        "image": "Kuva",
-        "math": "Matematiikka",
-        "string": "Teksti",
-        "video": "Video"
+
+      "string": {
+        "title": "Teksti"
+      },
+      "audio": {
+        "title": "Ääni"
+      },
+      "document": {
+        "title": "Asiakirja"
+      },
+      "home": {
+        "title": "Koti"
+      },
+      "image": {
+        "title": "Kuva"
+      },
+      "math": {
+        "title": "Matematiikka"
+      },
+      "video": {
+        "title": "Video"
       }
     },
     "web": {

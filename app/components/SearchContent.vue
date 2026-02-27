@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-background min-vh-100">
+  <div class="min-vh-100">
 
     <!-- Hero Section with Search -->
-    <div class="hero-bg bg-surface pt-8 pb-8 px-4 text-center">
-      <v-container max-width="900">
+    <v-container>
+      <div class="hero-bg bg-surface mt-4 rounded-xl pt-8 pb-8 px-4 text-center">
         <h1 class="text-h2 font-weight-black mb-4">
           {{ t('io.web.file_to_file.title') }}
         </h1>
@@ -23,11 +23,11 @@
             class="search-input rounded-xl"
             clearable
         />
-      </v-container>
-    </div>
+      </div>
+    </v-container>
 
     <!-- Список карточек -->
-    <v-container class="mt-8 position-relative z-index-1" max-width="1200">
+    <v-container class="mt-8 position-relative z-index-1">
 
       <!-- Если ничего не найдено -->
       <div v-if="filteredList.length === 0" class="text-center py-10">

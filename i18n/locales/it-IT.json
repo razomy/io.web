@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "Audio",
-        "document": "Documenti",
-        "home": "Home",
-        "image": "Immagine",
-        "math": "Matematica",
-        "string": "Testo",
-        "video": "Video"
+
+      "string": {
+        "title": "Testo"
+      },
+      "audio": {
+        "title": "Audio"
+      },
+      "document": {
+        "title": "Documenti"
+      },
+      "home": {
+        "title": "Home"
+      },
+      "image": {
+        "title": "Immagine"
+      },
+      "math": {
+        "title": "Matematica"
+      },
+      "video": {
+        "title": "Video"
       }
     },
     "web": {

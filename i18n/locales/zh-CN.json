@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "音频",
-        "document": "文档",
-        "home": "首页",
-        "image": "图像",
-        "math": "数学",
-        "string": "文本",
-        "video": "视频"
+
+      "string": {
+        "title": "文本"
+      },
+      "audio": {
+        "title": "音频"
+      },
+      "document": {
+        "title": "文档"
+      },
+      "home": {
+        "title": "首页"
+      },
+      "image": {
+        "title": "图像"
+      },
+      "math": {
+        "title": "数学"
+      },
+      "video": {
+        "title": "视频"
       }
     },
     "web": {

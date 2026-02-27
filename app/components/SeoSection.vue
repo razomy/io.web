@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mw-900 pb-16 px-0">
+  <v-container class="pb-16 px-0">
     <div class="d-flex justify-center gap-4 flex-wrap">
       <div class="d-flex align-center px-3 py-1 text-caption text-darken-2">
         <v-icon icon="mdi-shield-check" color="success" class="mr-2" size="small"/>
@@ -21,7 +21,7 @@
       <h2 class="text-h4 font-weight-bold mb-4 text-darken-4">
         {{ content.h1 }}
       </h2>
-      <p class="text-body-1 text-darken-1 mx-auto" style="max-width: 700px; line-height: 1.8;">
+      <p class="text-body-1 text-darken-1 mx-auto" style="line-height: 1.8;">
         {{ content.intro }}
       </p>
     </div>
@@ -219,12 +219,6 @@ useHead({
 </script>
 
 <style scoped>
-.mw-900 {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .step-number {
   width: 40px;
   height: 40px;

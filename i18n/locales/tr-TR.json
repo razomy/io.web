@@ -181,14 +181,27 @@
   },
   "io": {
     "db": {
-      "directories": {
-        "audio": "Ses",
-        "document": "Belge",
-        "home": "Ana Sayfa",
-        "image": "Resim",
-        "math": "Matematik",
-        "string": "Metin",
-        "video": "Video"
+
+      "string": {
+        "title": "Metin"
+      },
+      "audio": {
+        "title": "Ses"
+      },
+      "document": {
+        "title": "Belge"
+      },
+      "home": {
+        "title": "Ana Sayfa"
+      },
+      "image": {
+        "title": "Resim"
+      },
+      "math": {
+        "title": "Matematik"
+      },
+      "video": {
+        "title": "Video"
       }
     },
     "web": {
