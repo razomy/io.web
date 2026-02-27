@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Il suffit d'importer votre fichier, d'attendre la conversion et de cliquer sur télécharger. Cela fonctionne sur Windows, Mac, Linux et les appareils mobiles.",
               "a2": "Oui. Nous utilisons le chiffrement HTTPS. Vos fichiers sont automatiquement supprimés de nos serveurs après 1 heure pour garantir la confidentialité.",
-              "a3": "Absolument. Vous pouvez convertir des fichiers {source} en {target} gratuitement sans créer de compte.",
-              "q1": "Comment convertir {source} en {target} ?",
-              "q2": "Est-il sûr de convertir {source} sur Razomy ?",
+              "a3": "Absolument. Vous pouvez convertir des fichiers {sourceTkp} en {targetTkp} gratuitement sans créer de compte.",
+              "q1": "Comment convertir {sourceTkp} en {targetTkp} ?",
+              "q2": "Est-il sûr de convertir {sourceTkp} sur Razomy ?",
               "q3": "Ce convertisseur est-il gratuit ?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Haute qualité",
               "secure": "100% Sécurisé"
             },
-            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {source} en {target}. Aucune inscription ni installation de logiciel requise.",
+            "hero_sub": "Outil en ligne rapide, gratuit et sécurisé pour convertir {sourceTkp} en {targetTkp}. Aucune inscription ni installation de logiciel requise.",
             "seo": {
-              "description": "Le meilleur moyen de convertir des fichiers {source} au format {target} en ligne. Facile à utiliser, entièrement gratuit et sécurisé.",
-              "h1": "Convertisseur {source} en {target} en ligne gratuit",
-              "intro_text": "Notre convertisseur vous permet de traiter des fichiers avec une grande précision. Nous préservons la mise en page et la qualité d'origine tout en transformant vos documents {source} en {target}.",
-              "intro_title": "Pourquoi utiliser notre outil {source} vers {target} ?",
-              "title": "Convertir {source} en {target} en ligne | Outil gratuit et sécurisé"
+              "description": "Le meilleur moyen de convertir des fichiers {sourceTkp} au format {targetTkp} en ligne. Facile à utiliser, entièrement gratuit et sécurisé.",
+              "h1": "Convertisseur {sourceTkp} en {targetTkp} en ligne gratuit",
+              "intro_text": "Notre convertisseur vous permet de traiter des fichiers avec une grande précision. Nous préservons la mise en page et la qualité d'origine tout en transformant vos documents {sourceTkp} en {targetTkp}.",
+              "intro_title": "Pourquoi utiliser notre outil {sourceTkp} vers {targetTkp} ?",
+              "title": "Convertir {sourceTkp} en {targetTkp} en ligne | Outil gratuit et sécurisé"
             },
             "steps": {
-              "download": "3. Télécharger {target}",
-              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez instantanément votre nouveau fichier {target}.",
+              "download": "3. Télécharger {targetTkp}",
+              "download_desc": "Attendez un instant que le processus se termine, puis téléchargez instantanément votre nouveau fichier {targetTkp}.",
               "quality": "2. Processus de conversion",
-              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {target} avec les meilleurs paramètres possibles.",
-              "upload": "1. Importer le fichier {source}",
-              "upload_desc": "Glissez-déposez votre fichier {source} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo."
+              "quality_desc": "Notre outil convertit automatiquement votre fichier au format {targetTkp} avec les meilleurs paramètres possibles.",
+              "upload": "1. Importer le fichier {sourceTkp}",
+              "upload_desc": "Glissez-déposez votre fichier {sourceTkp} dans la zone de téléchargement. La taille maximale du fichier est de 100 Mo."
             }
           },
-          "subtitle": "Sélectionnez le format de commande pour vos fichiers {source}",
-          "title": "Convertir des fichiers {source}"
+          "subtitle": "Sélectionnez le format de commande pour vos fichiers {sourceTkp}",
+          "title": "Convertir des fichiers {sourceTkp}"
         },
         "error": "Erreur lors de la conversion du fichier : {fileName}",
         "faq_title": "Foire Aux Questions",
@@ -277,8 +277,8 @@
         "github": "Code source Github"
       },
       "input": {
-        "subtitle": "Sélectionnez le format de sortie pour vos données {source}",
-        "title": "Convertir les données {source}"
+        "subtitle": "Sélectionnez le format de sortie pour vos données {sourceTkp}",
+        "title": "Convertir les données {sourceTkp}"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Rechercher..."
       },
       "text_to_text": {
-        "convert_btn": "Convertir en {target}",
+        "convert_btn": "Convertir en {targetTkp}",
         "copied_success": "Copié dans le presse-papiers !",
         "copy_to_clipboard": "Copier dans le presse-papiers",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Collez simplement votre chaîne dans notre outil en ligne et cliquez sur convertir. Il appliquera automatiquement les règles de casse {target}. Ensuite, copiez simplement le résultat.",
+              "a1": "Collez simplement votre chaîne dans notre outil en ligne et cliquez sur convertir. Il appliquera automatiquement les règles de casse {targetTkp}. Ensuite, copiez simplement le résultat.",
               "a2": "Absolument. Nous nous soucions de la confidentialité. Votre texte est traité en toute sécurité et nous ne stockons ni ne sauvegardons aucun de vos contenus ou codes collés.",
               "a3": "Oui, cet outil de conversion de texte est 100 % gratuit, sans limites cachées.",
-              "q1": "Comment convertir du texte en {target} ?",
+              "q1": "Comment convertir du texte en {targetTkp} ?",
               "q2": "Mon texte et mon code sont-ils sécurisés ?",
               "q3": "Ce formateur de chaînes est-il gratuit ?"
             },
-            "hero_sub": "Outil en ligne gratuit et instantané pour convertir du texte normal, des chaînes ou des variables en {target}.",
+            "hero_sub": "Outil en ligne gratuit et instantané pour convertir du texte normal, des chaînes ou des variables en {targetTkp}.",
             "seo": {
-              "description": "Convertissez facilement votre texte, vos chaînes ou vos variables de code en {target} en ligne. Un outil de formatage de texte gratuit, rapide et sécurisé pour les développeurs et les rédacteurs.",
-              "h1": "Convertisseur {target} en ligne gratuit",
-              "intro_text": "Notre outil de formatage de chaînes transforme instantanément votre texte normal, vos phrases ou vos variables de code en {target}. Collez simplement votre contenu, et l'outil gérera automatiquement les espaces et la capitalisation.",
-              "intro_title": "Pourquoi utiliser notre générateur {target} ?",
-              "title": "Convertir du texte en {target} en ligne | Générateur de chaînes gratuit"
+              "description": "Convertissez facilement votre texte, vos chaînes ou vos variables de code en {targetTkp} en ligne. Un outil de formatage de texte gratuit, rapide et sécurisé pour les développeurs et les rédacteurs.",
+              "h1": "Convertisseur {targetTkp} en ligne gratuit",
+              "intro_text": "Notre outil de formatage de chaînes transforme instantanément votre texte normal, vos phrases ou vos variables de code en {targetTkp}. Collez simplement votre contenu, et l'outil gérera automatiquement les espaces et la capitalisation.",
+              "intro_title": "Pourquoi utiliser notre générateur {targetTkp} ?",
+              "title": "Convertir du texte en {targetTkp} en ligne | Générateur de chaînes gratuit"
             },
             "steps": {
-              "copy": "3. Copier {target}",
+              "copy": "3. Copier {targetTkp}",
               "copy_desc": "La conversion est terminée. Vous pouvez maintenant copier le résultat directement dans votre presse-papiers.",
-              "paste": "1. Collez le texte {source}",
-              "paste_desc": "Collez ou saisissez votre contenu {source} dans la zone de saisie.",
+              "paste": "1. Collez le texte {sourceTkp}",
+              "paste_desc": "Collez ou saisissez votre contenu {sourceTkp} dans la zone de saisie.",
               "process": "2. Processus de conversion",
-              "process_desc": "Notre outil convertit automatiquement votre texte au format {target} avec les meilleurs paramètres possibles."
+              "process_desc": "Notre outil convertit automatiquement votre texte au format {targetTkp} avec les meilleurs paramètres possibles."
             }
           }
         },
         "input_text": "Texte d'entrée",
         "placeholder_input": "Collez votre texte ici...",
         "placeholder_output": "Le résultat apparaîtra ici...",
-        "result_title": "Résultat {target}"
+        "result_title": "Résultat {targetTkp}"
       }
     }
   },

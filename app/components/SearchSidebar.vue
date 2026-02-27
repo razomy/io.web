@@ -24,7 +24,7 @@
         >
           <!-- Show a tiny loader while waiting for debounce -->
           <template v-if="isCalculating" v-slot:append-inner>
-            <v-progress-circular indeterminate size="20" width="2" color="primary" />
+            <v-progress-circular indeterminate size="20" width="2" color="primary"/>
           </template>
         </v-text-field>
       </div>
@@ -50,41 +50,41 @@
       <!-- Recursive Tree Rendering -->
       <div
           v-for="directory0 in searchResultsGroups"
-          :key="directory0.url"
+          :key="directory0.id"
       >
         <!-- Level 1: Group Title -->
         <div class="my-1 text-caption font-weight-bold text-uppercase text-darken-1">
-          {{ t(directory0.label.fullText) }}
+          {{ t(directory0.meta.nameTk) }}
         </div>
 
         <!-- Direct Commands in Level 1 -->
         <v-list-item
             v-for="command0 in directory0.commands"
-            :key="command0.url"
+            :key="command0.id"
             :active="command0.commandKey === currentCategories[1]"
             class="pa-0 pl-2"
-            :to="localePath(`/${directory0.key}/${command0.commandKey}`)"
+            :to="localePath(command0.meta.url)"
             color="secondary"
             density="compact"
         >
           <template v-slot:title>
             <v-icon v-if="activeSearchQuery" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
-            {{ command0.commandKey }}
+            {{ t(command0.meta.nameTk) }}
           </template>
         </v-list-item>
 
         <!-- Level 2: Categories -->
         <v-list-group
             v-for="directory1 in directory0.directories"
-            :key="directory1.url"
-            :active="directory1.key === currentCategories[1]"
-            :value="directory1.key"
+            :key="directory1.id"
+            :active="directory1.directoryKey === currentCategories[1]"
+            :value="directory1.id"
             class="pa-0 pl-2"
             density="compact"
         >
           <template v-slot:activator="{ props }">
             <v-list-item
-                :active="directory1.key === currentCategories[1]"
+                :active="directory1.directoryKey === currentCategories[1]"
                 color="secondary"
                 density="compact"
                 class="pa-0"
@@ -92,8 +92,8 @@
             >
               <template v-slot:title>
                 <v-btn density="compact" class="pl-0 text-left w-100" variant="plain" spaced="end"
-                       :to="localePath(`/${directory0.key}/${directory1.key}`)">
-                  {{ directory1.key }}
+                       :to="localePath(directory1.meta.url)">
+                  {{ t(directory1.meta.nameTk) }}
                 </v-btn>
               </template>
             </v-list-item>
@@ -102,16 +102,16 @@
           <!-- Level 3: Target Formats / Commands -->
           <v-list-item
               v-for="command1 in directory1.commands"
-              :key="command1.url"
-              :active="directory1.key === currentCategories[1] && command1.commandKey === currentCategories[2]"
-              :to="localePath(`/${directory0.key}/${directory1.key}/${command1.commandKey}`)"
+              :key="command1.id"
+              :active="directory1.directoryKey === currentCategories[1] && command1.commandKey === currentCategories[2]"
+              :to="localePath(command1.meta.url)"
               class="pa-0"
               color="secondary"
               density="compact"
           >
             <template v-slot:title>
               <v-icon v-if="activeSearchQuery" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
-              {{ command1.commandKey }}
+              {{ t(command1.meta.nameTk) }}
             </template>
           </v-list-item>
         </v-list-group>
@@ -131,16 +131,16 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue';
-import { useDisplay } from 'vuetify';
-import { directoriesTree } from '~~/razomy/db';
-import { type IoDirectory } from '~~/razomy/io/command';
+import {computed, ref, watch} from 'vue';
+import {useDisplay} from 'vuetify';
+import {directoriesTree} from '~~/razomy/db';
+import {type IoDirectory} from '~~/razomy/io/command';
 import {Debounce} from '~~/razomy/functions';
 
-const { t, availableLocales } = useI18n();
+const {t, availableLocales} = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
-const { xs } = useDisplay();
+const {xs} = useDisplay();
 
 const isMobile = computed(() => xs.value);
 const isOpen = ref<boolean>(!isMobile.value);
@@ -186,7 +186,7 @@ function handleSearchInput(newValue: string | null) {
 
 // ... (Keep filterDirectoryRecursive logic exactly as is) ...
 function filterDirectoryRecursive(directory: IoDirectory, queryParts: string[]): IoDirectory | null {
-  const dirSearchText = `${directory.key} ${(directory.label.fullText)}`.toLowerCase();
+  const dirSearchText = `${directory.directoryPath.join(' ')} ${t(directory.meta.nameTk)}`.toLowerCase();
 
   const prunedDirectories = (directory.directories || [])
       .map(child => filterDirectoryRecursive(child, queryParts))
@@ -217,7 +217,7 @@ const searchResultsGroups = computed(() => {
     if (!currentCategories.value.length) {
       return directoriesTree;
     }
-    return directoriesTree.filter(d => d.key === currentCategories.value[0]!);
+    return directoriesTree.filter(d => d.directoryKey === currentCategories.value[0]!);
   }
 
   const q = activeSearchQuery.value.toLowerCase().trim();
@@ -234,7 +234,7 @@ watch(searchResultsGroups, (directories) => {
   // Only auto-expand if we have search results
   if (!activeSearchQuery.value) return;
 
-  const allKeys = directories.map(d => d.directories.map(child => child.key)).flat(1);
+  const allKeys = directories.map(d => d.directories.map(child => child.directoryKey)).flat(1);
 
   // SAFETY: If search matches > 20 groups, do not expand all of them automatically.
   // This prevents the UI from freezing due to massive layout shifts.
@@ -254,6 +254,7 @@ watch(searchResultsGroups, (directories) => {
   padding: 0;
   margin: 0;
 }
+
 .v-list-group__items .v-list-item {
   padding-inline-start: 12px !important;
 }

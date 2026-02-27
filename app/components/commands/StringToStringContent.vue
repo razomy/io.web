@@ -2,11 +2,12 @@
   <div class="min-vh-100 pb-16">
 
 
-    <SeoHeader :directoryLast="directoryLast" :commandKey="commandKey">
+    <SeoHeader :sourceTkp="sourceTkp!"
+               :targetTkp="targetTkp!">
       {{
         t('io.web.text_to_text.directory.command.hero_sub', {
-          source: directoryLast.toUpperCase(),
-          target: commandKey.toUpperCase()
+          sourceTkp: directoryLast.toUpperCase(),
+          targetTkp: commandKey.toUpperCase()
         })
       }}
     </SeoHeader>
@@ -18,7 +19,7 @@
           :loading="loading"
           v-model="inputText"
           :outputText="outputText"
-          :commandKey="commandKey"
+          :targetTkp="commandKey"
           @convert="processTextData"
       ></TextInput>
 
@@ -34,13 +35,13 @@
       <!-- SEO Контент -->
       <SeoSection
           :content="seoContent"
-          :directory="directoryLast"
-          :command="commandKey"
+          :sourceTkp="sourceTkp!"
+          :targetTkp="targetTkp!"
       />
       <v-container class="pb-16 px-0">
         <CodeBlock
             :directoryPath="directoryPath"
-            :commandKey="commandKey"
+            :commandId="props.commandId"
         ></CodeBlock>
       </v-container>
     </v-container>
@@ -50,84 +51,88 @@
 
 <script setup lang="ts">
 import {computed, ref} from 'vue';
-import SeoSection from '~/components/SeoSection.vue';
+import SeoSection from '~/components/components/SeoSection.vue';
 // Заменили sendFile на функцию для отправки текста, предполагается, что она принимает (text, functionName, url)
 import {processText} from '~/functions/processText';
-import CodeBlock from '~/components/CodeBlock.vue';
-import {Debounce} from '~~/razomy/functions';
-import {commands} from '~~/razomy/db';
+import CodeBlock from '~/components/components/CodeBlock.vue';
+import {Debounce, type SeoContent} from '~~/razomy/functions';
+import {commands, getCommandById, getDirectoryBy} from '~~/razomy/db';
 
 const {t} = useI18n();
 const props = defineProps<{
-  directoryPath: string[],
-  commandKey: string, // Здесь передается название функции (например: 'base64', 'md5')
+  commandId: string,
 }>()
 
-const directoryPath = props.directoryPath;
-const directoryLast = directoryPath.at(-1)!;
-const commandKey = props.commandKey; // Название применяемой функции
+const command = computed(() => getCommandById(props.commandId));
+const directory = computed(() => command.value && getDirectoryBy(command.value.directoryPath));
+const sourceTkp = computed(() => command.value &&  t(command.value.meta.nameTk));
+const targetTkp = computed(() => directory.value &&  t(directory.value.meta.nameTk));
+
+const directoryPath = computed(() => directory.value!.directoryPath);
+const directoryLast = computed(() => directoryPath.value!.at(-1)!);
+const commandKey =computed(() => command.value!.commandKey); // Название применяемой функции
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
-  const in_ = directoryLast.toUpperCase();
-  const out = commandKey.toUpperCase();
+  const in_ = directoryLast.value.toUpperCase();
+  const out = commandKey.value.toUpperCase();
 
   return {
-    h1: t('io.web.text_to_text.directory.command.seo.h1', {source: in_, target: out}),
-    intro_title: t('io.web.text_to_text.directory.command.seo.intro_title', {source: in_, target: out}),
-    intro: t('io.web.text_to_text.directory.command.seo.intro_text', {source: in_, target: out}),
+    h1: t('io.web.text_to_text.directory.command.seo.h1', {sourceTkp: in_, targetTkp: out}),
+    intro_title: t('io.web.text_to_text.directory.command.seo.intro_title', {sourceTkp: in_, targetTkp: out}),
+    intro: t('io.web.text_to_text.directory.command.seo.intro_text', {sourceTkp: in_, targetTkp: out}),
     steps: [
       {
-        title: t('io.web.text_to_text.directory.command.steps.paste', {source: in_}),
+        title: t('io.web.text_to_text.directory.command.steps.paste', {sourceTkp: in_}),
         icon: 'mdi-clipboard-text-outline',
-        text: t('io.web.text_to_text.directory.command.steps.paste_desc', {source: in_})
+        text: t('io.web.text_to_text.directory.command.steps.paste_desc', {sourceTkp: in_})
       },
       {
-        title: t('io.web.text_to_text.directory.command.steps.process', {target: out}),
+        title: t('io.web.text_to_text.directory.command.steps.process', {targetTkp: out}),
         icon: 'mdi-cog-transfer-outline',
-        text: t('io.web.text_to_text.directory.command.steps.process_desc', {target: out})
+        text: t('io.web.text_to_text.directory.command.steps.process_desc', {targetTkp: out})
       },
       {
-        title: t('io.web.text_to_text.directory.command.steps.copy', {target: out}),
+        title: t('io.web.text_to_text.directory.command.steps.copy', {targetTkp: out}),
         icon: 'mdi-content-copy',
-        text: t('io.web.text_to_text.directory.command.steps.copy_desc', {target: out})
+        text: t('io.web.text_to_text.directory.command.steps.copy_desc', {targetTkp: out})
       },
     ],
     faq: [
       {
-        q: t('io.web.text_to_text.directory.command.faq.q1', {source: in_, target: out}),
+        q: t('io.web.text_to_text.directory.command.faq.q1', {sourceTkp: in_, targetTkp: out}),
         a: t('io.web.text_to_text.directory.command.faq.a1')
       },
       {
-        q: t('io.web.text_to_text.directory.command.faq.q2', {source: in_}),
+        q: t('io.web.text_to_text.directory.command.faq.q2', {sourceTkp: in_}),
         a: t('io.web.text_to_text.directory.command.faq.a2')
       },
       {
-        q: t('io.web.text_to_text.directory.command.faq.q3', {source: in_, target: out}),
+        q: t('io.web.text_to_text.directory.command.faq.q3', {sourceTkp: in_, targetTkp: out}),
         a: t('io.web.text_to_text.directory.command.faq.a3')
       },
     ]
-  }
+  } satisfies SeoContent;
 }
 
 const seoContent = computed(() => generateSeoContent());
 
 useSeoMeta({
   title: () => t('io.web.text_to_text.directory.command.seo.title', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   description: () => t('io.web.text_to_text.directory.command.seo.description', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   ogTitle: () => t('io.web.text_to_text.directory.command.seo.title', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   ogDescription: () => t('io.web.text_to_text.directory.command.seo.description', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   robots: 'index, follow'
 });
@@ -142,9 +147,7 @@ const errorMessage = ref('');
 let debouncer = new Debounce();
 
 watch(inputText, () => {
-  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
-
-  if (command.spec.performance.memoryDataSizeComplexityFn === 'O(n)') {
+  if (command.value!.spec.performance.memoryDataSizeComplexityFn === 'O(n)') {
     debouncer.debounce(processTextData, 350)
   }
 });
@@ -153,8 +156,8 @@ async function request() {
   try {
     // Отправляем текст на бэкенд для обработки конкретной функцией
     const result = await processText(
-        directoryPath,
-        commandKey,
+        directoryPath.value,
+        commandKey.value,
         [inputText.value],
     );
 

@@ -3,6 +3,7 @@ test {
 ui layout
 mobile
 i18n
+ rtl
 pages
  /
  /en

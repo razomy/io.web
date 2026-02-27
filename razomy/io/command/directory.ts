@@ -1,43 +1,32 @@
-import {type IoCommand} from './command';
+import {commandToNavigationNode, type IoCommand} from './command';
 import type {NavigationNode} from '@razomy/nuxt/runtime/functions';
+import {arrayToUrl} from '../../functions';
 
 // package name  = folder  = directory  = [string]  = [doucment,pdf] = [http]
 export type  IoDirectoryPath = string[];
 
 export interface IoDirectory {
-  key: string;
-  url: string;
-  updateDatetime: string;
+  id: string;
+  directoryKey: string;
   directoryPath: IoDirectoryPath;
-  iconName: string;
-  label: {
-    fullText: string;
-  },
+  meta: {
+    url: string;
+    updateDatetime: string;
+    iconName: string;
+    nameTk: string;
+  }
   commands: IoCommand[]
   directories: IoDirectory[]
 }
 
-function commandToNavigationNode(command: IoCommand): NavigationNode {
-  return {
-    id: command.commandKey,
-    meta: {
-      key: command.commandKey,
-      labelText: command.label.fullText,
-      iconName: command.iconName,
-      url: command.url,
-    },
-    children: [],
-  };
-}
 
 export function directoryToNavigationNode(directory: IoDirectory): NavigationNode {
   return {
-    id: directory.key,
+    id: directory.directoryPath.join('.'),
     meta: {
-      key: directory.key,
-      labelText: directory.label.fullText,
-      iconName: directory.iconName,
-      url: '/' + directory.directoryPath.join('/')
+      nameTk: directory.meta.nameTk,
+      iconName: directory.meta.iconName,
+      url: arrayToUrl(directory.directoryPath)
     },
     children: [
       ...directory.commands.map(commandToNavigationNode),
@@ -45,6 +34,3 @@ export function directoryToNavigationNode(directory: IoDirectory): NavigationNod
     ],
   }
 }
-
-
-

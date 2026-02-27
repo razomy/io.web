@@ -23,8 +23,13 @@ export function flatDirectories(directoriesTree: IoDirectory[]): IoDirectory[] {
 
 export const directories = flatDirectories(directoriesTree);
 
+export const getDirectoryBy = (directoryPath: IoDirectoryPath) => {
+  return directories.find(i => i.directoryPath.join('/') === directoryPath.join('/'))
+}
+
+
 export const isDirectoryExists = (directoryPath: IoDirectoryPath) => {
-  return !!directories.find(i => i.directoryPath.join('/') === directoryPath.join('/'))
+  return !!getDirectoryBy(directoryPath);
 }
 
 export function getDirectoryByFilter(value: string) {

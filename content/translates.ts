@@ -59,32 +59,32 @@ export const i18n = {
         text_to_text: {
           input_text: 'Input Text',
           placeholder_input: 'Paste your text here...',
-          result_title: '{target} Result',
+          result_title: '{targetTkp} Result',
           copy_to_clipboard: 'Copy to clipboard',
           placeholder_output: 'Result will appear here...',
-          convert_btn: 'Convert to {target}',
+          convert_btn: 'Convert to {targetTkp}',
           copied_success: 'Copied to clipboard!',
           directory: {
             command: {
-              hero_sub: 'Free and instant online tool to convert normal text, strings, or variables into {target}.',
+              hero_sub: 'Free and instant online tool to convert normal text, strings, or variables into {targetTkp}.',
               seo: {
-                title: 'Convert Text to {target} Online | Free String Generator',
-                h1: 'Free Online {target} Converter',
-                description: 'Easily convert your text, strings, or code variables to {target} online. A free, fast, and secure text formatting tool for developers and writers.',
-                intro_title: 'Why use our {target} generator?',
-                intro_text: 'Our string formatting tool instantly transforms your normal text, sentences, or code variables into {target}. Simply paste your content, and the tool will automatically handle spaces and capitalization.'
+                title: 'Convert Text to {targetTkp} Online | Free String Generator',
+                h1: 'Free Online {targetTkp} Converter',
+                description: 'Easily convert your text, strings, or code variables to {targetTkp} online. A free, fast, and secure text formatting tool for developers and writers.',
+                intro_title: 'Why use our {targetTkp} generator?',
+                intro_text: 'Our string formatting tool instantly transforms your normal text, sentences, or code variables into {targetTkp}. Simply paste your content, and the tool will automatically handle spaces and capitalization.'
               },
               steps: {
-                paste: '1. Paste {source} text',
-                paste_desc: 'Paste or type your {source} content into the input area.',
+                paste: '1. Paste {sourceTkp} text',
+                paste_desc: 'Paste or type your {sourceTkp} content into the input area.',
                 process: '2. Conversion Process',
-                process_desc: 'Our tool automatically converts your text to {target} format with the best possible settings.',
-                copy: '3. Copy {target}',
+                process_desc: 'Our tool automatically converts your text to {targetTkp} format with the best possible settings.',
+                copy: '3. Copy {targetTkp}',
                 copy_desc: 'The conversion is complete. You can now copy the result directly to your clipboard.',
               },
               faq: {
-                q1: 'How do I convert text to {target}?',
-                a1: 'Just paste your string into our online tool and click convert. It will automatically apply the {target} casing rules. Then, simply copy the result.',
+                q1: 'How do I convert text to {targetTkp}?',
+                a1: 'Just paste your string into our online tool and click convert. It will automatically apply the {targetTkp} casing rules. Then, simply copy the result.',
                 q2: 'Is my text and code secure?',
                 a2: 'Absolutely. We care about privacy. Your text is processed securely, and we do not store or save any of your pasted content or code.',
                 q3: 'Is this string formatter free?',
@@ -103,8 +103,8 @@ export const i18n = {
           typescript_javascript: 'Typescript/Javascript'
         },
         input: {
-          title: 'Convert {source} data',
-          subtitle: 'Select output format for your {source} data',
+          title: 'Convert {sourceTkp} data',
+          subtitle: 'Select output format for your {sourceTkp} data',
         },
         file_to_file: {
           error: 'Error converting file: {fileName}',
@@ -130,7 +130,7 @@ export const i18n = {
           directory: {
             available_conversions: 'Available conversions',
             command: {
-              hero_sub: 'Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.',
+              hero_sub: 'Fast, free, and secure online tool to convert {sourceTkp} to {targetTkp}. No registration or software installation required.',
               features: {
                 fast: 'Fast Conversion',
                 secure: '100% Secure',
@@ -138,42 +138,64 @@ export const i18n = {
                 accurate: 'High Accuracy',
               },
               seo: {
-                title: 'Convert {source} to {target} Online | Free & Secure Tool',
-                h1: 'Free Online {source} to {target} Converter',
-                description: 'The best way to convert {source} files to {target} format online. Easy to use, completely free, and secure file conversion.',
-                intro_title: 'Why use our {source} to {target} tool?',
-                intro_text: 'Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {source} documents into {target}.'
+                title: 'Convert {sourceTkp} to {targetTkp} Online | Free & Secure Tool',
+                h1: 'Free Online {sourceTkp} to {targetTkp} Converter',
+                description: 'The best way to convert {sourceTkp} files to {targetTkp} format online. Easy to use, completely free, and secure file conversion.',
+                intro_title: 'Why use our {sourceTkp} to {targetTkp} tool?',
+                intro_text: 'Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {sourceTkp} documents into {targetTkp}.'
               },
               steps: {
-                upload: '1. Upload {source} file',
-                upload_desc: 'Drag and drop your {source} file into the upload area. The maximum file size is 100MB.',
+                upload: '1. Upload {sourceTkp} file',
+                upload_desc: 'Drag and drop your {sourceTkp} file into the upload area. The maximum file size is 100MB.',
                 quality: '2. Conversion Process',
-                quality_desc: 'Our tool automatically converts your file to {target} format with the best possible settings.',
-                download: '3. Download {target}',
-                download_desc: 'Wait a moment for the process to finish, then download your new {target} file instantly.'
+                quality_desc: 'Our tool automatically converts your file to {targetTkp} format with the best possible settings.',
+                download: '3. Download {targetTkp}',
+                download_desc: 'Wait a moment for the process to finish, then download your new {targetTkp} file instantly.'
               },
               faq: {
-                q1: 'How do I convert {source} to {target}?',
+                q1: 'How do I convert {sourceTkp} to {targetTkp}?',
                 a1: 'Simply upload your file, wait for the conversion, and click download. It works on Windows, Mac, Linux, and mobile devices.',
-                q2: 'Is it safe to convert {source} on Razomy?',
+                q2: 'Is it safe to convert {sourceTkp} on Razomy?',
                 a2: 'Yes. We use HTTPS encryption. Your files are automatically deleted from our servers after 1 hour to ensure privacy.',
                 q3: 'Is this converter free?',
-                a3: 'Absolutely. You can convert {source} files to {target} for free without creating an account.'
+                a3: 'Absolutely. You can convert {sourceTkp} files to {targetTkp} for free without creating an account.'
               }
             }
           }
         },
       },
       db: {
-        directories: {
-          home: 'Home',
-          image: 'Image',
-          audio: 'Audio',
-          video: 'Video',
-          document: 'Document',
-          math: 'Math',
-          string: 'Text'
-        },
+        home: {title: 'Home', children: []},
+        image: {title: 'Image', children: []},
+        audio: {title: 'Audio', children: []},
+        video: {title: 'Video', children: []},
+        document: {title: 'Document', children: []},
+        math: {title: 'Math', children: []},
+        string: {
+          title: 'Text',
+          children: {
+            camelCase: {title: 'camel case'},
+            capitalize: {title: 'capitalize'},
+            constantCase: {title: 'constant case'},
+            dotCase: {title: 'dot case'},
+            abbreviation: {title: 'Abbreviation'},
+            headerCase: {title: 'header case'},
+            humanize: {title: 'humanize'},
+            isLowerCase: {title: 'is lower case'},
+            isUpperCase: {title: 'is upper case'},
+            kebabCase: {title: 'kebab case'},
+            lowerCase: {title: 'lower case'},
+            pascalCase: {title: 'pascal case'},
+            pathCase: {title: 'path case'},
+            reverse: {title: 'reverse'},
+            sentenceCase: {title: 'sentence case'},
+            slugify: {title: 'slugify'},
+            snakeCase: {title: 'snake case'},
+            swapCase: {title: 'swap case'},
+            titleCase: {title: 'title case'},
+            upperCase: {title: 'upper case'},
+          }
+        }
       },
     },
   }

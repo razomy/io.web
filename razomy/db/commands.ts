@@ -14,6 +14,14 @@ export const getCommandBy = (
   )
 }
 
+export const getCommandById = (
+  commandId: string) => {
+  return commands.find(i =>
+    i.id === commandId
+  )
+}
+
+
 export const isCommandExists = (
   directoryPath: IoDirectoryPath,
   commandKey: IoCommandKey | null = null) => {

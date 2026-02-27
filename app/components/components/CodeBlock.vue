@@ -107,9 +107,19 @@
               {{ copiedId === tab.value + '-run' ? 'mdi-check' : 'mdi-content-copy' }}
             </v-icon>
           </v-btn>
-          <v-chip :href="`https://www.npmjs.com/package/@razomy/${tab.directoryPath.join('-')}`">Npm</v-chip>
-          <v-chip :href="`https://github.com/razomy/js/tree/main/razomy/${tab.directoryPath.join('-')}`">GitHub</v-chip>
-<!--          <v-chip :href="`https://io.razomy.org/${tab.directoryPath.join('/')}`">Io</v-chip>-->
+
+          <div class="">
+            <v-chip class="mr-2 my-2"
+                    :href="`https://www.npmjs.com/package/@razomy/${tab.directoryPath.join('-')}`">
+              Npm
+            </v-chip>
+            <v-chip class="mr-2 my-2"
+                    :href="`https://github.com/razomy/js/tree/main/razomy/${tab.directoryPath.join('-')}`">
+              GitHub
+            </v-chip>
+            <!--          <v-chip :href="`https://io.razomy.org/${tab.directoryPath.join('/')}`">Io</v-chip>-->
+          </div>
+
           <pre><code class="hljs rounded-xl pa-4" v-html="highlightCode(tab.codeRun, tab.language)"></code></pre>
         </div>
       </v-window-item>
@@ -118,11 +128,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { getCommandBy } from '~~/razomy/db';
+import {computed, ref} from 'vue'
 import hljs from 'highlight.js'
+import {getCommandById} from '~~/razomy/db/commands';
 
-const { t } = useI18n();
+const {t} = useI18n();
 const isDark = usePreferredDark()
 
 useHead({
@@ -139,12 +149,11 @@ useHead({
 })
 
 const props = defineProps<{
-  directoryPath: string[],
-  commandKey: string,
+  commandId: string,
 }>()
 
 const command = computed(() => {
-  return getCommandBy(props.directoryPath, props.commandKey)
+  return getCommandById(props.commandId)
 })
 
 const tabs = computed(() => {
@@ -168,7 +177,7 @@ const tabs = computed(() => {
 
 const highlightCode = (code: string, language: string) => {
   if (!code) return ''
-  return hljs.highlight(code, { language }).value
+  return hljs.highlight(code, {language}).value
 }
 
 // State

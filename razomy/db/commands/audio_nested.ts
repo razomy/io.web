@@ -1,7 +1,7 @@
-import {fsFileFormatToDirectory} from '../../io/command';
+import {fsFileFormatToDirectory, type IoDirectory} from '../../io/command';
 import {audios} from '@razomy/audios';
-import {type IoDirectory} from '../../io/command';
 import {lT} from '../alies';
+import {arrayToUrl} from '../../functions';
 
 export const audioSubDirectories = audios.map(fireFormat => fsFileFormatToDirectory(
   ['audio'],
@@ -9,12 +9,15 @@ export const audioSubDirectories = audios.map(fireFormat => fsFileFormatToDirect
 ));
 
 export const audioDirectory = {
-  key: 'audio',
+  id: 'audio',
+  directoryKey: 'audio',
   directoryPath: ['audio'],
-  iconName: 'mdi-music',
-  label: lT('audio'),
+  meta: {
+    iconName: 'mdi-music',
+    nameTk: lT('audio'),
+    url: arrayToUrl(['audio']),
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+  },
   commands: [],
-  updateDatetime: '2026-02-22T23:22:59.211Z',
   directories: audioSubDirectories,
-  url: '/audio'
 } as const satisfies IoDirectory;

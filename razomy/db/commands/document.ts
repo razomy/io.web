@@ -1,13 +1,17 @@
 import {type IoDirectory} from '../../io/command';
 import {lT} from '../alies';
+import {arrayToUrl} from '../../functions';
 
 export const documentDirectory = {
-  key: 'file',
+  id: 'file',
+  directoryKey: 'file',
   directoryPath: ['file'],
-  iconName: 'mdi-file-document-multiple',
-  label: lT('document'),
+  meta: {
+    iconName: 'mdi-file-document-multiple',
+    nameTk: lT('document'),
+    url: arrayToUrl(['file']),
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+  },
   commands: [],
-  updateDatetime: '2026-02-22T23:22:59.211Z',
   directories: [],
-  url: '/file'
 } as const satisfies IoDirectory;

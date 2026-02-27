@@ -1,5 +1,5 @@
 import {type IoCommandTemplate, type IoDirectory, templateToCommand} from '../../io/command';
-import {cK, dP, eB, en, iN, lT, n} from '../alies';
+import {lT} from '../alies';
 
 const p = '@razomy/maths';
 const mathCommands = ([
@@ -8,12 +8,15 @@ const mathCommands = ([
 ] as const satisfies IoCommandTemplate[]);
 
 export const mathDirectory = {
-  key: 'math',
-  'iconName': 'mdi-math-compass',
+  id: 'math',
+  directoryKey: 'math',
   directoryPath: ['music'],
-  label: lT('math'),
-  updateDatetime: '2026-02-22T23:22:59.211Z',
+  meta: {
+    iconName: 'mdi-math-compass',
+    nameTk: lT('math'),
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+    url: '/math'
+  },
   commands: mathCommands.map(templateToCommand),
   directories: [],
-  url: '/math'
 } as const satisfies IoDirectory;

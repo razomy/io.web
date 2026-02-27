@@ -1,5 +1,4 @@
-export {commands, getCommandBy, isCommandExists} from './commands';
+export {commands, getCommandBy, isCommandExists, getCommandById} from './commands';
 export {directoryToNavigationNode} from '../io/command/directory';
-export {directoriesTree, getDirectoryByFilter, isDirectoryExists} from './directories';
+export {directoriesTree, getDirectoryByFilter, isDirectoryExists, getDirectoryBy} from './directories';
 export {systemSet} from './systems';
-

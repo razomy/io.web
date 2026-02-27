@@ -1,14 +1,13 @@
-import { commands } from '~~/razomy/db';
+import { getCommandById } from '~~/razomy/db';
 
 // Вспомогательная функция для паузы
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const sendFile = async (
-  directoryPath: string[],
-  commandKey: string,
+  commandId: string,
   arguments_: [File]
 ) => {
-  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
+  const command = getCommandById(commandId)!;
 
   // Если стратегия браузерная - оставляем как есть
   if (command.environment.strategy === 'browser') {
@@ -18,11 +17,11 @@ export const sendFile = async (
   if (command.environment.strategy === 'client_server') {
     const formData = new FormData();
     formData.append('file', arguments_[0]);
-    formData.append('from', directoryPath[0]!);
-    formData.append('to', commandKey);
+    formData.append('from', command.directoryPath[0]!);
+    formData.append('to', command.commandKey);
 
     // 1. Отправляем файл и получаем Job ID
-    const { data: jobData, error: uploadError } = await useFetch(`/api/all/${directoryPath[0]}`, {
+    const { data: jobData, error: uploadError } = await useFetch(`/api/all/${command.directoryPath[0]}`, {
       method: 'POST',
       body: formData,
       // responseType: 'blob' - УБИРАЕМ, теперь мы ждем JSON с ID

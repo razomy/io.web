@@ -1,11 +1,13 @@
 <template>
   <div class="min-vh-100 pb-16">
 
-    <SeoHeader :directoryLast="directoryLast" :commandKey="commandKey">
+    <SeoHeader
+        :sourceTkp="sourceTkp!"
+        :targetTkp="targetTkp!">
       {{
         t('io.web.file_to_file.directory.command.hero_sub', {
-          source: directoryLast.toUpperCase(),
-          target: commandKey.toUpperCase()
+          sourceTkp: sourceTkp,
+          targetTkp: targetTkp
         })
       }}
     </SeoHeader>
@@ -16,7 +18,7 @@
       <!-- Карточка конвертера -->
       <rzm-modern-dropzone
           v-model="files"
-          :accept="`.${directoryLast}`"
+          :accept="`.${directory!.directoryKey}`"
           :is-processing="loading"
           @convert="startConversion"
       />
@@ -33,8 +35,8 @@
       <!-- SEO Контент -->
       <SeoSection
           :content="seoContent"
-          :directory="directoryLast"
-          :command="commandKey"
+          :sourceTkp="sourceTkp!"
+          :targetTkp="targetTkp!"
       />
     </v-container>
 
@@ -42,33 +44,33 @@
 </template>
 
 <script setup lang="ts">
-import SeoSection from '~/components/SeoSection.vue';
+import SeoSection from '~/components/components/SeoSection.vue';
 import {sendFile} from '~/functions/sendFile';
+import type {SeoContent} from '~~/razomy/functions';
+import {getCommandById, getDirectoryBy} from '~~/razomy/db';
 
 const {t} = useI18n();
 const props = defineProps<{
-  directoryPath: string[],
-  commandKey: string,
+  commandId: string,
 }>()
 
-const directoryPath = props.directoryPath;
-const directoryLast = directoryPath.at(-1)!;
-const commandKey = props.commandKey;
+
+const command = computed(() => getCommandById(props.commandId));
+const directory = computed(() => command.value && getDirectoryBy(command.value.directoryPath));
+const sourceTkp = computed(() => command.value &&  t(command.value.meta.nameTk))!;
+const targetTkp = computed(() => directory.value &&  t(directory.value.meta.nameTk))!;
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
-  const in_ = directoryLast.toUpperCase();
-  const out = commandKey.toUpperCase();
-
   return {
-    h1: t('io.web.file_to_file.directory.command.seo.h1', {source: in_, target: out}),
-    intro_title: t('io.web.file_to_file.directory.command.seo.intro_title', {source: in_, target: out}),
-    intro: t('io.web.file_to_file.directory.command.seo.intro_text', {source: in_, target: out}), // Более длинный текст
+    h1: t('io.web.file_to_file.directory.command.seo.h1', {sourceTkp: sourceTkp.value, targetTkp: targetTkp.value}),
+    intro_title: t('io.web.file_to_file.directory.command.seo.intro_title', {sourceTkp: sourceTkp.value, targetTkp: targetTkp.value}),
+    intro: t('io.web.file_to_file.directory.command.seo.intro_text', {sourceTkp: sourceTkp.value, targetTkp: targetTkp.value}), // Более длинный текст
     steps: [
       {
-        title: t('io.web.file_to_file.directory.command.steps.upload', {source: in_}),
+        title: t('io.web.file_to_file.directory.command.steps.upload', {sourceTkp: sourceTkp.value}),
         icon: 'mdi-cloud-upload-outline',
-        text: t('io.web.file_to_file.directory.command.steps.upload_desc', {source: in_})
+        text: t('io.web.file_to_file.directory.command.steps.upload_desc', {sourceTkp: sourceTkp.value})
       },
       {
         title: t('io.web.file_to_file.directory.command.steps.quality'),
@@ -76,26 +78,26 @@ const generateSeoContent = () => {
         text: t('io.web.file_to_file.directory.command.steps.quality_desc')
       },
       {
-        title: t('io.web.file_to_file.directory.command.steps.download', {target: out}),
+        title: t('io.web.file_to_file.directory.command.steps.download', {targetTkp: targetTkp.value}),
         icon: 'mdi-download-outline',
-        text: t('io.web.file_to_file.directory.command.steps.download_desc', {target: out})
+        text: t('io.web.file_to_file.directory.command.steps.download_desc', {targetTkp: targetTkp.value})
       },
     ],
     faq: [
       {
-        q: t('io.web.file_to_file.directory.command.faq.q1', {source: in_, target: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q1', {sourceTkp: sourceTkp.value, targetTkp: targetTkp.value}),
         a: t('io.web.file_to_file.directory.command.faq.a1')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q2', {source: in_}),
+        q: t('io.web.file_to_file.directory.command.faq.q2', {sourceTkp: sourceTkp.value}),
         a: t('io.web.file_to_file.directory.command.faq.a2')
       },
       {
-        q: t('io.web.file_to_file.directory.command.faq.q3', {source: in_, target: out}),
+        q: t('io.web.file_to_file.directory.command.faq.q3', {sourceTkp: sourceTkp, targetTkp: targetTkp.value}),
         a: t('io.web.file_to_file.directory.command.faq.a3')
       },
     ]
-  }
+  } satisfies SeoContent;
 }
 
 const seoContent = computed(() => generateSeoContent());
@@ -103,20 +105,20 @@ const seoContent = computed(() => generateSeoContent());
 // Meta tags for Google
 useSeoMeta({
   title: () => t('io.web.file_to_file.directory.command.seo.title', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   description: () => t('io.web.file_to_file.directory.command.seo.description', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   ogTitle: () => t('io.web.file_to_file.directory.command.seo.title', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   ogDescription: () => t('io.web.file_to_file.directory.command.seo.description', {
-    source: directoryLast.toUpperCase(),
-    target: commandKey.toUpperCase()
+    sourceTkp: sourceTkp.value,
+    targetTkp: targetTkp.value
   }),
   robots: 'index, follow'
 });
@@ -136,7 +138,7 @@ const startConversion = async () => {
 
   for (const file of files.value) {
     try {
-      const result = await sendFile(directoryPath, commandKey, [file]);
+      const result = await sendFile(props.commandId, [file]);
 
       // Логика скачивания одного файла
       const blob = result as Blob;
@@ -148,14 +150,14 @@ const startConversion = async () => {
       const nameWithoutExt = originalPath.replace(/\.[^/.]+$/, '');
       const safeName = nameWithoutExt.split('/').join('_');
 
-      link.setAttribute('download', `${safeName}.${commandKey}`);
+      link.setAttribute('download', `${safeName}.${command.value!.commandKey}`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     } catch (e: any) {
       const error = {
-        message: t('io.web.file_to_file.error',{fileName:file.name}),
+        message: t('io.web.file_to_file.error', {fileName: file.name}),
         error: e
       }
       console.error(error.message);

@@ -184,65 +184,73 @@
       "string": {
         "title": "Text",
         "children": {
-          "camelCase": {
-            "title": "Camel Case"
-          },
-          "capitalize": {
-            "title": "Capitalize"
-          },
-          "constantCase": {
-            "title": "Constant Case"
-          },
-          "dotCase": {
-            "title": "Dot Case"
-          },
-          "getAbbreviation": {
-            "title": "Get Abbreviation"
-          },
-          "headerCase": {
-            "title": "Header Case"
-          },
-          "humanize": {
-            "title": "Humanize"
-          },
-          "isLowerCase": {
-            "title": "Is Lower Case"
-          },
-          "isUpperCase": {
-            "title": "Is Upper Case"
-          },
-          "kebabCase": {
-            "title": "Kebab Case"
-          },
-          "lowerCase": {
-            "title": "Lower Case"
-          },
-          "pascalCase": {
-            "title": "Pascal Case"
-          },
-          "pathCase": {
-            "title": "Path Case"
-          },
-          "reverse": {
-            "title": "Reverse"
-          },
-          "sentenceCase": {
-            "title": "Sentence Case"
-          },
-          "slugify": {
-            "title": "Slugify"
-          },
-          "snakeCase": {
-            "title": "Snake Case"
-          },
-          "swapCase": {
-            "title": "Swap Case"
-          },
-          "titleCase": {
-            "title": "Title Case"
-          },
-          "upperCase": {
-            "title": "Upper Case"
+          "case": {
+            "title": "Case",
+            "children": {
+              "alternatingCase": {
+                "title": "Alternating Case"
+              },
+              "camelCase": {
+                "title": "Camel Case"
+              },
+              "capitalize": {
+                "title": "Capitalize"
+              },
+              "constantCase": {
+                "title": "Constant Case"
+              },
+              "dotCase": {
+                "title": "Dot Case"
+              },
+              "abbreviation": {
+                "title": "Abbreviation"
+              },
+              "headerCase": {
+                "title": "Header Case"
+              },
+              "humanize": {
+                "title": "Humanize"
+              },
+              "isLowerCase": {
+                "title": "Is Lower Case"
+              },
+              "isUpperCase": {
+                "title": "Is Upper Case"
+              },
+              "kebabCase": {
+                "title": "Kebab Case"
+              },
+              "lowerCase": {
+                "title": "Lower Case"
+              },
+              "pascalCase": {
+                "title": "Pascal Case"
+              },
+              "pathCase": {
+                "title": "Path Case"
+              },
+              "reverse": {
+                "title": "Reverse"
+              },
+              "sentenceCase": {
+                "title": "Sentence Case"
+              },
+              "slugify": {
+                "title": "Slugify"
+              },
+              "snakeCase": {
+                "title": "Snake Case"
+              },
+              "swapCase": {
+                "title": "Swap Case"
+              },
+              "titleCase": {
+                "title": "Title Case"
+              },
+              "upperCase": {
+                "title": "Upper Case"
+              }
+            }
           }
         }
       },
@@ -285,9 +293,9 @@
             "faq": {
               "a1": "Simply upload your file, wait for the conversion, and click download. It works on Windows, Mac, Linux, and mobile devices.",
               "a2": "Yes. We use HTTPS encryption. Your files are automatically deleted from our servers after 1 hour to ensure privacy.",
-              "a3": "Absolutely. You can convert {source} files to {target} for free without creating an account.",
-              "q1": "How do I convert {source} to {target}?",
-              "q2": "Is it safe to convert {source} on Razomy?",
+              "a3": "Absolutely. You can convert {sourceTkp} files to {targetTkp} for free without creating an account.",
+              "q1": "How do I convert {sourceTkp} to {targetTkp}?",
+              "q2": "Is it safe to convert {sourceTkp} on Razomy?",
               "q3": "Is this converter free?"
             },
             "features": {
@@ -296,25 +304,25 @@
               "quality": "High Quality",
               "secure": "100% Secure"
             },
-            "hero_sub": "Fast, free, and secure online tool to convert {source} to {target}. No registration or software installation required.",
+            "hero_sub": "Fast, free, and secure online tool to convert {sourceTkp} to {targetTkp}. No registration or software installation required.",
             "seo": {
-              "description": "The best way to convert {source} files to {target} format online. Easy to use, completely free, and secure file conversion.",
-              "h1": "Free Online {source} to {target} Converter",
-              "intro_text": "Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {source} documents into {target}.",
-              "intro_title": "Why use our {source} to {target} tool?",
-              "title": "Convert {source} to {target} Online | Free & Secure Tool"
+              "description": "The best way to convert {sourceTkp} files to {targetTkp} format online. Easy to use, completely free, and secure file conversion.",
+              "h1": "Free Online {sourceTkp} to {targetTkp} Converter",
+              "intro_text": "Our converter allows you to process files with high precision. We preserve the original layout and quality while transforming your {sourceTkp} documents into {targetTkp}.",
+              "intro_title": "Why use our {sourceTkp} to {targetTkp} tool?",
+              "title": "Convert {sourceTkp} to {targetTkp} Online | Free & Secure Tool"
             },
             "steps": {
-              "download": "3. Download {target}",
-              "download_desc": "Wait a moment for the process to finish, then download your new {target} file instantly.",
+              "download": "3. Download {targetTkp}",
+              "download_desc": "Wait a moment for the process to finish, then download your new {targetTkp} file instantly.",
               "quality": "2. Conversion Process",
-              "quality_desc": "Our tool automatically converts your file to {target} format with the best possible settings.",
-              "upload": "1. Upload {source} file",
-              "upload_desc": "Drag and drop your {source} file into the upload area. The maximum file size is 100MB."
+              "quality_desc": "Our tool automatically converts your file to {targetTkp} format with the best possible settings.",
+              "upload": "1. Upload {sourceTkp} file",
+              "upload_desc": "Drag and drop your {sourceTkp} file into the upload area. The maximum file size is 100MB."
             }
           },
-          "subtitle": "Choose format {source}",
-          "title": "Manage {source}"
+          "subtitle": "Choose format {sourceTkp}",
+          "title": "Manage {sourceTkp}"
         },
         "error": "Error converting file: {fileName}",
         "faq_title": "Frequently Asked Questions",
@@ -338,8 +346,8 @@
         "github": "Source Code Github"
       },
       "input": {
-        "subtitle": "Select output format for your {source} data",
-        "title": "Convert {source} data"
+        "subtitle": "Select output format for your {sourceTkp} data",
+        "title": "Convert {sourceTkp} data"
       },
       "navbar": {
         "products": {
@@ -352,41 +360,41 @@
         "search": "Find..."
       },
       "text_to_text": {
-        "convert_btn": "Convert to {target}",
+        "convert_btn": "Convert to {targetTkp}",
         "copied_success": "Copied to clipboard!",
         "copy_to_clipboard": "Copy to clipboard",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Just paste your string into our online tool and click convert. It will automatically apply the {target} casing rules. Then, simply copy the result.",
+              "a1": "Just paste your string into our online tool and click convert. It will automatically apply the {targetTkp} casing rules. Then, simply copy the result.",
               "a2": "Absolutely. We care about privacy. Your text is processed securely, and we do not store or save any of your pasted content or code.",
               "a3": "Yes, this text conversion tool is 100% free to use with no hidden limits.",
-              "q1": "How do I convert text to {target}?",
+              "q1": "How do I convert text to {targetTkp}?",
               "q2": "Is my text and code secure?",
               "q3": "Is this string formatter free?"
             },
-            "hero_sub": "Free and instant online tool to convert normal text, strings, or variables into {target}.",
+            "hero_sub": "Free and instant online tool to convert normal text, strings, or variables into {targetTkp}.",
             "seo": {
-              "description": "Easily convert your text, strings, or code variables to {target} online. A free, fast, and secure text formatting tool for developers and writers.",
-              "h1": "Free Online {target} Converter",
-              "intro_text": "Our string formatting tool instantly transforms your normal text, sentences, or code variables into {target}. Simply paste your content, and the tool will automatically handle spaces and capitalization.",
-              "intro_title": "Why use our {target} generator?",
-              "title": "Convert Text to {target} Online | Free String Generator"
+              "description": "Easily convert your text, strings, or code variables to {targetTkp} online. A free, fast, and secure text formatting tool for developers and writers.",
+              "h1": "Free Online {targetTkp} Converter",
+              "intro_text": "Our string formatting tool instantly transforms your normal text, sentences, or code variables into {targetTkp}. Simply paste your content, and the tool will automatically handle spaces and capitalization.",
+              "intro_title": "Why use our {targetTkp} generator?",
+              "title": "Convert Text to {targetTkp} Online | Free String Generator"
             },
             "steps": {
-              "copy": "3. Copy {target}",
+              "copy": "3. Copy {targetTkp}",
               "copy_desc": "The conversion is complete. You can now copy the result directly to your clipboard.",
-              "paste": "1. Paste {source} text",
-              "paste_desc": "Paste or type your {source} content into the input area.",
+              "paste": "1. Paste {sourceTkp} text",
+              "paste_desc": "Paste or type your {sourceTkp} content into the input area.",
               "process": "2. Conversion Process",
-              "process_desc": "Our tool automatically converts your text to {target} format with the best possible settings."
+              "process_desc": "Our tool automatically converts your text to {targetTkp} format with the best possible settings."
             }
           }
         },
         "input_text": "Input Text",
         "placeholder_input": "Paste your text here...",
         "placeholder_output": "Result will appear here...",
-        "result_title": "{target} Result"
+        "result_title": "{targetTkp} Result"
       }
     }
   },

@@ -94,14 +94,14 @@
                 <v-icon icon="mdi-file-import" size="small" class="mr-2"/>
                 {{ t('io.web.file_to_file.input') }}
               </td>
-              <td class="font-weight-medium text-uppercase text-right">{{ directory }}</td>
+              <td class="font-weight-medium text-uppercase text-right">{{ sourceTkp }}</td>
             </tr>
             <tr>
               <td class="text-medium-emphasis py-3">
                 <v-icon icon="mdi-file-export" size="small" class="mr-2"/>
                 {{ t('io.web.file_to_file.output') }}
               </td>
-              <td class="font-weight-medium text-uppercase text-right">{{ command }}</td>
+              <td class="font-weight-medium text-uppercase text-right">{{ targetTkp }}</td>
             </tr>
             <!--            <tr>-->
             <!--              <td class="text-medium-emphasis py-3">-->
@@ -144,11 +144,11 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 import {useHead} from '#imports';
+import type {SeoContent} from '~~/razomy/functions';
 
-const props = defineProps<{ content: any, directory: string, command: string }>()
+const props = defineProps<{ content: SeoContent, sourceTkp: string, targetTkp: string }>()
 
 const {t} = useI18n();
-
 
 /**
  * ГЕНЕРАЦИЯ SCHEMA.ORG (JSON-LD)
@@ -177,7 +177,7 @@ const jsonLd = computed(() => {
       // Schema для Инструкции
       {
         '@type': 'HowTo',
-        'name': `How to convert ${props.directory.toUpperCase()} to ${props.command.toUpperCase()}`,
+        'name': `How to convert ${props.sourceTkp} to ${props.targetTkp}`,
         'step': steps
       },
       // Schema для FAQ
@@ -188,7 +188,7 @@ const jsonLd = computed(() => {
       // Schema для Софта (SoftwareApplication) - опционально, но полезно
       {
         '@type': 'SoftwareApplication',
-        'name': `${props.directory.toUpperCase()} to ${props.command.toUpperCase()} Converter`,
+        'name': `${props.sourceTkp} to ${props.targetTkp} Converter`,
         'applicationCategory': 'MultimediaApplication',
         'operatingSystem': 'Any',
         'offers': {

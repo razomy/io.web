@@ -2,8 +2,7 @@ import {type IoCommandTemplate, type IoDirectory, templateToCommand} from '../..
 import {cA, eB, hRA, lT, s} from '../alies';
 import packageJson from '@razomy/string-case/package.json';
 import specifications from '@razomy/string-case/specifications.json';
-import {kebabCase} from '@razomy/string-case';
-import type {IoCammandSpec} from '../../io/command/command';
+
 const dpPackage = packageJson.name.replace('@razomy/', '').split('-');
 
 const registry = {
@@ -13,35 +12,40 @@ const registry = {
 export const stringCommands = specifications
   .map(s => {
     return {
-      iconName: 'mdi-text',
+      metaIconName: 'mdi-text',
       ...cA,
       ...hRA,
       directoryPath: dpPackage,
       environment: eB(registry, packageJson.name, s.name),
       spec: s,
-      commandKey: kebabCase(s.name)
     } as IoCommandTemplate;
   }) satisfies IoCommandTemplate[];
 
 export const stringCaseDirectory = {
-  key: 'case',
+  id: 'string.case',
+  directoryKey: 'case',
   directoryPath: dpPackage,
-  iconName: 'mdi-text',
-  label: {fullText: 'case'},
-  updateDatetime: '2026-02-22T23:22:59.211Z',
+  meta: {
+    iconName: 'mdi-text',
+    nameTk: lT('string.children.case'),
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+    url: '/' + dpPackage.join('/')
+  },
   commands: stringCommands.map(templateToCommand),
   directories: [],
-  url: '/' + dpPackage.join('/')
 } as const satisfies IoDirectory;
 
 export const stringDirectory = {
-  key: 'string',
+  id: 'string',
+  directoryKey: 'string',
   directoryPath: [s],
+  meta:{
   iconName: 'mdi-text',
   updateDatetime: '2026-02-22T23:22:59.211Z',
-  label: lT('string'),
+  nameTk: lT('string'),
+  url: '/string'
+  },
   commands: [],
   directories: [stringCaseDirectory],
-  url: '/string'
 } as const satisfies IoDirectory;
 

@@ -30,7 +30,7 @@
     <v-container class="mt-8 position-relative z-index-1">
 
       <!-- Если ничего не найдено -->
-      <div v-if="filteredList.length === 0" class="text-center py-10">
+      <div v-if="currentDirectories.length === 0" class="text-center py-10">
         <v-icon icon="mdi-file-remove-outline" size="64" color="grey"/>
         <h3 class="text-h5 text-darken mt-4">{{ t('io.web.file_to_file.no_results') }}</h3>
       </div>
@@ -38,21 +38,21 @@
       <!-- Сетка форматов -->
       <v-row>
         <v-col
-            v-for="item in filteredList"
-            :key="item.url"
+            v-for="directory in currentDirectories"
+            :key="directory.id"
             cols="12"
             xs="12"
             sm="12"
             md="4"
         >
           <v-card class="rounded-xl"
-                  :href="localePath(`/${item.directoryPath.join('/')}`)"
+                  :href="localePath(directory.meta.url)"
                   hover
                   border="0">
             <v-card-item>
               <template v-slot:prepend>
                 <v-avatar size="48" variant="flat">
-                  <v-icon :icon="item.iconName"/>
+                  <v-icon :icon="directory.meta.iconName"/>
                 </v-avatar>
               </template>
               <v-card-subtitle>
@@ -60,20 +60,20 @@
               </v-card-subtitle>
               <v-card-title class="font-weight-bold text-uppercase">
                 <template
-                    v-for="idx in Array.from({ length: item.directoryPath.length }, (_, i) => i)"
+                    v-for="idx in Array.from({ length: directory.directoryPath.length }, (_, i) => i)"
                     :key="idx"
                 >
                   <v-chip
-                      v-if="item.directoryPath[idx] !== defaultSearch"
+                      v-if="directory.directoryPath[idx] !== defaultSearch"
                       :key="idx"
-                      :to="localePath('/'+item.directoryPath.slice(0, idx+1).join('/'))"
+                      :to="localePath('/'+directory.directoryPath.slice(0, idx+1).join('/'))"
                       color="primary"
                       variant="outlined"
                       size="small"
                       label
                       class="font-weight-bold mr-2 text-uppercase cursor-pointer"
                   >
-                    {{ item.directoryPath[idx] }}
+                    {{ directory.directoryPath[idx] }}
                   </v-chip>
                 </template>
               </v-card-title>
@@ -89,16 +89,16 @@
 
               <div class="d-flex flex-wrap gap-2">
                 <v-chip
-                    v-for="target in item.commands"
-                    :key="target.url"
-                    :to="localePath(`/${item.directoryPath.join('/')}/${target.commandKey}`)"
+                    v-for="command in directory.commands"
+                    :key="command.id"
+                    :to="localePath(command.meta.url)"
                     color="primary"
                     variant="text"
                     size="small"
                     label
                     class="font-weight-bold text-uppercase cursor-pointer px-3"
                 >
-                  {{ target.commandKey }}
+                  {{ t(command.meta.nameTk) }}
                   <!--                  <v-icon end icon="mdi-arrow-right" size="14"/>-->
                 </v-chip>
               </div>
@@ -126,7 +126,7 @@ const search = ref(defaultSearch);
 
 
 // Преобразуем объект в массив и фильтруем
-const filteredList = computed(() => {
+const currentDirectories = computed(() => {
   return getDirectoryByFilter(search.value).filter(d => d.commands.length);
 });
 

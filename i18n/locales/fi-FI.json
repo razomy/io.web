@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Lataa vain tiedostosi, odota muunnosta ja napsauta latauspainiketta. Se toimii Windowsissa, Macissa, Linuxissa ja mobiililaitteissa.",
               "a2": "Kyllä. Käytämme HTTPS-salausta. Tiedostosi poistetaan palvelimiltamme automaattisesti 1 tunnin kuluttua yksityisyyden takaamiseksi.",
-              "a3": "Ehdottomasti. Voit muuntaa {source}-tiedostoja muotoon {target} ilmaiseksi luomatta tiliä.",
-              "q1": "Kuinka muunnan tiedoston {source} muotoon {target}?",
-              "q2": "Onko {source}:n muuntaminen Razomyssa turvallista?",
+              "a3": "Ehdottomasti. Voit muuntaa {sourceTkp}-tiedostoja muotoon {targetTkp} ilmaiseksi luomatta tiliä.",
+              "q1": "Kuinka muunnan tiedoston {sourceTkp} muotoon {targetTkp}?",
+              "q2": "Onko {sourceTkp}:n muuntaminen Razomyssa turvallista?",
               "q3": "Onko tämä muunnin ilmainen?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Korkea laatu",
               "secure": "100% Turvallinen"
             },
-            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {source} muotoon {target}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
+            "hero_sub": "Nopea, ilmainen ja turvallinen verkkotyökalu muuntamaan {sourceTkp} muotoon {targetTkp}. Ei vaadi rekisteröitymistä tai ohjelmiston asennusta.",
             "seo": {
-              "description": "Paras tapa muuntaa {source}-tiedostot {target}-muotoon verkossa. Helppokäyttöinen, täysin ilmainen ja turvallinen tiedostomuunnos.",
-              "h1": "Ilmainen {source}–{target}-verkkomuunnin",
-              "intro_text": "Muuntimemme avulla voit käsitellä tiedostoja suurella tarkkuudella. Säilytämme alkuperäisen asettelun ja laadun muuntaessamme {source}-asiakirjasi muotoon {target}.",
-              "intro_title": "Miksi käyttää {source}–{target}-työkaluamme?",
-              "title": "Muunna {source} muotoon {target} verkossa | Ilmainen & turvallinen työkalu"
+              "description": "Paras tapa muuntaa {sourceTkp}-tiedostot {targetTkp}-muotoon verkossa. Helppokäyttöinen, täysin ilmainen ja turvallinen tiedostomuunnos.",
+              "h1": "Ilmainen {sourceTkp}–{targetTkp}-verkkomuunnin",
+              "intro_text": "Muuntimemme avulla voit käsitellä tiedostoja suurella tarkkuudella. Säilytämme alkuperäisen asettelun ja laadun muuntaessamme {sourceTkp}-asiakirjasi muotoon {targetTkp}.",
+              "intro_title": "Miksi käyttää {sourceTkp}–{targetTkp}-työkaluamme?",
+              "title": "Muunna {sourceTkp} muotoon {targetTkp} verkossa | Ilmainen & turvallinen työkalu"
             },
             "steps": {
-              "download": "3. Lataa {target}",
-              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {target}-tiedostosi välittömästi.",
+              "download": "3. Lataa {targetTkp}",
+              "download_desc": "Odota hetki prosessin valmistumista ja lataa sitten uusi {targetTkp}-tiedostosi välittömästi.",
               "quality": "2. Muunnosprosessi",
-              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla.",
-              "upload": "1. Lataa {source}-tiedosto",
-              "upload_desc": "Vedä ja pudota {source}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt."
+              "quality_desc": "Työkalumme muuntaa tiedostosi automaattisesti {targetTkp}-muotoon parhailla mahdollisilla asetuksilla.",
+              "upload": "1. Lataa {sourceTkp}-tiedosto",
+              "upload_desc": "Vedä ja pudota {sourceTkp}-tiedostosi latausalueelle. Tiedoston enimmäiskoko on 100 Mt."
             }
           },
-          "subtitle": "Valitse komentomuoto {source}-tiedostoillesi",
-          "title": "Muunna {source}-tiedostoja"
+          "subtitle": "Valitse komentomuoto {sourceTkp}-tiedostoillesi",
+          "title": "Muunna {sourceTkp}-tiedostoja"
         },
         "error": "Virhe tiedoston muuntamisessa: {fileName}",
         "faq_title": "Usein kysytyt kysymykset",
@@ -277,8 +277,8 @@
         "github": "Lähdekoodi Githubissa"
       },
       "input": {
-        "subtitle": "Valitse tulostusmuoto {source}-datallesi",
-        "title": "Muunna {source}-data"
+        "subtitle": "Valitse tulostusmuoto {sourceTkp}-datallesi",
+        "title": "Muunna {sourceTkp}-data"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Etsi..."
       },
       "text_to_text": {
-        "convert_btn": "Muunna muotoon {target}",
+        "convert_btn": "Muunna muotoon {targetTkp}",
         "copied_success": "Kopioitu leikepöydälle!",
         "copy_to_clipboard": "Kopioi leikepöydälle",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Liitä vain merkkijonosi verkkotyökaluumme ja napsauta muunna. Se soveltaa automaattisesti muodon {target} sääntöjä. Kopioi sitten tulos.",
+              "a1": "Liitä vain merkkijonosi verkkotyökaluumme ja napsauta muunna. Se soveltaa automaattisesti muodon {targetTkp} sääntöjä. Kopioi sitten tulos.",
               "a2": "Ehdottomasti. Välitämme yksityisyydestä. Tekstisi käsitellään turvallisesti, emmekä tallenna tai säästä mitään liittämääsi sisältöä tai koodia.",
               "a3": "Kyllä, tämä tekstinmuunnostyökalu on 100 % ilmainen käyttää ilman piilorajoituksia.",
-              "q1": "Kuinka muunnan tekstin muotoon {target}?",
+              "q1": "Kuinka muunnan tekstin muotoon {targetTkp}?",
               "q2": "Ovatko tekstini ja koodini turvassa?",
               "q3": "Onko tämä merkkijonomuotoilija ilmainen?"
             },
-            "hero_sub": "Ilmainen ja välitön verkkotyökalu tavallisen tekstin, merkkijonojen tai muuttujien muuntamiseen muotoon {target}.",
+            "hero_sub": "Ilmainen ja välitön verkkotyökalu tavallisen tekstin, merkkijonojen tai muuttujien muuntamiseen muotoon {targetTkp}.",
             "seo": {
-              "description": "Muunna tekstisi, merkkijonosi tai koodimuuttujasi helposti muotoon {target} verkossa. Ilmainen, nopea ja turvallinen tekstin muotoilutyökalu kehittäjille ja kirjoittajille.",
-              "h1": "Ilmainen {target}-muunnin verkossa",
-              "intro_text": "Merkkijonojen muotoilutyökalumme muuntaa tavallisen tekstin, lauseet tai koodimuuttujat välittömästi muotoon {target}. Liitä vain sisältösi, ja työkalu käsittelee välilyönnit ja isot kirjaimet automaattisesti.",
-              "intro_title": "Miksi käyttää {target}-generaattoriamme?",
-              "title": "Muunna teksti muotoon {target} verkossa | Ilmainen merkkijonogeneraattori"
+              "description": "Muunna tekstisi, merkkijonosi tai koodimuuttujasi helposti muotoon {targetTkp} verkossa. Ilmainen, nopea ja turvallinen tekstin muotoilutyökalu kehittäjille ja kirjoittajille.",
+              "h1": "Ilmainen {targetTkp}-muunnin verkossa",
+              "intro_text": "Merkkijonojen muotoilutyökalumme muuntaa tavallisen tekstin, lauseet tai koodimuuttujat välittömästi muotoon {targetTkp}. Liitä vain sisältösi, ja työkalu käsittelee välilyönnit ja isot kirjaimet automaattisesti.",
+              "intro_title": "Miksi käyttää {targetTkp}-generaattoriamme?",
+              "title": "Muunna teksti muotoon {targetTkp} verkossa | Ilmainen merkkijonogeneraattori"
             },
             "steps": {
-              "copy": "3. Kopioi {target}",
+              "copy": "3. Kopioi {targetTkp}",
               "copy_desc": "Muunnos on valmis. Voit nyt kopioida tuloksen suoraan leikepöydällesi.",
-              "paste": "1. Liitä {source} -teksti",
-              "paste_desc": "Liitä tai kirjoita {source}-sisältösi syötekenttään.",
+              "paste": "1. Liitä {sourceTkp} -teksti",
+              "paste_desc": "Liitä tai kirjoita {sourceTkp}-sisältösi syötekenttään.",
               "process": "2. Muunnosprosessi",
-              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {target}-muotoon parhailla mahdollisilla asetuksilla."
+              "process_desc": "Työkalumme muuntaa tekstisi automaattisesti {targetTkp}-muotoon parhailla mahdollisilla asetuksilla."
             }
           }
         },
         "input_text": "Syöteteksti",
         "placeholder_input": "Liitä tekstisi tähän...",
         "placeholder_output": "Tulos ilmestyy tähän...",
-        "result_title": "{target} -tulos"
+        "result_title": "{targetTkp} -tulos"
       }
     }
   },

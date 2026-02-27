@@ -224,9 +224,9 @@
             "faq": {
               "a1": "只需上传您的文件，等待转换完成，然后点击下载。它适用于 Windows、Mac、Linux 和移动设备。",
               "a2": "是的。我们使用 HTTPS 加密。您的文件会在 1 小时后自动从我们的服务器删除，以确保隐私。",
-              "a3": "当然。您可以免费将 {source} 文件转换为 {target}，无需创建帐户。",
-              "q1": "如何将 {source} 转换为 {target}？",
-              "q2": "在 Razomy 上转换 {source} 安全吗？",
+              "a3": "当然。您可以免费将 {sourceTkp} 文件转换为 {targetTkp}，无需创建帐户。",
+              "q1": "如何将 {sourceTkp} 转换为 {targetTkp}？",
+              "q2": "在 Razomy 上转换 {sourceTkp} 安全吗？",
               "q3": "此转换器免费吗？"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "高质量",
               "secure": "100% 安全"
             },
-            "hero_sub": "快速、免费且安全的在线工具，可将 {source} 转换为 {target}。无需注册或安装软件。",
+            "hero_sub": "快速、免费且安全的在线工具，可将 {sourceTkp} 转换为 {targetTkp}。无需注册或安装软件。",
             "seo": {
-              "description": "在线将 {source} 文件转换为 {target} 格式的最佳方式。简单易用、完全免费且安全的文件转换。",
-              "h1": "免费在线 {source} 转 {target} 转换器",
-              "intro_text": "我们的转换器允许您高精度地处理文件。我们在将您的 {source} 文档转换为 {target} 时，保留原始布局和质量。",
-              "intro_title": "为什么使用我们的 {source} 转 {target} 工具？",
-              "title": "在线将 {source} 转换为 {target} | 免费安全工具"
+              "description": "在线将 {sourceTkp} 文件转换为 {targetTkp} 格式的最佳方式。简单易用、完全免费且安全的文件转换。",
+              "h1": "免费在线 {sourceTkp} 转 {targetTkp} 转换器",
+              "intro_text": "我们的转换器允许您高精度地处理文件。我们在将您的 {sourceTkp} 文档转换为 {targetTkp} 时，保留原始布局和质量。",
+              "intro_title": "为什么使用我们的 {sourceTkp} 转 {targetTkp} 工具？",
+              "title": "在线将 {sourceTkp} 转换为 {targetTkp} | 免费安全工具"
             },
             "steps": {
-              "download": "3. 下载 {target}",
-              "download_desc": "稍等片刻待处理完成，然后即刻下载您的新 {target} 文件。",
+              "download": "3. 下载 {targetTkp}",
+              "download_desc": "稍等片刻待处理完成，然后即刻下载您的新 {targetTkp} 文件。",
               "quality": "2. 转换过程",
-              "quality_desc": "我们的工具会自动以最佳设置将您的文件转换为 {target} 格式。",
-              "upload": "1. 上传 {source} 文件",
-              "upload_desc": "将您的 {source} 文件拖拽至上传区域。最大文件大小为 100MB。"
+              "quality_desc": "我们的工具会自动以最佳设置将您的文件转换为 {targetTkp} 格式。",
+              "upload": "1. 上传 {sourceTkp} 文件",
+              "upload_desc": "将您的 {sourceTkp} 文件拖拽至上传区域。最大文件大小为 100MB。"
             }
           },
-          "subtitle": "为您的 {source} 文件选择目标格式",
-          "title": "转换 {source} 文件"
+          "subtitle": "为您的 {sourceTkp} 文件选择目标格式",
+          "title": "转换 {sourceTkp} 文件"
         },
         "error": "转换文件时出错：{fileName}",
         "faq_title": "常见问题解答",
@@ -277,8 +277,8 @@
         "github": "GitHub 源代码"
       },
       "input": {
-        "subtitle": "为您的 {source} 数据选择输出格式",
-        "title": "转换 {source} 数据"
+        "subtitle": "为您的 {sourceTkp} 数据选择输出格式",
+        "title": "转换 {sourceTkp} 数据"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "查找..."
       },
       "text_to_text": {
-        "convert_btn": "转换为 {target}",
+        "convert_btn": "转换为 {targetTkp}",
         "copied_success": "已复制到剪贴板！",
         "copy_to_clipboard": "复制到剪贴板",
         "directory": {
           "command": {
             "faq": {
-              "a1": "只需将您的字符串粘贴到我们的在线工具中，然后点击转换。它会自动应用 {target} 的大小写规则。然后，只需复制结果即可。",
+              "a1": "只需将您的字符串粘贴到我们的在线工具中，然后点击转换。它会自动应用 {targetTkp} 的大小写规则。然后，只需复制结果即可。",
               "a2": "绝对安全。我们重视隐私。您的文本经过安全处理，我们不会存储或保存您粘贴的任何内容或代码。",
               "a3": "是的，此文本转换工具 100% 免费使用，没有任何隐藏限制。",
-              "q1": "如何将文本转换为 {target}？",
+              "q1": "如何将文本转换为 {targetTkp}？",
               "q2": "我的文本和代码安全吗？",
               "q3": "这个字符串格式化程序是免费的吗？"
             },
-            "hero_sub": "免费且即时的在线工具，可将普通文本、字符串或变量转换为 {target}。",
+            "hero_sub": "免费且即时的在线工具，可将普通文本、字符串或变量转换为 {targetTkp}。",
             "seo": {
-              "description": "在线轻松将您的文本、字符串或代码变量转换为 {target}。一款专为开发人员和作家设计的免费、快速且安全的文本格式化工具。",
-              "h1": "免费在线 {target} 转换器",
-              "intro_text": "我们的字符串格式化工具可瞬间将您的普通文本、句子或代码变量转换为 {target}。只需粘贴您的内容，工具即可自动处理空格和大小写。",
-              "intro_title": "为什么要使用我们的 {target} 生成器？",
-              "title": "在线将文本转换为 {target} | 免费字符串生成器"
+              "description": "在线轻松将您的文本、字符串或代码变量转换为 {targetTkp}。一款专为开发人员和作家设计的免费、快速且安全的文本格式化工具。",
+              "h1": "免费在线 {targetTkp} 转换器",
+              "intro_text": "我们的字符串格式化工具可瞬间将您的普通文本、句子或代码变量转换为 {targetTkp}。只需粘贴您的内容，工具即可自动处理空格和大小写。",
+              "intro_title": "为什么要使用我们的 {targetTkp} 生成器？",
+              "title": "在线将文本转换为 {targetTkp} | 免费字符串生成器"
             },
             "steps": {
-              "copy": "3. 复制 {target}",
+              "copy": "3. 复制 {targetTkp}",
               "copy_desc": "转换完成。您现在可以直接将结果复制到剪贴板。",
-              "paste": "1. 粘贴 {source} 文本",
-              "paste_desc": "将您的 {source} 内容粘贴或输入到输入框中。",
+              "paste": "1. 粘贴 {sourceTkp} 文本",
+              "paste_desc": "将您的 {sourceTkp} 内容粘贴或输入到输入框中。",
               "process": "2. 转换过程",
-              "process_desc": "我们的工具会自动以最佳设置将您的文本转换为 {target} 格式。"
+              "process_desc": "我们的工具会自动以最佳设置将您的文本转换为 {targetTkp} 格式。"
             }
           }
         },
         "input_text": "输入文本",
         "placeholder_input": "在此粘贴您的文本...",
         "placeholder_output": "结果将显示在这里...",
-        "result_title": "{target} 结果"
+        "result_title": "{targetTkp} 结果"
       }
     }
   },

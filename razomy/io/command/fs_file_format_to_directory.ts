@@ -2,12 +2,14 @@ import {type IoCommandTemplate, templateToCommand} from './command';
 import type {FileFormat} from '@razomy/fs-file-format';
 import type {IoDirectory} from './directory';
 import type {HardwareResourceMinimal} from '../system/task';
+import {arrayToUrl} from '../../functions';
+import {lT} from '../../db/alies';
 
-function fileFormatOutputToCommandTemplate(directoryPath: string[], fileFormat: FileFormat, fileFormatOutput: string) {
+function fileFormatOutputToCommandTemplate(parentDirectoryPath: string[], fileFormat: FileFormat, fileFormatOutput: string) {
   return {
-    iconName: 'mdi-file',
-    directoryPath: directoryPath,
+    directoryPath: parentDirectoryPath,
     commandKey: fileFormatOutput,
+    metaIconName: 'mdi-file',
     environment: {
       strategy: 'client_server',
       client_server: {
@@ -25,7 +27,7 @@ function fileFormatOutputToCommandTemplate(directoryPath: string[], fileFormat: 
     spec: {
       description: '',
       examples: [],
-      name: '',
+      name: fileFormatOutput,
       performance: {
         memoryDataSizeComplexityFn: 'O(n^2)',
         timeDataSizeComplexityFn: 'O(n^2)',
@@ -49,16 +51,20 @@ function fsFileFormatToCommandTemplate(directoryPath: string[], fileFormat: File
   ));
 }
 
-export function fsFileFormatToDirectory(directoryPath: string[], fireFormat: FileFormat) {
-  return ({
-    key: fireFormat.fileExtensionType,
-    url: '/' + directoryPath.join('/'),
-    updateDatetime: '2026-02-22T23:22:59.211Z',
-    directoryPath: [...directoryPath, fireFormat.fileExtensionType],
-    iconName: 'mdi-file',
-    label: {fullText: fireFormat.fileExtensionType},
-    commands: fsFileFormatToCommandTemplate([...directoryPath, fireFormat.fileExtensionType], fireFormat)
+export function fsFileFormatToDirectory(parentDirectoryPath: string[], fireFormat: FileFormat) {
+  const directoryPath = [...parentDirectoryPath, fireFormat.fileExtensionType];
+  return {
+    id: directoryPath.join('.'),
+    directoryKey: fireFormat.fileExtensionType,
+    directoryPath,
+    meta: {
+      url: arrayToUrl(directoryPath),
+      updateDatetime: '2026-02-22T23:22:59.211Z',
+      iconName: 'mdi-file',
+      nameTk: lT(`${directoryPath.join('.children.')}`)
+    },
+    commands: fsFileFormatToCommandTemplate(directoryPath, fireFormat)
       .map(templateToCommand),
     directories: []
-  }) as IoDirectory
+  } as IoDirectory
 }

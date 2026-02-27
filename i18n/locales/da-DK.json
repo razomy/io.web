@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Upload blot din fil, vent på konverteringen og klik på download. Det fungerer på Windows, Mac, Linux og mobile enheder.",
               "a2": "Ja. Vi bruger HTTPS-kryptering. Dine filer slettes automatisk fra vores servere efter 1 time for at sikre privatlivets fred.",
-              "a3": "Absolut. Du kan konvertere {source}-filer til {target} gratis uden at oprette en konto.",
-              "q1": "Hvordan konverterer jeg {source} til {target}?",
-              "q2": "Er det sikkert at konvertere {source} på Razomy?",
+              "a3": "Absolut. Du kan konvertere {sourceTkp}-filer til {targetTkp} gratis uden at oprette en konto.",
+              "q1": "Hvordan konverterer jeg {sourceTkp} til {targetTkp}?",
+              "q2": "Er det sikkert at konvertere {sourceTkp} på Razomy?",
               "q3": "Er denne konverter gratis?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Høj kvalitet",
               "secure": "100% sikker"
             },
-            "hero_sub": "Hurtigt, gratis og sikkert onlineværktøj til at konvertere {source} til {target}. Ingen registrering eller softwareinstallation påkrævet.",
+            "hero_sub": "Hurtigt, gratis og sikkert onlineværktøj til at konvertere {sourceTkp} til {targetTkp}. Ingen registrering eller softwareinstallation påkrævet.",
             "seo": {
-              "description": "Den bedste måde at konvertere {source}-filer til {target}-format online. Nem at bruge, helt gratis og sikker filkonvertering.",
-              "h1": "Gratis online {source} til {target}-konverter",
-              "intro_text": "Vores konverter giver dig mulighed for at behandle filer med høj præcision. Vi bevarer det oprindelige layout og kvaliteten, mens vi omdanner dine {source}-dokumenter til {target}.",
-              "intro_title": "Hvorfor bruge vores værktøj til {source} til {target}?",
-              "title": "Konvertér {source} til {target} online | Gratis & sikkert værktøj"
+              "description": "Den bedste måde at konvertere {sourceTkp}-filer til {targetTkp}-format online. Nem at bruge, helt gratis og sikker filkonvertering.",
+              "h1": "Gratis online {sourceTkp} til {targetTkp}-konverter",
+              "intro_text": "Vores konverter giver dig mulighed for at behandle filer med høj præcision. Vi bevarer det oprindelige layout og kvaliteten, mens vi omdanner dine {sourceTkp}-dokumenter til {targetTkp}.",
+              "intro_title": "Hvorfor bruge vores værktøj til {sourceTkp} til {targetTkp}?",
+              "title": "Konvertér {sourceTkp} til {targetTkp} online | Gratis & sikkert værktøj"
             },
             "steps": {
-              "download": "3. Download {target}",
-              "download_desc": "Vent et øjeblik på, at processen afsluttes, og download derefter din nye {target}-fil med det samme.",
+              "download": "3. Download {targetTkp}",
+              "download_desc": "Vent et øjeblik på, at processen afsluttes, og download derefter din nye {targetTkp}-fil med det samme.",
               "quality": "2. Konverteringsproces",
-              "quality_desc": "Vores værktøj konverterer automatisk din fil til {target}-format med de bedst mulige indstillinger.",
-              "upload": "1. Upload {source}-fil",
-              "upload_desc": "Træk og slip din {source}-fil i uploadområdet. Den maksimale filstørrelse er 100 MB."
+              "quality_desc": "Vores værktøj konverterer automatisk din fil til {targetTkp}-format med de bedst mulige indstillinger.",
+              "upload": "1. Upload {sourceTkp}-fil",
+              "upload_desc": "Træk og slip din {sourceTkp}-fil i uploadområdet. Den maksimale filstørrelse er 100 MB."
             }
           },
-          "subtitle": "Vælg kommandoformat for dine {source}-filer",
-          "title": "Konvertér {source}-filer"
+          "subtitle": "Vælg kommandoformat for dine {sourceTkp}-filer",
+          "title": "Konvertér {sourceTkp}-filer"
         },
         "error": "Fejl ved konvertering af fil: {fileName}",
         "faq_title": "Ofte stillede spørgsmål",
@@ -277,8 +277,8 @@
         "github": "Kildekode Github"
       },
       "input": {
-        "subtitle": "Vælg outputformat for dine {source}-data",
-        "title": "Konverter {source}-data"
+        "subtitle": "Vælg outputformat for dine {sourceTkp}-data",
+        "title": "Konverter {sourceTkp}-data"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Find..."
       },
       "text_to_text": {
-        "convert_btn": "Konvertér til {target}",
+        "convert_btn": "Konvertér til {targetTkp}",
         "copied_success": "Kopieret til udklipsholder!",
         "copy_to_clipboard": "Kopiér til udklipsholder",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Indsæt blot din streng i vores online værktøj og klik på konverter. Det vil automatisk anvende reglerne for {target}-casing. Kopier derefter blot resultatet.",
+              "a1": "Indsæt blot din streng i vores online værktøj og klik på konverter. Det vil automatisk anvende reglerne for {targetTkp}-casing. Kopier derefter blot resultatet.",
               "a2": "Absolut. Vi går op i privatlivets fred. Din tekst behandles sikkert, og vi gemmer eller lagrer ikke noget af dit indsatte indhold eller kode.",
               "a3": "Ja, dette tekstkonverteringsværktøj er 100 % gratis at bruge uden skjulte begrænsninger.",
-              "q1": "Hvordan konverterer jeg tekst til {target}?",
+              "q1": "Hvordan konverterer jeg tekst til {targetTkp}?",
               "q2": "Er min tekst og kode sikker?",
               "q3": "Er denne strengformater gratis?"
             },
-            "hero_sub": "Gratis og øjeblikkeligt online værktøj til at konvertere normal tekst, strenge eller variabler til {target}.",
+            "hero_sub": "Gratis og øjeblikkeligt online værktøj til at konvertere normal tekst, strenge eller variabler til {targetTkp}.",
             "seo": {
-              "description": "Konverter nemt din tekst, strenge eller kodevariabler til {target} online. Et gratis, hurtigt og sikkert tekstformateringsværktøj til udviklere og skribenter.",
-              "h1": "Gratis online {target}-konverter",
-              "intro_text": "Vores strengformateringsværktøj omdanner øjeblikkeligt din normale tekst, sætninger eller kodevariabler til {target}. Indsæt blot dit indhold, så håndterer værktøjet automatisk mellemrum og store bogstaver.",
-              "intro_title": "Hvorfor bruge vores {target}-generator?",
-              "title": "Konverter tekst til {target} online | Gratis strenggenerator"
+              "description": "Konverter nemt din tekst, strenge eller kodevariabler til {targetTkp} online. Et gratis, hurtigt og sikkert tekstformateringsværktøj til udviklere og skribenter.",
+              "h1": "Gratis online {targetTkp}-konverter",
+              "intro_text": "Vores strengformateringsværktøj omdanner øjeblikkeligt din normale tekst, sætninger eller kodevariabler til {targetTkp}. Indsæt blot dit indhold, så håndterer værktøjet automatisk mellemrum og store bogstaver.",
+              "intro_title": "Hvorfor bruge vores {targetTkp}-generator?",
+              "title": "Konverter tekst til {targetTkp} online | Gratis strenggenerator"
             },
             "steps": {
-              "copy": "3. Kopiér {target}",
+              "copy": "3. Kopiér {targetTkp}",
               "copy_desc": "Konverteringen er færdig. Du kan nu kopiere resultatet direkte til din udklipsholder.",
-              "paste": "1. Indsæt {source}-tekst",
-              "paste_desc": "Indsæt eller skriv dit {source}-indhold i inputfeltet.",
+              "paste": "1. Indsæt {sourceTkp}-tekst",
+              "paste_desc": "Indsæt eller skriv dit {sourceTkp}-indhold i inputfeltet.",
               "process": "2. Konverteringsproces",
-              "process_desc": "Vores værktøj konverterer automatisk din tekst til {target}-format med de bedst mulige indstillinger."
+              "process_desc": "Vores værktøj konverterer automatisk din tekst til {targetTkp}-format med de bedst mulige indstillinger."
             }
           }
         },
         "input_text": "Input-tekst",
         "placeholder_input": "Indsæt din tekst her...",
         "placeholder_output": "Resultatet vises her...",
-        "result_title": "{target}-resultat"
+        "result_title": "{targetTkp}-resultat"
       }
     }
   },

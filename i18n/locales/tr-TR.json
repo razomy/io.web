@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Dosyanızı yükleyin, dönüştürmeyi bekleyin ve indire tıklayın. Windows, Mac, Linux ve mobil cihazlarda çalışır.",
               "a2": "Evet. HTTPS şifrelemesi kullanıyoruz. Dosyalarınız gizliliği sağlamak için 1 saat sonra sunucularımızdan otomatik olarak silinir.",
-              "a3": "Kesinlikle. {source} dosyalarını hesap oluşturmadan ücretsiz olarak {target} formatına dönüştürebilirsiniz.",
-              "q1": "{source} dosyasını {target} formatına nasıl dönüştürürüm?",
-              "q2": "Razomy üzerinde {source} dönüştürmek güvenli mi?",
+              "a3": "Kesinlikle. {sourceTkp} dosyalarını hesap oluşturmadan ücretsiz olarak {targetTkp} formatına dönüştürebilirsiniz.",
+              "q1": "{sourceTkp} dosyasını {targetTkp} formatına nasıl dönüştürürüm?",
+              "q2": "Razomy üzerinde {sourceTkp} dönüştürmek güvenli mi?",
               "q3": "Bu dönüştürücü ücretsiz mi?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Yüksek Kalite",
               "secure": "%100 Güvenli"
             },
-            "hero_sub": "{source} dosyasını {target} formatına dönüştürmek için hızlı, ücretsiz ve güvenli çevrimiçi araç. Kayıt veya yazılım kurulumu gerekmez.",
+            "hero_sub": "{sourceTkp} dosyasını {targetTkp} formatına dönüştürmek için hızlı, ücretsiz ve güvenli çevrimiçi araç. Kayıt veya yazılım kurulumu gerekmez.",
             "seo": {
-              "description": "{source} dosyalarını çevrimiçi olarak {target} formatına dönüştürmenin en iyi yolu. Kullanımı kolay, tamamen ücretsiz ve güvenli dosya dönüştürme.",
-              "h1": "Ücretsiz Çevrimiçi {source} - {target} Dönüştürücü",
-              "intro_text": "Dönüştürücümüz dosyaları yüksek hassasiyetle işlemenizi sağlar. {source} belgelerinizi {target} formatına dönüştürürken orijinal düzeni ve kaliteyi koruruz.",
-              "intro_title": "Neden {source} - {target} aracımızı kullanmalısınız?",
-              "title": "Çevrimiçi {source} - {target} Dönüştürücü | Ücretsiz & Güvenli Araç"
+              "description": "{sourceTkp} dosyalarını çevrimiçi olarak {targetTkp} formatına dönüştürmenin en iyi yolu. Kullanımı kolay, tamamen ücretsiz ve güvenli dosya dönüştürme.",
+              "h1": "Ücretsiz Çevrimiçi {sourceTkp} - {targetTkp} Dönüştürücü",
+              "intro_text": "Dönüştürücümüz dosyaları yüksek hassasiyetle işlemenizi sağlar. {sourceTkp} belgelerinizi {targetTkp} formatına dönüştürürken orijinal düzeni ve kaliteyi koruruz.",
+              "intro_title": "Neden {sourceTkp} - {targetTkp} aracımızı kullanmalısınız?",
+              "title": "Çevrimiçi {sourceTkp} - {targetTkp} Dönüştürücü | Ücretsiz & Güvenli Araç"
             },
             "steps": {
-              "download": "3. {target} dosyasını indirin",
-              "download_desc": "İşlemin bitmesi için bir süre bekleyin, ardından yeni {target} dosyanızı anında indirin.",
+              "download": "3. {targetTkp} dosyasını indirin",
+              "download_desc": "İşlemin bitmesi için bir süre bekleyin, ardından yeni {targetTkp} dosyanızı anında indirin.",
               "quality": "2. Dönüştürme İşlemi",
-              "quality_desc": "Aracımız dosyanızı otomatik olarak en iyi ayarlarla {target} formatına dönüştürür.",
-              "upload": "1. {source} dosyasını yükleyin",
-              "upload_desc": "{source} dosyanızı yükleme alanına sürükleyip bırakın. Maksimum dosya boyutu 100MB'dır."
+              "quality_desc": "Aracımız dosyanızı otomatik olarak en iyi ayarlarla {targetTkp} formatına dönüştürür.",
+              "upload": "1. {sourceTkp} dosyasını yükleyin",
+              "upload_desc": "{sourceTkp} dosyanızı yükleme alanına sürükleyip bırakın. Maksimum dosya boyutu 100MB'dır."
             }
           },
-          "subtitle": "{source} dosyalarınız için komut formatını seçin",
-          "title": "{source} dosyalarını dönüştür"
+          "subtitle": "{sourceTkp} dosyalarınız için komut formatını seçin",
+          "title": "{sourceTkp} dosyalarını dönüştür"
         },
         "error": "Dosya dönüştürme hatası: {fileName}",
         "faq_title": "Sıkça Sorulan Sorular",
@@ -277,8 +277,8 @@
         "github": "Github Kaynak Kodu"
       },
       "input": {
-        "subtitle": "{source} veriniz için çıktı formatını seçin",
-        "title": "{source} verisini dönüştür"
+        "subtitle": "{sourceTkp} veriniz için çıktı formatını seçin",
+        "title": "{sourceTkp} verisini dönüştür"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Bul..."
       },
       "text_to_text": {
-        "convert_btn": "{target} formatına dönüştür",
+        "convert_btn": "{targetTkp} formatına dönüştür",
         "copied_success": "Panoya kopyalandı!",
         "copy_to_clipboard": "Panoya kopyala",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Dizenizi çevrimiçi aracımıza yapıştırın ve dönüştür'e tıklayın. {target} harf kurallarını otomatik olarak uygulayacaktır. Ardından, sonucu kopyalamanız yeterlidir.",
+              "a1": "Dizenizi çevrimiçi aracımıza yapıştırın ve dönüştür'e tıklayın. {targetTkp} harf kurallarını otomatik olarak uygulayacaktır. Ardından, sonucu kopyalamanız yeterlidir.",
               "a2": "Kesinlikle. Gizliliğe önem veriyoruz. Metniniz güvenli bir şekilde işlenir ve yapıştırdığınız içeriğin veya kodun hiçbirini saklamayız veya kaydetmeyiz.",
               "a3": "Evet, bu metin dönüştürme aracının kullanımı %100 ücretsizdir ve gizli sınırlar yoktur.",
-              "q1": "Metni nasıl {target} formatına dönüştürürüm?",
+              "q1": "Metni nasıl {targetTkp} formatına dönüştürürüm?",
               "q2": "Metnim ve kodum güvende mi?",
               "q3": "Bu dize biçimlendirici ücretsiz mi?"
             },
-            "hero_sub": "Normal metinleri, dizeleri veya değişkenleri {target} formatına dönüştürmek için ücretsiz ve anında kullanılabilen çevrimiçi araç.",
+            "hero_sub": "Normal metinleri, dizeleri veya değişkenleri {targetTkp} formatına dönüştürmek için ücretsiz ve anında kullanılabilen çevrimiçi araç.",
             "seo": {
-              "description": "Metinlerinizi, dizelerinizi veya kod değişkenlerinizi kolayca çevrimiçi olarak {target} formatına dönüştürün. Geliştiriciler ve yazarlar için ücretsiz, hızlı ve güvenli bir metin biçimlendirme aracı.",
-              "h1": "Ücretsiz Çevrimiçi {target} Dönüştürücü",
-              "intro_text": "Dize biçimlendirme aracımız, normal metinlerinizi, cümlelerinizi veya kod değişkenlerinizi anında {target} biçimine dönüştürür. İçeriğinizi yapıştırmanız yeterlidir; araç boşlukları ve büyük/küçük harf kullanımını otomatik olarak halleder.",
-              "intro_title": "Neden {target} oluşturucumuzu kullanmalısınız?",
-              "title": "Çevrimiçi Metni {target} Formatına Dönüştür | Ücretsiz Dize Oluşturucu"
+              "description": "Metinlerinizi, dizelerinizi veya kod değişkenlerinizi kolayca çevrimiçi olarak {targetTkp} formatına dönüştürün. Geliştiriciler ve yazarlar için ücretsiz, hızlı ve güvenli bir metin biçimlendirme aracı.",
+              "h1": "Ücretsiz Çevrimiçi {targetTkp} Dönüştürücü",
+              "intro_text": "Dize biçimlendirme aracımız, normal metinlerinizi, cümlelerinizi veya kod değişkenlerinizi anında {targetTkp} biçimine dönüştürür. İçeriğinizi yapıştırmanız yeterlidir; araç boşlukları ve büyük/küçük harf kullanımını otomatik olarak halleder.",
+              "intro_title": "Neden {targetTkp} oluşturucumuzu kullanmalısınız?",
+              "title": "Çevrimiçi Metni {targetTkp} Formatına Dönüştür | Ücretsiz Dize Oluşturucu"
             },
             "steps": {
-              "copy": "3. {target} sonucunu kopyala",
+              "copy": "3. {targetTkp} sonucunu kopyala",
               "copy_desc": "Dönüştürme tamamlandı. Sonucu doğrudan panonuza kopyalayabilirsiniz.",
-              "paste": "1. {source} metnini yapıştırın",
-              "paste_desc": "{source} içeriğinizi girdi alanına yapıştırın veya yazın.",
+              "paste": "1. {sourceTkp} metnini yapıştırın",
+              "paste_desc": "{sourceTkp} içeriğinizi girdi alanına yapıştırın veya yazın.",
               "process": "2. Dönüştürme İşlemi",
-              "process_desc": "Aracımız metninizi otomatik olarak en iyi ayarlarla {target} formatına dönüştürür."
+              "process_desc": "Aracımız metninizi otomatik olarak en iyi ayarlarla {targetTkp} formatına dönüştürür."
             }
           }
         },
         "input_text": "Girdi Metni",
         "placeholder_input": "Metninizi buraya yapıştırın...",
         "placeholder_output": "Sonuç burada görünecek...",
-        "result_title": "{target} Sonucu"
+        "result_title": "{targetTkp} Sonucu"
       }
     }
   },

@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Upload eenvoudig uw bestand, wacht op de conversie en klik op downloaden. Het werkt op Windows, Mac, Linux en mobiele apparaten.",
               "a2": "Ja. We gebruiken HTTPS-versleuteling. Uw bestanden worden na 1 uur automatisch van onze servers verwijderd om uw privacy te waarborgen.",
-              "a3": "Absoluut. U kunt gratis {source}-bestanden naar {target} converteren zonder een account aan te maken.",
-              "q1": "Hoe converteer ik {source} naar {target}?",
-              "q2": "Is het veilig om {source} te converteren op Razomy?",
+              "a3": "Absoluut. U kunt gratis {sourceTkp}-bestanden naar {targetTkp} converteren zonder een account aan te maken.",
+              "q1": "Hoe converteer ik {sourceTkp} naar {targetTkp}?",
+              "q2": "Is het veilig om {sourceTkp} te converteren op Razomy?",
               "q3": "Is deze converter gratis?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Hoge kwaliteit",
               "secure": "100% Veilig"
             },
-            "hero_sub": "Snelle, gratis en veilige online tool om {source} naar {target} te converteren. Geen registratie of software-installatie vereist.",
+            "hero_sub": "Snelle, gratis en veilige online tool om {sourceTkp} naar {targetTkp} te converteren. Geen registratie of software-installatie vereist.",
             "seo": {
-              "description": "De beste manier om {source}-bestanden online naar {target}-formaat te converteren. Eenvoudig in gebruik, volledig gratis en veilige bestandsconversie.",
-              "h1": "Gratis online {source} naar {target} converter",
-              "intro_text": "Onze converter stelt u in staat bestanden met hoge precisie te verwerken. We behouden de originele lay-out en kwaliteit tijdens het omzetten van uw {source}-documenten naar {target}.",
-              "intro_title": "Waarom onze {source} naar {target} tool gebruiken?",
-              "title": "Converteer {source} naar {target} Online | Gratis & Veilig"
+              "description": "De beste manier om {sourceTkp}-bestanden online naar {targetTkp}-formaat te converteren. Eenvoudig in gebruik, volledig gratis en veilige bestandsconversie.",
+              "h1": "Gratis online {sourceTkp} naar {targetTkp} converter",
+              "intro_text": "Onze converter stelt u in staat bestanden met hoge precisie te verwerken. We behouden de originele lay-out en kwaliteit tijdens het omzetten van uw {sourceTkp}-documenten naar {targetTkp}.",
+              "intro_title": "Waarom onze {sourceTkp} naar {targetTkp} tool gebruiken?",
+              "title": "Converteer {sourceTkp} naar {targetTkp} Online | Gratis & Veilig"
             },
             "steps": {
-              "download": "3. Download {target}",
-              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {target}-bestand.",
+              "download": "3. Download {targetTkp}",
+              "download_desc": "Wacht even tot het proces is voltooid en download vervolgens direct uw nieuwe {targetTkp}-bestand.",
               "quality": "2. Conversieproces",
-              "quality_desc": "Onze tool converteert uw bestand automatisch naar {target}-formaat met de best mogelijke instellingen.",
-              "upload": "1. Upload {source}-bestand",
-              "upload_desc": "Sleep uw {source}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB."
+              "quality_desc": "Onze tool converteert uw bestand automatisch naar {targetTkp}-formaat met de best mogelijke instellingen.",
+              "upload": "1. Upload {sourceTkp}-bestand",
+              "upload_desc": "Sleep uw {sourceTkp}-bestand naar het uploadgebied. De maximale bestandsgrootte is 100MB."
             }
           },
-          "subtitle": "Selecteer opdrachtformaat voor uw {source}-bestanden",
-          "title": "Converteer {source}-bestanden"
+          "subtitle": "Selecteer opdrachtformaat voor uw {sourceTkp}-bestanden",
+          "title": "Converteer {sourceTkp}-bestanden"
         },
         "error": "Fout bij converteren van bestand: {fileName}",
         "faq_title": "Veelgestelde vragen",
@@ -277,8 +277,8 @@
         "github": "Broncode Github"
       },
       "input": {
-        "subtitle": "Selecteer uitvoerformaat voor uw {source}-data",
-        "title": "Converteer {source}-data"
+        "subtitle": "Selecteer uitvoerformaat voor uw {sourceTkp}-data",
+        "title": "Converteer {sourceTkp}-data"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Zoeken..."
       },
       "text_to_text": {
-        "convert_btn": "Converteren naar {target}",
+        "convert_btn": "Converteren naar {targetTkp}",
         "copied_success": "Gekopieerd naar klembord!",
         "copy_to_clipboard": "Kopiëren naar klembord",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Plak uw string in onze online tool en klik op converteren. De {target}-hoofdletterregels worden automatisch toegepast. Kopieer vervolgens het resultaat.",
+              "a1": "Plak uw string in onze online tool en klik op converteren. De {targetTkp}-hoofdletterregels worden automatisch toegepast. Kopieer vervolgens het resultaat.",
               "a2": "Absoluut. Wij geven om privacy. Uw tekst wordt veilig verwerkt en we bewaren of slaan geen van uw geplakte inhoud of code op.",
               "a3": "Ja, deze tekstconversietool is 100% gratis te gebruiken zonder verborgen limieten.",
-              "q1": "Hoe converteer ik tekst naar {target}?",
+              "q1": "Hoe converteer ik tekst naar {targetTkp}?",
               "q2": "Zijn mijn tekst en code veilig?",
               "q3": "Is deze string-formatter gratis?"
             },
-            "hero_sub": "Gratis en directe online tool om gewone tekst, strings of variabelen om te zetten naar {target}.",
+            "hero_sub": "Gratis en directe online tool om gewone tekst, strings of variabelen om te zetten naar {targetTkp}.",
             "seo": {
-              "description": "Converteer eenvoudig uw tekst, strings of codevariabelen online naar {target}. Een gratis, snelle en veilige tool voor tekstformattering voor ontwikkelaars en schrijvers.",
-              "h1": "Gratis Online {target} Converter",
-              "intro_text": "Onze string-formatting tool zet uw gewone tekst, zinnen of codevariabelen direct om in {target}. Plak eenvoudigweg uw inhoud en de tool verwerkt automatisch spaties en hoofdlettergebruik.",
-              "intro_title": "Waarom onze {target} generator gebruiken?",
-              "title": "Converteer Tekst naar {target} Online | Gratis String Generator"
+              "description": "Converteer eenvoudig uw tekst, strings of codevariabelen online naar {targetTkp}. Een gratis, snelle en veilige tool voor tekstformattering voor ontwikkelaars en schrijvers.",
+              "h1": "Gratis Online {targetTkp} Converter",
+              "intro_text": "Onze string-formatting tool zet uw gewone tekst, zinnen of codevariabelen direct om in {targetTkp}. Plak eenvoudigweg uw inhoud en de tool verwerkt automatisch spaties en hoofdlettergebruik.",
+              "intro_title": "Waarom onze {targetTkp} generator gebruiken?",
+              "title": "Converteer Tekst naar {targetTkp} Online | Gratis String Generator"
             },
             "steps": {
-              "copy": "3. Kopieer {target}",
+              "copy": "3. Kopieer {targetTkp}",
               "copy_desc": "De conversie is voltooid. U kunt het resultaat nu direct naar uw klembord kopiëren.",
-              "paste": "1. Plak {source} tekst",
-              "paste_desc": "Plak of typ uw {source}-inhoud in het invoerveld.",
+              "paste": "1. Plak {sourceTkp} tekst",
+              "paste_desc": "Plak of typ uw {sourceTkp}-inhoud in het invoerveld.",
               "process": "2. Conversieproces",
-              "process_desc": "Onze tool converteert uw tekst automatisch naar {target}-formaat met de best mogelijke instellingen."
+              "process_desc": "Onze tool converteert uw tekst automatisch naar {targetTkp}-formaat met de best mogelijke instellingen."
             }
           }
         },
         "input_text": "Invoertekst",
         "placeholder_input": "Plak uw tekst hier...",
         "placeholder_output": "Resultaat verschijnt hier...",
-        "result_title": "{target} Resultaat"
+        "result_title": "{targetTkp} Resultaat"
       }
     }
   },

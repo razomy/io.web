@@ -15,3 +15,22 @@ export class Debounce {
     this.debounceTimeout = setTimeout(cb, time); // 350ms delay
   }
 }
+
+export function arrayToUrl(items: string[], ...other: string[]) {
+  return '/' + [...items, ...other].join('/');
+}
+
+export interface SeoContent {
+  h1: string,
+  intro_title: string,
+  intro: string,
+  steps: {
+    title: string,
+    icon: string,
+    text: string
+  }[],
+  faq: {
+    q: string,
+    a: string
+  }[],
+}

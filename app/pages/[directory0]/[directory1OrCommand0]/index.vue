@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {isCommandExists, isDirectoryExists} from '~~/razomy/db';
-import IoFactory from '~/components/IoFactory.vue';
-import InputContent from '~/components/InputContent.vue'
+import IoFactory from '~/components/commands/IoFactory.vue';
+import DirectoryContent from '~/components/DirectoryContent.vue'
 
 definePageMeta({
   validate: async (route) => {
@@ -19,9 +19,9 @@ const directory1OrCommand0 = computed(() => String(route.params.directory1OrComm
 const isDirectory = computed(() => isDirectoryExists([directory0.value, directory1OrCommand0.value]));
 </script>
 <template>
-  <InputContent v-if="isDirectory" :directoryPath="[directory0, directory1OrCommand0]">
+  <DirectoryContent v-if="isDirectory" :directoryPath="[directory0, directory1OrCommand0]">
     <slot/>
-  </InputContent>
+  </DirectoryContent>
   <IoFactory v-else :directoryPath="[directory0]" :commandKey="directory1OrCommand0">
     <slot/>
   </IoFactory>

@@ -5,14 +5,14 @@
       <div class="bg-surface mt-4 rounded-xl pt-8 pb-8 px-4 text-center">
 
         <v-avatar size="80" variant="flat" class="mb-6">
-          <v-icon :icon="icon" color="accent" size="40"/>
+          <v-icon :icon="iconName" color="accent" size="40"/>
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('io.web.input.title', {source: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.title', {sourceTkp: directory1.toUpperCase()}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('io.web.input.subtitle', {source: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.subtitle', {sourceTkp: directory1.toUpperCase()}) }}
         </p>
       </div>
     </v-container>
@@ -26,8 +26,8 @@
 
         <v-row>
           <v-col
-              v-for="command in outputs"
-              :key="command.url"
+              v-for="command in currentCommands"
+              :key="command.id"
               cols="12"
               xs="2"
               lg="4"
@@ -67,8 +67,8 @@ const props = defineProps<{
 const directoryPath = props.directoryPath;
 const directory1 = directoryPath[1]!;
 
-const outputs = commands.filter(i => i.directoryPath.join('/') === directoryPath.join('/'));
-const icon = commands.find(i => i.directoryPath.join('/') === directoryPath.join('/'))!.iconName;
+const currentCommands = commands.filter(i => i.directoryPath.join('/') === directoryPath.join('/'));
+const iconName = commands.find(i => i.directoryPath.join('/') === directoryPath.join('/'))!.meta.iconName;
 </script>
 
 <style scoped>

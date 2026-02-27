@@ -6,12 +6,12 @@ export default defineSitemapEventHandler(async () => {
     ...directories.map(page => ({
       loc: page.directoryPath.join('/'),
       _i18nTransform: true,
-      lastmod: page.updateDatetime,
+      lastmod: page.meta.updateDatetime,
     })),
     ...commands.map(page => ({
-      loc: page.url,
+      loc: page.meta.url,
       _i18nTransform: true,
-      lastmod: page.updateDatetime,
+      lastmod: page.meta.updateDatetime,
     })),
   ]
 })

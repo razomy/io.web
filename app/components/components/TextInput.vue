@@ -25,7 +25,7 @@
           <div class="d-flex align-center">
             <v-icon color="accent" icon="mdi-code-braces" class="mr-2" />
             <span class="text-subtitle-1">
-              {{ t('io.web.text_to_text.result_title', { target: commandKey.toUpperCase() }) }}
+              {{ t('io.web.text_to_text.result_title', { targetTkp: targetTkp }) }}
             </span>
           </div>
           <v-btn
@@ -63,7 +63,7 @@
           @click="emit('convert')"
           class="px-8 rounded-pill"
       >
-        {{ t('io.web.text_to_text.convert_btn', { target: commandKey.toUpperCase() }) }}
+        {{ t('io.web.text_to_text.convert_btn', { targetTkp: targetTkp }) }}
       </v-btn>
     </div>
   </v-card>
@@ -81,13 +81,13 @@ const {t} = useI18n();
 
 const {
   loading,
-  commandKey,
+  targetTkp,
     ...props
 } = defineProps<{
   loading: boolean,
   modelValue: string,
   outputText: string,
-  commandKey: string,
+  targetTkp: string,
 }>();
 const emit = defineEmits(['update:modelValue', 'convert'])
 

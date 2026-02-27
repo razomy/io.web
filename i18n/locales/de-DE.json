@@ -224,9 +224,9 @@
             "faq": {
               "a1": "Laden Sie einfach Ihre Datei hoch, warten Sie auf die Konvertierung und klicken Sie auf Herunterladen. Es funktioniert unter Windows, Mac, Linux und auf mobilen Geräten.",
               "a2": "Ja. Wir verwenden HTTPS-Verschlüsselung. Ihre Dateien werden nach 1 Stunde automatisch von unseren Servern gelöscht, um Ihre Privatsphäre zu gewährleisten.",
-              "a3": "Absolut. Sie können {source}-Dateien kostenlos in {target} konvertieren, ohne ein Konto zu erstellen.",
-              "q1": "Wie konvertiere ich {source} in {target}?",
-              "q2": "Ist es sicher, {source} auf Razomy zu konvertieren?",
+              "a3": "Absolut. Sie können {sourceTkp}-Dateien kostenlos in {targetTkp} konvertieren, ohne ein Konto zu erstellen.",
+              "q1": "Wie konvertiere ich {sourceTkp} in {targetTkp}?",
+              "q2": "Ist es sicher, {sourceTkp} auf Razomy zu konvertieren?",
               "q3": "Ist dieser Konverter kostenlos?"
             },
             "features": {
@@ -235,25 +235,25 @@
               "quality": "Hohe Qualität",
               "secure": "100% Sicher"
             },
-            "hero_sub": "Schnelles, kostenloses und sicheres Online-Tool zur Konvertierung von {source} in {target}. Keine Registrierung oder Softwareinstallation erforderlich.",
+            "hero_sub": "Schnelles, kostenloses und sicheres Online-Tool zur Konvertierung von {sourceTkp} in {targetTkp}. Keine Registrierung oder Softwareinstallation erforderlich.",
             "seo": {
-              "description": "Der beste Weg, um {source}-Dateien online in das {target}-Format zu konvertieren. Einfach zu bedienen, völlig kostenlos und sichere Dateikonvertierung.",
-              "h1": "Kostenloser Online-{source}-in-{target}-Konverter",
-              "intro_text": "Unser Konverter ermöglicht es Ihnen, Dateien mit hoher Präzision zu verarbeiten. Wir bewahren das ursprüngliche Layout und die Qualität, während wir Ihre {source}-Dokumente in {target} umwandeln.",
-              "intro_title": "Warum unser Tool für {source} zu {target} nutzen?",
-              "title": "{source} in {target} online konvertieren | Kostenloses & sicheres Tool"
+              "description": "Der beste Weg, um {sourceTkp}-Dateien online in das {targetTkp}-Format zu konvertieren. Einfach zu bedienen, völlig kostenlos und sichere Dateikonvertierung.",
+              "h1": "Kostenloser Online-{sourceTkp}-in-{targetTkp}-Konverter",
+              "intro_text": "Unser Konverter ermöglicht es Ihnen, Dateien mit hoher Präzision zu verarbeiten. Wir bewahren das ursprüngliche Layout und die Qualität, während wir Ihre {sourceTkp}-Dokumente in {targetTkp} umwandeln.",
+              "intro_title": "Warum unser Tool für {sourceTkp} zu {targetTkp} nutzen?",
+              "title": "{sourceTkp} in {targetTkp} online konvertieren | Kostenloses & sicheres Tool"
             },
             "steps": {
-              "download": "3. {target} herunterladen",
-              "download_desc": "Warten Sie einen Moment, bis der Vorgang abgeschlossen ist, und laden Sie dann Ihre neue {target}-Datei sofort herunter.",
+              "download": "3. {targetTkp} herunterladen",
+              "download_desc": "Warten Sie einen Moment, bis der Vorgang abgeschlossen ist, und laden Sie dann Ihre neue {targetTkp}-Datei sofort herunter.",
               "quality": "2. Konvertierungsvorgang",
-              "quality_desc": "Unser Tool konvertiert Ihre Datei automatisch mit den bestmöglichen Einstellungen in das {target}-Format.",
-              "upload": "1. {source}-Datei hochladen",
-              "upload_desc": "Ziehen Sie Ihre {source}-Datei in den Upload-Bereich. Die maximale Dateigröße beträgt 100 MB."
+              "quality_desc": "Unser Tool konvertiert Ihre Datei automatisch mit den bestmöglichen Einstellungen in das {targetTkp}-Format.",
+              "upload": "1. {sourceTkp}-Datei hochladen",
+              "upload_desc": "Ziehen Sie Ihre {sourceTkp}-Datei in den Upload-Bereich. Die maximale Dateigröße beträgt 100 MB."
             }
           },
-          "subtitle": "Wählen Sie das Zielformat für Ihre {source}-Dateien",
-          "title": "{source}-Dateien konvertieren"
+          "subtitle": "Wählen Sie das Zielformat für Ihre {sourceTkp}-Dateien",
+          "title": "{sourceTkp}-Dateien konvertieren"
         },
         "error": "Fehler beim Konvertieren der Datei: {fileName}",
         "faq_title": "Häufig gestellte Fragen",
@@ -277,8 +277,8 @@
         "github": "Quellcode auf GitHub"
       },
       "input": {
-        "subtitle": "Wählen Sie das Ausgabeformat für Ihre {source}-Daten",
-        "title": "{source}-Daten umwandeln"
+        "subtitle": "Wählen Sie das Ausgabeformat für Ihre {sourceTkp}-Daten",
+        "title": "{sourceTkp}-Daten umwandeln"
       },
       "navbar": {
         "products": {
@@ -291,41 +291,41 @@
         "search": "Suchen..."
       },
       "text_to_text": {
-        "convert_btn": "In {target} konvertieren",
+        "convert_btn": "In {targetTkp} konvertieren",
         "copied_success": "In die Zwischenablage kopiert!",
         "copy_to_clipboard": "In die Zwischenablage kopieren",
         "directory": {
           "command": {
             "faq": {
-              "a1": "Fügen Sie Ihren String einfach in unser Online-Tool ein und klicken Sie auf Umwandeln. Es wendet automatisch die {target}-Regeln für Groß-/Kleinschreibung an. Kopieren Sie danach einfach das Ergebnis.",
+              "a1": "Fügen Sie Ihren String einfach in unser Online-Tool ein und klicken Sie auf Umwandeln. Es wendet automatisch die {targetTkp}-Regeln für Groß-/Kleinschreibung an. Kopieren Sie danach einfach das Ergebnis.",
               "a2": "Absolut. Wir achten auf Privatsphäre. Ihr Text wird sicher verarbeitet und wir speichern oder sichern keine Ihrer eingefügten Inhalte oder Codes.",
               "a3": "Ja, dieses Textumwandlungstool ist zu 100 % kostenlos und ohne versteckte Einschränkungen nutzbar.",
-              "q1": "Wie wandle ich Text in {target} um?",
+              "q1": "Wie wandle ich Text in {targetTkp} um?",
               "q2": "Sind mein Text und Code sicher?",
               "q3": "Ist dieser String-Formatierer kostenlos?"
             },
-            "hero_sub": "Kostenloses und sofortiges Online-Tool zum Umwandeln von normalem Text, Strings oder Variablen in {target}.",
+            "hero_sub": "Kostenloses und sofortiges Online-Tool zum Umwandeln von normalem Text, Strings oder Variablen in {targetTkp}.",
             "seo": {
-              "description": "Wandeln Sie Text, Strings oder Code-Variablen einfach online in {target} um. Ein kostenloses, schnelles und sicheres Textformatierungstool für Entwickler und Autoren.",
-              "h1": "Kostenloser Online-{target}-Konverter",
-              "intro_text": "Unser String-Formatierungstool wandelt Ihren normalen Text, Sätze oder Code-Variablen sofort in {target} um. Fügen Sie einfach Ihren Inhalt ein und das Tool kümmert sich automatisch um Leerzeichen und Großschreibung.",
-              "intro_title": "Warum unseren {target}-Generator nutzen?",
-              "title": "Text in {target} online umwandeln | Kostenloser String-Generator"
+              "description": "Wandeln Sie Text, Strings oder Code-Variablen einfach online in {targetTkp} um. Ein kostenloses, schnelles und sicheres Textformatierungstool für Entwickler und Autoren.",
+              "h1": "Kostenloser Online-{targetTkp}-Konverter",
+              "intro_text": "Unser String-Formatierungstool wandelt Ihren normalen Text, Sätze oder Code-Variablen sofort in {targetTkp} um. Fügen Sie einfach Ihren Inhalt ein und das Tool kümmert sich automatisch um Leerzeichen und Großschreibung.",
+              "intro_title": "Warum unseren {targetTkp}-Generator nutzen?",
+              "title": "Text in {targetTkp} online umwandeln | Kostenloser String-Generator"
             },
             "steps": {
-              "copy": "3. {target} kopieren",
+              "copy": "3. {targetTkp} kopieren",
               "copy_desc": "Die Konvertierung ist abgeschlossen. Sie können das Ergebnis nun direkt in Ihre Zwischenablage kopieren.",
-              "paste": "1. {source}-Text einfügen",
-              "paste_desc": "Fügen Sie Ihren {source}-Inhalt in das Eingabefeld ein oder tippen Sie ihn ein.",
+              "paste": "1. {sourceTkp}-Text einfügen",
+              "paste_desc": "Fügen Sie Ihren {sourceTkp}-Inhalt in das Eingabefeld ein oder tippen Sie ihn ein.",
               "process": "2. Konvertierungsvorgang",
-              "process_desc": "Unser Tool konvertiert Ihren Text automatisch mit den bestmöglichen Einstellungen in das {target}-Format."
+              "process_desc": "Unser Tool konvertiert Ihren Text automatisch mit den bestmöglichen Einstellungen in das {targetTkp}-Format."
             }
           }
         },
         "input_text": "Eingabetext",
         "placeholder_input": "Fügen Sie Ihren Text hier ein...",
         "placeholder_output": "Ergebnis erscheint hier...",
-        "result_title": "{target} Ergebnis"
+        "result_title": "{targetTkp} Ergebnis"
       }
     }
   },

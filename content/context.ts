@@ -1,8 +1,6 @@
 import {i18n} from './translates';
 import {directoriesTree, directoryToNavigationNode} from '../razomy/db';
 import type {NavigationNode, RzmNuxtConfig} from '@razomy/nuxt/runtime/functions';
-
-// import type {Category} from '@razomy/nuxt/runtime/functions';
 import {lT} from '../razomy/db/alies';
 
 const subdomainName = 'io' as const;
@@ -15,8 +13,7 @@ const cookie = {
 const externalNavigationRoot = {
   id: 'io.razomy.org',
   meta: {
-    key: 'io',
-    labelText: 'io.web.navbar.products.io',
+    nameTk: 'io.web.navbar.products.io',
     iconName: 'https://io.razomy.org/favicon.svg',
     url: 'https://io.razomy.org'
   },
@@ -25,8 +22,7 @@ const externalNavigationRoot = {
       id: 'io.razomy.org',
       children: [],
       meta: {
-        key: 'io',
-        labelText: 'io.web.navbar.products.io',
+        nameTk: 'io.web.navbar.products.io',
         iconName: 'https://io.razomy.org/favicon.svg',
         url: 'https://io.razomy.org'
       },
@@ -62,10 +58,9 @@ export const c = {
   headerNavigationNodes: [],
   footerNavigationNodes: [{
     meta: {
-      labelText: 'io.web.footer.github',
+      nameTk: 'io.web.footer.github',
       url: 'https://github.com/razomy/io.web',
       iconName: 'mdi-github',
-      key: 'github.com/razomy/io.web'
     },
     children: [],
     id: 'github.com/razomy/io.web'
@@ -73,10 +68,9 @@ export const c = {
   externalNavigationRoot: externalNavigationRoot,
   navigationRoot: {
     meta: {
-      key: 'root',
       iconName: 'mdi-home',
       url: '/',
-      labelText: lT('home').fullText,
+      nameTk: lT('home'),
     },
     id: 'root',
     children: directoriesTree.map(directoryToNavigationNode),
