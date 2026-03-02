@@ -185,7 +185,7 @@
         "title": "Texto",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "Maiúsculas",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

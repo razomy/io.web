@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import SeoSection from '~/components/components/SeoSection.vue';
+import SeoSection from '~/components/SeoSection.vue';
 import {sendFile} from '~/functions/sendFile';
 import type {SeoContent} from '~~/razomy/functions';
 import {getCommandById, getDirectoryBy} from '~~/razomy/db';
@@ -57,8 +57,8 @@ const props = defineProps<{
 
 const command = computed(() => getCommandById(props.commandId));
 const directory = computed(() => command.value && getDirectoryBy(command.value.directoryPath));
-const sourceTkp = computed(() => command.value &&  t(command.value.meta.nameTk))!;
-const targetTkp = computed(() => directory.value &&  t(directory.value.meta.nameTk))!;
+const sourceTkp = computed(() => directory.value &&  t(directory.value.meta.nameTk))!;
+const targetTkp = computed(() => command.value &&  t(command.value.meta.nameTk))!;
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {

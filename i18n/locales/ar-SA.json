@@ -185,7 +185,7 @@
         "title": "نص",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "حالة الأحرف",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

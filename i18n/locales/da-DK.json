@@ -185,7 +185,7 @@
         "title": "Tekst",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "Store",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

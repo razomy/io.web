@@ -6,7 +6,7 @@
   <!-- Docs View based on JSON -->
   <v-card
       v-if="command && command.spec"
-      class="rounded-xl mb-4 pa-5"
+      class="content-1 mb-4 pa-5"
       border="0"
       elevation="0"
       color="surface"
@@ -50,7 +50,7 @@
   </v-card>
 
   <!-- Code Blocks Area -->
-  <v-card class="rounded-xl" border="0" elevation="0">
+  <v-card class="content-1" border="0" elevation="0">
     <!-- Header with Tabs -->
     <v-toolbar color="surface" height="48">
       <v-tabs
@@ -108,19 +108,21 @@
             </v-icon>
           </v-btn>
 
+          <pre><code class="hljs rounded-xl pa-4" v-html="highlightCode(tab.codeRun, tab.language)"></code></pre>
+
           <div class="">
-            <v-chip class="mr-2 my-2"
+            <v-chip class="mr-2 my-2" variant="plain"
                     :href="`https://www.npmjs.com/package/@razomy/${tab.directoryPath.join('-')}`">
               Npm
+              <v-icon icon="mdi-open-in-new" size="16"></v-icon>
             </v-chip>
-            <v-chip class="mr-2 my-2"
+            <v-chip class="mr-2 my-2" variant="plain"
                     :href="`https://github.com/razomy/js/tree/main/razomy/${tab.directoryPath.join('-')}`">
               GitHub
+              <v-icon icon="mdi-open-in-new" size="16"></v-icon>
             </v-chip>
             <!--          <v-chip :href="`https://io.razomy.org/${tab.directoryPath.join('/')}`">Io</v-chip>-->
           </div>
-
-          <pre><code class="hljs rounded-xl pa-4" v-html="highlightCode(tab.codeRun, tab.language)"></code></pre>
         </div>
       </v-window-item>
     </v-window>

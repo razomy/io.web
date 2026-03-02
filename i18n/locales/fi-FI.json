@@ -185,7 +185,7 @@
         "title": "Teksti",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "Kirjainkoko",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

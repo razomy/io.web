@@ -185,7 +185,7 @@
         "title": "Text",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "Skiftläge",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

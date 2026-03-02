@@ -41,7 +41,7 @@
             <v-icon icon="mdi-chevron-right" size="40"/>
           </div>
 
-          <v-card border="0" class="h-100 py-8 px-6 text-center rounded-xl" elevation="0" color="surface">
+          <v-card border="0" class="h-100 py-8 px-6 text-center content-1" elevation="0" color="surface">
             <v-avatar color="accent" variant="tonal" size="64" class="mb-4">
               <v-icon :icon="step.icon" size="32"/>
             </v-avatar>
@@ -64,7 +64,7 @@
           <h2 class="text-h5 font-weight-bold">{{ t('io.web.file_to_file.faq_title') }}</h2>
         </div>
 
-        <v-expansion-panels variant="accordion" class="rounded-xl overflow-hidden">
+        <v-expansion-panels variant="accordion" class="content-1 overflow-hidden">
           <v-expansion-panel
               v-for="(item, i) in content.faq"
               :key="i"
@@ -86,7 +86,7 @@
           <h3 class="text-h5 font-weight-bold">{{ t('io.web.file_to_file.specs_title') }}</h3>
         </div>
 
-        <div class="bg-surface rounded-xl">
+        <div class="content-1">
           <v-table density="comfortable" class="px-2 w-full">
             <tbody>
             <tr>

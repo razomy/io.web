@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {isCommandExists} from '~~/razomy/db';
+import IoFactory from '~/components/IoFactory.vue';
 
 definePageMeta({
   validate: async (route) => {

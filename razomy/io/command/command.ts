@@ -1,7 +1,7 @@
 import {type IoEnvironment} from '../environment';
 import type {IoDirectoryPath} from './directory';
 import type {TaskRequirement} from '../system/task';
-import type {NavigationNode} from '../../../../../code/js.chunk/razomy/nuxt/src/runtime/functions';
+import type {NavigationNode} from '@razomy/nuxt/runtime/functions';
 import {arrayToUrl} from '../../functions';
 import {kebabCase} from '@razomy/string-case';
 

@@ -6,8 +6,8 @@
                :targetTkp="targetTkp!">
       {{
         t('io.web.text_to_text.directory.command.hero_sub', {
-          sourceTkp: directoryLast.toUpperCase(),
-          targetTkp: commandKey.toUpperCase()
+          sourceTkp: sourceTkp,
+          targetTkp: targetTkp
         })
       }}
     </SeoHeader>
@@ -51,10 +51,10 @@
 
 <script setup lang="ts">
 import {computed, ref} from 'vue';
-import SeoSection from '~/components/components/SeoSection.vue';
+import SeoSection from '~/components/SeoSection.vue';
 // Заменили sendFile на функцию для отправки текста, предполагается, что она принимает (text, functionName, url)
 import {processText} from '~/functions/processText';
-import CodeBlock from '~/components/components/CodeBlock.vue';
+import CodeBlock from '~/components/CodeBlock.vue';
 import {Debounce, type SeoContent} from '~~/razomy/functions';
 import {commands, getCommandById, getDirectoryBy} from '~~/razomy/db';
 
@@ -65,17 +65,17 @@ const props = defineProps<{
 
 const command = computed(() => getCommandById(props.commandId));
 const directory = computed(() => command.value && getDirectoryBy(command.value.directoryPath));
-const sourceTkp = computed(() => command.value &&  t(command.value.meta.nameTk));
-const targetTkp = computed(() => directory.value &&  t(directory.value.meta.nameTk));
+const sourceTkp = computed(() => directory.value && t(directory.value.meta.nameTk));
+const targetTkp = computed(() => command.value && t(command.value.meta.nameTk));
 
 const directoryPath = computed(() => directory.value!.directoryPath);
 const directoryLast = computed(() => directoryPath.value!.at(-1)!);
-const commandKey =computed(() => command.value!.commandKey); // Название применяемой функции
+const commandKey = computed(() => command.value!.commandKey); // Название применяемой функции
 
 // --- SEO LOGIC ---
 const generateSeoContent = () => {
-  const in_ = directoryLast.value.toUpperCase();
-  const out = commandKey.value.toUpperCase();
+  const in_ = sourceTkp.value;
+  const out = targetTkp.value;
 
   return {
     h1: t('io.web.text_to_text.directory.command.seo.h1', {sourceTkp: in_, targetTkp: out}),

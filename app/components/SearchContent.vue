@@ -3,7 +3,7 @@
 
     <!-- Hero Section with Search -->
     <v-container>
-      <div class="hero-bg bg-surface mt-4 rounded-xl pt-8 pb-8 px-4 text-center">
+      <div class="content-1 mt-4 pt-8 pb-8 px-4 text-center">
         <h1 class="text-h2 font-weight-black mb-4">
           {{ t('io.web.file_to_file.title') }}
         </h1>
@@ -39,16 +39,16 @@
       <v-row>
         <v-col
             v-for="directory in currentDirectories"
-            :key="directory.id"
+            :key="'SearchContent.'+directory.id"
             cols="12"
             xs="12"
             sm="12"
             md="4"
         >
-          <v-card class="rounded-xl"
+          <v-card class="content-1"
                   :href="localePath(directory.meta.url)"
                   hover
-                  border="0">
+                  border="1">
             <v-card-item>
               <template v-slot:prepend>
                 <v-avatar size="48" variant="flat">
@@ -68,7 +68,7 @@
                       :key="idx"
                       :to="localePath('/'+directory.directoryPath.slice(0, idx+1).join('/'))"
                       color="primary"
-                      variant="outlined"
+                      variant="text"
                       size="small"
                       label
                       class="font-weight-bold mr-2 text-uppercase cursor-pointer"
@@ -137,11 +137,6 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.hero-bg {
-  background: rgb(var(--v-theme-primary));
-  padding-bottom: 100px;
-}
-
 .search-input :deep(.v-field__input) {
   padding-top: 15px;
   padding-bottom: 15px;

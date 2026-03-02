@@ -185,7 +185,7 @@
         "title": "Tekst",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "Hoofdlettergebruik",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

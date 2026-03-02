@@ -185,7 +185,7 @@
         "title": "ข้อความ",
         "children": {
           "case": {
-            "title": "Case",
+            "title": "ตัวพิมพ์",
             "children": {
               "camelCase": {
                 "title": "CamelCase"

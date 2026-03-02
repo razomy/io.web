@@ -2,17 +2,17 @@
   <div class="min-vh-100">
     <!-- Hero Header -->
     <v-container>
-      <div class="bg-surface mt-4 rounded-xl pt-8 pb-8 px-4 text-center">
+      <div class="content-1 mt-4 pt-8 pb-8 px-4 text-center">
 
         <v-avatar size="80" variant="flat" class="mb-6">
           <v-icon :icon="iconName" color="accent" size="40"/>
         </v-avatar>
 
         <h1 class="text-h3 font-weight-black mb-2">
-          {{ t('io.web.input.title', {sourceTkp: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.title', {sourceTkp: directory1}) }}
         </h1>
         <p class="text-white-70 text-h6 font-weight-regular">
-          {{ t('io.web.input.subtitle', {sourceTkp: directory1.toUpperCase()}) }}
+          {{ t('io.web.input.subtitle', {sourceTkp: directory1}) }}
         </p>
       </div>
     </v-container>
@@ -40,9 +40,9 @@
             >
               <v-icon icon="mdi-file-swap-outline" color="accent" start/>
               <span class="font-weight-bold text-body-1 text-high-emphasis">
-                  {{ directory1.toUpperCase() }}
+                  {{ directory1 }}
                   <span class="text-medium-emphasis mx-1">to</span>
-                  {{ command.commandKey.toUpperCase() }}
+                  {{ command.commandKey }}
                 </span>
               <v-spacer/>
               <v-icon icon="mdi-chevron-right" color="grey"/>

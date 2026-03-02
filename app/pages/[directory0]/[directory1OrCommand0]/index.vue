@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {isCommandExists, isDirectoryExists} from '~~/razomy/db';
-import IoFactory from '~/components/commands/IoFactory.vue';
+import IoFactory from '~/components/IoFactory.vue';
 import DirectoryContent from '~/components/DirectoryContent.vue'
 
 definePageMeta({

@@ -6,6 +6,24 @@
     --shadow-soft-lg: 0 16px 40px -12px rgba(0, 0, 0, 0.12);
 }
 
+.content-0 {
+    /*border-width: 1px !important;*/
+    /*border-style: solid !important;*/
+    /*border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;*/
+    /*border-radius: 24px !important;*/
+    background-color: rgb(var(--v-theme-background)) !important;
+    /*color: rgb(var(--v-theme-on-surface)) !important;*/
+}
+
+.content-1 {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    border-radius: 24px !important;
+    background-color: rgb(var(--v-theme-surface)) !important;
+    color: rgb(var(--v-theme-on-surface)) !important;
+}
+
 /* 1. Класс для Всплывающих Меню (VMenu) */
 .global-soft-menu {
     /* Тень широкая и прозрачная */
