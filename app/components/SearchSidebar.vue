@@ -53,7 +53,7 @@
           :key="directory0.id"
       >
         <!-- Level 1: Group Title -->
-        <div class="my-1 text-caption font-weight-bold text-uppercase text-darken-1">
+        <div class="my-1 text-body-medium text-medium-emphasis">
           {{ t(directory0.meta.nameTk) }}
         </div>
 
@@ -69,7 +69,7 @@
         >
           <template v-slot:title>
             <v-icon v-if="activeSearchQuery" icon="mdi-swap-horizontal" size="small" class="mr-2"/>
-            {{ t(command0.meta.nameTk) }}
+            <span class="text-body-medium">{{ t(command0.meta.nameTk) }}</span>
           </template>
         </v-list-item>
 
@@ -93,7 +93,7 @@
               <template v-slot:title>
                 <v-btn density="compact" class="pl-0 text-left w-100" variant="plain" spaced="end"
                        :to="localePath(directory1.meta.url)">
-                  {{ t(directory1.meta.nameTk) }}
+                  <span class="text-body-medium">{{ t(directory1.meta.nameTk) }}</span>
                 </v-btn>
               </template>
             </v-list-item>

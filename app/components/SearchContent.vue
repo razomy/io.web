@@ -3,7 +3,7 @@
 
     <!-- Hero Section with Search -->
     <v-container>
-      <div class="content-1 mt-4 pt-8 pb-8 px-4 text-center">
+      <div class="content-1 mt-10 pt-8 pb-8 px-4 text-center">
         <h1 class="text-h2 font-weight-black mb-4">
           {{ t('io.web.file_to_file.title') }}
         </h1>
@@ -27,7 +27,7 @@
     </v-container>
 
     <!-- Список карточек -->
-    <v-container class="mt-8 position-relative z-index-1">
+    <v-container class="position-relative z-index-1">
 
       <!-- Если ничего не найдено -->
       <div v-if="currentDirectories.length === 0" class="text-center py-10">
@@ -46,8 +46,7 @@
             md="4"
         >
           <v-card class="content-1"
-                  :href="localePath(directory.meta.url)"
-                  hover
+                  height="250"
                   border="1">
             <v-card-item>
               <template v-slot:prepend>
@@ -58,7 +57,7 @@
               <v-card-subtitle>
                 {{ t('io.web.file_to_file.convert_from') }}:
               </v-card-subtitle>
-              <v-card-title class="font-weight-bold text-uppercase">
+              <v-card-title class="">
                 <template
                     v-for="idx in Array.from({ length: directory.directoryPath.length }, (_, i) => i)"
                     :key="idx"
@@ -69,9 +68,9 @@
                       :to="localePath('/'+directory.directoryPath.slice(0, idx+1).join('/'))"
                       color="primary"
                       variant="text"
-                      size="small"
+                      density="compact"
                       label
-                      class="font-weight-bold mr-2 text-uppercase cursor-pointer"
+                      class="mr-2"
                   >
                     {{ directory.directoryPath[idx] }}
                   </v-chip>
@@ -83,20 +82,20 @@
             <v-divider class="my-0 mx-2"/>
 
             <v-card-text>
-              <p class="text-caption text-medium-emphasis mb-2 font-weight-bold text-uppercase">
+              <p class="mb-2 text-medium-emphasis">
                 {{ t('io.web.file_to_file.convert_to') }}:
               </p>
 
-              <div class="d-flex flex-wrap gap-2">
+              <div style="max-height: 100px;" class="d-flex flex-wrap gap-2 overflow-y-auto">
                 <v-chip
                     v-for="command in directory.commands"
                     :key="command.id"
                     :to="localePath(command.meta.url)"
                     color="primary"
                     variant="text"
-                    size="small"
+                    density="compact"
                     label
-                    class="font-weight-bold text-uppercase cursor-pointer px-3"
+                    class=""
                 >
                   {{ t(command.meta.nameTk) }}
                   <!--                  <v-icon end icon="mdi-arrow-right" size="14"/>-->
