@@ -1,5 +1,5 @@
-import {directories} from '~~/razomy/db/directories';
-import {commands} from '~~/razomy/db';
+import {directories} from '~~/razomy/_db/directories';
+import {commands} from '~~/razomy/_db';
 
 export default defineSitemapEventHandler(async () => {
   return [

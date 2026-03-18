@@ -47,7 +47,8 @@
 import SeoSection from '~/components/SeoSection.vue';
 import {sendFile} from '~/functions/sendFile';
 import type {SeoContent} from '~~/razomy/functions';
-import {getCommandById, getDirectoryBy} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const {getCommandById, getDirectoryBy} = useCommandTreeStore();
 
 const {t} = useI18n();
 const props = defineProps<{
@@ -141,7 +142,7 @@ const startConversion = async () => {
       const result = await sendFile(props.commandId, [file]);
 
       // Логика скачивания одного файла
-      const blob = result as Blob;
+      const blob = result;
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;

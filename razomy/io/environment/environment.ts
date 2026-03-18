@@ -16,16 +16,10 @@ export interface IoEnvironmentOther {
 
 export interface IoEnvironmentBrowser extends IEnv {
   strategy: 'browser';
-  browser: {
-    execute: (...arguments_: any[]) => Promise<any>
-  };
 }
 
 export interface IoEnvironmentClientServer extends IEnv {
   strategy: 'client_server';
-  client_server: {
-    execute: (...arguments_: any[]) => Promise<any>
-  };
 }
 
 

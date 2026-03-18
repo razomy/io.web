@@ -1,7 +1,8 @@
-import {i18n} from './translates';
-import {directoriesTree, directoryToNavigationNode} from '../razomy/db';
-import type {NavigationNode, RzmNuxtConfig} from '@razomy/nuxt/runtime/functions';
-import {lT} from '../razomy/db/alies';
+import {i18n} from '../i18n/translates';
+import {directoriesTree, directoryToNavigationNode} from '../razomy/_db';
+import type {NavigationNode, RzmNuxtRuntimeConfig, RzmNuxtStaticConfig} from '@razomy/nuxt/runtime/functions';
+
+const lT = (n: string) => (`io.db.${n}.title`)
 
 const subdomainName = 'io' as const;
 const domain = `${subdomainName}.razomy.org` as const;
@@ -78,4 +79,5 @@ export const c = {
   url,
   cookie,
   i18n,
-} as const satisfies RzmNuxtConfig;
+} as const satisfies RzmNuxtRuntimeConfig & RzmNuxtStaticConfig;
+

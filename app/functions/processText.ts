@@ -1,14 +1,14 @@
-import {commands} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+import {useExecuteStore} from "~/composables/useExecuteStore";
 
 export const processText = async (
   directoryPath: string[],
   commandKey: string,
   arguments_: any[]
 ) => {
-  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
-  if (command.environment.strategy === 'browser') {
-    return await command.environment.browser.execute(...arguments_);
-  }
+  const {commands} = useCommandTreeStore();
+  const {executeCommand} = useExecuteStore();
 
-  throw new Error('unknown sendFile arugments')
+  const command = commands.find(c => c.directoryPath.join('/') === directoryPath.join('/') && c.commandKey === commandKey)!;
+  return executeCommand(command, arguments_) as Promise<string>;
 }

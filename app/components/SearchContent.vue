@@ -111,7 +111,8 @@
 </template>
 
 <script setup lang="ts">
-import {getDirectoryByFilter} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const { getDirectoryByFilter} = useCommandTreeStore();
 
 const {
   defaultSearch,

@@ -5,10 +5,6 @@ import specifications from '@razomy/string-case/specifications.json';
 
 const dpPackage = packageJson.name.replace('@razomy/', '').split('-');
 
-const registry = {
-  [packageJson.name]: () => import('@razomy/string-case')
-}
-
 export const stringCommands = specifications
   .map(s => {
     return {
@@ -16,8 +12,8 @@ export const stringCommands = specifications
       ...cA,
       ...hRA,
       directoryPath: dpPackage,
-      environment: eB(registry, packageJson.name, s.name),
-      spec: s,
+      environment: eB(),
+      spec: {...s, ...{packageName: packageJson.name}},
     } as IoCommandTemplate;
   }) satisfies IoCommandTemplate[];
 
@@ -39,11 +35,11 @@ export const stringDirectory = {
   id: 'string',
   directoryKey: 'string',
   directoryPath: [s],
-  meta:{
-  iconName: 'mdi-text',
-  updateDatetime: '2026-02-22T23:22:59.211Z',
-  nameTk: lT('string'),
-  url: '/string'
+  meta: {
+    iconName: 'mdi-text',
+    updateDatetime: '2026-02-22T23:22:59.211Z',
+    nameTk: lT('string'),
+    url: '/string'
   },
   commands: [],
   directories: [stringCaseDirectory],

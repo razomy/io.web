@@ -46,7 +46,7 @@ export interface IoCommandTemplate extends TaskRequirement {
   metaIconName: string;
   directoryPath: IoDirectoryPath;
   environment: IoEnvironment;
-  spec: FunctionSpecification & { name: IoCommandKey };
+  spec: FunctionSpecification & { name: IoCommandKey, packageName: string };
 }
 
 export function templateToCommand(template: IoCommandTemplate): IoCommand {
@@ -73,7 +73,7 @@ export interface IoCommand extends TaskRequirement {
   directoryPath: IoDirectoryPath;
   commandKey: IoCommandKey;
   environment: IoEnvironment;
-  spec: FunctionSpecification & { name: IoCommandKey };
+  spec: FunctionSpecification & { name: IoCommandKey, packageName: string };
   meta: {
     url: string;
     iconName: string;

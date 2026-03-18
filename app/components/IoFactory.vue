@@ -11,7 +11,8 @@
   </LazyStringToStringContent>
 </template>
 <script setup lang="ts">
-import {commands, getCommandBy} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const {commands, getCommandBy} = useCommandTreeStore();
 
 const props = defineProps<{
   directoryPath: string[],

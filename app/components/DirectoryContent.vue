@@ -55,7 +55,8 @@
 </template>
 
 <script setup lang="ts">
-import {commands} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const {commands} = useCommandTreeStore();
 
 const {t} = useI18n();
 const localePath = useLocalePath();

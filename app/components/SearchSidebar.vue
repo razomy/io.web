@@ -133,9 +133,10 @@
 <script lang="ts" setup>
 import {computed, ref, watch} from 'vue';
 import {useDisplay} from 'vuetify';
-import {directoriesTree} from '~~/razomy/db';
 import {type IoDirectory} from '~~/razomy/io/command';
 import {Debounce} from '~~/razomy/functions';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const { directoriesTree} = useCommandTreeStore();
 
 const {t, availableLocales} = useI18n();
 const localePath = useLocalePath();

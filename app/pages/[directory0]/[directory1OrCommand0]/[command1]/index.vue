@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import {isCommandExists} from '~~/razomy/db';
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+
 import IoFactory from '~/components/IoFactory.vue';
 
 definePageMeta({
   validate: async (route) => {
+    const {isCommandExists} = useCommandTreeStore();
+
     const directory0 = (route.params.directory0 as any).toLowerCase();
     const directory1 = (route.params.directory1OrCommand0 as string).toLowerCase();
     const command1 = (route.params.command1 as string).toLowerCase();

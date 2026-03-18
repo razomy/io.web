@@ -1,5 +1,5 @@
 import {en as vuetifyEn} from 'vuetify/locale';
-import type {RzmNuxtTranslate} from '@razomy/nuxt/runtime/functions';
+import type {RzmNuxtRuntimeTranslate, RzmNuxtStaticTranslate} from '@razomy/nuxt/runtime/functions';
 
 const nuxtTranslates = {
   footer: {
@@ -30,7 +30,7 @@ const nuxtTranslates = {
     name: 'Io',
     description: 'Input command',
   },
-} as const satisfies RzmNuxtTranslate['nuxt'];
+} as const satisfies RzmNuxtRuntimeTranslate['nuxt'] & RzmNuxtStaticTranslate['nuxt'];
 
 declare global {
   // Tool to search broken translates:

@@ -3,7 +3,7 @@ import type {FileFormat} from '@razomy/fs-file-format';
 import type {IoDirectory} from './directory';
 import type {HardwareResourceMinimal} from '../system/task';
 import {arrayToUrl} from '../../functions';
-import {lT} from '../../db/alies';
+import {lT} from '../../_db/alies';
 
 function fileFormatOutputToCommandTemplate(parentDirectoryPath: string[], fileFormat: FileFormat, fileFormatOutput: string) {
   return {
@@ -12,10 +12,6 @@ function fileFormatOutputToCommandTemplate(parentDirectoryPath: string[], fileFo
     metaIconName: 'mdi-file',
     environment: {
       strategy: 'client_server',
-      client_server: {
-        execute() {
-        }
-      }
     } as any,
     capabilities: ['node_js'],
     hardwareResourceMinimal: {
@@ -25,6 +21,7 @@ function fileFormatOutputToCommandTemplate(parentDirectoryPath: string[], fileFo
       ramMbMinimal: 1,
     } as HardwareResourceMinimal,
     spec: {
+      packageName: '',
       description: '',
       examples: [],
       name: fileFormatOutput,

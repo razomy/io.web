@@ -56,7 +56,9 @@ import SeoSection from '~/components/SeoSection.vue';
 import {processText} from '~/functions/processText';
 import CodeBlock from '~/components/CodeBlock.vue';
 import {Debounce, type SeoContent} from '~~/razomy/functions';
-import {commands, getCommandById, getDirectoryBy} from '~~/razomy/db';
+
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+const { commands, getCommandById, getDirectoryBy} = useCommandTreeStore();
 
 const {t} = useI18n();
 const props = defineProps<{

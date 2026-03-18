@@ -132,8 +132,10 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue'
 import hljs from 'highlight.js'
-import {getCommandById} from '~~/razomy/db/commands';
 
+import {useCommandTreeStore} from "~/composables/useCommandTreeStore";
+
+const {getCommandById} = useCommandTreeStore();
 const {t} = useI18n();
 const isDark = usePreferredDark()
 

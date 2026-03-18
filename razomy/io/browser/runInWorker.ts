@@ -1,4 +1,4 @@
-export function runInWorkerFile(workerPath: string, data: any) {
+export function runInWorker(workerPath: string, data: any) {
   return new Promise((resolve, reject) => {
     const worker = new Worker(workerPath);
 

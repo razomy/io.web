@@ -11,6 +11,7 @@
     "analyze": "npx nuxi analyze"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.11.3",
     "@razomy/audios": "0.0.1-alpha.4",
     "@razomy/fs-file-format": "0.0.1-alpha.4",
     "@razomy/images": "0.0.1-alpha.4",
@@ -19,6 +20,7 @@
     "@razomy/videos": "0.0.1-alpha.4",
     "formidable": "^3.5.4",
     "highlight.js": "^11.11.1",
+    "quickjs-emscripten": "^0.32.0",
     "uuid": "^13.0.0"
   },
   "devDependencies": {

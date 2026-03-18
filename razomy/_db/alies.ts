@@ -20,15 +20,6 @@ export const hRA = {
   } as HardwareResourceMinimal
 };
 
-export const eB = <R extends Record<string, ()=>Promise<any>>,T extends keyof R>(r:R, pN: T, fN: string) => ({
+export const eB = <R extends Record<string, ()=>Promise<any>>,T extends keyof R>() => ({
   strategy: 'browser',
-  browser: {
-    async execute(...input: any[]) {
-      return await r[pN]!().then(module => {
-        const fn = module [fN as keyof typeof module] as (...s: any[]) => any;
-        const result = fn(...input);
-        return result;
-      })
-    }
-  }
 }) as const satisfies IoEnvironmentBrowser;
