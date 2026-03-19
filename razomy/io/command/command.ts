@@ -3,7 +3,7 @@ import type {IoDirectoryPath} from './directory';
 import type {TaskRequirement} from '../system/task';
 import type {NavigationNode} from '@razomy/nuxt/runtime/functions';
 import {arrayToUrl} from '../../functions';
-import {slugify} from '@razomy/string-case';
+import * as stringCase from '@razomy/string-case';
 
 // function name = file    = command    = uppercase = png,web-viewer = post(action to complete)
 export type  IoCommandKey = string;
@@ -50,7 +50,7 @@ export interface IoCommandTemplate extends TaskRequirement {
 }
 
 export function templateToCommand(template: IoCommandTemplate): IoCommand {
-  const commandKey = slugify(template.spec.name);
+  const commandKey = stringCase.kebabCase(template.spec.name);
   return {
     id: [...template.directoryPath, commandKey].join('.'),
     spec: template.spec,

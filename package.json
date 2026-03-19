@@ -15,7 +15,7 @@
     "@razomy/audios": "0.0.1-alpha.4",
     "@razomy/fs-file-format": "0.0.1-alpha.4",
     "@razomy/images": "0.0.1-alpha.4",
-    "@razomy/nuxt": "0.0.1-alpha.8",
+    "@razomy/nuxt": "0.0.1-alpha.9",
     "@razomy/string-case": "0.0.1-beta.2",
     "@razomy/videos": "0.0.1-alpha.4",
     "formidable": "^3.5.4",

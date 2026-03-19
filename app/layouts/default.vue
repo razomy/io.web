@@ -4,6 +4,7 @@
 <template>
   <rzm-default-layout>
     <template v-slot:sidebar>
+      <rzm-group-sidebar></rzm-group-sidebar>
       <SearchSidebar></SearchSidebar>
     </template>
     <slot/>

@@ -1,16 +1,4 @@
-import {videoDirectory} from './commands/video_nested';
-import {audioDirectory} from './commands/audio_nested';
-import {imageDirectory} from './commands/images_nested';
-import {stringDirectory} from './commands/string';
 import type {IoDirectory, IoDirectoryPath} from '../io/command';
-
-export const directoriesTree = [
-  stringDirectory,
-  // mathDirectory,
-  imageDirectory,
-  audioDirectory,
-  videoDirectory,
-] as const satisfies IoDirectory[];
 
 export function flatDirectories(directoriesTree: IoDirectory[]): IoDirectory[] {
   return directoriesTree.map(d => {
@@ -21,18 +9,16 @@ export function flatDirectories(directoriesTree: IoDirectory[]): IoDirectory[] {
   }).flat(1);
 }
 
-export const directories = flatDirectories(directoriesTree);
-
-export const getDirectoryBy = (directoryPath: IoDirectoryPath) => {
+export const getDirectoryBy = (directories: IoDirectory[], directoryPath: IoDirectoryPath) => {
   return directories.find(i => i.directoryPath.join('/') === directoryPath.join('/'))
 }
 
 
-export const isDirectoryExists = (directoryPath: IoDirectoryPath) => {
-  return !!getDirectoryBy(directoryPath);
+export const isDirectoryExists = (directories: IoDirectory[], directoryPath: IoDirectoryPath) => {
+  return !!getDirectoryBy(directories, directoryPath);
 }
 
-export function getDirectoryByFilter(value: string) {
+export function getDirectoryByFilter(directories: IoDirectory[], value: string) {
   const query = value.toLowerCase().trim();
   if (!query) return directories;
   const queries = query.split(/ |,|to/);

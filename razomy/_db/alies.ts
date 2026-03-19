@@ -3,12 +3,7 @@ import type {Capability} from '../io/system/system';
 import type {HardwareResourceMinimal} from '../io/system/task';
 
 export const lT = (n: string) => (`io.db.${n}.title`)
-export const dP = 'directoryPath';
 export const en = 'environment';
-export const cK = 'commandKey';
-export const iN = 'iconName';
-export const s = 'string';
-export const n = 'number';
 
 export const cA = {capabilities: ['browser_wasm', 'browser_js', 'edge_js', 'node_js'] as Capability[]}
 export const hRA = {

@@ -1,7 +1,13 @@
-import {directories} from '~~/razomy/_db/directories';
-import {commands} from '~~/razomy/_db';
+import {defaultIoConfig, loadNpmPackageCommandsWithCommands} from "~~/razomy/_db/loadNpmPackageCommands";
+
 
 export default defineSitemapEventHandler(async () => {
+  const {
+    directoriesTree,
+    commands,
+    directories
+  } = await loadNpmPackageCommandsWithCommands(defaultIoConfig);
+
   return [
     ...directories.map(page => ({
       loc: page.directoryPath.join('/'),

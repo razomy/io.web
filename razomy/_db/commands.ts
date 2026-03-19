@@ -1,11 +1,16 @@
-import type {IoCommand, IoCommandKey, IoDirectoryPath} from '../io/command';
-import {directories} from './directories';
+import {type IoCommand, type IoCommandKey, type IoDirectoryPath} from '../io/command';
 
-export const commands = [
-  ...directories.map(d => d.commands).flat(1)
-] as const satisfies IoCommand[];
+interface IoConfigNpmPackageResolveStrategy {
+  strategy: string,
+  packageName: string
+}
+
+export interface IoConfig {
+  packageResolvers: IoConfigNpmPackageResolveStrategy[]
+}
 
 export const getCommandBy = (
+  commands: IoCommand[],
   directoryPath: IoDirectoryPath,
   commandKey: IoCommandKey | null = null) => {
   return commands.find(i =>
@@ -15,6 +20,7 @@ export const getCommandBy = (
 }
 
 export const getCommandById = (
+  commands: IoCommand[],
   commandId: string) => {
   return commands.find(i =>
     i.id === commandId
@@ -23,7 +29,8 @@ export const getCommandById = (
 
 
 export const isCommandExists = (
+  commands: IoCommand[],
   directoryPath: IoDirectoryPath,
   commandKey: IoCommandKey | null = null) => {
-  return !!getCommandBy(directoryPath, commandKey);
+  return !!getCommandBy(commands, directoryPath, commandKey);
 }
